@@ -1,0 +1,58 @@
+{
+  "name": "reka-ui",
+  "type": "module",
+  "version": "2.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "license": "MIT",
+  "repository": "unovue/reka-ui",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "story:dev": "pnpm --filter histoire story:dev --open",
+    "build": "rimraf packages/core/dist  && pnpm run --filter reka-ui build && pnpm run --filter plugins build",
+    "build-only": "rimraf packages/core/dist  && pnpm run -r build-only",
+    "docs:install": "pnpm --filter docs install",
+    "docs:dev": "pnpm --filter docs docs:dev",
+    "docs:build": "pnpm --filter docs docs:build",
+    "docs:gen": "pnpm --filter docs docs:gen",
+    "docs:contributors": "pnpm --filter docs docs:contributors",
+    "prepare": "pnpm simple-git-hooks",
+    "test": "pnpm --filter reka-ui test",
+    "test-update": "pnpm --filter reka-ui test-update",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "bumpp": "bumpp package.json packages/*/package.json docs/package.json",
+    "pub:release": "cd packages/core && pnpm pub:release"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.27.3",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "bumpp": "^9.11.1",
+    "eslint": "^9.22.0",
+    "lint-staged": "^15.4.3",
+    "pnpm": "^9.15.0",
+    "rimraf": "^6.0.1",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "5.3.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vitepress": "patches/vitepress.patch"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
