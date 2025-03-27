@@ -1,0 +1,48 @@
+/* Dark mode variables */
+:root {
+  --header-bg: #ffffff;
+  --footer-bg: #f7fafc;
+  --border-color: #eaeaea;
+  --text-color: #1a202c;
+  --nav-text: #4a5568;
+  --tag-bg: #f1f1f1;
+  --tag-text: #666;
+  --primary-color: #3182ce;
+  --footer-text: #718096;
+  --copyright: #a0aec0;
+  --body-bg: #ffffff;
+  --card-bg: #ffffff;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  --header-bg: #1a202c;
+  --footer-bg: #1a202c;
+  --border-color: #2d3748;
+  --text-color: #f7fafc;
+  --nav-text: #e2e8f0;
+  --tag-bg: #2d3748;
+  --tag-text: #cbd5e0;
+  --primary-color: #63b3ed;
+  --footer-text: #a0aec0;
+  --copyright: #718096;
+  --body-bg: #171923;
+  --card-bg: #2d3748;
+
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
+
+/* Additional dark mode styles */
+body.dark-mode a {
+  color: var(--primary-color);
+}
+
+body.dark-mode .router-link-active {
+  color: var(--primary-color);
+}
+
+body.dark-mode pre, body.dark-mode code {
+  background-color: #2d3748;
+  color: #cbd5e0;
+}

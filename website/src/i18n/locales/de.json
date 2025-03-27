@@ -1,0 +1,115 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "news": "Neuigkeiten",
+    "blog": "Blog",
+    "team": "Team",
+    "partners": "Partner"
+  },
+  "home": {
+    "hero": {
+      "title": "Willkommen bei PrivateAIM",
+      "subtitle": "Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik",
+      "explorePlatform": "Unsere Plattform entdecken",
+      "joinNetwork": "Netzwerk beitreten"
+    },
+    "intro": {
+      "paragraph1": "Medizinische Datenanalyse ist entscheidend für die Weiterentwicklung der Gesundheitsforschung und ermöglicht präzisere Diagnosen, innovative Behandlungen und zukunftsfähige Patientenversorgung. Aufgrund der Sensibilität solcher Daten sind jedoch strenge Datenschutzvorkehrungen erforderlich, um gesetzliche Vorschriften einzuhalten und die Vertraulichkeit der Patienten zu schützen.",
+      "paragraph2": "Diese Herausforderung wird besonders bei KI-Anwendungen im medizinischen Bereich deutlich, wo umfangreiche Datensätze erforderlich sind, um zuverlässige und aussagekräftige Ergebnisse zu erzielen."
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "paragraph1": "PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip \"Code to Data\" stellen wir sicher, dass Patientendaten sicher in Universitätskliniken gespeichert bleiben, während nur Analysealgorithmen ausgetauscht werden.",
+      "paragraph2": "Dieser föderierte Ansatz garantiert, dass sensible medizinische Informationen ihre geschützte Umgebung nie verlassen und die Identität der Patienten jederzeit geschützt bleibt.",
+      "paragraph3": "FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist eine neuartige Softwareplattform, die eine sichere, dezentrale Datenanalyse innerhalb der Medizininformatik-Initiative (MII) ermöglicht."
+    },
+    "howItWorks": {
+      "title": "Wie es funktioniert",
+      "step1": {
+        "title": "Daten bleiben lokal",
+        "description": "Patientendaten bleiben in Krankenhaussystemen sicher und verlassen ihre geschützte Umgebung nie."
+      },
+      "step2": {
+        "title": "Code-to-Data-Ansatz",
+        "description": "Analysealgorithmen reisen zu den Daten, anstatt sensible Informationen zu bewegen."
+      },
+      "step3": {
+        "title": "Föderierte Analyse",
+        "description": "Ergebnisse werden über Institutionen hinweg aggregiert, wobei die Privatsphäre gewahrt und die Forschungsqualität verbessert wird."
+      },
+      "experienceFlame": "Erleben Sie FLAME",
+      "flamePlatform": "Unsere innovative Plattform für sichere, föderierte medizinische Datenanalyse",
+      "explorePlatform": "Plattform erkunden"
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "paragraph1": "Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.",
+      "paragraph2": "PrivateAIM bindet Patienten, Interessengruppen und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen."
+    },
+    "partners": {
+      "title": "Vertraut von führenden Institutionen",
+      "viewAll": "Alle Partner anzeigen"
+    },
+    "cta": {
+      "title": "Bereit, die medizinische Forschung zu transformieren?",
+      "subtitle": "Helfen Sie uns, eine Zukunft aufzubauen, in der Datenschutz und Innovation Hand in Hand gehen.",
+      "explorePlatform": "Plattform erkunden",
+      "contactUs": "Kontakt"
+    }
+  },
+  "footer": {
+    "documentation": "Dokumentation",
+    "flame": "FLAME Plattform",
+    "github": "GitHub",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
+  },
+  "languageSelector": {
+    "label": "Sprachen",
+    "english": "Englisch",
+    "german": "Deutsch"
+  },
+  "imprint": {
+    "title": "Imprint",
+    "information": {
+      "title": "Information according to § 5 TMG",
+      "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
+      "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
+      "address1": "Anna-Louisa-Karsch-Str. 2",
+      "address2": "10178 Berlin",
+      "contact": {
+        "phone": "Phone",
+        "fax": "Fax",
+        "email": "Email"
+      }
+    },
+    "representation": {
+      "title": "Legal Representatives"
+    },
+    "contact": {
+      "title": "Contact",
+      "department": "AG Medizininformatik",
+      "institute": "Berlin Institute of Health @Charité - Universitätsmedizin Berlin",
+      "address1": "Charitéplatz 1",
+      "address2": "10117 Berlin",
+      "email": "Email"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content": {
+        "title": "Accountability for content",
+        "text": "The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this matter, please note that we are not obliged to monitor the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG)."
+      },
+      "links": {
+        "title": "Accountability for links",
+        "text": "Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately."
+      },
+      "copyright": {
+        "title": "Copyright",
+        "text": "Our web pages and their contents are subject to German copyright law. Unless expressly permitted by law, every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are only allowed for private use. The materials from these pages are copyrighted and any unauthorized use may violate copyright laws."
+      }
+    }
+  }
+}
