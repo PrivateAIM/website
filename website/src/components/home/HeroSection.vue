@@ -16,37 +16,7 @@
       </div>
 
       <div class="hero-visual">
-        <div class="hero-graphic">
-          <!-- Decorative elements -->
-          <div class="graphic-element graphic-circle-1"></div>
-          <div class="graphic-element graphic-circle-2"></div>
-          <div class="graphic-element graphic-square"></div>
-          <div class="graphic-element graphic-line-1"></div>
-          <div class="graphic-element graphic-line-2"></div>
-
-          <!-- Simplified visual representation of federated learning -->
-          <div class="network-visualization">
-            <div class="node node-1">
-              <div class="node-inner"></div>
-            </div>
-            <div class="node node-2">
-              <div class="node-inner"></div>
-            </div>
-            <div class="node node-3">
-              <div class="node-inner"></div>
-            </div>
-            <div class="node node-4">
-              <div class="node-inner"></div>
-            </div>
-            <div class="node node-central">
-              <div class="node-inner"></div>
-            </div>
-            <div class="connection connection-1"></div>
-            <div class="connection connection-2"></div>
-            <div class="connection connection-3"></div>
-            <div class="connection connection-4"></div>
-          </div>
-        </div>
+        <img src="/images/home/server-analysis.svg" alt="Server Analysis Graphic" class="hero-graphic" />
       </div>
     </div>
 
@@ -148,7 +118,7 @@
 /* Visual part */
 .hero-visual {
   position: relative;
-  height: 400px;
+  height: 700px;
 }
 
 .hero-graphic {

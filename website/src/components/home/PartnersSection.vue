@@ -8,10 +8,10 @@
           <img src="/images/partners/partner1.jpg" alt="University Hospital Bonn" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/partner2.jpg" alt="Charité Berlin" />
+          <img src="/images/partners/BIH.png" alt="Charité Berlin" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/partner3.jpg" alt="University Hospital Heidelberg" />
+          <img src="/images/partners/UKHD.png" alt="University Hospital Heidelberg" />
         </div>
         <div class="partner-logo">
           <img src="/images/partners/partner4.jpg" alt="Medical Informatics Initiative" />

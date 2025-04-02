@@ -3,8 +3,8 @@
     <div class="header-container">
       <div class="logo-section">
         <router-link to="/" class="logo">
-          <img src="/images/logo.png" alt="PrivateAIM Logo" class="header-logo" />
-          <span class="logo-text">PrivateAIM</span>
+          <img src="/images/logo-light.png" alt="Logo light" class="header-logo logo-light" />
+          <img src="/images/logo-dark.png" alt="Logo dark" class="header-logo logo-dark" />
         </router-link>
       </div>
 
@@ -64,16 +64,26 @@ import ThemeToggle from './ThemeToggle.vue';
   align-items: center;
 }
 
-.header-logo {
+.logo-dark {
   height: 32px;
   width: auto;
   margin-right: 0.75rem;
+  display: none;
 }
 
-.logo-text {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--text-color, #1a202c);
+.logo-light {
+  height: 32px;
+  width: auto;
+  margin-right: 0.75rem;
+  display: block;
+}
+
+.dark-mode .logo-dark {
+  display: block;
+}
+
+.dark-mode .logo-light {
+  display: none;
 }
 
 .main-nav {

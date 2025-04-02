@@ -2,9 +2,9 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-left">
-        <router-link to="/" class="footer-logo">
-          <img src="/images/logo.png" alt="PrivateAIM Logo" class="footer-logo-img" />
-          <span>PrivateAIM</span>
+        <router-link to="/" class="logo">
+          <img src="/images/logo-light.png" alt="Logo light" class="header-logo logo-light" />
+          <img src="/images/logo-dark.png" alt="Logo dark" class="header-logo logo-dark" />
         </router-link>
       </div>
 
@@ -61,18 +61,34 @@ const currentYear = computed(() => new Date().getFullYear());
   align-items: center;
 }
 
-.footer-logo {
+
+.logo {
+  text-decoration: none;
+  color: var(--text-color, #1a202c);
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--text-color, #1a202c);
-  text-decoration: none;
 }
 
-.footer-logo-img {
-  height: 28px;
+.logo-dark {
+  height: 32px;
+  width: auto;
   margin-right: 0.75rem;
+  display: none;
+}
+
+.logo-light {
+  height: 32px;
+  width: auto;
+  margin-right: 0.75rem;
+  display: block;
+}
+
+.dark-mode .logo-dark {
+  display: block;
+}
+
+.dark-mode .logo-light {
+  display: none;
 }
 
 .footer-links {
