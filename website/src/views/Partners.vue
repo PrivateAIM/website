@@ -1,155 +1,180 @@
 <template>
   <div class="partners-container">
     <div class="page-header">
-      <h1>Our Partners</h1>
+      <h1>{{ $t('partners.title') }}</h1>
       <p class="header-subtitle">
-        Collaboration is at the heart of PrivateAIM's mission. Meet the organizations working with us to advance privacy-preserving medical research.
+        {{ $t('partners.description') }}
       </p>
     </div>
 
     <div class="partners-content">
-      <!-- Academic Partners Section -->
       <section class="partners-section">
-        <h2 class="section-title">Academic Partners</h2>
-        <p class="section-description">
-          Leading research institutions and hospitals collaborating with PrivateAIM to advance medical knowledge while maintaining patient privacy.
-        </p>
-
+        <h2 class="section-title">{{ $t('partners.subsection1') }}</h2>
         <div class="partners-grid">
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="University Hospital Bonn" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">University Hospital Bonn</h3>
-              <p class="partner-description">
-                Leading healthcare research in secure federated analytics and privacy-preserving techniques for patient data.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="Charité Berlin" />
+              <img src="/images/partners/BIH.png" alt="Charité Berlin" />
             </div>
             <div class="partner-info">
               <h3 class="partner-name">Charité Berlin</h3>
-              <p class="partner-description">
-                Developing innovative approaches to collaborative research in precision medicine and rare disease treatment.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <a href="https://www.bihealth.org/de/forschung/arbeitsgruppe/ag-prasser-medizininformatik" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
-
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="University Hospital Heidelberg" />
+              <img src="/images/partners/UKT.png" alt="Universitätsklinikum Tübingen" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">University Hospital Heidelberg</h3>
-              <p class="partner-description">
-                Pioneering cancer research through privacy-preserving analytics across multiple institutions.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Tübingen</h3>
+              <a href="https://www.medizin.uni-tuebingen.de/de/das-klinikum/einrichtungen/institute/informationstechnologie-und-medizininformatik/translationale-bioinformatik" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
-
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="Medical Informatics Initiative" />
+              <img src="/images/partners/TUM.svg" alt="TUM Klinikum Rechts der Isar" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">Medical Informatics Initiative</h3>
-              <p class="partner-description">
-                National consortium advancing digital infrastructure for privacy-preserving medical research.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">TUM Klinikum Rechts der Isar</h3>
+              <a href="https://www.kiinformatik.mri.tum.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Technical Partners Section -->
       <section class="partners-section">
-        <h2 class="section-title">Technical Partners</h2>
-        <p class="section-description">
-          Organizations providing technological expertise and infrastructure to support PrivateAIM's mission.
-        </p>
-
+        <h2 class="section-title">{{ $t('partners.subsection2') }}</h2>
         <div class="partners-grid">
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="Technical University Munich" />
+              <img src="/images/partners/LMU.png" alt="Ludwig-Maximilians-Universität München" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">Technical University Munich</h3>
-              <p class="partner-description">
-                Providing expertise in cryptographic techniques and machine learning optimization for federated systems.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">Ludwig-Maximilians-Universität München</h3>
+              <a href="https://www.ibe.med.uni-muenchen.de/index.html" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
-
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="German Research Center for Artificial Intelligence" />
+              <img src="/images/partners/DKFZ.png" alt="Deutsche Krebsforschungszentrum" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">German Research Center for AI</h3>
-              <p class="partner-description">
-                Developing advanced AI models optimized for privacy-preserving medical research.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">Deutsche Krebsforschungszentrum</h3>
+              <a href="https://www.dkfz.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
-
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="European Secure Computing Consortium" />
+              <img src="/images/partners/EKUT.png" alt="Eberhard Karls Universität Tübingnen" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">European Secure Computing Consortium</h3>
-              <p class="partner-description">
-                Supporting secure computation infrastructure for cross-border medical research.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">Eberhard Karls Universität Tübingnen</h3>
+              <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/TMF.jpg" alt="TMF" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">TMF</h3>
+              <a href="https://www.tmf-ev.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKU.svg" alt="Universität Ulm" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">Universität Ulm</h3>
+              <a href="https://sysbio.uni-ulm.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKER.svg" alt="Universitätsklinikum Erlangen" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Erlangen</h3>
+              <a href="https://www.imi.med.fau.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKFR.png" alt="Universitätsklinikum Freiburg" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Freiburg</h3>
+              <a href="https://www.uniklinik-freiburg.de/imbi.html" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKHD.png" alt="Universitätsklinikum Heidelberg" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Heidelberg</h3>
+              <a href="https://www.klinikum.uni-heidelberg.de/zentrum-fuer-innere-medizin-medizin-klinik/innere-medizin-iii-kardiologie-angiologie-und-pneumologie/forschung/forschung/klaus-tschira-institut-for-computational-cardiology" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKK.png" alt="Universitätsklinikum Köln" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Köln</h3>
+              <a href="https://www.uk-koeln.de/forschung/medical-data-integration-center-medic/" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UKL.png" alt="Universitätsklinikum Leipzig" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Leipzig</h3>
+              <a href="https://www.uniklinikum-leipzig.de/einrichtungen/medical-data-science/" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/CISPA.svg" alt="CISPA" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">CISPA</h3>
+              <a href="https://cispa.de/de" class="partner-link">{{ $t('partners.partner.info') }}</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="/images/partners/UMM.svg" alt="Universitätsmedizin Mannheim" />
+            </div>
+            <div class="partner-info">
+              <h3 class="partner-name">Universitätsmedizin Mannheim</h3>
+              <a href="https://www.umm.uni-heidelberg.de/mi3/" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Funding Partners Section -->
+      <!-- Associated Partners Section -->
       <section class="partners-section">
-        <h2 class="section-title">Funding Partners</h2>
-        <p class="section-description">
-          Organizations providing financial support to make PrivateAIM's work possible.
-        </p>
-
+        <h2 class="section-title">{{ $t('partners.subsection3') }}</h2>
         <div class="partners-grid">
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="European Research Council" />
+              <img src="/images/partners/IKIM.png" alt="University Hospital Essen" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">European Research Council</h3>
-              <p class="partner-description">
-                Supporting groundbreaking research in privacy-preserving technologies for healthcare.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Essen</h3>
+              <a href="https://www.ikim.uk-essen.de" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
-
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/test.jpg" alt="German Ministry of Education and Research" />
+              <img src="/images/partners/UKSH.png" alt="University Hospital Schleswig-Holstein" />
             </div>
             <div class="partner-info">
-              <h3 class="partner-name">German Ministry of Education and Research</h3>
-              <p class="partner-description">
-                Funding innovative approaches to secure medical collaboration and research.
-              </p>
-              <a href="#" class="partner-link">Learn more →</a>
+              <h3 class="partner-name">{{ $t('partners.partner.name') }} Schleswig-Holstein</h3>
+              <a href="https://mi-ki.eu/de/willkommen/" class="partner-link">{{ $t('partners.partner.info') }}</a>
             </div>
           </div>
         </div>
@@ -158,31 +183,31 @@
       <!-- Become a Partner Section -->
       <section class="become-partner">
         <div class="become-partner-content">
-          <h2 class="become-partner-title">Join Our Network</h2>
+          <h2 class="become-partner-title">{{ $t('partners.network.title') }}</h2>
           <p class="become-partner-description">
-            Interested in collaborating with PrivateAIM? We're always looking to expand our network of partners who share our vision of privacy-preserving medical research.
+            {{ $t('partners.network.subtitle') }}
           </p>
           <div class="partner-benefits">
             <div class="benefit">
-              <h3 class="benefit-title">Access to Cutting-Edge Technology</h3>
+              <h3 class="benefit-title">{{ $t('partners.network.box1.title') }}</h3>
               <p class="benefit-description">
-                Work with our team to implement state-of-the-art federated learning systems.
+                {{ $t('partners.network.box1.text') }}
               </p>
             </div>
             <div class="benefit">
-              <h3 class="benefit-title">Collaborative Research Opportunities</h3>
+              <h3 class="benefit-title">{{ $t('partners.network.box2.title') }}</h3>
               <p class="benefit-description">
-                Participate in multi-institutional studies without compromising data sovereignty.
+                {{ $t('partners.network.box2.text') }}
               </p>
             </div>
             <div class="benefit">
-              <h3 class="benefit-title">Shape the Future of Medical Research</h3>
+              <h3 class="benefit-title">{{ $t('partners.network.box3.title') }}</h3>
               <p class="benefit-description">
-                Help define standards and best practices for privacy-preserving analytics.
+                {{ $t('partners.network.box3.text') }}
               </p>
             </div>
           </div>
-          <a href="#" class="contact-button">Contact Us to Discuss Partnership</a>
+          <a href="#" class="contact-button">{{ $t('partners.network.button') }}</a>
         </div>
       </section>
     </div>
@@ -395,3 +420,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>
