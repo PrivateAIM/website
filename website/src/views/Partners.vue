@@ -291,7 +291,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.0rem;
   background-color: var(--tag-bg, #f7fafc);
 }
 

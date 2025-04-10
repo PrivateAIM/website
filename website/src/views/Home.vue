@@ -12,7 +12,6 @@
     </section>
 
     <PartnersSection />
-    <CtaSection />
   </div>
 </template>
 

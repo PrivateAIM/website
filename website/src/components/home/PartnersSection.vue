@@ -5,16 +5,28 @@
       <div class="partners-grid">
         <!-- Partner logos -->
         <div class="partner-logo">
-          <img src="/images/partners/partner1.jpg" alt="University Hospital Bonn" />
+          <img src="/images/partners/UKT.png" alt="University Hospital Tübingen" />
         </div>
         <div class="partner-logo">
           <img src="/images/partners/BIH.png" alt="Charité Berlin" />
         </div>
         <div class="partner-logo">
+          <img src="/images/partners/TUM.svg" alt="TUM Munich" />
+        </div>
+        <div class="partner-logo">
           <img src="/images/partners/UKHD.png" alt="University Hospital Heidelberg" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/partner4.jpg" alt="Medical Informatics Initiative" />
+          <img src="/images/partners/UKER.svg" alt="University Hospital Erlangen" />
+        </div>
+        <div class="partner-logo">
+          <img src="/images/partners/UKL.png" alt="University Hospital Leipzig" />
+        </div>
+        <div class="partner-logo">
+          <img src="/images/partners/UKFR.png" alt="University Hospital Freiburg" />
+        </div>
+        <div class="partner-logo">
+          <img src="/images/partners/LMU.png" alt="LMU Munich" />
         </div>
       </div>
       <div class="partner-cta">
@@ -94,3 +106,5 @@ h2 {
   }
 }
 </style>
+<script setup lang="ts">
+</script>
