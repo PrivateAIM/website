@@ -1,41 +1,41 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 // Define language options
 const languages = [
   { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' }
+  { code: 'de', label: 'Deutsch' },
 ]
 
 const { locale } = useI18n()
 
-// Set active language based on current locale
-const activeLanguage = ref(locale.value)
+// Use a computed property that always returns the current locale
+const activeLanguage = computed(() => locale.value)
+
 const isOpen = ref(false)
-const dropdownRef = ref(null)
+const dropdownRef = ref<HTMLElement | null>(null)
 
 // Function to change language
-const changeLanguage = (langCode) => {
+function changeLanguage(langCode: string) {
   locale.value = langCode
-  activeLanguage.value = langCode
   isOpen.value = false
 }
 
 // Toggle dropdown
-const toggleDropdown = () => {
+function toggleDropdown() {
   isOpen.value = !isOpen.value
 }
 
 // Get current language label
-const currentLanguageLabel = () => {
+function currentLanguageLabel() {
   const lang = languages.find(l => l.code === activeLanguage.value)
   return lang ? lang.label : 'Language'
 }
 
 // Close dropdown when clicking outside
-const handleClickOutside = (event) => {
-  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+function handleClickOutside(event: MouseEvent) {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
     isOpen.value = false
   }
 }
@@ -50,26 +50,36 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="dropdownRef" class="language-selector">
+  <div
+    ref="dropdownRef"
+    class="language-selector"
+  >
     <button
       type="button"
       class="language-trigger"
-      :class="{ 'active': isOpen }"
+      :class="{ active: isOpen }"
       aria-haspopup="menu"
       :aria-expanded="isOpen"
       @click="toggleDropdown"
     >
       <span>{{ currentLanguageLabel() }}</span>
-      <!-- Chevron down icon (similar to the lucide icon in your example) -->
+      <!-- Chevron down icon -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="ml-1 chevron-icon"
-        :class="{ 'rotate': isOpen }"
+        :class="{ rotate: isOpen }"
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
       >
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m6 9l6 6l6-6"
+        />
       </svg>
     </button>
 
@@ -82,7 +92,7 @@ onUnmounted(() => {
           v-for="lang in languages"
           :key="lang.code"
           class="language-option"
-          :class="{ 'selected': activeLanguage === lang.code }"
+          :class="{ selected: activeLanguage === lang.code }"
           @click="changeLanguage(lang.code)"
         >
           {{ lang.label }}
