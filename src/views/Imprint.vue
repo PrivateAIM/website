@@ -6,9 +6,8 @@
 
     <div class="legal-content">
       <section class="legal-section">
-        <h2>{{ $t('imprint.information.title') }}</h2>
         <p class="address">
-          {{ $t('imprint.information.entity') }}<br>
+          <b>{{ $t('imprint.information.entity') }}</b><br>
           {{ $t('imprint.information.department') }}<br>
           {{ $t('imprint.information.address1') }}<br>
           {{ $t('imprint.information.address2') }}
@@ -38,19 +37,6 @@
           {{ $t('imprint.contact.address2') }}<br>
           {{ $t('imprint.contact.email') }}: fabian.prasser@bih-charite.de
         </p>
-      </section>
-
-      <section class="legal-section">
-        <h2>{{ $t('imprint.disclaimer.title') }}</h2>
-
-        <h3>{{ $t('imprint.disclaimer.content.title') }}</h3>
-        <p>{{ $t('imprint.disclaimer.content.text') }}</p>
-
-        <h3>{{ $t('imprint.disclaimer.links.title') }}</h3>
-        <p>{{ $t('imprint.disclaimer.links.text') }}</p>
-
-        <h3>{{ $t('imprint.disclaimer.copyright.title') }}</h3>
-        <p>{{ $t('imprint.disclaimer.copyright.text') }}</p>
       </section>
     </div>
   </div>
@@ -112,16 +98,6 @@ p {
 
 strong {
   font-weight: 600;
-}
-
-/* Dark mode specifics */
-:global(.dark-mode) .legal-content {
-  color: var(--card-bg, #ffffff);
-}
-
-:global(.dark-mode) h2,
-:global(.dark-mode) h3 {
-  color: var(--card-bg, #ffffff);
 }
 
 /* Responsive adjustments */

@@ -74,27 +74,26 @@
   "imprint": {
     "title": "Imprint",
     "information": {
-      "title": "Information according to § 5 TMG",
-      "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
-      "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
+      "entity": "Berlin Institute of Health {'@'}Charité (BIH)",
+      "department": "Translational Research Unit of the Charité - Universitätsmedizin Berlin",
       "address1": "Anna-Louisa-Karsch-Str. 2",
       "address2": "10178 Berlin",
       "contact": {
-        "phone": "Phone",
+        "phone": "Tel.",
         "fax": "Fax",
         "email": "Email"
       }
     },
     "representation": {
-      "title": "Legal Representatives"
+      "title": "Authorized representative"
     },
     "contact": {
       "title": "Contact",
       "department": "AG Medizininformatik",
-      "institute": "Berlin Institute of Health @Charité - Universitätsmedizin Berlin",
+      "institute": "Berlin Institute of Health {'@'}Charité - Universitätsmedizin Berlin",
       "address1": "Charitéplatz 1",
       "address2": "10117 Berlin",
-      "email": "Email"
+      "email": "E-Mail"
     },
     "disclaimer": {
       "title": "Disclaimer",
@@ -139,5 +138,10 @@
       },
       "button": "Contact Us to Discuss Partnership"
     }
-  }
+  },
+  "privacy": {
+    "title": "Privacy Policy"
+  },
+  "lastUpdated": "Last updated",
+  "updateDate": "March 27, 2025"
 }
