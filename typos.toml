@@ -1,5 +1,0 @@
-[default]
-extend-ignore-re = [
-  # Chalk.ist website
-  "Chalk\\.ist",
-]

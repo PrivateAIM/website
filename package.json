@@ -1,58 +1,43 @@
 {
-  "name": "reka-ui",
-  "type": "module",
-  "version": "2.1.0",
+  "name": "my-reka-app",
+  "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.15.0",
-  "license": "MIT",
-  "repository": "unovue/reka-ui",
-  "workspaces": [
-    "packages/*"
-  ],
+  "type": "module",
   "scripts": {
-    "story:dev": "pnpm --filter histoire story:dev --open",
-    "build": "rimraf packages/core/dist  && pnpm run --filter reka-ui build && pnpm run --filter plugins build",
-    "build-only": "rimraf packages/core/dist  && pnpm run -r build-only",
-    "docs:install": "pnpm --filter docs install",
-    "docs:dev": "pnpm --filter docs docs:dev",
-    "docs:build": "pnpm --filter docs docs:build",
-    "docs:gen": "pnpm --filter docs docs:gen",
-    "docs:contributors": "pnpm --filter docs docs:contributors",
-    "prepare": "pnpm simple-git-hooks",
-    "test": "pnpm --filter reka-ui test",
-    "test-update": "pnpm --filter reka-ui test-update",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "bumpp": "bumpp package.json packages/*/package.json docs/package.json",
-    "pub:release": "cd packages/core && pnpm pub:release"
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@vueuse/core": "^13.0.0",
+    "bootstrap": "^5.3.3",
+    "marked": "^15.0.7",
+    "pinia": "^3.0.1",
+    "reka-ui": "^2.1.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.1.2",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.3",
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
-    "bumpp": "^9.11.1",
-    "eslint": "^9.22.0",
-    "lint-staged": "^15.4.3",
-    "pnpm": "^9.15.0",
-    "rimraf": "^6.0.1",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "5.3.3"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "vitepress": "patches/vitepress.patch"
-    }
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
+    "@tsconfig/node22": "^22.0.0",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^22.13.9",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-vue": "~10.0.0",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.0",
+    "vite": "^6.2.1",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^2.2.8"
   }
 }
