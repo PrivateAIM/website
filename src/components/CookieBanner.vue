@@ -7,11 +7,25 @@ interface CookieOptions {
   analytics: boolean;
 }
 
+// Typdefinitionen für Google Analytics
+interface GTagArguments {
+  [key: string]: unknown;
+}
+
+interface WindowWithDataLayer extends Window {
+  dataLayer: Array<unknown[]>;
+  gtag?: (...args: unknown[]) => void;
+  [key: string]: unknown;
+}
+
 const isVisible = ref(false);
 const cookieOptions = ref<CookieOptions>({
   necessary: true, // Immer aktiviert
   analytics: false,
 });
+
+// Hier deine Google Analytics Tracking ID einfügen
+const GA_TRACKING_ID = 'G-HEP0T9F5MV';
 
 // Cookie überprüfen, ob bereits eingestellt
 const checkCookieConsent = (): boolean => {
@@ -30,18 +44,62 @@ const setCookieConsent = (options: CookieOptions) => {
   // Wenn Analytics akzeptiert wurde, initialisiere Google Analytics
   if (options.analytics) {
     initGoogleAnalytics();
+  } else {
+    // Falls Analytics abgelehnt wurde, deaktivieren
+    disableGoogleAnalytics();
   }
 };
 
-// Google Analytics initialisieren
+// Google Analytics mit anonymisierter IP initialisieren
 const initGoogleAnalytics = () => {
-  // Hier würdest du deinen Google Analytics Code einfügen
-  console.log('Google Analytics wurde initialisiert');
-  // Beispiel:
-  // window.dataLayer = window.dataLayer || [];
-  // function gtag(){dataLayer.push(arguments);}
-  // gtag('js', new Date());
-  // gtag('config', 'G-XXXXXXXXXX');
+  if (typeof window !== 'undefined') {
+    // Google Analytics 4 (GA4) mit anonymisierter IP einrichten
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+    document.head.appendChild(script);
+
+    const windowWithDataLayer = window as WindowWithDataLayer;
+    windowWithDataLayer.dataLayer = windowWithDataLayer.dataLayer || [];
+
+    function gtag(...args: unknown[]): void {
+      windowWithDataLayer.dataLayer.push(args);
+    }
+
+    windowWithDataLayer.gtag = gtag;
+    gtag('js', new Date());
+
+    // GA4 mit anonymisierter IP konfigurieren
+    gtag('config', GA_TRACKING_ID, {
+      'anonymize_ip': true,           // IP-Adresse anonymisieren
+      'allow_google_signals': false,  // Google-Signale deaktivieren
+      'allow_ad_personalization_signals': false, // Personalisierte Anzeigen deaktivieren
+      'send_page_view': true          // Seitenaufrufe tracken
+    });
+
+    console.log('Google Analytics mit anonymisierter IP wurde initialisiert');
+  }
+};
+
+// Google Analytics deaktivieren
+const disableGoogleAnalytics = () => {
+  if (typeof window !== 'undefined') {
+    const windowWithDataLayer = window as WindowWithDataLayer;
+
+    // GA4 deaktivieren
+    windowWithDataLayer[`ga-disable-${GA_TRACKING_ID}`] = true;
+
+    // Optional: Vorhandene GA-Cookies entfernen
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.indexOf('_ga') === 0 || cookie.indexOf('_gid') === 0 || cookie.indexOf('_gat') === 0) {
+        document.cookie = cookie.split('=')[0] + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      }
+    }
+
+    console.log('Google Analytics wurde deaktiviert');
+  }
 };
 
 // Cookie Banner akzeptieren
