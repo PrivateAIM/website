@@ -26,6 +26,15 @@
     "noUnusedParameters": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts", "vue-i18n.d.ts", "src/**/*.md"],
+  "include": [
+    "env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "env.d.ts",
+    "src/**/*.md"
+  ],
+  "exclude": ["src/**/__tests__/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
