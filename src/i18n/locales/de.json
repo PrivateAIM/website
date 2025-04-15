@@ -161,5 +161,75 @@
         "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
       }
     }
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.",
+    "noItems": "Keine Neuigkeiten für dieses Jahr verfügbar.",
+    "items": {
+      "2025": [
+        {
+          "date": "25-26/02/2025",
+          "title": "NUM Convention 2025",
+          "content": "Unter dem Format Die Infrastruktur NUM-DIZ: Datenschutz sucht Forscher:innen der NUM Convention 2025 präsentierte Oliver Kohlbacher als PrivateAIM-Koordinator wie FLAME als geförderte Plattform in der Medizininformatik-Initiative den Schatz heben wird.",
+          "images": [
+            "news_num-convention.jpg"
+          ]
+        }
+      ],
+      "2024": [
+        {
+          "date": "25-27/09/2024",
+          "title": "Retreat in Potsdam",
+          "content": "Unser 3-tägiges Retreat im wunderschönen Potsdam ist vorbei! Bei spannenden Präsentationen und regem Austausch haben wir neue Ideen und Strategien entwickelt und wichtige Impulse für den weiteren Projektverlauf gesetzt. #PrivateAIM #Retreat #Teamwork",
+          "images": [
+            "potsdam/news_potsdam_retreat.jpg",
+            "potsdam/news_potsdam_retreat_2.jpg",
+            "potsdam/news_potsdam_retreat_3.jpg"
+          ]
+        },
+        {
+          "date": "06-07/05/2024",
+          "title": "Workshop in Leipzig",
+          "content": "Bei unserem zweitägigen #PrivateAIM-Workshop in der ehrwürdigen Albertina Bibliothek der @UniLeipzig wurde das Minimal Viable Product (MVP) der FLAME-Plattform vorgestellt. In verschiedenen Breakout-Sessions wurden anschließend Themen rund um die FLAME-Architektur vertieft, verschiedene Anwendungsfälle und die DIZ-Integration diskutiert und daraus nächste Schritte erarbeitet. Vielen Dank an alle Teilnehmenden für den regen Austausch! #PrivateAIM #Workshop #Leipzig #FLAME",
+          "images": [
+            "leipzig/news_leipzig-workshop.jpg",
+            "leipzig/news_leipzig-workshop_2.jpg",
+            "leipzig/news_leipzig-workshop_3.jpg",
+            "leipzig/news_leipzig-workshop_4.jpg"
+          ]
+        }
+      ],
+      "2023": [
+        {
+          "date": "20/12/2023",
+          "title": "Workshop in Frankfurt am Main",
+          "content": "Zum Abschluss des Jahres hat gestern ein Workshop zur Finalisierung der grundlegenden Architektur der FLAME Plattform am Universitätsklinikum in Frankfurt stattgefunden.",
+          "images": [
+            "news_ffm-workshop.jpg"
+          ]
+        },
+        {
+          "date": "16-18/10/2023",
+          "title": "PrivateAIM Retreat in Lobbach",
+          "content": "Vom 16. bis 18. Oktober 2023 fand in Lobbach das erste PrivateAIM Retreat statt. Dieses Treffen markierte das erste persönliche Zusammentreffen aller Projektpartner. In einer Atmosphäre des regen Austauschs und der Zusammenarbeit haben wir wichtige Grundsteine für eine erfolgreiche Zukunft unseres Projekts gelegt.",
+          "images": [
+            "news_lobbach-retreat.jpg"
+          ]
+        },
+        {
+          "date": "24/04/2023",
+          "title": "Kick-Off-Meeting",
+          "content": "Am 24.04.2023 fand das virtuelle Kick-Off-Meeting von PrivateAIM statt. Dabei kamen alle Teammitglieder zusammen, um die erste Phase des Projekts einzuleiten und zu planen.",
+          "images": []
+        },
+        {
+          "date": "01/04/2023",
+          "title": "Offizieller Start",
+          "content": "Am 01.04.2023 hat das Projekt PrivateAIM offiziell begonnen. Auf dieser Webseite werden wir regelmäßig über Fortschritte im Projekt berichten.",
+          "images": []
+        }
+      ]
+    }
   }
 }
