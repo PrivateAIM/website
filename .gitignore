@@ -30,6 +30,7 @@ coverage
 *.sw?
 ./.nuxt
 .neoconf.json
+.idea/*
 
 test-results/
 playwright-report/

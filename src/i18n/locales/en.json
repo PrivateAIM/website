@@ -139,9 +139,28 @@
       "button": "Contact Us to Discuss Partnership"
     }
   },
+
   "privacy": {
     "title": "Privacy Policy"
   },
   "lastUpdated": "Last updated",
-  "updateDate": "March 27, 2025"
+  "updateDate": "March 27, 2025",
+  "cookie": {
+    "title": "Cookie Settings",
+    "subtitle": "This website uses cookies to improve your browsing experience and to perform analyses of website usage. You can choose which cookies you want to allow.\n",
+    "accept": "Accept all",
+    "deny": "Only necessary",
+    "preference": "Save selection",
+    "settings": "Settings",
+    "setting": {
+      "required": {
+        "title": "Necessary Cookies",
+        "description": "These cookies are essential for the website to function and cannot be disabled."
+      },
+      "analysis": {
+        "title": "Analysis Cookies",
+        "description": "These cookies allow us to count visits and traffic sources anonymously, so we can measure and improve the performance of our website."
+      }
+    }
+  }
 }

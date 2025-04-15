@@ -2,11 +2,10 @@
   <LanguageProvider>
     <div class="app">
       <RekaHeader />
-
       <main class="main-content">
         <router-view />
       </main>
-
+      <CookieBanner />
       <RekaFooter />
     </div>
   </LanguageProvider>
@@ -16,6 +15,7 @@
 import RekaHeader from './components/RekaHeader.vue';
 import RekaFooter from './components/RekaFooter.vue';
 import LanguageProvider from './components/LanguageProvider.vue';
+import CookieBanner from './components/CookieBanner.vue';
 </script>
 
 <style>
@@ -27,6 +27,7 @@ import LanguageProvider from './components/LanguageProvider.vue';
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main-content {

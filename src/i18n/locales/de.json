@@ -143,5 +143,23 @@
     "title": "Datenschutzerklärung"
   },
   "lastUpdated": "Letzte Aktualisierung",
-  "updateDate": "27. März 2025"
+  "updateDate": "27. März 2025",
+  "cookie": {
+    "title": "Cookie-Einstellungen",
+    "subtitle": "Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n",
+    "accept": "Alle akzeptieren",
+    "deny": "Nur notwendige",
+    "preference": "Auswahl speichern",
+    "settings": "Einstellungen",
+    "setting": {
+      "required": {
+        "title": "Notwendige Cookies",
+        "description": "Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden."
+      },
+      "analysis": {
+        "title": "Analyse-Cookies",
+        "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
+      }
+    }
+  }
 }
