@@ -1,61 +1,54 @@
-// router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import BlogList from '../views/BlogList.vue'
-import Imprint from '../views/Imprint.vue'
-import Privacy from '../views/Privacy.vue'
-import Team from '../views/Team.vue'
-import News from '../views/News.vue'
-import Partners from '../views/Partners.vue'
+import type { RouteRecordRaw } from 'vue-router'
 
-// Define routes
-const routes = [
+// Define routes with proper typing
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('@/views/Home.vue')
   },
   {
     path: '/blog',
     name: 'Blog',
-    component: BlogList
+    component: () => import('@/views/BlogList.vue')
   },
   {
     path: '/blog/:id',
     name: 'BlogPost',
-    component: () => import('../views/BlogPost.vue')
+    component: () => import('@/views/BlogPost.vue'),
+    props: true // Allow passing route params as props
   },
   {
     path: '/team',
     name: 'Team',
-    component: Team
+    component: () => import('@/views/Team.vue')
   },
   {
     path: '/news',
     name: 'News',
-    component: News
+    component: () => import('@/views/News.vue')
   },
   {
     path: '/partners',
     name: 'Partners',
-    component: Partners
+    component: () => import('@/views/Partners.vue')
   },
   {
     path: '/imprint',
     name: 'Imprint',
-    component: Imprint
+    component: () => import('@/views/Imprint.vue')
   },
   {
     path: '/privacy',
     name: 'Privacy',
-    component: Privacy
+    component: () => import('@/views/Privacy.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  // Add scroll behavior configuration
   scrollBehavior() {
     // Always scroll to top when navigating to a new page
     return {
