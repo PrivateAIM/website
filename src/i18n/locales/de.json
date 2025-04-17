@@ -44,7 +44,11 @@
     "vision": {
       "title": "Unsere Vision",
       "paragraph1": "Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.",
-      "paragraph2": "PrivateAIM bindet Patienten, Interessengruppen und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen."
+      "paragraph2": "PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen.",
+      "paragraph3": "Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.",
+      "contribute": "Open-Source Beitragen",
+      "explanation": "Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.",
+      "github": "GitHub öffnen"
     },
     "partners": {
       "title": "Vertraut von führenden Institutionen",
@@ -55,6 +59,11 @@
       "subtitle": "Helfen Sie uns, eine Zukunft aufzubauen, in der Datenschutz und Innovation Hand in Hand gehen.",
       "explorePlatform": "Plattform erkunden",
       "contactUs": "Kontakt"
+    },
+    "news": {
+      "latestNews": "Neueste Nachrichten",
+      "description": "Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.",
+      "button": "Mehr lesen"
     }
   },
   "footer": {

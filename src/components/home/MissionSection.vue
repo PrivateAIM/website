@@ -11,9 +11,9 @@
 
       <div class="action-card">
         <div class="card-content">
-          <h3>{{ $t('home.latestNews') }}</h3>
-          <p>{{ $t('home.latestNews.description') }}</p>
-          <router-link to="/news" class="card-link">{{ $t('home.readMore') }} →</router-link>
+          <h3>{{ $t('home.news.latestNews') }}</h3>
+          <p>{{ $t('home.news.description') }}</p>
+          <router-link to="/news" class="card-link">{{ $t('home.news.button') }} →</router-link>
         </div>
       </div>
     </div>

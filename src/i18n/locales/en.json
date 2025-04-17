@@ -44,7 +44,11 @@
     "vision": {
       "title": "Our Vision",
       "paragraph1": "We envision a future where AI-driven medical research is seamlessly integrated with privacy-by-design principles. PrivateAIM is pioneering a new standard for secure, federated medical AI by fostering a collaborative network of hospitals, researchers, and patients.",
-      "paragraph2": "PrivateAIM actively involves patients, stakeholders, and the public through workshops, educational materials, and open dialogue to ensure broad acceptance and transparency. We aim to demystify AI and federated learning, making all security guarantees and benefits understandable."
+      "paragraph2": "PrivateAIM actively involves patients, [partners](/partners:internal), and the public through workshops, educational materials, and open dialogue to ensure broad acceptance and transparency. We aim to demystify AI and federated learning, making all security guarantees and benefits understandable.",
+      "paragraph3": "Over the project time, PrivateAIM and [FLAME](https://docs.privateaim.net:external) will provide the [MII](https://www.medizininformatik-initiative.de/de/start) with a secure and scalable solution for cross-institutional medical data analysis. We are shaping the future of trustworthy and impactful medical research by enabling AI-driven healthcare innovations while preserving patient privacy.",
+      "contribute": "Open Source Contributions",
+      "explanation": "Explore our code repositories and contribute to the future of privacy-preserving medical data research.",
+      "github": "Visit GitHub"
     },
     "partners": {
       "title": "Trusted By Leading Institutions",
@@ -55,6 +59,11 @@
       "subtitle": "Join us in building a future where privacy and innovation go hand in hand.",
       "explorePlatform": "Explore Platform",
       "contactUs": "Contact Us"
+    },
+    "news": {
+      "latestNews": "Latest News",
+      "description": "Here you can find latest news and updates related PrivateAIM.",
+      "button": "Read More"
     }
   },
   "footer": {

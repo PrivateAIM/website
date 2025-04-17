@@ -4,21 +4,101 @@
 
     <div class="vision-content">
       <div class="vision-text">
-        <p v-html="$t('home.vision.paragraph1')"></p>
-        <p v-html="$t('home.vision.paragraph2')"></p>
-        <p v-html="$t('home.vision.paragraph3')"></p>
+        <p>
+          <template v-for="(part, index) in splitText($t('home.vision.paragraph1'))" :key="`p1-${index}`">
+            <LocalizedLink
+                v-if="part.isLink"
+                :url="part.url"
+                :internal="part.internal"
+            >{{ part.text }}</LocalizedLink>
+            <span v-else>{{ part.text }}</span>
+          </template>
+        </p>
+        <p>
+          <template v-for="(part, index) in splitText($t('home.vision.paragraph2'))" :key="`p2-${index}`">
+            <LocalizedLink
+                v-if="part.isLink"
+                :url="part.url"
+                :internal="part.internal"
+            >{{ part.text }}</LocalizedLink>
+            <span v-else>{{ part.text }}</span>
+          </template>
+        </p>
+        <p>
+          <template v-for="(part, index) in splitText($t('home.vision.paragraph3'))" :key="`p3-${index}`">
+            <LocalizedLink
+                v-if="part.isLink"
+                :url="part.url"
+                :internal="part.internal"
+            >{{ part.text }}</LocalizedLink>
+            <span v-else>{{ part.text }}</span>
+          </template>
+        </p>
       </div>
 
       <div class="action-card">
         <div class="card-content">
-          <h3>Open Source Contributions</h3>
-          <p>Explore our code repositories and contribute to the future of privacy-preserving medical research.</p>
-          <a href="https://github.com/PrivateAIM" target="_blank" class="card-link">Visit GitHub →</a>
+          <h3>{{ $t('home.vision.contribute') }}</h3>
+          <p>{{ $t('home.vision.explanation') }}</p>
+          <a href="https://github.com/PrivateAIM" target="_blank" class="card-link">{{ $t('home.vision.github') }} →</a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import LocalizedLink from '@/components/shared/LocalizedLink.vue';
+
+// Parse text with link placeholders like [text](url:internal/external)
+function splitText(text) {
+  const parts = [];
+  const linkRegex = /\[([^\]]+)\]\(([^:)]+(?::\/\/[^)]+)?):([^)]+)\)/g;
+
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push({
+        isLink: false,
+        text: text.substring(lastIndex, match.index)
+      });
+    }
+
+    // Parse link details
+    const linkText = match[1];
+    let linkUrl = match[2].trim();
+    const linkType = match[3].trim();
+    const isInternal = linkType === 'internal';
+
+    // Ensure external URLs have proper protocol WITHOUT duplicating it
+    if (!isInternal && !linkUrl.match(/^https?:\/\//)) {
+      linkUrl = `https://${linkUrl}`;
+    }
+
+    parts.push({
+      isLink: true,
+      text: linkText,
+      url: linkUrl,
+      internal: isInternal
+    });
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text after the last link
+  if (lastIndex < text.length) {
+    parts.push({
+      isLink: false,
+      text: text.substring(lastIndex)
+    });
+  }
+
+  return parts;
+}
+</script>
 
 <style scoped>
 .vision-section {
