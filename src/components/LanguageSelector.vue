@@ -2,38 +2,29 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-// Define language options
+// Reduzierte Sprachoptionen
 const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' },
+  { code: 'en', label: '🇺🇸' },
+  { code: 'de', label: '🇩🇪' },
 ]
 
 const { locale } = useI18n()
-
-// Use a computed property that always returns the current locale
 const activeLanguage = computed(() => locale.value)
-
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
-// Function to change language
+// Sprache ändern
 function changeLanguage(langCode: string) {
   locale.value = langCode
   isOpen.value = false
 }
 
-// Toggle dropdown
+// Dropdown umschalten
 function toggleDropdown() {
   isOpen.value = !isOpen.value
 }
 
-// Get current language label
-function currentLanguageLabel() {
-  const lang = languages.find(l => l.code === activeLanguage.value)
-  return lang ? lang.label : 'Language'
-}
-
-// Close dropdown when clicking outside
+// Dropdown schließen, wenn außerhalb geklickt wird
 function handleClickOutside(event: MouseEvent) {
   if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
     isOpen.value = false
@@ -50,23 +41,17 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-      ref="dropdownRef"
-      class="language-selector"
-  >
+  <div ref="dropdownRef" class="language-selector">
     <button
         type="button"
         class="language-trigger"
         :class="{ active: isOpen }"
-        aria-haspopup="menu"
-        :aria-expanded="isOpen"
         @click="toggleDropdown"
     >
-      <span>{{ currentLanguageLabel() }}</span>
-      <!-- Chevron down icon -->
+      {{ languages.find(l => l.code === activeLanguage)?.label || '🌐' }}
       <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="ml-1 chevron-icon"
+          class="chevron-icon"
           :class="{ rotate: isOpen }"
           width="1em"
           height="1em"
@@ -83,21 +68,16 @@ onUnmounted(() => {
       </svg>
     </button>
 
-    <div
-        v-if="isOpen"
-        class="language-dropdown"
-    >
-      <div class="language-menu">
-        <button
-            v-for="lang in languages"
-            :key="lang.code"
-            class="language-option"
-            :class="{ selected: activeLanguage === lang.code }"
-            @click="changeLanguage(lang.code)"
-        >
-          {{ lang.label }}
-        </button>
-      </div>
+    <div v-if="isOpen" class="language-dropdown">
+      <button
+          v-for="lang in languages"
+          :key="lang.code"
+          class="language-option"
+          :class="{ selected: activeLanguage === lang.code }"
+          @click="changeLanguage(lang.code)"
+      >
+        {{ lang.label }}
+      </button>
     </div>
   </div>
 </template>
@@ -111,10 +91,7 @@ onUnmounted(() => {
 .language-trigger {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
   color: var(--nav-text, #64748b);
   background: none;
   border: none;
@@ -140,29 +117,23 @@ onUnmounted(() => {
   position: absolute;
   top: 100%;
   right: 0;
-  width: 160px;
+  width: 80px;
   margin-top: 0.5rem;
   background-color: var(--card-bg, white);
   border-radius: 0.375rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   z-index: 50;
   overflow: hidden;
   animation: slideIn 0.1s ease-out;
 }
 
-.language-menu {
-  padding: 0.25rem;
-}
-
 .language-option {
   width: 100%;
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
+  text-align: center;
+  padding: 0.5rem;
   color: var(--nav-text, #64748b);
   background: none;
   border: none;
-  border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -175,7 +146,6 @@ onUnmounted(() => {
 .language-option.selected {
   background-color: var(--tag-bg, #f1f1f1);
   color: var(--primary-color, #3182ce);
-  font-weight: 500;
 }
 
 @keyframes slideIn {
@@ -191,7 +161,7 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .language-dropdown {
-    right: -2rem;
+    right: -8px;
   }
 }
 </style>
