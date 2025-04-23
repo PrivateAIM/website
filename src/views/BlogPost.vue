@@ -88,8 +88,8 @@ const renderedContent = computed(() => {
   marked.setOptions({
     breaks: true,
     gfm: true,
-    headerIds: true,
-    mangle: false // Prevent mangling email links
+    // headerIds: true,
+    // mangle: false // Prevent mangling email links
   });
 
   return marked(post.value.content);

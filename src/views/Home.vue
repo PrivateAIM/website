@@ -22,7 +22,6 @@ import MissionSection from '../components/home/MissionSection.vue';
 import HowItWorksSection from '../components/home/HowItWorksSection.vue';
 import VisionSection from '../components/home/VisionSection.vue';
 import PartnersSection from '../components/home/PartnersSection.vue';
-import CtaSection from '../components/home/CtaSection.vue';
 </script>
 
 <style scoped>

@@ -7,11 +7,6 @@ interface CookieOptions {
   analytics: boolean;
 }
 
-// Typdefinitionen für Google Analytics
-interface GTagArguments {
-  [key: string]: unknown;
-}
-
 interface WindowWithDataLayer extends Window {
   dataLayer: Array<unknown[]>;
   gtag?: (...args: unknown[]) => void;
@@ -59,7 +54,7 @@ const initGoogleAnalytics = () => {
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
     document.head.appendChild(script);
 
-    const windowWithDataLayer = window as WindowWithDataLayer;
+    const windowWithDataLayer = window as unknown as WindowWithDataLayer;
     windowWithDataLayer.dataLayer = windowWithDataLayer.dataLayer || [];
 
     function gtag(...args: unknown[]): void {
@@ -84,7 +79,7 @@ const initGoogleAnalytics = () => {
 // Google Analytics deaktivieren
 const disableGoogleAnalytics = () => {
   if (typeof window !== 'undefined') {
-    const windowWithDataLayer = window as WindowWithDataLayer;
+    const windowWithDataLayer = window as unknown as WindowWithDataLayer;
 
     // GA4 deaktivieren
     windowWithDataLayer[`ga-disable-${GA_TRACKING_ID}`] = true;

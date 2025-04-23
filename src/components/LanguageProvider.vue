@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted } from 'vue'
+import { computed, watch, onMounted } from 'vue'
 import { ConfigProvider } from 'reka-ui'
 import { useTextDirection } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
