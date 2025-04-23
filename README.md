@@ -12,14 +12,14 @@ This project is built with Vue 3 and TypeScript.
 
 ### Prerequisites
 
-- Node.js (v18 or higher recommended)
-- npm or yarn
+- Node.js (v22 or higher recommended)
+- npm
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone [repository-url]
+git clone https://github.com/PrivateAim/website
 
 # Navigate to the project directory
 cd website

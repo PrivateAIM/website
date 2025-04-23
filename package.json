@@ -11,6 +11,9 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "@vueuse/core": "^13.0.0",
     "bootstrap": "^5.3.3",
