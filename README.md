@@ -1,4 +1,6 @@
-# PrivateAIM Vue Application
+# PrivateAIM Website
+
+[![main](https://github.com/PrivateAim/website/actions/workflows/main.yml/badge.svg)](https://github.com/PrivateAim/website/actions/workflows/main.yml)
 
 A Vue 3 application for the PrivateAIM website.
 
