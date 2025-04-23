@@ -47,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory((import.meta as Record<string ,any>).env.BASE_URL),
+  history: createWebHistory((import.meta as Record<string, any>).env.BASE_URL),
   routes,
   scrollBehavior() {
     // Always scroll to top when navigating to a new page

@@ -3,6 +3,7 @@ import 'vue-i18n'
 declare module 'vue-i18n' {
   // Define your custom message schema if needed
   export interface DefineLocaleMessage {
+      [k: string]: any
     // Define your message structure here if you want better typing
   }
 }

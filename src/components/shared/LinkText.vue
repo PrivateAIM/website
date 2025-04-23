@@ -2,12 +2,19 @@
 import {computed, defineComponent, toRef} from 'vue';
 import LocalizedLink from './LocalizedLink.vue';
 
-type TextItem = {
-    isLink: boolean,
-    text: string,
-    url?: string,
-    internal?: boolean
+type TextItemDefault = {
+    isLink: false,
+    text: string
 }
+
+type TextItemLink = {
+    isLink: true,
+    text: string,
+    url: string,
+    internal: boolean
+}
+
+type TextItem = TextItemDefault | TextItemLink;
 
 export default defineComponent({
     components: {LocalizedLink},

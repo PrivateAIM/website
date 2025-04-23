@@ -24,8 +24,8 @@ async function loadPolicy() {
       module = await import('@/data/privacy/privacy.de.md?raw')
     }
     policyContent.value = module?.default || 'Failed to load privacy policy.'
-  }
-  catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_e) {
     policyContent.value = 'Failed to load privacy policy.'
   }
 }
