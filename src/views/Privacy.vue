@@ -99,7 +99,7 @@ const renderedPolicy = computed(() => {
   margin: 0 auto;
   padding: 3rem 1rem 5rem;
   color: var(--text-color, #1a202c);
-  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+  font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.6;
 }

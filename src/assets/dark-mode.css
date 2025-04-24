@@ -1,48 +1,45 @@
 /* Dark mode variables */
 :root {
   --header-bg: #ffffff;
-  --footer-bg: #f7fafc;
-  --border-color: #eaeaea;
-  --text-color: #1a202c;
-  --nav-text: #4a5568;
-  --tag-bg: #f1f1f1;
-  --tag-text: #666;
-  --primary-color: #3182ce;
-  --footer-text: #718096;
-  --copyright: #a0aec0;
+  --footer-bg: #f9f9f9;
+  --border-color: #e0e0e0;
+  --text-color: #111111;
+  --nav-text: #222222;
+  --tag-bg: #f0f0f0;
+  --tag-text: #444444;
+  --primary-color: #1E90FF; /* New primary brand color */
+  --footer-text: #666666;
+  --copyright: #999999;
   --body-bg: #ffffff;
   --card-bg: #ffffff;
 }
 
-/* Dark mode overrides */
 body.dark-mode {
-  --header-bg: #1a202c;
-  --footer-bg: #1a202c;
-  --border-color: #2d3748;
-  --text-color: #f7fafc;
-  --nav-text: #e2e8f0;
-  --tag-bg: #2d3748;
-  --tag-text: #cbd5e0;
-  --primary-color: #63b3ed;
+  --header-bg: #0f1115;
+  --footer-bg: #0f1115;
+  --border-color: #2a2e35;
+  --text-color: #f5f5f5;
+  --nav-text: #d1d5db;
+  --tag-bg: #2a2e35;
+  --tag-text: #b0b0b0;
+  --primary-color: #1E90FF; /* Retain for brand consistency */
   --footer-text: #a0aec0;
-  --copyright: #718096;
-  --body-bg: #171923;
-  --card-bg: #2d3748;
+  --copyright: #888888;
+  --body-bg: #0b0c10;
+  --card-bg: #656568;
 
   background-color: var(--body-bg);
   color: var(--text-color);
 }
 
 /* Additional dark mode styles */
-body.dark-mode a {
-  color: var(--primary-color);
-}
-
+body.dark-mode a,
 body.dark-mode .router-link-active {
   color: var(--primary-color);
 }
 
-body.dark-mode pre, body.dark-mode code {
-  background-color: #2d3748;
-  color: #cbd5e0;
+body.dark-mode pre,
+body.dark-mode code {
+  background-color: #1a1c22;
+  color: #e2e8f0;
 }

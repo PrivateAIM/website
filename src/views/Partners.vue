@@ -299,6 +299,7 @@
   max-width: 80%;
   max-height: 100px;
   object-fit: contain;
+
 }
 
 .partner-info {
