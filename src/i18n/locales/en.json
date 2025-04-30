@@ -4,7 +4,8 @@
     "news": "News",
     "blog": "Blog",
     "team": "Team",
-    "partners": "Partners"
+    "partners": "Partners",
+    "publications": "Publications"
   },
   "home": {
     "hero": {
@@ -171,6 +172,11 @@
         "description": "These cookies allow us to count visits and traffic sources anonymously, so we can measure and improve the performance of our website."
       }
     }
+  },
+  "publications": {
+    "title": "Publications",
+    "subtitle": "Discover our research and publications in the field of privacy-preserving medical analytics.",
+    "readMore": "Read Paper"
   },
   "news": {
     "title": "News",

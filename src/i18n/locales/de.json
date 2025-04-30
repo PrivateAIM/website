@@ -4,7 +4,8 @@
     "news": "Neuigkeiten",
     "blog": "Blog",
     "team": "Team",
-    "partners": "Partner"
+    "partners": "Partner",
+    "publications": "Publikationen"
   },
   "home": {
     "hero": {
@@ -170,6 +171,11 @@
         "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
       }
     }
+  },
+  "publications": {
+    "title": "Publikationen",
+    "subtitle": "Entdecken Sie unsere Forschung und Publikationen im Bereich der datenschutzfreundlichen medizinischen Analytik.",
+    "readMore": "Publikation lesen"
   },
   "news": {
     "title": "News",

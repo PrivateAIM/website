@@ -35,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Partners.vue')
   },
   {
+    path: '/publications',
+    name: 'Publications',
+    component: () => import('@/views/Publications.vue')
+  },
+  {
     path: '/imprint',
     name: 'Imprint',
     component: () => import('@/views/Imprint.vue')
