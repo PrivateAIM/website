@@ -1,244 +1,250 @@
 {
-  "navigation": {
-    "home": "Startseite",
-    "news": "Neuigkeiten",
-    "blog": "Blog",
-    "team": "Team",
-    "partners": "Partner"
-  },
-  "home": {
-    "hero": {
-      "title": "Willkommen bei PrivateAIM",
-      "subtitle": "Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik",
-      "explorePlatform": "Unsere Plattform entdecken",
-      "joinNetwork": "Netzwerk beitreten"
+    "navigation": {
+        "home": "Startseite",
+        "news": "Neuigkeiten",
+        "blog": "Blog",
+        "team": "Team",
+        "partners": "Partner"
     },
-    "intro": {
-      "paragraph1": "Medizinische Datenanalyse ist entscheidend für die Weiterentwicklung der Gesundheitsforschung und ermöglicht präzisere Diagnosen, innovative Behandlungen und zukunftsfähige Patientenversorgung. Aufgrund der Sensibilität solcher Daten sind jedoch strenge Datenschutzvorkehrungen erforderlich, um gesetzliche Vorschriften einzuhalten und die Vertraulichkeit der Patienten zu schützen.",
-      "paragraph2": "Diese Herausforderung wird besonders bei KI-Anwendungen im medizinischen Bereich deutlich, wo umfangreiche Datensätze erforderlich sind, um zuverlässige und aussagekräftige Ergebnisse zu erzielen."
+    "home": {
+        "hero": {
+            "title": "Willkommen bei PrivateAIM",
+            "subtitle": "Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik",
+            "explorePlatform": "Unsere Plattform entdecken",
+            "joinNetwork": "Netzwerk beitreten"
+        },
+        "intro": {
+            "paragraph1": "Medizinische Datenanalyse ist entscheidend für die Weiterentwicklung der Gesundheitsforschung und ermöglicht präzisere Diagnosen, innovative Behandlungen und zukunftsfähige Patientenversorgung. Aufgrund der Sensibilität solcher Daten sind jedoch strenge Datenschutzvorkehrungen erforderlich, um gesetzliche Vorschriften einzuhalten und die Vertraulichkeit der Patienten zu schützen.",
+            "paragraph2": "Diese Herausforderung wird besonders bei KI-Anwendungen im medizinischen Bereich deutlich, wo umfangreiche Datensätze erforderlich sind, um zuverlässige und aussagekräftige Ergebnisse zu erzielen."
+        },
+        "mission": {
+            "title": "Unsere Mission",
+            "paragraph1": "PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip \"Code to Data\" stellen wir sicher, dass Patientendaten sicher in Universitätskliniken gespeichert bleiben, während nur Analysealgorithmen ausgetauscht werden.",
+            "paragraph2": "Dieser föderierte Ansatz garantiert, dass sensible medizinische Informationen ihre geschützte Umgebung nie verlassen und die Identität der Patienten jederzeit geschützt bleibt.",
+            "paragraph3": "FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist eine neuartige Softwareplattform, die eine sichere, dezentrale Datenanalyse innerhalb der Medizininformatik-Initiative (MII) ermöglicht."
+        },
+        "howItWorks": {
+            "title": "Wie es funktioniert",
+            "step1": {
+                "title": "Daten bleiben lokal",
+                "description": "Patientendaten bleiben in Krankenhaussystemen sicher und verlassen ihre geschützte Umgebung nie."
+            },
+            "step2": {
+                "title": "Code-to-Data-Ansatz",
+                "description": "Analysealgorithmen reisen zu den Daten, anstatt sensible Informationen zu bewegen."
+            },
+            "step3": {
+                "title": "Föderierte Analyse",
+                "description": "Ergebnisse werden über Institutionen hinweg aggregiert, wobei die Privatsphäre gewahrt und die Forschungsqualität verbessert wird."
+            },
+            "experienceFlame": "Erleben Sie FLAME",
+            "flamePlatform": "Unsere innovative Plattform für sichere, föderierte medizinische Datenanalyse",
+            "explorePlatform": "Plattform erkunden"
+        },
+        "vision": {
+            "title": "Unsere Vision",
+            "paragraph1": "Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.",
+            "paragraph2": "PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen.",
+            "paragraph3": "Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.",
+            "contribute": "Open-Source Beitragen",
+            "explanation": "Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.",
+            "github": "GitHub öffnen"
+        },
+        "partners": {
+            "title": "Vertraut von führenden Institutionen",
+            "viewAll": "Alle Partner anzeigen"
+        },
+        "cta": {
+            "title": "Bereit, die medizinische Forschung zu transformieren?",
+            "subtitle": "Helfen Sie uns, eine Zukunft aufzubauen, in der Datenschutz und Innovation Hand in Hand gehen.",
+            "explorePlatform": "Plattform erkunden",
+            "contactUs": "Kontakt"
+        },
+        "news": {
+            "latestNews": "Neueste Nachrichten",
+            "description": "Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.",
+            "button": "Mehr lesen"
+        }
     },
-    "mission": {
-      "title": "Unsere Mission",
-      "paragraph1": "PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip \"Code to Data\" stellen wir sicher, dass Patientendaten sicher in Universitätskliniken gespeichert bleiben, während nur Analysealgorithmen ausgetauscht werden.",
-      "paragraph2": "Dieser föderierte Ansatz garantiert, dass sensible medizinische Informationen ihre geschützte Umgebung nie verlassen und die Identität der Patienten jederzeit geschützt bleibt.",
-      "paragraph3": "FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist eine neuartige Softwareplattform, die eine sichere, dezentrale Datenanalyse innerhalb der Medizininformatik-Initiative (MII) ermöglicht."
+    "footer": {
+        "documentation": "Dokumentation",
+        "flame": "FLAME Plattform",
+        "github": "GitHub",
+        "legal": "Rechtliches",
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
     },
-    "howItWorks": {
-      "title": "Wie es funktioniert",
-      "step1": {
-        "title": "Daten bleiben lokal",
-        "description": "Patientendaten bleiben in Krankenhaussystemen sicher und verlassen ihre geschützte Umgebung nie."
-      },
-      "step2": {
-        "title": "Code-to-Data-Ansatz",
-        "description": "Analysealgorithmen reisen zu den Daten, anstatt sensible Informationen zu bewegen."
-      },
-      "step3": {
-        "title": "Föderierte Analyse",
-        "description": "Ergebnisse werden über Institutionen hinweg aggregiert, wobei die Privatsphäre gewahrt und die Forschungsqualität verbessert wird."
-      },
-      "experienceFlame": "Erleben Sie FLAME",
-      "flamePlatform": "Unsere innovative Plattform für sichere, föderierte medizinische Datenanalyse",
-      "explorePlatform": "Plattform erkunden"
+    "languageSelector": {
+        "label": "Sprachen",
+        "english": "Englisch",
+        "german": "Deutsch"
     },
-    "vision": {
-      "title": "Unsere Vision",
-      "paragraph1": "Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.",
-      "paragraph2": "PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen.",
-      "paragraph3": "Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.",
-      "contribute": "Open-Source Beitragen",
-      "explanation": "Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.",
-      "github": "GitHub öffnen"
+    "imprint": {
+        "title": "Impressum",
+        "information": {
+            "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
+            "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
+            "address1": "Anna-Louisa-Karsch-Str. 2",
+            "address2": "10178 Berlin",
+            "contact": {
+                "phone": "Tel.",
+                "fax": "Fax",
+                "email": "E-Mail"
+            }
+        },
+        "representation": {
+            "title": "Vertretungsberechtigt"
+        },
+        "contact": {
+            "title": "Kontakt",
+            "department": "AG Medizininformatik",
+            "institute": "Berlin Institute of Health {'@'}Charité - Universitätsmedizin Berlin",
+            "address1": "Charitéplatz 1",
+            "address2": "10117 Berlin",
+            "email": "E-Mail"
+        },
+        "disclaimer": {
+            "title": "Haftungsausschluss",
+            "content": {
+                "title": "Haftung für Inhalte",
+                "text": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt."
+            },
+            "links": {
+                "title": "Haftung für Links",
+                "text": "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+            },
+            "copyright": {
+                "title": "Urheberrecht",
+                "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+            }
+        }
     },
-    "partners": {
-      "title": "Vertraut von führenden Institutionen",
-      "viewAll": "Alle Partner anzeigen"
+    "partners":{
+        "title": "Unsere Partner",
+        "description": "Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:",
+        "subsection1": "Koordination",
+        "subsection2": "Projektpartner",
+        "subsection3": "Assoziierte Partner",
+        "partner": {
+            "info": "Mehr informationen →",
+            "name": "Universitätsklinikum"
+        },
+        "network": {
+            "title": "Teil unseres Netzwerks werden",
+            "subtitle": "Interessiert an einer Zusammenarbeit mit PrivateAIM? Wir sind stets auf der Suche nach Partnern, die unsere Vision einer datenschutzfreundlichen medizinischen Forschung teilen.\n",
+            "box1": {
+                "title": "Zugang zu modernster Technologie",
+                "text": "Arbeiten Sie mit unserem Team zusammen, um hochmoderne föderierte Lernsysteme zu implementieren."
+            },
+            "box2": {
+                "title": "Gemeinsame Forschungsvorhaben",
+                "text": "Nehmen Sie an institutionenübergreifenden Studien teil, ohne die Datensouveränität zu gefährden."
+            },
+            "box3": {
+                "title": "Die Zukunft der medizinischen Forschung mitgestalten",
+                "text": "Helfen Sie mit, Standards und Best Practices für datenschutzfreundliche Analysen zu definieren."
+            },
+            "button": "Kontaktieren Sie uns für eine Partnerschaft"
+        }
     },
-    "cta": {
-      "title": "Bereit, die medizinische Forschung zu transformieren?",
-      "subtitle": "Helfen Sie uns, eine Zukunft aufzubauen, in der Datenschutz und Innovation Hand in Hand gehen.",
-      "explorePlatform": "Plattform erkunden",
-      "contactUs": "Kontakt"
+    "privacy": {
+        "title": "Datenschutzerklärung"
+    },
+    "lastUpdated": "Letzte Aktualisierung",
+    "updateDate": "27. März 2025",
+    "cookie": {
+        "title": "Cookie-Einstellungen",
+        "subtitle": "Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n",
+        "accept": "Alle akzeptieren",
+        "deny": "Nur notwendige",
+        "preference": "Auswahl speichern",
+        "settings": "Einstellungen",
+        "setting": {
+            "required": {
+                "title": "Notwendige Cookies",
+                "description": "Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden."
+            },
+            "analysis": {
+                "title": "Analyse-Cookies",
+                "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
+            }
+        }
     },
     "news": {
-      "latestNews": "Neueste Nachrichten",
-      "description": "Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.",
-      "button": "Mehr lesen"
-    }
-  },
-  "footer": {
-    "documentation": "Dokumentation",
-    "flame": "FLAME Plattform",
-    "github": "GitHub",
-    "legal": "Rechtliches",
-    "imprint": "Impressum",
-    "privacy": "Datenschutz",
-    "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
-  },
-  "languageSelector": {
-    "label": "Sprachen",
-    "english": "Englisch",
-    "german": "Deutsch"
-  },
-  "imprint": {
-    "title": "Impressum",
-    "information": {
-      "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
-      "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
-      "address1": "Anna-Louisa-Karsch-Str. 2",
-      "address2": "10178 Berlin",
-      "contact": {
-        "phone": "Tel.",
-        "fax": "Fax",
-        "email": "E-Mail"
-      }
-    },
-    "representation": {
-      "title": "Vertretungsberechtigt"
-    },
-    "contact": {
-      "title": "Kontakt",
-      "department": "AG Medizininformatik",
-      "institute": "Berlin Institute of Health {'@'}Charité - Universitätsmedizin Berlin",
-      "address1": "Charitéplatz 1",
-      "address2": "10117 Berlin",
-      "email": "E-Mail"
-    },
-    "disclaimer": {
-      "title": "Haftungsausschluss",
-      "content": {
-        "title": "Haftung für Inhalte",
-        "text": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt."
-      },
-      "links": {
-        "title": "Haftung für Links",
-        "text": "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
-      },
-      "copyright": {
-        "title": "Urheberrecht",
-        "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
-      }
-    }
-  },
-  "partners":{
-    "title": "Unsere Partner",
-    "description": "Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:",
-    "subsection1": "Koordination",
-    "subsection2": "Projektpartner",
-    "subsection3": "Assoziierte Partner",
-    "partner": {
-      "info": "Mehr informationen →",
-      "name": "Universitätsklinikum"
-    },
-    "network": {
-      "title": "Teil unseres Netzwerks werden",
-      "subtitle": "Interessiert an einer Zusammenarbeit mit PrivateAIM? Wir sind stets auf der Suche nach Partnern, die unsere Vision einer datenschutzfreundlichen medizinischen Forschung teilen.\n",
-      "box1": {
-        "title": "Zugang zu modernster Technologie",
-        "text": "Arbeiten Sie mit unserem Team zusammen, um hochmoderne föderierte Lernsysteme zu implementieren."
-      },
-      "box2": {
-        "title": "Gemeinsame Forschungsvorhaben",
-        "text": "Nehmen Sie an institutionenübergreifenden Studien teil, ohne die Datensouveränität zu gefährden."
-      },
-      "box3": {
-        "title": "Die Zukunft der medizinischen Forschung mitgestalten",
-        "text": "Helfen Sie mit, Standards und Best Practices für datenschutzfreundliche Analysen zu definieren."
-      },
-      "button": "Kontaktieren Sie uns für eine Partnerschaft"
-    }
-  },
-  "privacy": {
-    "title": "Datenschutzerklärung"
-  },
-  "lastUpdated": "Letzte Aktualisierung",
-  "updateDate": "27. März 2025",
-  "cookie": {
-    "title": "Cookie-Einstellungen",
-    "subtitle": "Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n",
-    "accept": "Alle akzeptieren",
-    "deny": "Nur notwendige",
-    "preference": "Auswahl speichern",
-    "settings": "Einstellungen",
-    "setting": {
-      "required": {
-        "title": "Notwendige Cookies",
-        "description": "Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden."
-      },
-      "analysis": {
-        "title": "Analyse-Cookies",
-        "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
-      }
-    }
-  },
-  "news": {
-    "title": "News",
-    "subtitle": "Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.",
-    "noItems": "Keine Neuigkeiten für dieses Jahr verfügbar.",
-    "items": {
-      "2025": [
-        {
-          "date": "25-26/02/2025",
-          "title": "NUM Convention 2025",
-          "content": "Unter dem Format Die Infrastruktur NUM-DIZ: Datenschutz sucht Forscher:innen der NUM Convention 2025 präsentierte Oliver Kohlbacher als PrivateAIM-Koordinator wie FLAME als geförderte Plattform in der Medizininformatik-Initiative den Schatz heben wird.",
-          "images": [
-            "news_num-convention.jpg"
-          ]
+        "title": "News",
+        "subtitle": "Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.",
+        "noItems": "Keine Neuigkeiten für dieses Jahr verfügbar.",
+        "items": {
+            "2025": [
+                {
+                    "date": "28-30/04/2025",
+                    "title": "Retreat in Herrsching",
+                    "content": "In an inspiring setting by the Ammersee, we focused on the next phase of our project: deployment and implementation. Through deep-dive sessions, roadmap planning, and collaborative alignment, we laid the foundation for a focused rollout and defined concrete next steps.\n\nA special highlight was our hike to Kloster Andechs – a perfect mix of fresh air, shared conversations, and Bavarian hospitality.\n\nFeeling energized and aligned – ready for what’s next.\n\n#PrivateAIM #Retreat #Deployment #NextSteps #Teamwork #KlosterAndechs",
+                    "images": ["news_herrsching.jpeg"]
+                },
+                {
+                    "date": "25-26/02/2025",
+                    "title": "NUM Convention 2025",
+                    "content": "Unter dem Format Die Infrastruktur NUM-DIZ: Datenschutz sucht Forscher:innen der NUM Convention 2025 präsentierte Oliver Kohlbacher als PrivateAIM-Koordinator wie FLAME als geförderte Plattform in der Medizininformatik-Initiative den Schatz heben wird.",
+                    "images": [
+                        "news_num-convention.jpg"
+                    ]
+                }
+            ],
+            "2024": [
+                {
+                    "date": "25-27/09/2024",
+                    "title": "Retreat in Potsdam",
+                    "content": "Unser 3-tägiges Retreat im wunderschönen Potsdam ist vorbei! Bei spannenden Präsentationen und regem Austausch haben wir neue Ideen und Strategien entwickelt und wichtige Impulse für den weiteren Projektverlauf gesetzt. #PrivateAIM #Retreat #Teamwork",
+                    "images": [
+                        "potsdam/news_potsdam_retreat.jpg",
+                        "potsdam/news_potsdam_retreat_2.jpg",
+                        "potsdam/news_potsdam_retreat_3.jpg"
+                    ]
+                },
+                {
+                    "date": "06-07/05/2024",
+                    "title": "Workshop in Leipzig",
+                    "content": "Bei unserem zweitägigen #PrivateAIM-Workshop in der ehrwürdigen Albertina Bibliothek der @UniLeipzig wurde das Minimal Viable Product (MVP) der FLAME-Plattform vorgestellt. In verschiedenen Breakout-Sessions wurden anschließend Themen rund um die FLAME-Architektur vertieft, verschiedene Anwendungsfälle und die DIZ-Integration diskutiert und daraus nächste Schritte erarbeitet. Vielen Dank an alle Teilnehmenden für den regen Austausch! #PrivateAIM #Workshop #Leipzig #FLAME",
+                    "images": [
+                        "leipzig/news_leipzig-workshop.jpg",
+                        "leipzig/news_leipzig-workshop_2.jpg",
+                        "leipzig/news_leipzig-workshop_3.jpg",
+                        "leipzig/news_leipzig-workshop_4.jpg"
+                    ]
+                }
+            ],
+            "2023": [
+                {
+                    "date": "20/12/2023",
+                    "title": "Workshop in Frankfurt am Main",
+                    "content": "Zum Abschluss des Jahres hat gestern ein Workshop zur Finalisierung der grundlegenden Architektur der FLAME Plattform am Universitätsklinikum in Frankfurt stattgefunden.",
+                    "images": [
+                        "news_ffm-workshop.jpg"
+                    ]
+                },
+                {
+                    "date": "16-18/10/2023",
+                    "title": "PrivateAIM Retreat in Lobbach",
+                    "content": "Vom 16. bis 18. Oktober 2023 fand in Lobbach das erste PrivateAIM Retreat statt. Dieses Treffen markierte das erste persönliche Zusammentreffen aller Projektpartner. In einer Atmosphäre des regen Austauschs und der Zusammenarbeit haben wir wichtige Grundsteine für eine erfolgreiche Zukunft unseres Projekts gelegt.",
+                    "images": [
+                        "news_lobbach-retreat.jpg"
+                    ]
+                },
+                {
+                    "date": "24/04/2023",
+                    "title": "Kick-Off-Meeting",
+                    "content": "Am 24.04.2023 fand das virtuelle Kick-Off-Meeting von PrivateAIM statt. Dabei kamen alle Teammitglieder zusammen, um die erste Phase des Projekts einzuleiten und zu planen.",
+                    "images": []
+                },
+                {
+                    "date": "01/04/2023",
+                    "title": "Offizieller Start",
+                    "content": "Am 01.04.2023 hat das Projekt PrivateAIM offiziell begonnen. Auf dieser Webseite werden wir regelmäßig über Fortschritte im Projekt berichten.",
+                    "images": []
+                }
+            ]
         }
-      ],
-      "2024": [
-        {
-          "date": "25-27/09/2024",
-          "title": "Retreat in Potsdam",
-          "content": "Unser 3-tägiges Retreat im wunderschönen Potsdam ist vorbei! Bei spannenden Präsentationen und regem Austausch haben wir neue Ideen und Strategien entwickelt und wichtige Impulse für den weiteren Projektverlauf gesetzt. #PrivateAIM #Retreat #Teamwork",
-          "images": [
-            "potsdam/news_potsdam_retreat.jpg",
-            "potsdam/news_potsdam_retreat_2.jpg",
-            "potsdam/news_potsdam_retreat_3.jpg"
-          ]
-        },
-        {
-          "date": "06-07/05/2024",
-          "title": "Workshop in Leipzig",
-          "content": "Bei unserem zweitägigen #PrivateAIM-Workshop in der ehrwürdigen Albertina Bibliothek der @UniLeipzig wurde das Minimal Viable Product (MVP) der FLAME-Plattform vorgestellt. In verschiedenen Breakout-Sessions wurden anschließend Themen rund um die FLAME-Architektur vertieft, verschiedene Anwendungsfälle und die DIZ-Integration diskutiert und daraus nächste Schritte erarbeitet. Vielen Dank an alle Teilnehmenden für den regen Austausch! #PrivateAIM #Workshop #Leipzig #FLAME",
-          "images": [
-            "leipzig/news_leipzig-workshop.jpg",
-            "leipzig/news_leipzig-workshop_2.jpg",
-            "leipzig/news_leipzig-workshop_3.jpg",
-            "leipzig/news_leipzig-workshop_4.jpg"
-          ]
-        }
-      ],
-      "2023": [
-        {
-          "date": "20/12/2023",
-          "title": "Workshop in Frankfurt am Main",
-          "content": "Zum Abschluss des Jahres hat gestern ein Workshop zur Finalisierung der grundlegenden Architektur der FLAME Plattform am Universitätsklinikum in Frankfurt stattgefunden.",
-          "images": [
-            "news_ffm-workshop.jpg"
-          ]
-        },
-        {
-          "date": "16-18/10/2023",
-          "title": "PrivateAIM Retreat in Lobbach",
-          "content": "Vom 16. bis 18. Oktober 2023 fand in Lobbach das erste PrivateAIM Retreat statt. Dieses Treffen markierte das erste persönliche Zusammentreffen aller Projektpartner. In einer Atmosphäre des regen Austauschs und der Zusammenarbeit haben wir wichtige Grundsteine für eine erfolgreiche Zukunft unseres Projekts gelegt.",
-          "images": [
-            "news_lobbach-retreat.jpg"
-          ]
-        },
-        {
-          "date": "24/04/2023",
-          "title": "Kick-Off-Meeting",
-          "content": "Am 24.04.2023 fand das virtuelle Kick-Off-Meeting von PrivateAIM statt. Dabei kamen alle Teammitglieder zusammen, um die erste Phase des Projekts einzuleiten und zu planen.",
-          "images": []
-        },
-        {
-          "date": "01/04/2023",
-          "title": "Offizieller Start",
-          "content": "Am 01.04.2023 hat das Projekt PrivateAIM offiziell begonnen. Auf dieser Webseite werden wir regelmäßig über Fortschritte im Projekt berichten.",
-          "images": []
-        }
-      ]
     }
-  }
 }
