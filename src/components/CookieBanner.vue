@@ -301,7 +301,7 @@ h3 {
   left: 20px;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--primary-color, #3182ce);
   border: 1px solid #ddd;
   border-radius: 30px;
   padding: 8px 16px;

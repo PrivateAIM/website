@@ -2,10 +2,13 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import FlagUS from '@/assets/flags/us-flag.svg'
+import FlagDE from '@/assets/flags/de-flag.svg'
+
 // Reduzierte Sprachoptionen
 const languages = [
-  { code: 'en', label: '🇺🇸' },
-  { code: 'de', label: '🇩🇪' },
+  { code: 'en', label: FlagUS },
+  { code: 'de', label: FlagDE },
 ]
 
 const { locale } = useI18n()
@@ -48,7 +51,11 @@ onUnmounted(() => {
         :class="{ active: isOpen }"
         @click="toggleDropdown"
     >
-      {{ languages.find(l => l.code === activeLanguage)?.label || '🌐' }}
+        <img
+            :src="languages.find(l => l.code === activeLanguage)?.label"
+            alt="flag"
+            class="flag-icon"
+        />
       <svg
           xmlns="http://www.w3.org/2000/svg"
           class="chevron-icon"
@@ -76,7 +83,7 @@ onUnmounted(() => {
           :class="{ selected: activeLanguage === lang.code }"
           @click="changeLanguage(lang.code)"
       >
-        {{ lang.label }}
+          <img :src="lang.label" alt="flag" class="flag-icon" />
       </button>
     </div>
   </div>
@@ -146,6 +153,13 @@ onUnmounted(() => {
 .language-option.selected {
   background-color: var(--tag-bg, #f1f1f1);
   color: var(--primary-color, #3182ce);
+}
+
+.flag-icon {
+    width: 1.5rem;
+    height: auto;
+    border-radius: 0.125rem;
+    margin-right: 0.25rem;
 }
 
 @keyframes slideIn {

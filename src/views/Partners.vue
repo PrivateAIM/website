@@ -272,7 +272,7 @@
 }
 
 .partner-card {
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--tag-bg, #ffffff);
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -292,7 +292,7 @@
   align-items: center;
   justify-content: center;
   padding: 1.0rem;
-  background-color: var(--tag-bg, #f7fafc);
+  background-color: var(--card-bg, #f7fafc);
 }
 
 .partner-logo img {

@@ -34,13 +34,14 @@
   position: relative;
   background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
   color: white;
-  padding: 6rem 1rem 8rem;
+  padding: 2rem 1rem 10rem;
   overflow: hidden;
 }
 
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
+    height: 65vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -371,7 +372,15 @@
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 5rem 1rem 7rem;
+    padding: 2rem 1rem 12rem;
+  }
+
+  .hero-container {
+      gap: 0;
+  }
+  .hero-visual {
+      position: relative;
+      width: 100%;
   }
 
   .hero-title {
@@ -380,7 +389,8 @@
 
   .hero-cta {
     flex-direction: column;
-    width: 100%;
+      width: 70%;
+      align-content: center;
   }
 
   .primary-button, .secondary-button {
