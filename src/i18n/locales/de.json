@@ -1,27 +1,11 @@
 {
-<<<<<<< HEAD
-  "navigation": {
-    "home": "Startseite",
-    "news": "Neuigkeiten",
-    "blog": "Blog",
-    "team": "Team",
-    "partners": "Partner",
-    "publications": "Publikationen"
-  },
-  "home": {
-    "hero": {
-      "title": "Willkommen bei PrivateAIM",
-      "subtitle": "Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik",
-      "explorePlatform": "Unsere Plattform entdecken",
-      "joinNetwork": "Netzwerk beitreten"
-=======
     "navigation": {
         "home": "Startseite",
         "news": "Neuigkeiten",
         "blog": "Blog",
         "team": "Team",
-        "partners": "Partner"
->>>>>>> master
+        "partners": "Partner",
+        "publications": "Publikationen"
     },
     "home": {
         "hero": {
@@ -189,122 +173,121 @@
         }
     },
     "news": {
-      "latestNews": "Neueste Nachrichten",
-      "description": "Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.",
-      "button": "Mehr lesen"
-    }
-  },
-  "footer": {
-    "documentation": "Dokumentation",
-    "flame": "FLAME Plattform",
-    "github": "GitHub",
-    "legal": "Rechtliches",
-    "imprint": "Impressum",
-    "privacy": "Datenschutz",
-    "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
-  },
-  "languageSelector": {
-    "label": "Sprachen",
-    "english": "Englisch",
-    "german": "Deutsch"
-  },
-  "imprint": {
-    "title": "Impressum",
-    "information": {
-      "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
-      "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
-      "address1": "Anna-Louisa-Karsch-Str. 2",
-      "address2": "10178 Berlin",
-      "contact": {
-        "phone": "Tel.",
-        "fax": "Fax",
-        "email": "E-Mail"
-      }
+        "latestNews": "Neueste Nachrichten",
+        "description": "Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.",
+        "button": "Mehr lesen"
     },
-    "representation": {
-      "title": "Vertretungsberechtigt"
+    "footer": {
+        "documentation": "Dokumentation",
+        "flame": "FLAME Plattform",
+        "github": "GitHub",
+        "legal": "Rechtliches",
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
     },
-    "contact": {
-      "title": "Kontakt",
-      "department": "AG Medizininformatik",
-      "institute": "Berlin Institute of Health {'@'}Charité - Universitätsmedizin Berlin",
-      "address1": "Charitéplatz 1",
-      "address2": "10117 Berlin",
-      "email": "E-Mail"
+    "languageSelector": {
+        "label": "Sprachen",
+        "english": "Englisch",
+        "german": "Deutsch"
     },
-    "disclaimer": {
-      "title": "Haftungsausschluss",
-      "content": {
-        "title": "Haftung für Inhalte",
-        "text": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt."
-      },
-      "links": {
-        "title": "Haftung für Links",
-        "text": "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
-      },
-      "copyright": {
-        "title": "Urheberrecht",
-        "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
-      }
-    }
-  },
-  "partners":{
-    "title": "Unsere Partner",
-    "description": "Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:",
-    "subsection1": "Koordination",
-    "subsection2": "Projektpartner",
-    "subsection3": "Assoziierte Partner",
-    "partner": {
-      "info": "Mehr informationen →",
-      "name": "Universitätsklinikum"
+    "imprint": {
+        "title": "Impressum",
+        "information": {
+            "entity": "Berliner Institut für Gesundheitsforschung in der Charité",
+            "department": "Translationsforschungsbereich der Charité – Universitätsmedizin Berlin",
+            "address1": "Anna-Louisa-Karsch-Str. 2",
+            "address2": "10178 Berlin",
+            "contact": {
+                "phone": "Tel.",
+                "fax": "Fax",
+                "email": "E-Mail"
+            }
+        },
+        "representation": {
+            "title": "Vertretungsberechtigt"
+        },
+        "contact": {
+            "title": "Kontakt",
+            "department": "AG Medizininformatik",
+            "institute": "Berlin Institute of Health {'@'}Charité - Universitätsmedizin Berlin",
+            "address1": "Charitéplatz 1",
+            "address2": "10117 Berlin",
+            "email": "E-Mail"
+        },
+        "disclaimer": {
+            "title": "Haftungsausschluss",
+            "content": {
+                "title": "Haftung für Inhalte",
+                "text": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt."
+            },
+            "links": {
+                "title": "Haftung für Links",
+                "text": "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+            },
+            "copyright": {
+                "title": "Urheberrecht",
+                "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+            }
+        }
     },
-    "network": {
-      "title": "Teil unseres Netzwerks werden",
-      "subtitle": "Interessiert an einer Zusammenarbeit mit PrivateAIM? Wir sind stets auf der Suche nach Partnern, die unsere Vision einer datenschutzfreundlichen medizinischen Forschung teilen.\n",
-      "box1": {
-        "title": "Zugang zu modernster Technologie",
-        "text": "Arbeiten Sie mit unserem Team zusammen, um hochmoderne föderierte Lernsysteme zu implementieren."
-      },
-      "box2": {
-        "title": "Gemeinsame Forschungsvorhaben",
-        "text": "Nehmen Sie an institutionenübergreifenden Studien teil, ohne die Datensouveränität zu gefährden."
-      },
-      "box3": {
-        "title": "Die Zukunft der medizinischen Forschung mitgestalten",
-        "text": "Helfen Sie mit, Standards und Best Practices für datenschutzfreundliche Analysen zu definieren."
-      },
-      "button": "Kontaktieren Sie uns für eine Partnerschaft"
-    }
-  },
-  "privacy": {
-    "title": "Datenschutzerklärung"
-  },
-  "lastUpdated": "Letzte Aktualisierung",
-  "updateDate": "27. März 2025",
-  "cookie": {
-    "title": "Cookie-Einstellungen",
-    "subtitle": "Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n",
-    "accept": "Alle akzeptieren",
-    "deny": "Nur notwendige",
-    "preference": "Auswahl speichern",
-    "settings": "Einstellungen",
-    "setting": {
-      "required": {
-        "title": "Notwendige Cookies",
-        "description": "Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden."
-      },
-      "analysis": {
-        "title": "Analyse-Cookies",
-        "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
-      }
-    }
-  },
-  "publications": {
-    "title": "Publikationen",
-    "subtitle": "Entdecken Sie unsere Forschung und Publikationen im Bereich der datenschutzfreundlichen medizinischen Analytik.",
-    "readMore": "Publikation lesen"
-  },
-  "news": {
+    "partners":{
+        "title": "Unsere Partner",
+        "description": "Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:",
+        "subsection1": "Koordination",
+        "subsection2": "Projektpartner",
+        "subsection3": "Assoziierte Partner",
+        "partner": {
+            "info": "Mehr informationen →",
+            "name": "Universitätsklinikum"
+        },
+        "network": {
+            "title": "Teil unseres Netzwerks werden",
+            "subtitle": "Interessiert an einer Zusammenarbeit mit PrivateAIM? Wir sind stets auf der Suche nach Partnern, die unsere Vision einer datenschutzfreundlichen medizinischen Forschung teilen.\n",
+            "box1": {
+                "title": "Zugang zu modernster Technologie",
+                "text": "Arbeiten Sie mit unserem Team zusammen, um hochmoderne föderierte Lernsysteme zu implementieren."
+            },
+            "box2": {
+                "title": "Gemeinsame Forschungsvorhaben",
+                "text": "Nehmen Sie an institutionenübergreifenden Studien teil, ohne die Datensouveränität zu gefährden."
+            },
+            "box3": {
+                "title": "Die Zukunft der medizinischen Forschung mitgestalten",
+                "text": "Helfen Sie mit, Standards und Best Practices für datenschutzfreundliche Analysen zu definieren."
+            },
+            "button": "Kontaktieren Sie uns für eine Partnerschaft"
+        }
+    },
+    "privacy": {
+        "title": "Datenschutzerklärung"
+    },
+    "lastUpdated": "Letzte Aktualisierung",
+    "updateDate": "27. März 2025",
+    "cookie": {
+        "title": "Cookie-Einstellungen",
+        "subtitle": "Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n",
+        "accept": "Alle akzeptieren",
+        "deny": "Nur notwendige",
+        "preference": "Auswahl speichern",
+        "settings": "Einstellungen",
+        "setting": {
+            "required": {
+                "title": "Notwendige Cookies",
+                "description": "Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden."
+            },
+            "analysis": {
+                "title": "Analyse-Cookies",
+                "description": "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
+            }
+        }
+    },
+    "publications": {
+        "title": "Publikationen",
+        "subtitle": "Entdecken Sie unsere Forschung und Publikationen im Bereich der datenschutzfreundlichen medizinischen Analytik.",
+        "readMore": "Publikation lesen"
+    },
+    "news": {
         "title": "News",
         "subtitle": "Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.",
         "noItems": "Keine Neuigkeiten für dieses Jahr verfügbar.",
