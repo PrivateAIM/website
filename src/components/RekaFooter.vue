@@ -3,8 +3,8 @@
     <div class="footer-container">
       <div class="footer-left">
         <router-link to="/" class="logo">
-          <img src="/images/logo-light.png" alt="Logo light" class="header-logo logo-light" />
-          <img src="/images/logo-dark.png" alt="Logo dark" class="header-logo logo-dark" />
+            <img src="/images/logo.png" alt="PrivateAIM Logo" class="footer-logo" />
+            <span class="logo-text">PrivateAIM</span>
         </router-link>
       </div>
 
@@ -130,6 +130,16 @@ const currentYear = computed(() => new Date().getFullYear());
   color: var(--copyright, #a0aec0);
   font-size: 0.85rem;
 }
+.footer-logo {
+    height: 24px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+.footer-logo {
+    height: 32px;
+    width: auto;
+    margin-right: 0.5rem;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -154,5 +164,8 @@ const currentYear = computed(() => new Date().getFullYear());
     align-items: center;
     text-align: center;
   }
+    .footer-logo {
+        height: 20px;
+    }
 }
 </style>

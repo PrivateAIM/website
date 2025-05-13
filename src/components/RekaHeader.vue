@@ -12,10 +12,10 @@
       <nav class="main-nav" :class="{ 'mobile-menu-open': isMobileMenuOpen }">
         <router-link to="/" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.home') }}</router-link>
         <router-link to="/news" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.news') }}</router-link>
-        <router-link to="/blog" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.blog') }}</router-link>
+          <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.blog') }}</router-link>-->
         <router-link to="/publications" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.publications') }}</router-link>
-        <!-- <router-link to="/team" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.team') }}</router-link>
-        <router-link to="/partners" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.partners') }}</router-link> -->
+        <!-- <router-link to="/team" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.team') }}</router-link>-->
+        <router-link to="/partners" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.partners') }}</router-link>
       </nav>
 
       <div class="header-right">
