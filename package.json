@@ -15,7 +15,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@vueuse/core": "^13.0.0",
+    "@vueuse/core": "^13.2.0",
     "bootstrap": "^5.3.6",
     "marked": "^15.0.11",
     "mitt": "^3.0.1",
