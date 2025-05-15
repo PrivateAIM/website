@@ -15,20 +15,20 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@vueuse/core": "^13.0.0",
+    "@vueuse/core": "^13.2.0",
     "bootstrap": "^5.3.6",
     "marked": "^15.0.11",
     "mitt": "^3.0.1",
     "pinia": "^3.0.1",
     "reka-ui": "^2.2.1",
-    "vue": "^3.5.13",
+    "vue": "^3.5.14",
     "vue-i18n": "^11.1.2",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
     "@types/marked": "^5.0.2",
-    "@types/node": "^22.15.17",
+    "@types/node": "^22.15.18",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
