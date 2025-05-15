@@ -171,13 +171,25 @@ A browser should support at least:
 Depending on the service, cookies are used in different ways. Generally, one distinguishes four categories:
 
 - **Essential Cookies:** Necessary to ensure the basic functions of the website (e.g., keeping a shopping cart intact even if you leave the site).
-- **Functional Cookies:** Collect information about user behavior and any error messages.
-- **Targeted Cookies:** Improve user-friendliness, for example by storing entered locations, font sizes, or form data.
-- **Advertising Cookies (Targeting Cookies):** Deliver individualized advertising. These can be very useful but also potentially intrusive.
+- **Analysis Cookies:** Collect information about user behavior and any error messages.
 
 Typically, upon visiting a website for the first time, you are asked which types of cookies you wish to allow; this decision is then stored in a cookie.
 
 If you want to learn more about cookies, we recommend reviewing [RFC 6265](https://tools.ietf.org/html/rfc6265) by the IETF, titled “HTTP State Management Mechanism.”
+
+---
+## Web analysis and optimization
+
+We use tools for web analysis and reach measurement so that we can evaluate visitor flows on our website. For this purpose, we collect information about the behavior, interests or demographic information of our visitors, such as age, gender or similar. This helps us to recognize at what time our online offer, its functions or content are most frequented or invite repeated visits. We can also use the information collected to determine whether our online offering needs to be optimized or adapted.
+
+The information collected for this purpose is stored in cookies or similar procedures and is used for range measurement and optimization. The data stored in the cookies may include content viewed, online presences visited, settings and functions and systems used. As a rule, however, no clear user data is processed for the purposes described. In this case, the data is modified in such a way that neither we nor the provider of the tool used know the actual identity of the user. The data modified in this way is often stored in user profiles.
+### Google Analytics
+|                           |                                                                                                                                                                    |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Service used:**         | Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland                                                                                             |
+| **Privacy Policy:**       | [https://policies.google.com/privacy?hl=de&gl=de](https://policies.google.com/privacy?hl=de&gl=de)                                                                 |
+| **Opt-out link**          | [https://tools.google.com/dlpage/gaoptout?hl=de](https://tools.google.com/dlpage/gaoptout?hl=de) or [https://myaccount.google.com/](https://myaccount.google.com/) |
+| **Guarantee third country transfer:** | Based on the [adequacy decision of the European Commission](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) for the country USA                                                                                      |
 
 ---
 
