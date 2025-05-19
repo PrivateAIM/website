@@ -71,8 +71,6 @@ const initGoogleAnalytics = () => {
       'allow_ad_personalization_signals': false, // Personalisierte Anzeigen deaktivieren
       'send_page_view': true          // Seitenaufrufe tracken
     });
-
-    console.log('Google Analytics mit anonymisierter IP wurde initialisiert');
   }
 };
 
@@ -92,8 +90,6 @@ const disableGoogleAnalytics = () => {
         document.cookie = cookie.split('=')[0] + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
       }
     }
-
-    console.log('Google Analytics wurde deaktiviert');
   }
 };
 
@@ -151,7 +147,6 @@ onMounted(() => {
         }
       }
     } catch (error) {
-      console.error('Fehler beim Laden der Cookie-Einstellungen:', error);
     }
   }
 });

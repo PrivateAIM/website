@@ -2,12 +2,12 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import FlagUS from '@/assets/flags/us-flag.svg'
+import FlagEN from '@/assets/flags/en-flag.svg'
 import FlagDE from '@/assets/flags/de-flag.svg'
 
 // Reduzierte Sprachoptionen
 const languages = [
-  { code: 'en', label: FlagUS },
+  { code: 'en', label: FlagEN },
   { code: 'de', label: FlagDE },
 ]
 

@@ -34,14 +34,14 @@
   position: relative;
   background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
   color: white;
-  padding: 2rem 1rem 10rem;
+  padding: 1rem 1rem 6rem;
   overflow: hidden;
 }
 
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-    height: 65vh;
+  height: 75vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -128,163 +128,6 @@
   height: 100%;
 }
 
-/* Decorative elements */
-.graphic-element {
-  position: absolute;
-  opacity: 0.1;
-  background-color: white;
-}
-
-.graphic-circle-1 {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  top: 10%;
-  left: 10%;
-  opacity: 0.05;
-}
-
-.graphic-circle-2 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  bottom: 5%;
-  right: 5%;
-  opacity: 0.07;
-}
-
-.graphic-square {
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg);
-  top: 40%;
-  right: 25%;
-  opacity: 0.05;
-}
-
-.graphic-line-1 {
-  width: 200px;
-  height: 2px;
-  top: 20%;
-  right: 15%;
-  transform: rotate(-30deg);
-  opacity: 0.05;
-}
-
-.graphic-line-2 {
-  width: 150px;
-  height: 2px;
-  bottom: 30%;
-  left: 20%;
-  transform: rotate(45deg);
-  opacity: 0.05;
-}
-
-/* Network visualization */
-.network-visualization {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-}
-
-.node {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-}
-
-.node-inner {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-.node-central {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 2;
-}
-
-.node-central .node-inner {
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-}
-
-.node-1 {
-  top: 10%;
-  left: 30%;
-}
-
-.node-2 {
-  top: 30%;
-  right: 10%;
-}
-
-.node-3 {
-  bottom: 10%;
-  right: 30%;
-}
-
-.node-4 {
-  bottom: 30%;
-  left: 10%;
-}
-
-.connection {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 1;
-}
-
-.connection-1 {
-  width: 120px;
-  height: 2px;
-  top: 35%;
-  left: 35%;
-  transform: rotate(-45deg);
-}
-
-.connection-2 {
-  width: 120px;
-  height: 2px;
-  top: 35%;
-  right: 35%;
-  transform: rotate(45deg);
-}
-
-.connection-3 {
-  width: 120px;
-  height: 2px;
-  bottom: 35%;
-  right: 35%;
-  transform: rotate(-45deg);
-}
-
-.connection-4 {
-  width: 120px;
-  height: 2px;
-  bottom: 35%;
-  left: 35%;
-  transform: rotate(45deg);
-}
-
 /* Wave divider at bottom */
 .wave-divider {
   position: absolute;
@@ -317,28 +160,6 @@
   /* Add transition to match other elements */
   transition: fill 0.3s ease;
 }
-
-/* Animation */
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-}
-
-.node-inner {
-  animation: pulse 2s infinite;
-}
-
-.node-1 .node-inner { animation-delay: 0s; }
-.node-2 .node-inner { animation-delay: 0.5s; }
-.node-3 .node-inner { animation-delay: 1s; }
-.node-4 .node-inner { animation-delay: 1.5s; }
 
 /* Dark mode adjustments */
 :global(.dark-mode) .wave-path {
@@ -396,11 +217,6 @@
   .primary-button, .secondary-button {
     width: 100%;
     text-align: center;
-  }
-
-  .network-visualization {
-    width: 250px;
-    height: 250px;
   }
 }
 </style>
