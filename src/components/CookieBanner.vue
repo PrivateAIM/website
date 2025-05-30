@@ -131,7 +131,6 @@ onMounted(() => {
     isVisible.value = true;
   } else {
     // Versuche gespeicherte Cookie-Optionen zu laden
-    try {
       const cookieOptionsStr = document.cookie
           .split('; ')
           .find(row => row.startsWith('cookie-options='))
@@ -146,8 +145,6 @@ onMounted(() => {
           initGoogleAnalytics();
         }
       }
-    } catch (error) {
-    }
   }
 });
 </script>
