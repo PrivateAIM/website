@@ -1,0 +1,1 @@
+const s="/website/images/partners/UKT.png",e="/website/images/partners/BIH.png",t="/website/images/partners/TUM.svg",a="/website/images/partners/UKHD.png",r="/website/images/partners/UKER.svg",i="/website/images/partners/UKL.png",p="/website/images/partners/UKFR.png",n="/website/images/partners/LMU.png";export{s as _,e as a,t as b,a as c,r as d,i as e,p as f,n as g};
