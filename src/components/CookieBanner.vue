@@ -286,7 +286,7 @@ h3 {
   left: 20px;
   display: flex;
   align-items: center;
-  background-color: var(--primary-color, #3182ce);
+  background-color: #e2df21;
   border: 1px solid #ddd;
   border-radius: 30px;
   padding: 8px 16px;
@@ -306,14 +306,4 @@ h3 {
   margin-right: 6px;
 }
 
-/* Animationen */
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: transform 0.3s ease;
-}
-
-.slide-up-enter-from,
-.slide-up-leave-to {
-  transform: translateY(100%);
-}
 </style>
