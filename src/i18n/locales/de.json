@@ -184,7 +184,8 @@
         "legal": "Rechtliches",
         "imprint": "Impressum",
         "privacy": "Datenschutz",
-        "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten."
+        "copyright": "© {year} PrivateAIM. Alle Rechte vorbehalten.",
+        "sponsor": "Gefördert vom"
     },
     "languageSelector": {
         "label": "Sprachen",

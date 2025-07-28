@@ -185,7 +185,8 @@
         "legal": "Legal",
         "imprint": "Imprint",
         "privacy": "Privacy Policy",
-        "copyright": "© {year} PrivateAIM. All rights reserved."
+        "copyright": "© {year} PrivateAIM. All rights reserved.",
+        "sponsor": "Funded by"
     },
     "languageSelector": {
         "label": "Languages",

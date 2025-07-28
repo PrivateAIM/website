@@ -20,6 +20,11 @@
           <router-link to="/imprint" class="footer-link">{{ $t('footer.imprint') }}</router-link>
           <router-link to="/privacy" class="footer-link">{{ $t('footer.privacy') }}</router-link>
         </div>
+          <div class="footer-column">
+              <div class="footer-header">{{ $t('footer.sponsor') }}</div>
+              <img src="/images/BMFTR-dark.svg" alt="Sponsor Logo Dark" class="sponsor-logo sponsor-logo-dark" />
+              <img src="/images/BMFTR-light.svg" alt="Sponsor Logo Light" class="sponsor-logo sponsor-logo-light" />
+          </div>
       </div>
     </div>
 
@@ -141,6 +146,28 @@ const currentYear = computed(() => new Date().getFullYear());
     margin-right: 0.5rem;
 }
 
+.sponsor-logo {
+    height: 60px;
+    width: auto;
+}
+
+.sponsor-logo-light {
+    display: block;
+}
+
+.sponsor-logo-dark {
+    display: none;
+}
+
+.dark-mode .sponsor-logo-dark {
+    display: block;
+}
+
+.dark-mode .sponsor-logo-light {
+    display: none;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-container {
@@ -167,5 +194,9 @@ const currentYear = computed(() => new Date().getFullYear());
     .footer-logo {
         height: 20px;
     }
+    .sponsor-logo {
+        height: 40px;
+    }
 }
 </style>
+
