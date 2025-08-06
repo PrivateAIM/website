@@ -13,7 +13,7 @@
         <div class="partners-grid">
           <div class="partner-card">
             <div class="partner-logo">
-              <img src="/images/partners/BIH.png" alt="Charité Berlin" />
+              <img src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
             </div>
             <div class="partner-info">
               <h3 class="partner-name">Charité Berlin</h3>
