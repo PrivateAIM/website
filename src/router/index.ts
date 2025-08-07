@@ -48,6 +48,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/privacy',
     name: 'Privacy',
     component: () => import('@/views/Privacy.vue')
+  },
+  {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('@/views/NotFound.vue'),
   }
 ]
 

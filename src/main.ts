@@ -9,6 +9,12 @@ import 'bootstrap/dist/css/bootstrap-utilities.min.css';
 
 const app = createApp(App)
 
+const redirectPath = sessionStorage.getItem('redirect-path');
+if (redirectPath) {
+    sessionStorage.removeItem('redirect-path');
+    router.replace(redirectPath);
+}
+
 app.use(router)
 app.use(i18n)
 
