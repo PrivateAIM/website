@@ -8,7 +8,7 @@
           <img src="/images/partners/UKT.png" alt="University Hospital Tübingen" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/BIH.png" alt="Charité Berlin" />
+          <img src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
         </div>
         <div class="partner-logo">
           <img src="/images/partners/TUM.svg" alt="TUM Munich" />
