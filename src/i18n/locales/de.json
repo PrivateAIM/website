@@ -295,6 +295,12 @@
         "items": {
             "2025": [
                 {
+                    "date": "8-10/10/2025",
+                    "title": "Herbstretreat in Bad Urach",
+                    "content": "Vom 8. bis 10. Oktober 2025 traf sich das PrivateAIM-Konsortium in Bad Urach zum jährlichen Herbstretreat. Das Treffen begann mit der Teilnahme des Projektförderers, der eine Demonstration der aktuellen Plattform sowie Berichte aus allen Arbeitspaketen erhielt.\nIm Verlauf des Retreats wurden die Aktivitäten der Arbeitspakete abgestimmt, die letzten Vorbereitungen für den produktiven Rollout der FLAME-Plattform abgeschlossen und die kommenden Use Cases an den ersten angebundenen Universitätskliniken diskutiert. Der fokussierte Austausch und die konstruktive Atmosphäre legten eine starke Grundlage für die nächste Projektphase.",
+                    "images": ["news_bad_urach.jpeg"]
+                },
+                {
                     "date": "10/10/2025",
                     "title": "GMDS 2025",
                     "content": "Auf der <a href=\"https://gmds2025.de\" target=\"_blank\">GMDS 2025</a> in Jena haben Dr. Marius de Arruda Botelho Herr und Peter Placzek das Konzept der FLAME-Architektur sowie das zugehörige Policy-Framework vorgestellt.\nDer Workshop zeigt, wie FLAME datenschutzfördernde Technologien mit einem dynamischen Policy-Framework kombiniert, um regulatorische und technische Herausforderungen zu bewältigen und gleichzeitig eine sichere, skalierbare Zusammenarbeit zwischen Institutionen zu ermöglichen. \n\n <a href=\"/files/FLAME-GMDS2025.pdf\" target=\"_blank\">Link zur Präsentation</a>"
