@@ -295,13 +295,18 @@
         "items": {
             "2025": [
                 {
+                    "date": "17/10/2025",
+                    "title": "Patienten- und Datenschutzflyer",
+                    "content": "Sichere Forschung mit medizinischen Daten: Unser Engagement für Datenschutz mit PrivateAIM (Privacy-Preserving Analytics in Medicine)\nPrivateAIM und FLAME bilden einen innovativen Ansatz zur Analyse medizinischer Daten, der höchsten Datenschutz bietet. Das verfolgte Ziel: Wertvolle Einblicke in Gesundheitsdaten zu gewinnen und gleichzeitig die Privatsphäre der Patient*innen bestmöglich zu schützen.\nMit PrivateAIM leisten wir einen wichtigen Beitrag zur Verbesserung der Medizin und setzen gleichzeitig neue Maßstäbe im Datenschutz.<a href=\"/files/Flyer-Patienten.pdf\" target=\"_blank\">Flyer für Patienten</a>\n\n <a href=\"/files/Flyer-Datenschutz.pdf\" target=\"_blank\">Flyer für Ethik und Datenschutz</a>  \n#Patientensicherheit #Datenschutz #PrivateAIM #Medizininformatik #Innovation #Gesundheitsdaten #medizinische Versorgung #medizinische Forschung."
+                },
+                {
                     "date": "8-10/10/2025",
                     "title": "Retreat in Bad Urach",
-                    "content": "Vom 8. bis 10. Oktober 2025 traf sich das PrivateAIM-Konsortium in Bad Urach zum jährlichen Herbstretreat. Das Treffen begann mit der Teilnahme des Projektförderers, der eine Demonstration der aktuellen Plattform sowie Berichte aus allen Arbeitspaketen erhielt.\nIm Verlauf des Retreats wurden die Aktivitäten der Arbeitspakete abgestimmt, die letzten Vorbereitungen für den produktiven Rollout der FLAME-Plattform abgeschlossen und die kommenden Use Cases an den ersten angebundenen Universitätskliniken diskutiert. Der fokussierte Austausch und die konstruktive Atmosphäre legten eine starke Grundlage für die nächste Projektphase.",
+                    "content": "Vom 8. bis 10. Oktober 2025 traf sich das PrivateAIM-Konsortium in Bad Urach zum jährlichen Projekt-Retreat. Die Sitzung wurde unter Beteiligung der Projekträger eröffnet, der eine Demonstration der aktuellen Plattform und Updates zu allen Arbeitspaketen vorgestellt wurden. Während des gesamten Retreats stimmten die Arbeitspakete ihre Aktivitäten aufeinander ab, schlossen die Vorbereitungen für den produktiven Einsatz der FLAME-Plattform ab und diskutierten bevorstehende Anwendungsfälle an den ersten Universitätskliniken. Der gezielte Austausch und die kooperative Atmosphäre bildeten eine solide Grundlage für die nächste Projektphase.\n",
                     "images": ["news_bad_urach.jpeg"]
                 },
                 {
-                    "date": "10/10/2025",
+                    "date": "10/09/2025",
                     "title": "GMDS 2025",
                     "content": "Auf der <a href=\"https://gmds2025.de\" target=\"_blank\">GMDS 2025</a> in Jena haben Dr. Marius de Arruda Botelho Herr und Peter Placzek das Konzept der FLAME-Architektur sowie das zugehörige Policy-Framework vorgestellt.\nDer Workshop zeigt, wie FLAME datenschutzfördernde Technologien mit einem dynamischen Policy-Framework kombiniert, um regulatorische und technische Herausforderungen zu bewältigen und gleichzeitig eine sichere, skalierbare Zusammenarbeit zwischen Institutionen zu ermöglichen. \n\n <a href=\"/files/FLAME-GMDS2025.pdf\" target=\"_blank\">Link zur Präsentation</a>"
                 },
