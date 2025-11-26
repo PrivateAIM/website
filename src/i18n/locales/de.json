@@ -295,6 +295,11 @@
         "items": {
             "2025": [
                 {
+                    "date": "25/11/2025",
+                    "title": "MIDI-Kolloquium",
+                    "content": "Wir freuen uns, die Aufzeichnung des Vortrags von Dr. Marius Herr zur FLAME-Plattform zu teilen. FLAME bietet ein datenschutzkonformes und auditierbares Framework für föderiertes Lernen. Im Vortrag erläutert Marius die Kernarchitektur von FLAME, zeigt auf, wie sichere verteilte Analysen ohne sensible Einzelinformationen offenzulegen möglich sind, und skizziert den Weg zur Umsetzung als reale Infrastruktur. Zudem wird ein konkreter Use Case vorgestellt und die Rolle von FLAME in der datenschutzbewahrenden Analyse demonstriert. Die vollständige Präsentation ist auf <a href=\" https://www.youtube.com/watch?v=tXfg3kb0AIg\" target=\"_blank\">YouTube (Englisch)</a> verfügbar."
+                },
+                {
                     "date": "17/10/2025",
                     "title": "Patienten- und Datenschutzflyer",
                     "content": "Sichere Forschung mit medizinischen Daten: Unser Engagement für Datenschutz mit PrivateAIM (Privacy-Preserving Analytics in Medicine)\nPrivateAIM und FLAME bilden einen innovativen Ansatz zur Analyse medizinischer Daten, der höchsten Datenschutz bietet. Das verfolgte Ziel: Wertvolle Einblicke in Gesundheitsdaten zu gewinnen und gleichzeitig die Privatsphäre der Patient*innen bestmöglich zu schützen.\nMit PrivateAIM leisten wir einen wichtigen Beitrag zur Verbesserung der Medizin und setzen gleichzeitig neue Maßstäbe im Datenschutz.<a href=\"/files/Flyer-Patienten.pdf\" target=\"_blank\">Flyer für Patienten</a>\n\n <a href=\"/files/Flyer-Datenschutz.pdf\" target=\"_blank\">Flyer für Ethik und Datenschutz</a>  \n#Patientensicherheit #Datenschutz #PrivateAIM #Medizininformatik #Innovation #Gesundheitsdaten #medizinische Versorgung #medizinische Forschung."
