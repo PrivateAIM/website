@@ -293,6 +293,13 @@
         "subtitle": "Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.",
         "noItems": "Keine Neuigkeiten für dieses Jahr verfügbar.",
         "items": {
+            "2026": [
+                {
+                    "date": "17/03/2026",
+                    "title": "MII Community Dialog",
+                    "content": "Beim MII Community Dialog präsentierte Dr. Marius Herr FLAME und dessen Rolle bei der Ermöglichung von datenschutzkonformem föderiertem Lernen für sensible medizinische Daten. Der Vortrag zeigte, wie FLAME verteilte Analysen über Universitätskliniken hinweg ermöglicht, ohne patientenbezogene Daten offenzulegen, und dabei zentrale Herausforderungen der regulatorischen Compliance und institutionellen Datenhoheit innerhalb der Medizininformatik-Initiative adressiert."
+                }
+            ],
             "2025": [
                 {
                     "date": "25/11/2025",

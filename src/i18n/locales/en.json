@@ -295,6 +295,13 @@
         "subtitle": "Here you will find an overview of the latest news in the context of PrivateAIM.",
         "noItems": "No news items available for this year.",
         "items": {
+            "2026": [
+                {
+                    "date": "17/03/2026",
+                    "title": "MII Community Dialog",
+                    "content": "At the MII Community Dialog, Dr. Marius Herr presented FLAME and its role in enabling privacy-preserving federated learning for sensitive medical data. The talk highlighted how FLAME allows distributed analysis across university hospitals without exposing patient-level data, addressing key challenges in regulatory compliance and institutional data sovereignty within the Medical Informatics Initiative."
+                }
+            ],
             "2025": [
                 {
                     "date": "25/11/2025",
