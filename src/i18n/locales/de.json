@@ -283,10 +283,21 @@
             }
         }
     },
+    "team": {
+        "title": "Unser Team",
+        "subtitle": "Lernen Sie die engagierten Personen kennen, die an der Weiterentwicklung datenschutzfreundlicher Analytik in der Medizin arbeiten.",
+        "leadership": "Projektleitung",
+        "alumni": "Alumni",
+        "alumniNote": "Wir danken unseren Alumni für ihre wertvollen Beiträge zum Projekt."
+    },
     "publications": {
         "title": "Publikationen",
         "subtitle": "Entdecken Sie unsere Forschung und Publikationen im Bereich der datenschutzfreundlichen medizinischen Analytik.",
-        "readMore": "Publikation lesen"
+        "readMore": "Publikation lesen",
+        "searchPlaceholder": "Suche nach Titel, Autor oder Venue...",
+        "results": "Publikationen",
+        "noResults": "Keine Publikationen gefunden.",
+        "resetSearch": "Suche zurücksetzen"
     },
     "news": {
         "title": "News",

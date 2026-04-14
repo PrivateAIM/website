@@ -65,7 +65,7 @@ h2 {
 
 .partner-logo {
   height: 100px;
-  background-color: var(--card-bg, #ffffff);
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;

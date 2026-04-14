@@ -8,11 +8,11 @@
         </router-link>
       </div>
 
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Footer navigation">
         <div class="footer-column">
           <div class="footer-header">{{ $t('footer.documentation') }}</div>
-          <a href="https://docs.privateaim.net/" target="_blank" class="footer-link">{{ $t('footer.flame') }}</a>
-          <a href="https://github.com/PrivateAIM" target="_blank" class="footer-link">{{ $t('footer.github') }}</a>
+          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="footer-link">{{ $t('footer.flame') }}</a>
+          <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="footer-link">{{ $t('footer.github') }}</a>
         </div>
 
         <div class="footer-column">
@@ -22,10 +22,12 @@
         </div>
           <div class="footer-column">
               <div class="footer-header">{{ $t('footer.sponsor') }}</div>
-              <img src="/images/BMFTR-dark.svg" alt="Sponsor Logo Dark" class="sponsor-logo sponsor-logo-dark" />
-              <img src="/images/BMFTR-light.svg" alt="Sponsor Logo Light" class="sponsor-logo sponsor-logo-light" />
+              <a href="https://www.gesundheitsforschung-bmftr.de/de/privateaim-medizininformatik-plattform-privatspharen-schutzende-analytik-in-der-medizin-16491.php" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/BMFTR-dark.svg" alt="Sponsor Logo Dark" class="sponsor-logo sponsor-logo-dark" />
+                  <img src="/images/BMFTR-light.svg" alt="Sponsor Logo Light" class="sponsor-logo sponsor-logo-light" />
+              </a>
           </div>
-      </div>
+      </nav>
     </div>
 
     <div class="copyright-container">
@@ -136,14 +138,14 @@ const currentYear = computed(() => new Date().getFullYear());
   font-size: 0.85rem;
 }
 .footer-logo {
-    height: 24px;
+    height: 48px;
     width: auto;
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
 }
-.footer-logo {
-    height: 32px;
-    width: auto;
-    margin-right: 0.5rem;
+
+.footer-left .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .sponsor-logo {
@@ -192,7 +194,7 @@ const currentYear = computed(() => new Date().getFullYear());
     text-align: center;
   }
     .footer-logo {
-        height: 20px;
+        height: 32px;
     }
     .sponsor-logo {
         height: 40px;

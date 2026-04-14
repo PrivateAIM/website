@@ -1,6 +1,7 @@
 // CookieBanner.vue
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { GA_TRACKING_ID, sendPageView } from '@/utils/analytics';
 
 interface CookieOptions {
   necessary: boolean;
@@ -15,12 +16,9 @@ interface WindowWithDataLayer extends Window {
 
 const isVisible = ref(false);
 const cookieOptions = ref<CookieOptions>({
-  necessary: true, // Immer aktiviert
+  necessary: true,
   analytics: false,
 });
-
-// Hier deine Google Analytics Tracking ID einfügen
-const GA_TRACKING_ID = 'G-HEP0T9F5MV';
 
 // Cookie überprüfen, ob bereits eingestellt
 const checkCookieConsent = (): boolean => {
@@ -47,24 +45,31 @@ const setCookieConsent = (options: CookieOptions) => {
 
 // Google Analytics mit anonymisierter IP initialisieren
 const initGoogleAnalytics = () => {
-    if (typeof window !== 'undefined') {
-        let script = document.createElement('script');
-        script.text = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${GA_TRACKING_ID}');
-            `;
+    if (typeof window === 'undefined') return;
 
-        document.body.appendChild(script);
+    const win = window as unknown as WindowWithDataLayer;
 
+    // Prevent duplicate injection
+    if (win.gtag) return;
 
-        script = document.createElement('script');
-        script.async = true;
-        script.src = new URL('https://www.googletagmanager.com/gtag/js').toString() + '?id=' + GA_TRACKING_ID;
+    const initScript = document.createElement('script');
+    initScript.text = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_TRACKING_ID}', { send_page_view: false });
+    `;
+    document.head.appendChild(initScript);
 
-        document.head.appendChild(script);
-    }
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_TRACKING_ID;
+    document.head.appendChild(gtagScript);
+
+    // Send initial page view once script loads
+    gtagScript.onload = () => {
+        sendPageView(window.location.pathname, document.title);
+    };
 };
 
 // Google Analytics deaktivieren
@@ -200,11 +205,12 @@ onMounted(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #fff;
+  background-color: var(--card-bg, #fff);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color, #eee);
+  color: var(--text-color, #333);
 }
 
 .cookie-content {
@@ -224,7 +230,7 @@ h3 {
 .cookie-option {
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--tag-bg, #f9f9f9);
   border-radius: 4px;
 }
 
@@ -242,7 +248,7 @@ h3 {
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 0.9em;
-  color: #666;
+  color: var(--nav-text, #666);
 }
 
 .cookie-actions {
@@ -261,22 +267,22 @@ h3 {
 
 .btn-outline {
   background: transparent;
-  border: 1px solid #ccc;
-  color: #333;
+  border: 1px solid var(--border-color, #ccc);
+  color: var(--text-color, #333);
 }
 
 .btn-outline:hover {
-  background-color: #f0f0f0;
+  background-color: var(--tag-bg, #f0f0f0);
 }
 
 .btn-primary {
-  background-color: #4a90e2;
-  border: 1px solid #4a90e2;
+  background-color: var(--primary-color, #4a90e2);
+  border: 1px solid var(--primary-color, #4a90e2);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #3a80d2;
+  opacity: 0.9;
 }
 
 /* Persistenter Cookie-Button */
@@ -286,19 +292,20 @@ h3 {
   left: 20px;
   display: flex;
   align-items: center;
-  background-color: #e2df21;
-  border: 1px solid #ddd;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #ddd);
   border-radius: 30px;
   padding: 8px 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 990;
   font-size: 14px;
+  color: var(--text-color, #333);
   transition: all 0.2s ease;
 }
 
 .cookie-settings-button:hover {
-  background-color: #f5f5f5;
+  background-color: var(--tag-bg, #f5f5f5);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 

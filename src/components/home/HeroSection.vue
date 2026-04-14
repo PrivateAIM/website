@@ -6,7 +6,7 @@
         <p class="hero-subtitle">{{ $t('home.hero.subtitle') }}</p>
 
         <div class="hero-cta">
-          <a href="https://docs.privateaim.net/" target="_blank" class="primary-button">
+          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="primary-button">
             {{ $t('home.hero.explorePlatform') }}
           </a>
           <router-link to="/partners" class="secondary-button">
@@ -41,7 +41,7 @@
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  height: 75vh;
+  height: clamp(400px, 75vh, 700px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -119,7 +119,8 @@
 /* Visual part */
 .hero-visual {
   position: relative;
-  height: 700px;
+  height: 100%;
+  max-height: 500px;
 }
 
 .hero-graphic {

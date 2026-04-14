@@ -30,14 +30,16 @@ function updateLanguage(newLocale: string) {
   }
 }
 
-// Watch for locale changes to update direction if needed
+// Watch for locale changes to update direction and html lang
 watch(locale, (newLocale) => {
   updateLanguage(newLocale)
+  document.documentElement.lang = newLocale
 })
 
-// Set initial direction based on current locale
+// Set initial direction and html lang based on current locale
 onMounted(() => {
   updateLanguage(locale.value)
+  document.documentElement.lang = locale.value
 })
 </script>
 
