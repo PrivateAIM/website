@@ -23,7 +23,7 @@ export default defineComponent({
                 <div class="card-content">
                     <h3>{{ $t('home.vision.contribute') }}</h3>
                     <p>{{ $t('home.vision.explanation') }}</p>
-                    <a href="https://github.com/PrivateAIM" target="_blank" class="card-link">{{ $t('home.vision.github') }} →</a>
+                    <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="card-link">{{ $t('home.vision.github') }} →</a>
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@
     <div class="platform-cta">
       <h3>{{ $t('home.howItWorks.experienceFlame') }}</h3>
       <p>{{ $t('home.howItWorks.flamePlatform') }}</p>
-      <a href="https://docs.privateaim.net/" target="_blank" class="cta-button primary">
+      <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="cta-button primary">
         {{ $t('home.howItWorks.explorePlatform') }}
       </a>
     </div>
