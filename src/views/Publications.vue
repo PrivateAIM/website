@@ -49,6 +49,12 @@ onMounted(() => {
 
 const publications = ref<Publication[]>([
     {
+        authors: 'Herr, M., Baykara, C. A., Ünal, A. B., Pfeifer, N., Akgün, M. (2025)',
+        title: 'Privacy-preserving AUC computation in distributed machine learning with PHT-meDIC.',
+        citation: 'PLOS Digital Health, 4(11), e0000753.',
+        link: 'https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000753'
+    },
+    {
         authors: 'Herr, M., Graf, M., Placzek, P., König, F., Bötte, F., Stickel, T., Hieber, D., Zimmermann, L., Slupina, M., Mohr, C., Biergans, S., Akgün, M., Pfeifer, N., & Kohlbacher, O. (2022)',
         title: 'Bringing the Algorithms to the Data - Secure Distributed Medical Analytics using the Personal Health Train (PHT-meDIC).',
         citation: 'arXiv (Cornell University).',
