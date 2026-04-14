@@ -37,5 +37,4 @@ playwright-report/
 vite.config.ts.timestamp*
 */.vitepress/cache
 .eslintcache
-src/.DS_Store
-public/images/.DS_Store
+tmp/
