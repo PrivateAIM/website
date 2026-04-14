@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://privateaim.de/sitemap.xml
+
+# Disallow non-content paths
+Disallow: /files/
