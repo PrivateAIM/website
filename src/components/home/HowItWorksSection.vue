@@ -116,7 +116,7 @@ h2 {
 }
 
 .cta-button.primary {
-  background-color: var(--primary-color, #3182ce);
+  background-color: #0055b3;
   color: white;
 }
 

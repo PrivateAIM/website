@@ -5,28 +5,28 @@
       <div class="partners-grid">
         <!-- Partner logos -->
         <div class="partner-logo">
-          <img src="/images/partners/UKT.png" alt="University Hospital Tübingen" />
+          <img loading="lazy" src="/images/partners/UKT.png" alt="University Hospital Tübingen" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
+          <img loading="lazy" src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/TUM.svg" alt="TUM Munich" />
+          <img loading="lazy" src="/images/partners/TUM.svg" alt="TUM Munich" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/UKHD.png" alt="University Hospital Heidelberg" />
+          <img loading="lazy" src="/images/partners/UKHD.png" alt="University Hospital Heidelberg" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/UKER.svg" alt="University Hospital Erlangen" />
+          <img loading="lazy" src="/images/partners/UKER.svg" alt="University Hospital Erlangen" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/UKL.png" alt="University Hospital Leipzig" />
+          <img loading="lazy" src="/images/partners/UKL.png" alt="University Hospital Leipzig" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/UKFR.png" alt="University Hospital Freiburg" />
+          <img loading="lazy" src="/images/partners/UKFR.png" alt="University Hospital Freiburg" />
         </div>
         <div class="partner-logo">
-          <img src="/images/partners/LMU.png" alt="LMU Munich" />
+          <img loading="lazy" src="/images/partners/LMU.png" alt="LMU Munich" />
         </div>
       </div>
       <div class="partner-cta">
@@ -64,19 +64,19 @@ h2 {
 }
 
 .partner-logo {
-  height: 100px;
+  height: 200px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.75rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .partner-logo img {
-  max-width: 80%;
-  max-height: 60px;
+  max-width: 90%;
+  max-height: 140px;
   object-fit: contain;
 }
 

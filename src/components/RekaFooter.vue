@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <router-link to="/" class="logo">
-            <img src="/images/logo.png" alt="PrivateAIM Logo" class="footer-logo" />
+            <img src="/images/logo-sm.webp" alt="PrivateAIM Logo" class="footer-logo" />
             <span class="logo-text">PrivateAIM</span>
         </router-link>
       </div>
@@ -121,6 +121,8 @@ const currentYear = computed(() => new Date().getFullYear());
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
 }
 
 .footer-link:hover {

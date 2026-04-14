@@ -3,7 +3,7 @@
     <div class="header-container">
       <div class="logo-section">
         <router-link to="/" class="logo">
-            <img src="/images/logo.png" alt="PrivateAIM Logo" class="header-logo" />
+            <img src="/images/logo-sm.webp" alt="PrivateAIM Logo" class="header-logo" />
             <span class="logo-text">PrivateAIM</span>
                   </router-link>
       </div>

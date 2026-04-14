@@ -84,7 +84,7 @@
 .primary-button {
   display: inline-block;
   background-color: white;
-  color: var(--primary-color, #3182ce);
+  color: #0055b3;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
