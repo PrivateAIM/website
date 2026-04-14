@@ -53,7 +53,7 @@ interface NewsItem {
 const { t, locale, messages } = useI18n()
 
 // Years in descending order
-const years = ref<string[]>(['2025', '2024', '2023'])
+const years = ref<string[]>(['2026', '2025', '2024', '2023'])
 
 // Function to get image URL
 const getImageUrl = (imagePath: string): string => {
@@ -119,19 +119,19 @@ computed<Record<string, NewsItem[]>>(() => {
 }
 
 .news-content {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .news-year-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .year-heading {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-color, #1a202c);
     border-bottom: 2px solid var(--primary-color, #3182ce);
     padding-bottom: 0.5rem;
@@ -140,7 +140,7 @@ computed<Record<string, NewsItem[]>>(() => {
 .news-items {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .news-item {
@@ -157,7 +157,7 @@ computed<Record<string, NewsItem[]>>(() => {
 
 .news-summary {
     cursor: pointer;
-    padding: 1.25rem;
+    padding: 1rem 3.5rem 1rem 1.25rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -172,13 +172,20 @@ computed<Record<string, NewsItem[]>>(() => {
 .news-summary::after {
     content: "+";
     position: absolute;
-    right: 1.25rem;
-    font-size: 1.5rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--tag-bg, #f0f4f8);
     color: var(--primary-color, #3182ce);
 }
 
 details[open] .news-summary::after {
-    content: "−";
+    content: "\2212";
 }
 
 .news-date {
@@ -194,7 +201,7 @@ details[open] .news-summary::after {
 }
 
 .news-detail-content {
-    padding: 0 1.25rem 1.25rem;
+    padding: 0 1.25rem 1rem;
     color: var(--text-color, #4a5568);
     line-height: 1.6;
 }
