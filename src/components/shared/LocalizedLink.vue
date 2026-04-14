@@ -44,9 +44,10 @@ const finalUrl = computed(() => {
 <style scoped>
 .inline-link {
   color: var(--primary-color, #3182ce);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .inline-link:hover {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 </style>

@@ -276,8 +276,8 @@ h3 {
 }
 
 .btn-primary {
-  background-color: var(--primary-color, #4a90e2);
-  border: 1px solid var(--primary-color, #4a90e2);
+  background-color: #0055b3;
+  border: 1px solid #0055b3;
   color: white;
 }
 
@@ -311,6 +311,17 @@ h3 {
 
 .cookie-settings-button svg {
   margin-right: 6px;
+}
+
+/* Slide-up transition for cookie banner */
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(100%);
 }
 
 </style>

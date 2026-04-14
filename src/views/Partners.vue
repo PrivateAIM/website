@@ -365,7 +365,7 @@
 
 .contact-button {
   display: block;
-  background-color: var(--primary-color, #3182ce);
+  background-color: #0055b3;
   color: white;
   font-weight: 500;
   font-size: 1rem;
