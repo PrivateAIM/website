@@ -26,7 +26,7 @@ body.dark-mode {
   --footer-text: #a0aec0;
   --copyright: #888888;
   --body-bg: #0b0c10;
-  --card-bg: #656568;
+  --card-bg: #1a1c24;
 
   background-color: var(--body-bg);
   color: var(--text-color);
