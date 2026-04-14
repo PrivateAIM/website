@@ -9,19 +9,19 @@
       </div>
 
       <!-- Navigation für Desktop und Mobile -->
-      <nav class="main-nav" :class="{ 'mobile-menu-open': isMobileMenuOpen }">
+      <nav class="main-nav" :class="{ 'mobile-menu-open': isMobileMenuOpen }" aria-label="Main navigation">
         <router-link to="/" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.home') }}</router-link>
         <router-link to="/news" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.news') }}</router-link>
           <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.blog') }}</router-link>-->
         <router-link to="/publications" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.publications') }}</router-link>
-        <!-- <router-link to="/team" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.team') }}</router-link>-->
+        <router-link to="/team" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.team') }}</router-link>
         <router-link to="/partners" class="nav-item" @click="closeMobileMenu">{{ $t('navigation.partners') }}</router-link>
       </nav>
 
       <div class="header-right">
         <LanguageSelector />
         <ThemeToggle />
-        <a href="https://github.com/PrivateAIM" target="_blank" class="github-link">
+        <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="github-link">
           <img
               src="/images/icons/github-mark.svg"
               class="icon-light logo-light"
@@ -33,7 +33,7 @@
               alt="GitHub"
           />
         </a>
-        <a href="https://discord.gg/yCTX7ePnhb" target="_blank" class="github-link">
+        <a href="https://discord.gg/yCTX7ePnhb" target="_blank" rel="noopener noreferrer" class="github-link">
           <img
               src="/images/icons/discord-mark.svg"
               class="icon-light logo-light"
@@ -58,12 +58,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import LanguageSelector from './LanguageSelector.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
 // Mobile Menu State
 const isMobileMenuOpen = ref(false);
+const route = useRoute();
+
+// Close mobile menu on any route change (including browser back/forward)
+watch(() => route.path, () => {
+  closeMobileMenu();
+});
 
 // Toggle Mobile Menu
 const toggleMobileMenu = () => {
@@ -181,6 +188,8 @@ const closeMobileMenu = () => {
 
 .nav-item.router-link-active {
   color: var(--primary-color, #3182ce);
+  border-bottom: 2px solid var(--primary-color, #3182ce);
+  padding-bottom: 2px;
 }
 
 .header-right {
