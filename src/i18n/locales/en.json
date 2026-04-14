@@ -285,10 +285,21 @@
             }
         }
     },
+    "team": {
+        "title": "Our Team",
+        "subtitle": "Meet the dedicated individuals working to advance privacy-preserving analytics in medicine.",
+        "leadership": "Project Leads",
+        "alumni": "Alumni",
+        "alumniNote": "We thank our alumni for their valuable contributions to the project."
+    },
     "publications": {
         "title": "Publications",
         "subtitle": "Discover our research and publications in the field of privacy-preserving medical analytics.",
-        "readMore": "Read Paper"
+        "readMore": "Read Paper",
+        "searchPlaceholder": "Search by title, author, or venue...",
+        "results": "publications",
+        "noResults": "No publications found matching your search.",
+        "resetSearch": "Reset search"
     },
     "news": {
         "title": "News",
