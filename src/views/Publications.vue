@@ -1,38 +1,49 @@
 <template>
     <div class="publications-container">
-        <div class="page-header">
-            <h1>{{ $t('publications.title') }}</h1>
-            <p class="header-subtitle">
-                {{ $t('publications.subtitle') }}
-            </p>
-        </div>
+        <PageHeader :title="$t('publications.title')" :subtitle="$t('publications.subtitle')" />
 
         <div class="publications-content">
-            <div v-for="year in years" :key="year" class="publications-year-section">
+            <div class="search-bar">
+                <input
+                    v-model="searchQuery"
+                    type="text"
+                    :placeholder="$t('publications.searchPlaceholder')"
+                    class="search-input"
+                />
+                <span class="result-count">{{ filteredPublications.length }} {{ $t('publications.results') }}</span>
+            </div>
+
+            <div v-for="year in filteredYears" :key="year" class="publications-year-section">
                 <h2 class="year-heading">{{ year }}</h2>
                 <div class="publications-list">
-                    <div v-for="(publication, index) in getPublicationsByYear(year)" :key="index" class="publication-item">
-                        <details class="publication-details">
-                            <summary class="publication-summary">
+                    <div v-for="(publication, index) in getFilteredPublicationsByYear(year)" :key="index" class="publication-item">
+                        <div class="publication-details">
+                            <button class="publication-summary" :class="{ open: openKey === `${year}-${index}` }" @click="toggle(`${year}-${index}`)">
                                 <span class="publication-title">{{ publication.title }}</span>
                                 <span class="publication-citation">{{ publication.citation }}</span>
-                            </summary>
-                            <div class="publication-detail-content">
+                            </button>
+                            <div v-if="openKey === `${year}-${index}`" class="publication-detail-content">
                                 <div class="publication-authors">{{ publication.authors }}</div>
-                                <a v-if="publication.link" :href="publication.link" target="_blank" class="publication-link">
+                                <a v-if="publication.link" :href="publication.link" target="_blank" rel="noopener noreferrer" class="publication-link">
                                     {{ $t('publications.readMore') }} →
                                 </a>
                             </div>
-                        </details>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div v-if="filteredPublications.length === 0" class="no-results">
+                <p>{{ $t('publications.noResults') }}</p>
+                <button class="reset-button" @click="searchQuery = ''">{{ $t('publications.resetSearch') }}</button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
+import PageHeader from '../components/PageHeader.vue';
 
 interface Publication {
     authors: string;
@@ -297,13 +308,29 @@ const publications: Publication[] = [
     }
 ];
 
-const years = computed(() => {
-    const uniqueYears = [...new Set(publications.map(p => p.year))];
+const searchQuery = ref('');
+const openKey = ref<string | null>(null);
+const toggle = (key: string) => {
+    openKey.value = openKey.value === key ? null : key;
+};
+
+const filteredPublications = computed(() => {
+    const query = searchQuery.value.toLowerCase().trim();
+    if (!query) return publications;
+    return publications.filter(p =>
+        p.title.toLowerCase().includes(query) ||
+        p.authors.toLowerCase().includes(query) ||
+        p.citation.toLowerCase().includes(query)
+    );
+});
+
+const filteredYears = computed(() => {
+    const uniqueYears = [...new Set(filteredPublications.value.map(p => p.year))];
     return uniqueYears.sort((a, b) => b - a);
 });
 
-const getPublicationsByYear = (year: number): Publication[] => {
-    return publications.filter(p => p.year === year);
+const getFilteredPublicationsByYear = (year: number): Publication[] => {
+    return filteredPublications.value.filter(p => p.year === year);
 };
 </script>
 
@@ -312,30 +339,38 @@ const getPublicationsByYear = (year: number): Publication[] => {
     width: 100%;
 }
 
-.page-header {
-    background-color: var(--primary-color, #3182ce);
-    color: white;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.header-subtitle {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
 .publications-content {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color, #eaeaea);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--card-bg, #ffffff);
+    color: var(--text-color, #1a202c);
+}
+
+.search-input::placeholder {
+    color: var(--nav-text, #4a5568);
+    opacity: 0.7;
+}
+
+.result-count {
+    font-size: 0.9rem;
+    color: var(--nav-text, #4a5568);
+    white-space: nowrap;
 }
 
 .publications-year-section {
@@ -376,11 +411,23 @@ const getPublicationsByYear = (year: number): Publication[] => {
     flex-direction: column;
     gap: 0.25rem;
     position: relative;
-    list-style: none;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border-radius: 0.5rem;
 }
 
-.publication-summary::-webkit-details-marker {
-    display: none;
+.publication-summary:hover {
+    background-color: var(--tag-bg, #f7fafc);
+}
+
+.publication-summary:focus-visible {
+    outline: 2px solid var(--primary-color, #3182ce);
+    outline-offset: -2px;
 }
 
 .publication-summary::after {
@@ -399,7 +446,7 @@ const getPublicationsByYear = (year: number): Publication[] => {
     color: var(--primary-color, #3182ce);
 }
 
-details[open] .publication-summary::after {
+.publication-summary.open::after {
     content: "\2212";
 }
 
@@ -439,12 +486,29 @@ details[open] .publication-summary::after {
     text-decoration: underline;
 }
 
+.no-results {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--nav-text, #4a5568);
+}
+
+.reset-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-color, #3182ce);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.reset-button:hover {
+    opacity: 0.9;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
     .publication-summary {
         padding-right: 2.5rem;
     }

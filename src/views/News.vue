@@ -1,11 +1,6 @@
 <template>
     <div class="news-container">
-        <div class="page-header">
-            <h1>{{ t('news.title') }}</h1>
-            <p class="header-subtitle">
-                {{ t('news.subtitle') }}
-            </p>
-        </div>
+        <PageHeader :title="t('news.title')" :subtitle="t('news.subtitle')" />
 
         <div class="news-content">
             <!-- News entries by year -->
@@ -14,12 +9,12 @@
 
                 <div class="news-items">
                     <div v-for="(newsItem, index) in getNewsItemsByYear(year)" :key="index" class="news-item">
-                        <details class="news-details">
-                            <summary class="news-summary">
+                        <div class="news-details">
+                            <button class="news-summary" :class="{ open: openKey === `${year}-${index}` }" @click="toggle(`${year}-${index}`)">
                                 <span class="news-date">{{ newsItem.date }}</span>
                                 <span class="news-title">{{ newsItem.title }}</span>
-                            </summary>
-                            <div class="news-detail-content">
+                            </button>
+                            <div v-if="openKey === `${year}-${index}`" class="news-detail-content">
                                 <p v-html="newsItem.content"></p>
                                 <div v-if="newsItem.images && newsItem.images.length > 0" class="news-images">
                                     <img
@@ -31,7 +26,7 @@
                                     >
                                 </div>
                             </div>
-                        </details>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,6 +37,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import PageHeader from '../components/PageHeader.vue'
 
 // Define types for news items
 interface NewsItem {
@@ -52,8 +48,23 @@ interface NewsItem {
 }
 const { t, locale, messages } = useI18n()
 
-// Years in descending order
-const years = ref<string[]>(['2026', '2025', '2024', '2023'])
+const openKey = ref<string | null>(null)
+const toggle = (key: string) => {
+    openKey.value = openKey.value === key ? null : key
+}
+
+// Years derived dynamically from i18n data, in descending order
+const years = computed<string[]>(() => {
+    try {
+        const currentLocaleMessages = messages.value[locale.value]
+        if (typeof currentLocaleMessages?.news === 'string') return []
+        const items = currentLocaleMessages?.news?.items
+        if (!items || typeof items !== 'object') return []
+        return Object.keys(items).sort((a, b) => parseInt(b) - parseInt(a))
+    } catch {
+        return []
+    }
+})
 
 // Function to get image URL
 const getImageUrl = (imagePath: string): string => {
@@ -81,41 +92,11 @@ const getNewsItemsByYear = (year: string): NewsItem[] => {
     return []
 }
 
-// Compute all news items grouped by year
-computed<Record<string, NewsItem[]>>(() => {
-    const result: Record<string, NewsItem[]> = {}
-
-    for (const year of years.value) {
-        result[year] = getNewsItemsByYear(year)
-    }
-
-    return result
-});
 </script>
 
 <style scoped>
 .news-container {
     width: 100%;
-}
-
-.page-header {
-    background-color: var(--primary-color, #3182ce);
-    color: white;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.header-subtitle {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
 }
 
 .news-content {
@@ -162,11 +143,23 @@ computed<Record<string, NewsItem[]>>(() => {
     align-items: center;
     position: relative;
     font-weight: 600;
-    list-style: none;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border-radius: 0.5rem;
 }
 
-.news-summary::-webkit-details-marker {
-    display: none;
+.news-summary:hover {
+    background-color: var(--tag-bg, #f7fafc);
+}
+
+.news-summary:focus-visible {
+    outline: 2px solid var(--primary-color, #3182ce);
+    outline-offset: -2px;
 }
 
 .news-summary::after {
@@ -184,7 +177,7 @@ computed<Record<string, NewsItem[]>>(() => {
     color: var(--primary-color, #3182ce);
 }
 
-details[open] .news-summary::after {
+.news-summary.open::after {
     content: "\2212";
 }
 
@@ -223,10 +216,6 @@ details[open] .news-summary::after {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
     .news-summary {
         flex-direction: column;
         align-items: flex-start;

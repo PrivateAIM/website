@@ -1,11 +1,6 @@
 <template>
   <div class="partners-container">
-    <div class="page-header">
-      <h1>{{ $t('partners.title') }}</h1>
-      <p class="header-subtitle">
-        {{ $t('partners.description') }}
-      </p>
-    </div>
+    <PageHeader :title="$t('partners.title')" :subtitle="$t('partners.description')" />
 
     <div class="partners-content">
       <section class="partners-section">
@@ -207,7 +202,7 @@
               </p>
             </div>
           </div>
-          <a href="#" class="contact-button">{{ $t('partners.network.button') }}</a>
+          <a href="mailto:info@bih-charite.de" class="contact-button">{{ $t('partners.network.button') }}</a>
         </div>
       </section>
     </div>
@@ -217,26 +212,6 @@
 <style scoped>
 .partners-container {
   width: 100%;
-}
-
-.page-header {
-  background-color: var(--primary-color, #3182ce);
-  color: white;
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.page-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.header-subtitle {
-  font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
 .partners-content {
@@ -292,7 +267,8 @@
   align-items: center;
   justify-content: center;
   padding: 1.0rem;
-  background-color: var(--card-bg, #f7fafc);
+  background-color: #ffffff;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 .partner-logo img {
@@ -412,14 +388,11 @@
     grid-template-columns: 1fr;
   }
 
-  .page-header h1 {
-    font-size: 2.5rem;
-  }
-
   .become-partner {
     padding: 2rem 1.5rem;
   }
 }
 </style>
 <script setup lang="ts">
+import PageHeader from '../components/PageHeader.vue';
 </script>
