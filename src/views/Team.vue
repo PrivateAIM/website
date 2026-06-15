@@ -1,6 +1,6 @@
 <template>
     <div class="team-container">
-        <PageHeader :title="$t('team.title')" :subtitle="$t('team.subtitle')" />
+        <PageHeader :title="title" :subtitle="subtitle" />
 
         <div class="team-content">
             <!-- Team Members -->
@@ -38,7 +38,7 @@
 
             <!-- Project Leads -->
             <section class="team-section">
-                <h2 class="section-heading">{{ $t('team.leadership') }}</h2>
+                <h2 class="section-heading"><ITranslate path="team.leadership" /></h2>
                 <div class="team-grid">
                     <a
                         v-for="member in leadership"
@@ -69,8 +69,8 @@
 
             <!-- Alumni -->
             <section class="team-section">
-                <h2 class="section-heading">{{ $t('team.alumni') }}</h2>
-                <p class="alumni-note">{{ $t('team.alumniNote') }}</p>
+                <h2 class="section-heading"><ITranslate path="team.alumni" /></h2>
+                <p class="alumni-note"><ITranslate path="team.alumniNote" /></p>
                 <div class="team-grid">
                     <a
                         v-for="member in alumni"
@@ -103,6 +103,10 @@
 
 <script setup lang="ts">
 import PageHeader from '../components/PageHeader.vue';
+import { useTranslation } from '@/i18n';
+
+const title = useTranslation('team.title');
+const subtitle = useTranslation('team.subtitle');
 
 interface TeamMember {
     name: string;

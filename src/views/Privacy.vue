@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { marked } from 'marked'
+import { useLocale } from '@/i18n'
 
-const { locale } = useI18n()
+const locale = useLocale()
 
 // Function to switch to German version
 function switchToGerman() {
@@ -49,7 +49,7 @@ const renderedPolicy = computed(() => {
 <template>
   <div class="legal-container">
     <div class="page-header">
-      <h1>{{ $t('privacy.title') }}</h1>
+      <h1><ITranslate path="privacy.title" /></h1>
     </div>
 
     <div class="legal-content">

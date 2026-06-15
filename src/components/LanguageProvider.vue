@@ -2,7 +2,7 @@
 import { computed, watch, onMounted } from 'vue'
 import { ConfigProvider } from 'reka-ui'
 import { useTextDirection } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
+import { useLocale } from '@/i18n'
 
 type LanguageInfo = {
   label: string
@@ -17,7 +17,7 @@ const languages: LanguageInfo[] = [
   { label: 'Deutsch', value: 'de', dir: 'ltr' }
 ]
 
-const { locale } = useI18n()
+const locale = useLocale()
 const textDirection = useTextDirection({ initialValue: 'ltr' })
 const dir = computed(() => textDirection.value === 'rtl' ? 'rtl' : 'ltr')
 

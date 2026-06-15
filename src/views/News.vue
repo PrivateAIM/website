@@ -1,6 +1,6 @@
 <template>
     <div class="news-container">
-        <PageHeader :title="t('news.title')" :subtitle="t('news.subtitle')" />
+        <PageHeader :title="title" :subtitle="subtitle" />
 
         <div class="news-content">
             <!-- News entries by year -->
@@ -36,35 +36,25 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
 import PageHeader from '../components/PageHeader.vue'
+import { useLocale, useTranslation } from '@/i18n'
+import { type NewsEntry, news } from '@/data/news'
 
-// Define types for news items
-interface NewsItem {
-    date: string;
-    title: string;
-    content: string;
-    images?: string[];
-}
-const { t, locale, messages } = useI18n()
+const title = useTranslation('news.title')
+const subtitle = useTranslation('news.subtitle')
+
+const locale = useLocale()
+const newsByYear = computed(() => news[locale.value] ?? news.en)
 
 const openKey = ref<string | null>(null)
 const toggle = (key: string) => {
     openKey.value = openKey.value === key ? null : key
 }
 
-// Years derived dynamically from i18n data, in descending order
-const years = computed<string[]>(() => {
-    try {
-        const currentLocaleMessages = messages.value[locale.value]
-        if (typeof currentLocaleMessages?.news === 'string') return []
-        const items = currentLocaleMessages?.news?.items
-        if (!items || typeof items !== 'object') return []
-        return Object.keys(items).sort((a, b) => parseInt(b) - parseInt(a))
-    } catch {
-        return []
-    }
-})
+// Years derived from the news data, in descending order
+const years = computed<string[]>(() =>
+    Object.keys(newsByYear.value).sort((a, b) => parseInt(b) - parseInt(a)),
+)
 
 // Function to get image URL
 const getImageUrl = (imagePath: string): string => {
@@ -72,25 +62,7 @@ const getImageUrl = (imagePath: string): string => {
 }
 
 // Function to get news items for a specific year
-const getNewsItemsByYear = (year: string): NewsItem[] => {
-    try {
-        // Access the messages object directly using the current locale
-        const currentLocaleMessages = messages.value[locale.value]
-
-        if(typeof currentLocaleMessages?.news === 'string') {
-            return [];
-        }
-
-        if (currentLocaleMessages?.news?.items?.[year]) {
-            return currentLocaleMessages.news.items[year] as NewsItem[]
-        }
-    } catch (error) {
-        console.warn(`Error getting news for year ${year}:`, error)
-    }
-
-    // Return empty array as fallback
-    return []
-}
+const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? []
 
 </script>
 

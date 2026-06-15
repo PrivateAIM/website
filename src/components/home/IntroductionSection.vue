@@ -1,10 +1,10 @@
 <template>
   <div class="intro-text">
     <p>
-      {{ $t('home.intro.paragraph1') }}
+      <ITranslate path="home.intro.paragraph1" />
     </p>
     <p>
-      {{ $t('home.intro.paragraph2') }}
+      <ITranslate path="home.intro.paragraph2" />
     </p>
   </div>
 </template>

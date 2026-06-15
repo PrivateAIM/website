@@ -1,7 +1,7 @@
 <template>
   <section class="partners-section">
     <div class="section-container">
-      <h2>{{ $t('home.partners.title') }}</h2>
+      <h2><ITranslate path="home.partners.title" /></h2>
       <div class="partners-grid">
         <!-- Partner logos -->
         <div class="partner-logo">
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="partner-cta">
-        <router-link to="/partners" class="text-link">{{ $t('home.partners.viewAll') }} →</router-link>
+        <router-link to="/partners" class="text-link"><ITranslate path="home.partners.viewAll" /> →</router-link>
       </div>
     </div>
   </section>

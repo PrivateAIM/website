@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { LOCALES, useLocale } from '@/i18n'
 
 import FlagEN from '@/assets/flags/en-flag.svg'
 import FlagDE from '@/assets/flags/de-flag.svg'
 
-// Reduzierte Sprachoptionen
-const languages = [
-  { code: 'en', label: FlagEN },
-  { code: 'de', label: FlagDE },
-]
+// Flag icon per locale; the locale list itself lives in @/i18n (single source of truth).
+const flags: Record<string, string> = { en: FlagEN, de: FlagDE }
+const languages = LOCALES.map((locale) => ({
+  code: locale.code,
+  label: locale.label,
+  flag: flags[locale.code],
+}))
 
-const { locale } = useI18n()
+const locale = useLocale()
 const activeLanguage = computed(() => locale.value)
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
@@ -52,8 +54,8 @@ onUnmounted(() => {
         @click="toggleDropdown"
     >
         <img
-            :src="languages.find(l => l.code === activeLanguage)?.label"
-            alt="flag"
+            :src="languages.find(l => l.code === activeLanguage)?.flag"
+            :alt="languages.find(l => l.code === activeLanguage)?.label"
             class="flag-icon"
         />
       <svg
@@ -83,7 +85,7 @@ onUnmounted(() => {
           :class="{ selected: activeLanguage === lang.code }"
           @click="changeLanguage(lang.code)"
       >
-          <img :src="lang.label" alt="flag" class="flag-icon" />
+          <img :src="lang.flag" :alt="lang.label" class="flag-icon" />
       </button>
     </div>
   </div>

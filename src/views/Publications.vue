@@ -1,16 +1,16 @@
 <template>
     <div class="publications-container">
-        <PageHeader :title="$t('publications.title')" :subtitle="$t('publications.subtitle')" />
+        <PageHeader :title="title" :subtitle="subtitle" />
 
         <div class="publications-content">
             <div class="search-bar">
                 <input
                     v-model="searchQuery"
                     type="text"
-                    :placeholder="$t('publications.searchPlaceholder')"
+                    :placeholder="searchPlaceholder"
                     class="search-input"
                 />
-                <span class="result-count">{{ filteredPublications.length }} {{ $t('publications.results') }}</span>
+                <span class="result-count">{{ filteredPublications.length }} <ITranslate path="publications.results" /></span>
             </div>
 
             <div v-for="year in filteredYears" :key="year" class="publications-year-section">
@@ -25,7 +25,7 @@
                             <div v-if="openKey === `${year}-${index}`" class="publication-detail-content">
                                 <div class="publication-authors">{{ publication.authors }}</div>
                                 <a v-if="publication.link" :href="publication.link" target="_blank" rel="noopener noreferrer" class="publication-link">
-                                    {{ $t('publications.readMore') }} →
+                                    <ITranslate path="publications.readMore" /> →
                                 </a>
                             </div>
                         </div>
@@ -34,8 +34,8 @@
             </div>
 
             <div v-if="filteredPublications.length === 0" class="no-results">
-                <p>{{ $t('publications.noResults') }}</p>
-                <button class="reset-button" @click="searchQuery = ''">{{ $t('publications.resetSearch') }}</button>
+                <p><ITranslate path="publications.noResults" /></p>
+                <button class="reset-button" @click="searchQuery = ''"><ITranslate path="publications.resetSearch" /></button>
             </div>
         </div>
     </div>
@@ -44,6 +44,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
+import { useTranslation } from '@/i18n';
+
+const title = useTranslation('publications.title');
+const subtitle = useTranslation('publications.subtitle');
+const searchPlaceholder = useTranslation('publications.searchPlaceholder');
 
 interface Publication {
     authors: string;
