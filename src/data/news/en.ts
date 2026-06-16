@@ -3,9 +3,31 @@ import type { NewsByYear } from './types';
 const news: NewsByYear = {
     '2026': [
         {
+            date: '19-22/05/2026',
+            title: 'Medical Informatics Europe (MIE) 2026',
+            content: 'From May 19 to 22, 2026, Medical Informatics Europe (MIE) 2026 took place in Genoa, Italy. Under the motto “Opening the Personal Gate between Technology and Health Care,” international experts from academia, healthcare, and technology came together to discuss current developments and future perspectives in digital medicine.\nThe PrivateAIM team was represented in Italy to foster international scientific exchange, establish new connections, and discuss the latest developments in privacy-preserving health data analytics. As part of the conference, we presented two poster contributions: PrivateAIM Coordinator Dr. Marius Herr from University Hospital Tübingen contributed “Enabling Privacy-Preserving Federated Learning in Healthcare,” while Dr. Hammam Abu Attieh from BIH presented “A Maturity Model for the Enforcement of PETs in Federated Settings,” introducing a framework for the systematic assessment and implementation of Privacy-Enhancing Technologies (PETs) in federated data ecosystems.',
+            images: [
+                'mie/news_mie-2026_1.jpeg',
+                'mie/news_mie-2026_2.jpeg',
+                'mie/news_mie-2026_3.jpeg',
+            ],
+        },
+        {
+            date: '24-25/03/2026',
+            title: 'MII Symposium 2026 – 10 Years of MII',
+            content: 'Ten years of the Medical Informatics Initiative (MII) – a milestone that impressively demonstrates what becomes possible when a shared vision, close collaboration, and innovative strength come together. At the anniversary symposium on March 24 and 25, 2026, at the dbb Forum Berlin, the community celebrated a decade of MII and looked back on its achievements: a resilient national network connecting research and healthcare, powerful infrastructures, joint projects, diverse use cases, dedicated junior research groups, and the successful collaboration among Germany’s university hospitals. Under the motto “Future Health: Harnessing Data. Fostering Connectivity. Shaping Innovation. Ten Years of the Medical Informatics Initiative – A Foundation for Research, Healthcare, and Digital Sovereignty in Europe,” the focus was also directed toward the future – and the next steps of data-driven health research.\nWhat began ten years ago as a shared vision has evolved into a central pillar of medical research in Germany and connects stakeholders from science, healthcare, and technology within a unique network.\nThe PrivateAIM team attended the event as an MII-funded Phase 3 project together with colleagues from Tübingen, Berlin, Leipzig, Munich, and Erlangen. Our project partner, Prof. Dr. Björn Eskofier from LMU Munich, delivered the keynote address and emphasized in his presentation, “AI for the Healthcare of the Future – How Data Becomes Medicine,” the importance of distributed analytics for the secure training of AI models in healthcare.\nDuring the evening get-together, interdisciplinary exchange was deepened and exciting new connections were established.',
+            images: ['news_mii-symposium-2026.jpg'],
+        },
+        {
             date: '17/03/2026',
             title: 'MII Community Dialog',
             content: 'At the MII Community Dialog, Dr. Marius Herr presented FLAME and its role in enabling privacy-preserving federated learning for sensitive medical data. The talk highlighted how FLAME allows distributed analysis across university hospitals without exposing patient-level data, addressing key challenges in regulatory compliance and institutional data sovereignty within the Medical Informatics Initiative.',
+        },
+        {
+            date: '21-22/01/2026',
+            title: 'NUM Convention 2026',
+            content: 'On January 21 and 22, 2026, the NUM CONVENTION 2026, the annual event of the nationwide Network University Medicine (NUM), took place in Berlin. Under the motto “NUM 3.0: On the Way to an Open and Sustainable Research Platform”, around 700 guests from science, clinical practice, politics, and industry came together to discuss the future of clinical research in Germany and to shape the next stage of development of NUM.\nThe focus was on the expansion of a sustainable research infrastructure, the improved use of medical data, and the strengthening of cross-sector collaborations. Particular emphasis was placed on the strategic cooperation between academia and industry, as the development, quality assurance, and provision of medical research data can only be achieved efficiently and sustainably through joint efforts.\nA large team from PrivateAIM was present on site to actively contribute to the professional exchange, strengthen existing partnerships, and establish new connections within the NUM ecosystem. The numerous discussions with researchers, clinicians, infrastructure managers, and political decision-makers once again confirmed the growing importance of privacy-preserving technologies for medical research. The event provided a valuable platform for developing shared perspectives on a secure, interoperable, and future-oriented research data landscape and for further strengthening PrivateAIM’s role as a partner for trustworthy data use in healthcare.',
+            images: ['news_num-convention-2026.jpeg'],
         },
     ],
     '2025': [

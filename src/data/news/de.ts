@@ -3,9 +3,31 @@ import type { NewsByYear } from './types';
 const news: NewsByYear = {
     '2026': [
         {
+            date: '19-22/05/2026',
+            title: 'Medical Informatics Europe (MIE) 2026',
+            content: 'Vom 19. bis 22. Mai 2026 fand die Medical Informatics Europe (MIE) 2026 in Genua statt. Unter dem Motto „Opening the Personal Gate between Technology and Health Care“ kamen internationale Expert:innen aus Wissenschaft, Gesundheitsversorgung und Technologie zusammen, um aktuelle Entwicklungen und Zukunftsperspektiven der digitalen Medizin zu diskutieren.\nDas Team von PrivateAIM war in Italien vertreten, um den länderübergreifenden fachlichen Austausch zu fördern, neue Kontakte zu knüpfen und aktuelle Entwicklungen im Bereich datenschutzkonformer Gesundheitsdatenanalyse zu diskutieren. Im Rahmen der Konferenz präsentierten wir zwei Posterbeiträge: PrivateAIM-Koordinator Dr. Marius Herr von der UK Tübingen steuerte „Enabling Privacy-Preserving Federated Learning in Healthcare“ bei, während Dr. Hammam Abu Attieh vom BIH mit „A Maturity Model for the Enforcement of PETs in Federated Settings“ ein Konzept zur systematischen Bewertung und Umsetzung von Privacy-Enhancing Technologies (PETs) in föderierten Datenökosystemen vorstellte.',
+            images: [
+                'mie/news_mie-2026_1.jpeg',
+                'mie/news_mie-2026_2.jpeg',
+                'mie/news_mie-2026_3.jpeg',
+            ],
+        },
+        {
+            date: '24-25/03/2026',
+            title: 'MII Symposium 2026 – 10 Jahre MII',
+            content: 'Zehn Jahre Medizininformatik-Initiative (MII) – ein Meilenstein, der eindrucksvoll zeigt, was möglich wird, wenn gemeinsame Vision, enge Zusammenarbeit und Innovationskraft aufeinandertreffen. Beim Jubiläumssymposium am 24. und 25. März 2026 im dbb-Forum Berlin feierte die Community eine Dekade MII und blickte auf das Erreichte zurück: auf ein tragfähiges nationales Netzwerk, das Forschung und Versorgung verbindet, auf leistungsfähige Infrastrukturen, gemeinsame Projekte, vielfältige Use Cases, engagierte Nachwuchsgruppen und die erfolgreiche Zusammenarbeit der deutschen Universitätsklinika. Unter dem Motto „Zukunft Gesundheit: Daten nutzen. Vernetzung fördern. Innovation gestalten. Zehn Jahre Medizininformatik-Initiative – Grundlage für Forschung, Versorgung und digitale Souveränität in Europa“ richtete sich der Blick zugleich nach vorn – auf die nächsten Schritte einer datengetriebenen Gesundheitsforschung.\nWas vor zehn Jahren als gemeinsame Vision begann, hat sich heute zu einer zentralen Säule der medizinischen Forschung in Deutschland entwickelt und verbindet Akteure aus Wissenschaft, Versorgung und Technologie in einem einzigartigen Netzwerk.\nDas Team von PrivateAIM war als MII-gefördertes Phase-3-Projekt gemeinsam mit Kolleg:innen aus Tübingen, Berlin, Leipzig, München und Erlangen vor Ort vertreten. Unser Projektpartner Prof. Dr. Björn Eskofier von der LMU München hielt die Keynote der Veranstaltung und betonte in seinem Vortrag „KI für die Gesundheitsversorgung der Zukunft – Wie Daten zu(r) Medizin werden“ die Bedeutung verteilter Analysen für das sichere Trainieren von KI-Modellen im Gesundheitswesen.\nBeim gemeinsamen Get-together am Abend wurde der interdisziplinäre Austausch vertieft und spannende neue Kontakte geknüpft.',
+            images: ['news_mii-symposium-2026.jpg'],
+        },
+        {
             date: '17/03/2026',
             title: 'MII Community Dialog',
             content: 'Beim MII Community Dialog präsentierte Dr. Marius Herr FLAME und dessen Rolle bei der Ermöglichung von datenschutzkonformem föderiertem Lernen für sensible medizinische Daten. Der Vortrag zeigte, wie FLAME verteilte Analysen über Universitätskliniken hinweg ermöglicht, ohne patientenbezogene Daten offenzulegen, und dabei zentrale Herausforderungen der regulatorischen Compliance und institutionellen Datenhoheit innerhalb der Medizininformatik-Initiative adressiert.',
+        },
+        {
+            date: '21-22/01/2026',
+            title: 'NUM Convention 2026',
+            content: 'Am 21. und 22. Januar 2026 fand die NUM CONVENTION 2026, die Jahresveranstaltung des bundesweiten Netzwerks Universitätsmedizin (NUM), in Berlin statt. Unter dem Motto „Das NUM 3.0: Auf dem Weg zu einer offenen und nachhaltigen Forschungsplattform“ kamen rund 700 Gäste aus Wissenschaft, Klinik, Politik und Industrie zusammen, um über die Zukunft der klinischen Forschung in Deutschland zu diskutieren und die nächste Entwicklungsstufe des NUM zu gestalten.\nIm Mittelpunkt standen der Ausbau einer nachhaltigen Forschungsinfrastruktur, die bessere Nutzung medizinischer Daten sowie die Stärkung sektorübergreifender Kooperationen. Besonders hervorgehoben wurde die strategische Zusammenarbeit zwischen Academia und Industrie, da die Erschließung, Qualitätssicherung und Bereitstellung medizinischer Forschungsdaten nur gemeinsam effizient und nachhaltig gelingen kann.\nEin vielköpfiges Team von PrivateAIM war vor Ort vertreten, um den fachlichen Austausch aktiv mitzugestalten, bestehende Partnerschaften zu vertiefen und neue Kontakte innerhalb des NUM-Ökosystems zu knüpfen. Die zahlreichen Gespräche mit Forschenden, Kliniker:innen, Infrastrukturverantwortlichen und politischen Entscheidungsträger:innen bestätigten einmal mehr die wachsende Bedeutung datenschutzkonformer Technologien für die medizinische Forschung. Die Veranstaltung bot eine wertvolle Plattform, um gemeinsame Perspektiven für eine sichere, interoperable und zukunftsfähige Forschungsdatenlandschaft zu entwickeln und die Rolle von PrivateAIM als Partner für vertrauenswürdige Datennutzung im Gesundheitswesen weiter zu stärken.',
+            images: ['news_num-convention-2026.jpeg'],
         },
     ],
     '2025': [
