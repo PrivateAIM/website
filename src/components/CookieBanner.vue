@@ -151,33 +151,33 @@ onMounted(() => {
   <transition name="slide-up">
     <div v-if="isVisible" class="cookie-banner">
       <div class="cookie-content">
-        <h3>{{ $t('cookie.title') }}</h3>
+        <h3><ITranslate path="cookie.title" /></h3>
         <p>
-          {{ $t('cookie.subtitle') }}
+          <ITranslate path="cookie.subtitle" />
         </p>
 
         <div class="cookie-options">
           <div class="cookie-option">
             <label>
               <input type="checkbox" v-model="cookieOptions.necessary" disabled>
-              <span>{{ $t('cookie.setting.required.title') }}</span>
+              <span><ITranslate path="cookie.setting.required.title" /></span>
             </label>
-            <p class="option-description">{{ $t('cookie.setting.required.description') }}</p>
+            <p class="option-description"><ITranslate path="cookie.setting.required.description" /></p>
           </div>
 
           <div class="cookie-option">
             <label>
               <input type="checkbox" v-model="cookieOptions.analytics">
-              <span>{{ $t('cookie.setting.analysis.title') }}</span>
+              <span><ITranslate path="cookie.setting.analysis.title" /></span>
             </label>
-            <p class="option-description">{{ $t('cookie.setting.analysis.description') }}</p>
+            <p class="option-description"><ITranslate path="cookie.setting.analysis.description" /></p>
           </div>
         </div>
 
         <div class="cookie-actions">
-          <button class="btn btn-outline" @click="acceptNecessary">{{ $t('cookie.deny') }}</button>
-          <button class="btn btn-outline" @click="savePreferences">{{ $t('cookie.preference') }}</button>
-          <button class="btn btn-primary" @click="acceptAll">{{ $t('cookie.accept') }}</button>
+          <button class="btn btn-outline" @click="acceptNecessary"><ITranslate path="cookie.deny" /></button>
+          <button class="btn btn-outline" @click="savePreferences"><ITranslate path="cookie.preference" /></button>
+          <button class="btn btn-primary" @click="acceptAll"><ITranslate path="cookie.accept" /></button>
         </div>
       </div>
     </div>

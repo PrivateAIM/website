@@ -2,15 +2,15 @@
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">{{ $t('home.hero.title') }}</h1>
-        <p class="hero-subtitle">{{ $t('home.hero.subtitle') }}</p>
+        <h1 class="hero-title"><ITranslate path="home.hero.title" /></h1>
+        <p class="hero-subtitle"><ITranslate path="home.hero.subtitle" /></p>
 
         <div class="hero-cta">
           <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="primary-button">
-            {{ $t('home.hero.explorePlatform') }}
+            <ITranslate path="home.hero.explorePlatform" />
           </a>
           <router-link to="/partners" class="secondary-button">
-            {{ $t('home.hero.joinNetwork') }}
+            <ITranslate path="home.hero.joinNetwork" />
           </router-link>
         </div>
       </div>

@@ -1,19 +1,13 @@
-import 'vue-i18n'
+/// <reference types="vite/client" />
 
-declare module 'vue-i18n' {
-  // Define your custom message schema if needed
-  export interface DefineLocaleMessage {
-      [k: string]: any
-    // Define your message structure here if you want better typing
+// Make the globally-registered @ilingo/vue components known to vue-tsc so they
+// can be used in templates without a per-component import (they are registered
+// app-wide by `installTranslator`).
+declare module 'vue' {
+  interface GlobalComponents {
+    ITranslate: typeof import('@ilingo/vue')['ITranslate'];
+    ITranslateT: typeof import('@ilingo/vue')['ITranslateT'];
   }
 }
 
-declare module '@vue/runtime-core' {
-  export interface ComponentCustomProperties {
-    $t: (key: string, ...args: any[]) => string
-    $i18n: {
-      locale: string
-      // Add other i18n properties you use
-    }
-  }
-}
+export {};

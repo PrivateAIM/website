@@ -17,7 +17,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 ## Architecture
 
-**Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, vue-i18n, Pinia, Bootstrap (grid + utilities only), Vite, TypeScript strict mode.
+**Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, ilingo (`@ilingo/vue`), Pinia, Bootstrap (grid + utilities only), Vite, TypeScript strict mode.
 
 **Path alias:** `@` → `src/` (configured in both `tsconfig.json` and `vite.config.ts`).
 
@@ -25,19 +25,20 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `src/views/` — page-level components, one per route (Home, BlogList, BlogPost, News, Team, Partners, Publications, Imprint, Privacy, NotFound)
 - `src/components/` — reusable components; `home/` has homepage sections, `blog/` has blog-specific components, `shared/` has generic components like LinkText and LocalizedLink
 - `src/data/blogs/` — blog post content as TypeScript modules organized by category (generalIntroduction, privateaimInsights, technicalDeepDives), aggregated in `index.ts`
-- `src/i18n/locales/` — `en.json` and `de.json` translation files; news items are embedded directly in locale JSON under `news.items.<year>`
+- `src/data/news/` — news content as TypeScript modules per locale (`en.ts`, `de.ts`), grouped by year and keyed by locale in `index.ts`
+- `src/i18n/locales/` — `en.ts` and `de.ts` ilingo catalogs built with `defineLocale`/`defineNamespace`/`defineTranslations`
 - `src/types/` — shared TypeScript interfaces (`BlogPost`, `NewsItem`)
 - `src/assets/` — CSS (dark-mode, fonts), SVG logo, flag icons
 
 **Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation. A session-storage-based redirect mechanism in `main.ts` handles SPA redirect after 404 pages on static hosting.
 
-**i18n:** vue-i18n in Composition API mode (`legacy: false`). Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
+**i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
 
 **Theming:** Dark mode via CSS custom properties defined in `src/assets/dark-mode.css`, toggled by `ThemeToggle` component.
 
 **Blog system:** Blog posts are defined as typed objects (`BlogPost` interface) in `src/data/blogs/` files with markdown content strings. They are sorted by date in the index. Categories are a union type in `src/types/BlogPost.ts`.
 
-**News system:** News items live directly in the i18n locale JSON files under `news.items`, grouped by year. The News view reads them from the i18n messages object at runtime.
+**News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 
 **Static assets:** Images go in `public/images/` with subdirectories per content type (blog, news, team, partners, authors). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
 

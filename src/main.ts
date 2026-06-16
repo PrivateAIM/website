@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import i18n from './i18n'
+import { installTranslator } from './i18n'
 import './assets/fonts.css'
 import './assets/dark-mode.css'
 
@@ -14,6 +14,6 @@ if (redirectPath) {
 }
 
 app.use(router)
-app.use(i18n)
+installTranslator(app)
 
 app.mount('#app')

@@ -1,29 +1,29 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import LinkText from '@/components/shared/LinkText.vue';
+import { useTranslation } from '@/i18n';
 
-export default defineComponent({
-    components: {
-        LinkText
-    }
-})
+// LinkText parses markdown-style links from a plain string, so these need the
+// resolved translation (a reactive Ref) rather than the <ITranslate> component.
+const paragraph1 = useTranslation('home.vision.paragraph1');
+const paragraph2 = useTranslation('home.vision.paragraph2');
+const paragraph3 = useTranslation('home.vision.paragraph3');
 </script>
 <template>
     <div class="vision-section">
-        <h2>{{ $t('home.vision.title') }}</h2>
+        <h2><ITranslate path="home.vision.title" /></h2>
 
         <div class="vision-content">
             <div class="vision-text">
-                <LinkText :text="$t('home.vision.paragraph1')" tag="p" />
-                <LinkText :text="$t('home.vision.paragraph2')" tag="p" />
-                <LinkText :text="$t('home.vision.paragraph3')" tag="p" />
+                <LinkText :text="paragraph1" tag="p" />
+                <LinkText :text="paragraph2" tag="p" />
+                <LinkText :text="paragraph3" tag="p" />
             </div>
 
             <div class="action-card">
                 <div class="card-content">
-                    <h3>{{ $t('home.vision.contribute') }}</h3>
-                    <p>{{ $t('home.vision.explanation') }}</p>
-                    <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="card-link">{{ $t('home.vision.github') }} →</a>
+                    <h3><ITranslate path="home.vision.contribute" /></h3>
+                    <p><ITranslate path="home.vision.explanation" /></p>
+                    <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="card-link"><ITranslate path="home.vision.github" /> →</a>
                 </div>
             </div>
         </div>

@@ -10,18 +10,18 @@
 
       <nav class="footer-links" aria-label="Footer navigation">
         <div class="footer-column">
-          <div class="footer-header">{{ $t('footer.documentation') }}</div>
-          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="footer-link">{{ $t('footer.flame') }}</a>
-          <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="footer-link">{{ $t('footer.github') }}</a>
+          <div class="footer-header"><ITranslate path="footer.documentation" /></div>
+          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="footer-link"><ITranslate path="footer.flame" /></a>
+          <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="footer-link"><ITranslate path="footer.github" /></a>
         </div>
 
         <div class="footer-column">
-          <div class="footer-header">{{ $t('footer.legal') }}</div>
-          <router-link to="/imprint" class="footer-link">{{ $t('footer.imprint') }}</router-link>
-          <router-link to="/privacy" class="footer-link">{{ $t('footer.privacy') }}</router-link>
+          <div class="footer-header"><ITranslate path="footer.legal" /></div>
+          <router-link to="/imprint" class="footer-link"><ITranslate path="footer.imprint" /></router-link>
+          <router-link to="/privacy" class="footer-link"><ITranslate path="footer.privacy" /></router-link>
         </div>
           <div class="footer-column">
-              <div class="footer-header">{{ $t('footer.sponsor') }}</div>
+              <div class="footer-header"><ITranslate path="footer.sponsor" /></div>
               <a href="https://www.gesundheitsforschung-bmftr.de/de/privateaim-medizininformatik-plattform-privatspharen-schutzende-analytik-in-der-medizin-16491.php" target="_blank" rel="noopener noreferrer">
                   <img src="/images/BMFTR-dark.svg" alt="Sponsor Logo Dark" class="sponsor-logo sponsor-logo-dark" />
                   <img src="/images/BMFTR-light.svg" alt="Sponsor Logo Light" class="sponsor-logo sponsor-logo-light" />
@@ -32,7 +32,7 @@
 
     <div class="copyright-container">
       <div class="copyright">
-        {{ $t('footer.copyright', { year: currentYear }) }}
+        <ITranslate path="footer.copyright" :data="{ year: currentYear }" />
       </div>
     </div>
   </footer>
