@@ -1,29 +1,39 @@
 <template>
-  <transition name="fade">
-    <button
-      v-show="isVisible"
-      class="back-to-top"
-      aria-label="Back to top"
-      @click="scrollToTop"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </button>
-  </transition>
+    <transition name="fade">
+        <button
+            v-show="isVisible"
+            class="back-to-top"
+            aria-label="Back to top"
+            @click="scrollToTop"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline points="18 15 12 9 6 15" />
+            </svg>
+        </button>
+    </transition>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const isVisible = ref(false);
 
 const handleScroll = () => {
-  isVisible.value = window.scrollY > 400;
+    isVisible.value = window.scrollY > 400;
 };
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }));

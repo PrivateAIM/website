@@ -1,50 +1,58 @@
 <script setup lang="ts">
-import { computed, watch, onMounted } from 'vue'
-import { ConfigProvider } from 'reka-ui'
-import { useTextDirection } from '@vueuse/core'
-import { useLocale } from '@/i18n'
+import { computed, onMounted, watch } from 'vue';
+import { ConfigProvider } from 'reka-ui';
+import { useTextDirection } from '@vueuse/core';
+import { useLocale } from '@/i18n';
 
 type LanguageInfo = {
-  label: string
-  value: string
-  dir: 'ltr' | 'rtl'
-}
+    label: string
+    value: string
+    dir: 'ltr' | 'rtl'
+};
 
 // Both German and English are LTR languages
 // If you add RTL languages like Arabic, you would set dir: 'rtl' for them
 const languages: LanguageInfo[] = [
-  { label: 'English', value: 'en', dir: 'ltr' },
-  { label: 'Deutsch', value: 'de', dir: 'ltr' }
-]
+    {
+        label: 'English', 
+        value: 'en', 
+        dir: 'ltr', 
+    },
+    {
+        label: 'Deutsch', 
+        value: 'de', 
+        dir: 'ltr', 
+    },
+];
 
-const locale = useLocale()
-const textDirection = useTextDirection({ initialValue: 'ltr' })
-const dir = computed(() => textDirection.value === 'rtl' ? 'rtl' : 'ltr')
+const locale = useLocale();
+const textDirection = useTextDirection({ initialValue: 'ltr' });
+const dir = computed(() => textDirection.value === 'rtl' ? 'rtl' : 'ltr');
 
 // If we need to change direction based on language
 // For now, both languages are LTR, so this doesn't change anything
 function updateLanguage(newLocale: string) {
-  const langInfo = languages.find(lang => lang.value === newLocale)
-  if (langInfo) {
-    textDirection.value = langInfo.dir
-  }
+    const langInfo = languages.find((lang) => lang.value === newLocale);
+    if (langInfo) {
+        textDirection.value = langInfo.dir;
+    }
 }
 
 // Watch for locale changes to update direction and html lang
 watch(locale, (newLocale) => {
-  updateLanguage(newLocale)
-  document.documentElement.lang = newLocale
-})
+    updateLanguage(newLocale);
+    document.documentElement.lang = newLocale;
+});
 
 // Set initial direction and html lang based on current locale
 onMounted(() => {
-  updateLanguage(locale.value)
-  document.documentElement.lang = locale.value
-})
+    updateLanguage(locale.value);
+    document.documentElement.lang = locale.value;
+});
 </script>
 
 <template>
-  <ConfigProvider :dir="dir">
-    <slot />
-  </ConfigProvider>
+    <ConfigProvider :dir="dir">
+        <slot />
+    </ConfigProvider>
 </template>

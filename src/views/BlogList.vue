@@ -3,11 +3,17 @@
         <div class="blog-header">
             <div class="blog-content">
                 <h1>PrivateAIM Blog</h1>
-                <p class="blog-intro">Explore the latest insights, tutorials, and developments in privacy-preserving medical analytics.</p>
+                <p class="blog-intro">
+                    Explore the latest insights, tutorials, and developments in privacy-preserving medical analytics.
+                </p>
             </div>
 
             <div class="blog-visual">
-                <img src="/images/blog/management-information-system.svg" alt="Server Analysis Graphic" class="blog-graphic" />
+                <img
+                    src="/images/blog/management-information-system.svg"
+                    alt="Server Analysis Graphic"
+                    class="blog-graphic"
+                >
             </div>
         </div>
 
@@ -39,7 +45,7 @@
                 type="text"
                 placeholder="Search posts..."
                 class="search-input"
-            />
+            >
 
             <div class="tag-filters">
                 <button
@@ -62,20 +68,35 @@
         </div>
 
         <!-- Featured Post (if any) -->
-        <div v-if="featuredPost && !searchQuery && !selectedTag && !selectedCategory" class="featured-post">
+        <div
+            v-if="featuredPost && !searchQuery && !selectedTag && !selectedCategory"
+            class="featured-post"
+        >
             <div class="featured-post-image">
-                <img :src="featuredPost.image" :alt="featuredPost.title" />
+                <img
+                    :src="featuredPost.image"
+                    :alt="featuredPost.title"
+                >
             </div>
             <div class="featured-post-content">
-                <div class="featured-badge">Featured</div>
-                <h2 class="featured-post-title">{{ featuredPost.title }}</h2>
-                <p class="featured-post-description">{{ featuredPost.description }}</p>
+                <div class="featured-badge">
+                    Featured
+                </div>
+                <h2 class="featured-post-title">
+                    {{ featuredPost.title }}
+                </h2>
+                <p class="featured-post-description">
+                    {{ featuredPost.description }}
+                </p>
                 <div class="featured-post-meta">
                     <span class="author">By {{ featuredPost.author.name }}</span>
                     <span class="date">{{ formatDate(featuredPost.date) }}</span>
                     <span class="read-time">{{ featuredPost.readTime }} min read</span>
                 </div>
-                <router-link :to="`/blog/${featuredPost.slug}`" class="featured-read-more">
+                <router-link
+                    :to="`/blog/${featuredPost.slug}`"
+                    class="featured-read-more"
+                >
                     Read Article →
                 </router-link>
             </div>
@@ -94,28 +115,37 @@
                         :src="post.image"
                         :alt="post.title"
                         class="post-image"
-                    />
+                    >
                 </div>
                 <div class="post-content">
-                    <div class="post-category">{{ post.category }}</div>
-                    <h2 class="post-title">{{ post.title }}</h2>
+                    <div class="post-category">
+                        {{ post.category }}
+                    </div>
+                    <h2 class="post-title">
+                        {{ post.title }}
+                    </h2>
                     <p class="post-meta">
                         <span>By {{ post.author.name }}</span>
                         <span> • {{ formatDate(post.date) }}</span>
                         <span> • {{ post.readTime }} min read</span>
                     </p>
-                    <p class="post-description">{{ post.description }}</p>
+                    <p class="post-description">
+                        {{ post.description }}
+                    </p>
                     <div class="post-tags">
-            <span
-                v-for="tag in post.tags.slice(0, 3)"
-                :key="tag"
-                class="post-tag"
-                @click.stop="selectedTag = tag"
-            >
-              {{ tag }}
-            </span>
+                        <span
+                            v-for="tag in post.tags.slice(0, 3)"
+                            :key="tag"
+                            class="post-tag"
+                            @click.stop="selectedTag = tag"
+                        >
+                            {{ tag }}
+                        </span>
                     </div>
-                    <router-link :to="`/blog/${post.slug}`" class="read-more">
+                    <router-link
+                        :to="`/blog/${post.slug}`"
+                        class="read-more"
+                    >
                         Read article →
                     </router-link>
                 </div>
@@ -123,15 +153,23 @@
         </div>
 
         <!-- No Posts Found Message -->
-        <div v-if="filteredPosts.length === 0" class="no-posts">
+        <div
+            v-if="filteredPosts.length === 0"
+            class="no-posts"
+        >
             <p>No posts found matching your criteria.</p>
-            <button @click="resetFilters" class="reset-button">Reset filters</button>
+            <button
+                class="reset-button"
+                @click="resetFilters"
+            >
+                Reset filters
+            </button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 import { sortedBlogPosts } from '../data/blogs';
 import type { BlogPost } from '../types/BlogPost';
 
@@ -141,14 +179,12 @@ const selectedTag = ref('');
 const selectedCategory = ref('');
 
 // Get featured post (if any)
-const featuredPost = computed(() => {
-    return posts.value.find(post => post.featured);
-});
+const featuredPost = computed(() => posts.value.find((post) => post.featured));
 
 // Get all categories from posts
 const categories = computed(() => {
     const categorySet = new Set<string>();
-    posts.value.forEach(post => {
+    posts.value.forEach((post) => {
         categorySet.add(post.category);
     });
     return Array.from(categorySet);
@@ -157,8 +193,8 @@ const categories = computed(() => {
 // Get top tags (limited to most common for UI cleanliness)
 const topTags = computed(() => {
     const tagCounts = new Map<string, number>();
-    posts.value.forEach(post => {
-        post.tags.forEach(tag => {
+    posts.value.forEach((post) => {
+        post.tags.forEach((tag) => {
             tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
         });
     });
@@ -167,19 +203,18 @@ const topTags = computed(() => {
     return Array.from(tagCounts.entries())
         .sort((a, b) => b[1] - a[1])
         .slice(0, 8)
-        .map(entry => entry[0]);
+        .map((entry) => entry[0]);
 });
 
 // Filter posts based on search query, selected tag, and category
 const filteredPosts = computed(() => {
     // If featured post exists and no filters are applied, exclude it from regular listing
-    const postsToFilter = featuredPost.value && !searchQuery.value && !selectedTag.value && !selectedCategory.value
-        ? posts.value.filter(post => post.id !== featuredPost.value?.id)
-        : posts.value;
+    const postsToFilter = featuredPost.value && !searchQuery.value && !selectedTag.value && !selectedCategory.value ?
+        posts.value.filter((post) => post.id !== featuredPost.value?.id) :
+        posts.value;
 
-    return postsToFilter.filter(post => {
-        const matchesSearch =
-            post.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+    return postsToFilter.filter((post) => {
+        const matchesSearch =            post.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
             post.description.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
             post.author.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
             post.content.toLowerCase().includes(searchQuery.value.toLowerCase());
@@ -199,7 +234,7 @@ const formatDate = (dateString: string) => {
     const options: Intl.DateTimeFormatOptions = {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
     };
     return new Date(dateString).toLocaleDateString(undefined, options);
 };

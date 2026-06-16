@@ -12,12 +12,13 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `npm run build` — type-check (`vue-tsc`) then build (`vite build`)
 - `npm run build-only` — build without type-check
 - `npm run type-check` — run `vue-tsc --build --noEmit`
-- `npm run lint` — ESLint with auto-fix
-- `npm run format` — Prettier on `src/`
+- `npm run lint` — ESLint with auto-fix (also handles code formatting — there is no separate Prettier step)
 
 ## Architecture
 
 **Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, ilingo (`@ilingo/vue`), Pinia, Bootstrap (grid + utilities only), Vite, TypeScript strict mode.
+
+**Lint & formatting:** ESLint flat config via [`@tada5hi/eslint-config`](https://github.com/tada5hi/javascript) (`eslint.config.ts`). It bundles `@stylistic` formatting (4-space indent, single quotes, semicolons, comma-dangle multiline, max-len 150) and replaces Prettier. `eslint.config.ts` adds browser globals, disables `vue/no-v-html` (markdown is rendered via `v-html` by design), and turns off `@stylistic/max-len` for `.vue` files (inline SVG paths). TypeScript config extends [`@tada5hi/tsconfig`](https://github.com/tada5hi/javascript) in `tsconfig.json`, layering Vite bundler-mode overrides on top. The base enables `noUncheckedIndexedAccess` and `verbatimModuleSyntax`, so index access is `T | undefined` and type-only imports must use `import type`.
 
 **Path alias:** `@` → `src/` (configured in both `tsconfig.json` and `vite.config.ts`).
 

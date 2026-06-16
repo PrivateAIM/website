@@ -1,59 +1,81 @@
 <template>
-  <div class="blog-post-container">
-    <div v-if="post" class="blog-post">
-      <PostHeader
-        :category="post.category"
-        :title="post.title"
-        :author="post.author"
-        :date="post.date"
-        :readTime="post.readTime"
-        :tags="post.tags"
-      />
+    <div class="blog-post-container">
+        <div
+            v-if="post"
+            class="blog-post"
+        >
+            <PostHeader
+                :category="post.category"
+                :title="post.title"
+                :author="post.author"
+                :date="post.date"
+                :read-time="post.readTime"
+                :tags="post.tags"
+            />
 
-      <div v-if="post.image" class="post-featured-image">
-        <img
-          :src="post.image"
-          :alt="post.title"
+            <div
+                v-if="post.image"
+                class="post-featured-image"
+            >
+                <img
+                    :src="post.image"
+                    :alt="post.title"
+                >
+            </div>
+
+            <div
+                class="post-content markdown-body"
+                v-html="renderedContent"
+            />
+
+            <div class="post-footer">
+                <ShareButtons
+                    :title="post.title"
+                    @link-copied="showNotification('Link copied to clipboard!')"
+                    @copy-error="showNotification('Failed to copy link. Please try again.')"
+                />
+
+                <router-link
+                    to="/blog"
+                    class="back-to-blog"
+                >
+                    <span aria-hidden="true">←</span> Back to all posts
+                </router-link>
+            </div>
+        </div>
+
+        <div
+            v-else-if="loading"
+            class="loading-state"
+        >
+            <p>Loading post...</p>
+        </div>
+
+        <div
+            v-else
+            class="not-found"
+            role="alert"
+        >
+            <h1>Post Not Found</h1>
+            <p>Sorry, the blog post you're looking for doesn't exist or has been removed.</p>
+            <router-link
+                to="/blog"
+                class="back-to-blog"
+            >
+                <span aria-hidden="true">←</span> Back to all posts
+            </router-link>
+        </div>
+
+        <ToastNotification
+            v-if="showToast"
+            :message="toastMessage"
+            @close="showToast = false"
         />
-      </div>
-
-      <div class="post-content markdown-body" v-html="renderedContent"></div>
-
-      <div class="post-footer">
-        <ShareButtons
-          :title="post.title"
-          @link-copied="showNotification('Link copied to clipboard!')"
-          @copy-error="showNotification('Failed to copy link. Please try again.')"
-        />
-
-        <router-link to="/blog" class="back-to-blog">
-          <span aria-hidden="true">←</span> Back to all posts
-        </router-link>
-      </div>
     </div>
-
-    <div v-else-if="loading" class="loading-state">
-      <p>Loading post...</p>
-    </div>
-
-    <div v-else class="not-found" role="alert">
-      <h1>Post Not Found</h1>
-      <p>Sorry, the blog post you're looking for doesn't exist or has been removed.</p>
-      <router-link to="/blog" class="back-to-blog">
-        <span aria-hidden="true">←</span> Back to all posts
-      </router-link>
-    </div>
-
-    <ToastNotification
-      v-if="showToast"
-      :message="toastMessage"
-      @close="showToast = false"
-    />
-  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { sortedBlogPosts } from '../data/blogs';
 import { marked } from 'marked';
@@ -70,38 +92,38 @@ const showToast = ref(false);
 const toastMessage = ref('');
 
 onMounted(() => {
-  // Find the post by slug
-  const foundPost = sortedBlogPosts.find(p => p.slug === postSlug.value);
+    // Find the post by slug
+    const foundPost = sortedBlogPosts.find((p) => p.slug === postSlug.value);
 
-  if (foundPost) {
-    post.value = foundPost;
-  }
+    if (foundPost) {
+        post.value = foundPost;
+    }
 
-  loading.value = false;
+    loading.value = false;
 });
 
 // Render markdown content
 const renderedContent = computed(() => {
-  if (!post.value) return '';
+    if (!post.value) return '';
 
-  // Configure marked options
-  marked.setOptions({
-    breaks: true,
-    gfm: true,
+    // Configure marked options
+    marked.setOptions({
+        breaks: true,
+        gfm: true,
     // headerIds: true,
     // mangle: false // Prevent mangling email links
-  });
+    });
 
-  return marked(post.value.content);
+    return marked(post.value.content);
 });
 
 // Display toast notification
 const showNotification = (message: string) => {
-  toastMessage.value = message;
-  showToast.value = true;
-  setTimeout(() => {
-    showToast.value = false;
-  }, 3000);
+    toastMessage.value = message;
+    showToast.value = true;
+    setTimeout(() => {
+        showToast.value = false;
+    }, 3000);
 };
 </script>
 

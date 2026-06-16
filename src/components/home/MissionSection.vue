@@ -1,46 +1,58 @@
 <template>
-  <div class="mission-section">
-    <h2><ITranslate path="home.mission.title" /></h2>
+    <div class="mission-section">
+        <h2><ITranslate path="home.mission.title" /></h2>
 
-    <div class="mission-content">
-      <div class="mission-text">
-        <p><ITranslate path="home.mission.paragraph1" /></p>
-        <p><ITranslate path="home.mission.paragraph2" /></p>
-        <p><ITranslate path="home.mission.paragraph3" /></p>
-      </div>
-
-      <div class="action-card">
-        <div class="card-content">
-            <h3><ITranslate path="home.news.latestNews" /></h3>
-            <p><ITranslate path="home.news.description" /></p>
-            <div v-if="latestNewsItem" class="latest-news-item">
-                <span class="news-date"></span>
-                <h4 class="news-title">{{ latestNewsItem.date }} {{ latestNewsItem.title }}</h4>
-                <p class="news-preview">{{ getNewsSummary(latestNewsItem.content) }}</p>
+        <div class="mission-content">
+            <div class="mission-text">
+                <p><ITranslate path="home.mission.paragraph1" /></p>
+                <p><ITranslate path="home.mission.paragraph2" /></p>
+                <p><ITranslate path="home.mission.paragraph3" /></p>
             </div>
-          <router-link to="/news" class="card-link"><ITranslate path="home.news.button" /> →</router-link>
+
+            <div class="action-card">
+                <div class="card-content">
+                    <h3><ITranslate path="home.news.latestNews" /></h3>
+                    <p><ITranslate path="home.news.description" /></p>
+                    <div
+                        v-if="latestNewsItem"
+                        class="latest-news-item"
+                    >
+                        <span class="news-date" />
+                        <h4 class="news-title">
+                            {{ latestNewsItem.date }} {{ latestNewsItem.title }}
+                        </h4>
+                        <p class="news-preview">
+                            {{ getNewsSummary(latestNewsItem.content) }}
+                        </p>
+                    </div>
+                    <router-link
+                        to="/news"
+                        class="card-link"
+                    >
+                        <ITranslate path="home.news.button" /> →
+                    </router-link>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useLocale } from '@/i18n';
-import { type NewsEntry, news } from '@/data/news';
+import { type NewsEntry, newsForLocale } from '@/data/news';
 
 const locale = useLocale();
-const newsByYear = computed(() => news[locale.value] ?? news.en);
+const newsByYear = computed(() => newsForLocale(locale.value));
 
 // The most recent news item: first entry of the latest year that has any
 // (entries within a year are authored newest-first).
 const latestNewsItem = computed<NewsEntry | null>(() => {
-    const years = Object.keys(newsByYear.value).sort((a, b) => parseInt(b) - parseInt(a));
+    const years = Object.keys(newsByYear.value).sort((a, b) => Number.parseInt(b, 10) - Number.parseInt(a, 10));
     for (const year of years) {
         const items = newsByYear.value[year];
         if (items && items.length > 0) {
-            return items[0];
+            return items[0] ?? null;
         }
     }
     return null;

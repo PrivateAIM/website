@@ -1,172 +1,291 @@
 <template>
-  <section class="team-section">
-    <div class="team-container">
-      <h2 class="section-title">Our Team</h2>
-      <p class="section-subtitle">
-        Meet the experts behind PrivateAIM who are dedicated to advancing privacy-preserving technologies in medical research.
-      </p>
-
-      <div class="team-grid">
-        <!-- Core Team Members -->
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">Cryptography Specialist</p>
-            <p class="member-description">
-              Leading the development of homomorphic encryption and secure multi-party computation protocols for PrivateAIM.
+    <section class="team-section">
+        <div class="team-container">
+            <h2 class="section-title">
+                Our Team
+            </h2>
+            <p class="section-subtitle">
+                Meet the experts behind PrivateAIM who are dedicated to advancing privacy-preserving technologies in medical research.
             </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
+
+            <div class="team-grid">
+                <!-- Core Team Members -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            Cryptography Specialist
+                        </p>
+                        <p class="member-description">
+                            Leading the development of homomorphic encryption and secure multi-party computation protocols for PrivateAIM.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            AI Researcher
+                        </p>
+                        <p class="member-description">
+                            Specializing in decentralized AUC computation and federated learning algorithms for healthcare applications.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            Healthcare Innovation Lead
+                        </p>
+                        <p class="member-description">
+                            Bridging the gap between medical research needs and federated learning implementation.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            Software Engineer
+                        </p>
+                        <p class="member-description">
+                            Developing FLAME platform architecture and infrastructure for secure federated learning.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            Security Architect
+                        </p>
+                        <p class="member-description">
+                            Ensuring robust security across all aspects of the PrivateAIM platform.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img
+                            src="/images/team/test.jpg"
+                            alt="Test Test"
+                        >
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">
+                            Test Test
+                        </h3>
+                        <p class="member-title">
+                            Privacy Researcher
+                        </p>
+                        <p class="member-description">
+                            Focusing on differential privacy techniques and privacy-preserving data analysis.
+                        </p>
+                        <div class="member-links">
+                            <a
+                                href="https://github.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>GitHub</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                class="member-link"
+                            >
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">AI Researcher</p>
-            <p class="member-description">
-              Specializing in decentralized AUC computation and federated learning algorithms for healthcare applications.
-            </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
+            <!-- Academic Partners Section -->
+            <div class="partners-section">
+                <h3 class="partners-title">
+                    Academic Partners
+                </h3>
+                <div class="partners-grid">
+                    <div class="partner">
+                        <img
+                            src="/images/partners/test.jpg"
+                            alt="University Hospital Bonn"
+                            class="partner-logo"
+                        >
+                        <h4 class="partner-name">
+                            University Hospital Bonn
+                        </h4>
+                    </div>
+                    <div class="partner">
+                        <img
+                            src="/images/partners/test.jpg"
+                            alt="Charité Berlin"
+                            class="partner-logo"
+                        >
+                        <h4 class="partner-name">
+                            Charité Berlin
+                        </h4>
+                    </div>
+                    <div class="partner">
+                        <img
+                            src="/images/partners/test.jpg"
+                            alt="University Hospital Heidelberg"
+                            class="partner-logo"
+                        >
+                        <h4 class="partner-name">
+                            University Hospital Heidelberg
+                        </h4>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">Healthcare Innovation Lead</p>
-            <p class="member-description">
-              Bridging the gap between medical research needs and federated learning implementation.
-            </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
+            <!-- Join Us Section -->
+            <div class="join-section">
+                <h3 class="join-title">
+                    Join Our Team
+                </h3>
+                <p class="join-description">
+                    We're always looking for talented individuals passionate about privacy-preserving AI in healthcare.
+                    Check out our open positions or reach out to discuss collaboration opportunities.
+                </p>
+                <a
+                    href="#"
+                    class="join-button"
+                >View Open Positions</a>
             </div>
-          </div>
         </div>
-
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">Software Engineer</p>
-            <p class="member-description">
-              Developing FLAME platform architecture and infrastructure for secure federated learning.
-            </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">Security Architect</p>
-            <p class="member-description">
-              Ensuring robust security across all aspects of the PrivateAIM platform.
-            </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-member">
-          <div class="member-photo">
-            <img src="/images/team/test.jpg" alt="Test Test" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Test Test</h3>
-            <p class="member-title">Privacy Researcher</p>
-            <p class="member-description">
-              Focusing on differential privacy techniques and privacy-preserving data analysis.
-            </p>
-            <div class="member-links">
-              <a href="https://github.com/" target="_blank" class="member-link">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" class="member-link">
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Academic Partners Section -->
-      <div class="partners-section">
-        <h3 class="partners-title">Academic Partners</h3>
-        <div class="partners-grid">
-          <div class="partner">
-            <img src="/images/partners/test.jpg" alt="University Hospital Bonn" class="partner-logo" />
-            <h4 class="partner-name">University Hospital Bonn</h4>
-          </div>
-          <div class="partner">
-            <img src="/images/partners/test.jpg" alt="Charité Berlin" class="partner-logo" />
-            <h4 class="partner-name">Charité Berlin</h4>
-          </div>
-          <div class="partner">
-            <img src="/images/partners/test.jpg" alt="University Hospital Heidelberg" class="partner-logo" />
-            <h4 class="partner-name">University Hospital Heidelberg</h4>
-          </div>
-        </div>
-      </div>
-
-      <!-- Join Us Section -->
-      <div class="join-section">
-        <h3 class="join-title">Join Our Team</h3>
-        <p class="join-description">
-          We're always looking for talented individuals passionate about privacy-preserving AI in healthcare.
-          Check out our open positions or reach out to discuss collaboration opportunities.
-        </p>
-        <a href="#" class="join-button">View Open Positions</a>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
+<script setup lang="ts">
+</script>
 <style scoped>
 .team-section {
   padding: 4rem 0;
@@ -384,5 +503,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-</script>

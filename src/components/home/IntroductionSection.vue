@@ -1,12 +1,12 @@
 <template>
-  <div class="intro-text">
-    <p>
-      <ITranslate path="home.intro.paragraph1" />
-    </p>
-    <p>
-      <ITranslate path="home.intro.paragraph2" />
-    </p>
-  </div>
+    <div class="intro-text">
+        <p>
+            <ITranslate path="home.intro.paragraph1" />
+        </p>
+        <p>
+            <ITranslate path="home.intro.paragraph2" />
+        </p>
+    </div>
 </template>
 
 <style scoped>

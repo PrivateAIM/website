@@ -1,22 +1,45 @@
 <template>
     <div class="news-container">
-        <PageHeader :title="title" :subtitle="subtitle" />
+        <PageHeader
+            :title="title"
+            :subtitle="subtitle"
+        />
 
         <div class="news-content">
             <!-- News entries by year -->
-            <div v-for="year in years" :key="year" class="news-year-section">
-                <h2 class="year-heading">{{ year }}</h2>
+            <div
+                v-for="year in years"
+                :key="year"
+                class="news-year-section"
+            >
+                <h2 class="year-heading">
+                    {{ year }}
+                </h2>
 
                 <div class="news-items">
-                    <div v-for="(newsItem, index) in getNewsItemsByYear(year)" :key="index" class="news-item">
+                    <div
+                        v-for="(newsItem, index) in getNewsItemsByYear(year)"
+                        :key="index"
+                        class="news-item"
+                    >
                         <div class="news-details">
-                            <button class="news-summary" :class="{ open: openKey === `${year}-${index}` }" @click="toggle(`${year}-${index}`)">
+                            <button
+                                class="news-summary"
+                                :class="{ open: openKey === `${year}-${index}` }"
+                                @click="toggle(`${year}-${index}`)"
+                            >
                                 <span class="news-date">{{ newsItem.date }}</span>
                                 <span class="news-title">{{ newsItem.title }}</span>
                             </button>
-                            <div v-if="openKey === `${year}-${index}`" class="news-detail-content">
-                                <p v-html="newsItem.content"></p>
-                                <div v-if="newsItem.images && newsItem.images.length > 0" class="news-images">
+                            <div
+                                v-if="openKey === `${year}-${index}`"
+                                class="news-detail-content"
+                            >
+                                <p v-html="newsItem.content" />
+                                <div
+                                    v-if="newsItem.images && newsItem.images.length > 0"
+                                    class="news-images"
+                                >
                                     <img
                                         v-for="(image, imgIndex) in newsItem.images"
                                         :key="imgIndex"
@@ -35,34 +58,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import PageHeader from '../components/PageHeader.vue'
-import { useLocale, useTranslation } from '@/i18n'
-import { type NewsEntry, news } from '@/data/news'
+import { computed, ref } from 'vue';
+import PageHeader from '../components/PageHeader.vue';
+import { useLocale, useTranslation } from '@/i18n';
+import { type NewsEntry, newsForLocale } from '@/data/news';
 
-const title = useTranslation('news.title')
-const subtitle = useTranslation('news.subtitle')
+const title = useTranslation('news.title');
+const subtitle = useTranslation('news.subtitle');
 
-const locale = useLocale()
-const newsByYear = computed(() => news[locale.value] ?? news.en)
+const locale = useLocale();
+const newsByYear = computed(() => newsForLocale(locale.value));
 
-const openKey = ref<string | null>(null)
+const openKey = ref<string | null>(null);
 const toggle = (key: string) => {
-    openKey.value = openKey.value === key ? null : key
-}
+    openKey.value = openKey.value === key ? null : key;
+};
 
 // Years derived from the news data, in descending order
 const years = computed<string[]>(() =>
-    Object.keys(newsByYear.value).sort((a, b) => parseInt(b) - parseInt(a)),
-)
+    Object.keys(newsByYear.value).sort((a, b) => Number.parseInt(b, 10) - Number.parseInt(a, 10)));
 
 // Function to get image URL
-const getImageUrl = (imagePath: string): string => {
-    return `/images/news/${imagePath}`
-}
+const getImageUrl = (imagePath: string): string => `/images/news/${imagePath}`;
 
 // Function to get news items for a specific year
-const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? []
+const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? [];
 
 </script>
 

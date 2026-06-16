@@ -1,32 +1,55 @@
 <template>
-  <section class="hero-section">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title"><ITranslate path="home.hero.title" /></h1>
-        <p class="hero-subtitle"><ITranslate path="home.hero.subtitle" /></p>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <ITranslate path="home.hero.title" />
+                </h1>
+                <p class="hero-subtitle">
+                    <ITranslate path="home.hero.subtitle" />
+                </p>
 
-        <div class="hero-cta">
-          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="primary-button">
-            <ITranslate path="home.hero.explorePlatform" />
-          </a>
-          <router-link to="/partners" class="secondary-button">
-            <ITranslate path="home.hero.joinNetwork" />
-          </router-link>
+                <div class="hero-cta">
+                    <a
+                        href="https://docs.privateaim.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="primary-button"
+                    >
+                        <ITranslate path="home.hero.explorePlatform" />
+                    </a>
+                    <router-link
+                        to="/partners"
+                        class="secondary-button"
+                    >
+                        <ITranslate path="home.hero.joinNetwork" />
+                    </router-link>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img
+                    src="/images/home/server-analysis.svg"
+                    alt="Server Analysis Graphic"
+                    class="hero-graphic"
+                >
+            </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <img src="/images/home/server-analysis.svg" alt="Server Analysis Graphic" class="hero-graphic" />
-      </div>
-    </div>
-
-    <!-- Fixed Wave divider effect at bottom of hero -->
-    <div class="wave-divider">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,100 L0,100 Z" class="wave-path"></path>
-      </svg>
-    </div>
-  </section>
+        <!-- Fixed Wave divider effect at bottom of hero -->
+        <div class="wave-divider">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 100"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,100 L0,100 Z"
+                    class="wave-path"
+                />
+            </svg>
+        </div>
+    </section>
 </template>
 
 <style scoped>

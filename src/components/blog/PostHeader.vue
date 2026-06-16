@@ -1,33 +1,56 @@
 <template>
-  <div class="post-header">
-    <div class="post-category">{{ category }}</div>
-    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-header">
+        <div class="post-category">
+            {{ category }}
+        </div>
+        <h1 class="post-title">
+            {{ title }}
+        </h1>
 
-    <div class="post-author-container">
-      <div class="author-avatar" v-if="author.avatar">
-        <img :src="author.avatar" :alt="author.name" />
-      </div>
-      <div class="author-info">
-        <div class="author-name">{{ author.name }}</div>
-        <div class="author-role" v-if="author.role">{{ author.role }}</div>
-      </div>
-      <div class="post-details">
-        <span class="post-date">{{ formattedDate }}</span>
-        <span class="post-read-time" v-if="readTime">{{ readTime }} min read</span>
-      </div>
-    </div>
+        <div class="post-author-container">
+            <div
+                v-if="author.avatar"
+                class="author-avatar"
+            >
+                <img
+                    :src="author.avatar"
+                    :alt="author.name"
+                >
+            </div>
+            <div class="author-info">
+                <div class="author-name">
+                    {{ author.name }}
+                </div>
+                <div
+                    v-if="author.role"
+                    class="author-role"
+                >
+                    {{ author.role }}
+                </div>
+            </div>
+            <div class="post-details">
+                <span class="post-date">{{ formattedDate }}</span>
+                <span
+                    v-if="readTime"
+                    class="post-read-time"
+                >{{ readTime }} min read</span>
+            </div>
+        </div>
 
-    <div class="post-tags" aria-label="Post tags">
-      <span
-        v-for="tag in tags"
-        :key="tag"
-        class="post-tag"
-        role="listitem"
-      >
-        {{ tag }}
-      </span>
+        <div
+            class="post-tags"
+            aria-label="Post tags"
+        >
+            <span
+                v-for="tag in tags"
+                :key="tag"
+                class="post-tag"
+                role="listitem"
+            >
+                {{ tag }}
+            </span>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,24 +58,24 @@ import { computed } from 'vue';
 import type { Author } from '../../types/BlogPost';
 
 interface PostHeaderProps {
-  category: string;
-  title: string;
-  author: Author;
-  date: string;
-  readTime?: number;
-  tags: string[];
+    category: string;
+    title: string;
+    author: Author;
+    date: string;
+    readTime?: number;
+    tags: string[];
 }
 
 const props = defineProps<PostHeaderProps>();
 
 // Format date to readable format
 const formattedDate = computed(() => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  };
-  return new Date(props.date).toLocaleDateString(undefined, options);
+    const options: Intl.DateTimeFormatOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    };
+    return new Date(props.date).toLocaleDateString(undefined, options);
 });
 </script>
 

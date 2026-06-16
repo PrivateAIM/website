@@ -1,81 +1,79 @@
 <template>
-  <div
-    class="toast-notification"
-    role="alert"
-    aria-live="assertive"
-    @click="handleClose"
-    ref="toastRef"
-  >
-    <div class="toast-content">
-      <span>{{ message }}</span>
-      <button
-        class="toast-close-button"
-        aria-label="Close notification"
-        @click.stop="handleClose"
-      >
-        &times;
-      </button>
+    <div
+        ref="toastRef"
+        class="toast-notification"
+        role="alert"
+        aria-live="assertive"
+        @click="handleClose"
+    >
+        <div class="toast-content">
+            <span>{{ message }}</span>
+            <button
+                class="toast-close-button"
+                aria-label="Close notification"
+                @click.stop="handleClose"
+            >
+                &times;
+            </button>
+        </div>
+        <div class="toast-progress-bar" />
     </div>
-    <div class="toast-progress-bar"></div>
-  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 interface ToastNotificationProps {
-  message: string;
-  duration?: number;
+    message: string;
+    duration?: number;
 }
 
-const props = withDefaults(defineProps<ToastNotificationProps>(), {
-  duration: 3000
-});
+const props = withDefaults(defineProps<ToastNotificationProps>(), { duration: 3000 });
 
 const emit = defineEmits<{
-  'close': [];
+    'close': [];
 }>();
 
 const toastRef = ref<HTMLDivElement | null>(null);
 let closeTimeout: ReturnType<typeof setTimeout> | null = null;
 
 onMounted(() => {
-  // Set up auto-close timeout
-  closeTimeout = setTimeout(() => {
-    emit('close');
-  }, props.duration);
+    // Set up auto-close timeout
+    closeTimeout = setTimeout(() => {
+        emit('close');
+    }, props.duration);
 
-  // Set focus on the toast for accessibility
-  if (toastRef.value) {
-    toastRef.value.focus();
-  }
+    // Set focus on the toast for accessibility
+    if (toastRef.value) {
+        toastRef.value.focus();
+    }
 
-  // Add event listener for escape key
-  document.addEventListener('keydown', handleKeyDown);
+    // Add event listener for escape key
+    document.addEventListener('keydown', handleKeyDown);
 });
 
 onUnmounted(() => {
-  // Clear timeout if component is unmounted
-  if (closeTimeout) {
-    clearTimeout(closeTimeout);
-  }
+    // Clear timeout if component is unmounted
+    if (closeTimeout) {
+        clearTimeout(closeTimeout);
+    }
 
-  // Remove event listener
-  document.removeEventListener('keydown', handleKeyDown);
+    // Remove event listener
+    document.removeEventListener('keydown', handleKeyDown);
 });
 
 const handleClose = () => {
-  if (closeTimeout) {
-    clearTimeout(closeTimeout);
-    closeTimeout = null;
-  }
-  emit('close');
+    if (closeTimeout) {
+        clearTimeout(closeTimeout);
+        closeTimeout = null;
+    }
+    emit('close');
 };
 
 const handleKeyDown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') {
-    handleClose();
-  }
+    if (event.key === 'Escape') {
+        handleClose();
+    }
 };
 </script>
 

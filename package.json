@@ -8,8 +8,7 @@
         "preview": "vite preview",
         "build-only": "vite build",
         "type-check": "vue-tsc --build --noEmit",
-        "lint": "eslint . --fix",
-        "format": "prettier --write src/"
+        "lint": "eslint . --fix"
     },
     "engines": {
         "node": ">=22"
@@ -27,19 +26,18 @@
         "vue-router": "^4.5.1"
     },
     "devDependencies": {
-        "@tsconfig/node22": "^22.0.0",
+        "@tada5hi/eslint-config": "^2.3.0",
+        "@tada5hi/tsconfig": "^0.7.2",
         "@types/marked": "^5.0.2",
         "@types/node": "^22.15.17",
         "@vitejs/plugin-vue": "^5.2.4",
-        "@vue/eslint-config-prettier": "^10.2.0",
-        "@vue/eslint-config-typescript": "^14.5.0",
-        "@vue/tsconfig": "^0.7.0",
-        "eslint": "^9.26.0",
-        "eslint-plugin-vue": "~10.1.0",
+        "eslint": "^10.5.0",
+        "eslint-plugin-vue": "^10.9.2",
+        "globals": "^17.6.0",
         "jiti": "^2.4.2",
         "npm-run-all2": "^7.0.2",
-        "prettier": "3.5.3",
         "typescript": "~5.8.0",
+        "typescript-eslint": "^8.61.1",
         "vite": "^6.3.5",
         "vite-plugin-vue-devtools": "^7.7.6",
         "vue-tsc": "^2.2.10"

@@ -1,79 +1,81 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import { marked } from 'marked'
-import { useLocale } from '@/i18n'
+import { 
+    computed, 
+    onMounted, 
+    ref, 
+    watch, 
+} from 'vue';
+import { marked } from 'marked';
+import { useLocale } from '@/i18n';
 
-const locale = useLocale()
+const locale = useLocale();
 
 // Function to switch to German version
 function switchToGerman() {
-  locale.value = 'de'
+    locale.value = 'de';
 }
 
 // Reactive variable to hold the raw Markdown content.
-const policyContent = ref('')
+const policyContent = ref('');
 
 // Asynchronously load the correct Markdown file based on the locale.
 async function loadPolicy() {
-  try {
-    let module
-    if (locale.value === 'en') {
-      module = await import('@/data/privacy/privacy.en.md?raw')
+    try {
+        let module;
+        if (locale.value === 'en') {
+            module = await import('@/data/privacy/privacy.en.md?raw');
+        }
+        else if (locale.value === 'de') {
+            module = await import('@/data/privacy/privacy.de.md?raw');
+        }
+        policyContent.value = module?.default || 'Failed to load privacy policy.';
+    } catch {
+        policyContent.value = 'Failed to load privacy policy.';
     }
-    else if (locale.value === 'de') {
-      module = await import('@/data/privacy/privacy.de.md?raw')
-    }
-    policyContent.value = module?.default || 'Failed to load privacy policy.'
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (_e) {
-    policyContent.value = 'Failed to load privacy policy.'
-  }
 }
 
 // Load the policy when the component is mounted.
 onMounted(() => {
-  loadPolicy()
-})
+    loadPolicy();
+});
 
 // Watch for locale changes to reload the content.
 watch(locale, () => {
-  loadPolicy()
-})
+    loadPolicy();
+});
 
 // Compute the rendered HTML from the Markdown content.
-const renderedPolicy = computed(() => {
-  return marked(policyContent.value)
-})
+const renderedPolicy = computed(() => marked(policyContent.value));
 </script>
 
 <template>
-  <div class="legal-container">
-    <div class="page-header">
-      <h1><ITranslate path="privacy.title" /></h1>
-    </div>
+    <div class="legal-container">
+        <div class="page-header">
+            <h1><ITranslate path="privacy.title" /></h1>
+        </div>
 
-    <div class="legal-content">
-      <!-- Language notice - only shown for English -->
-      <div
-          v-if="locale === 'en'"
-          class="language-notice"
-      >
-        <p class="alert alert-info">
-          <strong>Note:</strong> This legal notice is in Germany not legally binding and has been created for your convenience only.
-          We apologize for any inconveniences caused and refer to the
-          <a
-              href="#"
-              @click.prevent="switchToGerman"
-          >legally binding German version</a> available on this site.
-        </p>
-      </div>
+        <div class="legal-content">
+            <!-- Language notice - only shown for English -->
+            <div
+                v-if="locale === 'en'"
+                class="language-notice"
+            >
+                <p class="alert alert-info">
+                    <strong>Note:</strong> This legal notice is in Germany not legally binding and has been created for your convenience only.
+                    We apologize for any inconveniences caused and refer to the
+                    <a
+                        href="#"
+                        @click.prevent="switchToGerman"
+                    >legally binding German version</a> available on this site.
+                </p>
+            </div>
 
-      <!-- Render the converted Markdown content -->
-      <div class="privacy-container">
-        <div v-html="renderedPolicy" />
-      </div>
+            <!-- Render the converted Markdown content -->
+            <div class="privacy-container">
+                <div v-html="renderedPolicy" />
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <style scoped>

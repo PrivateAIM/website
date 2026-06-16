@@ -1,45 +1,45 @@
 <template>
-  <div class="legal-container">
-    <div class="page-header">
-      <h1><ITranslate path="imprint.title" /></h1>
+    <div class="legal-container">
+        <div class="page-header">
+            <h1><ITranslate path="imprint.title" /></h1>
+        </div>
+
+        <div class="legal-content">
+            <section class="legal-section">
+                <p class="address">
+                    <b><ITranslate path="imprint.information.entity" /></b><br>
+                    <ITranslate path="imprint.information.department" /><br>
+                    <ITranslate path="imprint.information.address1" /><br>
+                    <ITranslate path="imprint.information.address2" />
+                </p>
+
+                <p>
+                    <ITranslate path="imprint.information.contact.phone" />: 030 450 543 049<br>
+                    <ITranslate path="imprint.information.contact.fax" />: 030 450 7543999<br>
+                    <ITranslate path="imprint.information.contact.email" />: info@bih-charite.de
+                </p>
+            </section>
+
+            <section class="legal-section">
+                <h2><ITranslate path="imprint.representation.title" /></h2>
+                <p>
+                    Prof. Dr. Christopher H. Baum
+                </p>
+            </section>
+
+            <section class="legal-section">
+                <h2><ITranslate path="imprint.contact.title" /></h2>
+                <p>
+                    Prof. Dr. Fabian Prasser<br>
+                    <ITranslate path="imprint.contact.department" /><br>
+                    <ITranslate path="imprint.contact.institute" /><br>
+                    <ITranslate path="imprint.contact.address1" /><br>
+                    <ITranslate path="imprint.contact.address2" /><br>
+                    <ITranslate path="imprint.contact.email" />: fabian.prasser@bih-charite.de
+                </p>
+            </section>
+        </div>
     </div>
-
-    <div class="legal-content">
-      <section class="legal-section">
-        <p class="address">
-          <b><ITranslate path="imprint.information.entity" /></b><br>
-          <ITranslate path="imprint.information.department" /><br>
-          <ITranslate path="imprint.information.address1" /><br>
-          <ITranslate path="imprint.information.address2" />
-        </p>
-
-        <p>
-          <ITranslate path="imprint.information.contact.phone" />: 030 450 543 049<br>
-          <ITranslate path="imprint.information.contact.fax" />: 030 450 7543999<br>
-          <ITranslate path="imprint.information.contact.email" />: info@bih-charite.de
-        </p>
-      </section>
-
-      <section class="legal-section">
-        <h2><ITranslate path="imprint.representation.title" /></h2>
-        <p>
-          Prof. Dr. Christopher H. Baum
-        </p>
-      </section>
-
-      <section class="legal-section">
-        <h2><ITranslate path="imprint.contact.title" /></h2>
-        <p>
-          Prof. Dr. Fabian Prasser<br>
-          <ITranslate path="imprint.contact.department" /><br>
-          <ITranslate path="imprint.contact.institute" /><br>
-          <ITranslate path="imprint.contact.address1" /><br>
-          <ITranslate path="imprint.contact.address2" /><br>
-          <ITranslate path="imprint.contact.email" />: fabian.prasser@bih-charite.de
-        </p>
-      </section>
-    </div>
-  </div>
 </template>
 
 <style scoped>

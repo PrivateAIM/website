@@ -1,17 +1,20 @@
 <template>
-  <div class="page-header">
-    <h1>{{ title }}</h1>
-    <p v-if="subtitle" class="header-subtitle">
-      {{ subtitle }}
-    </p>
-    <slot></slot>
-  </div>
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+        <p
+            v-if="subtitle"
+            class="header-subtitle"
+        >
+            {{ subtitle }}
+        </p>
+        <slot />
+    </div>
 </template>
 
 <script setup lang="ts">
 interface PageHeaderProps {
-  title: string;
-  subtitle?: string;
+    title: string;
+    subtitle?: string;
 }
 
 defineProps<PageHeaderProps>();

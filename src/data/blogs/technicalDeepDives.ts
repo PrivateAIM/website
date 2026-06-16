@@ -1,22 +1,22 @@
 import type { BlogPost } from '../../types/BlogPost';
 
 export const technicalDeepDivesPosts: BlogPost[] = [
-  {
-    id: '6',
-    slug: 'homomorphic-encryption-mpc',
-    title: 'Building Secure Federated Models with Homomorphic Encryption and MPC',
-    description: 'A technical exploration of how homomorphic encryption and secure multi-party computation can enhance privacy in federated learning systems.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
-    },
-    date: '2024-05-03',
-    tags: ['Homomorphic Encryption', 'MPC', 'Cryptography', 'Federated Learning'],
-    category: 'Technical Deep Dives',
-    readTime: 15,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '6',
+        slug: 'homomorphic-encryption-mpc',
+        title: 'Building Secure Federated Models with Homomorphic Encryption and MPC',
+        description: 'A technical exploration of how homomorphic encryption and secure multi-party computation can enhance privacy in federated learning systems.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-05-03',
+        tags: ['Homomorphic Encryption', 'MPC', 'Cryptography', 'Federated Learning'],
+        category: 'Technical Deep Dives',
+        readTime: 15,
+        image: '/images/blog/test.jpg',
+        content: `
 # Building Secure Federated Models with Homomorphic Encryption and MPC
 
 Federated learning has emerged as a promising approach for collaborative model training while keeping data decentralized. However, standard federated learning still faces security challenges, particularly around model update privacy and potential information leakage. Advanced cryptographic techniques—specifically homomorphic encryption (HE) and secure multi-party computation (MPC)—provide powerful tools to address these concerns and build truly secure federated models.
@@ -222,24 +222,24 @@ Homomorphic encryption and secure multi-party computation represent powerful too
 As PrivateAIM continues to develop the FLAME platform, these advanced cryptographic techniques serve as foundational elements of our security architecture, enabling truly privacy-preserving collaboration across organizational boundaries. By combining the best of federated learning with state-of-the-art cryptography, we are helping to build a future where data utility and privacy protection can coexist.
 
 For organizations looking to implement secure federated learning systems, understanding these cryptographic building blocks is essential to making informed decisions about security-performance tradeoffs and selecting appropriate protocols for specific use cases.
-    `
-  },
-  {
-    id: '7',
-    slug: 'decentralized-auc-computation',
-    title: 'Decentralized AUC Computation: Innovations and Insights',
-    description: 'An exploration of novel approaches to computing Area Under the Curve (AUC) metrics in federated and distributed learning environments.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
+    `,
     },
-    date: '2024-05-10',
-    tags: ['AUC', 'Metrics', 'Federated Learning', 'Evaluation'],
-    category: 'Technical Deep Dives',
-    readTime: 12,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '7',
+        slug: 'decentralized-auc-computation',
+        title: 'Decentralized AUC Computation: Innovations and Insights',
+        description: 'An exploration of novel approaches to computing Area Under the Curve (AUC) metrics in federated and distributed learning environments.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-05-10',
+        tags: ['AUC', 'Metrics', 'Federated Learning', 'Evaluation'],
+        category: 'Technical Deep Dives',
+        readTime: 12,
+        image: '/images/blog/test.jpg',
+        content: `
 # Decentralized AUC Computation: Innovations and Insights
 
 The Area Under the Receiver Operating Characteristic Curve (AUC-ROC or simply AUC) is one of the most important evaluation metrics for classification models, particularly in medical applications. However, computing this metric in a federated learning environment, where data cannot be shared across participants, presents significant challenges. This article explores innovative approaches to decentralized AUC computation and their implementation in federated learning systems.
@@ -503,8 +503,8 @@ Decentralized AUC computation represents a critical capability for privacy-prese
 PrivateAIM's PP-AUC protocol exemplifies how thoughtful algorithm design can address the complex challenges of federated evaluation. As healthcare continues to embrace AI and machine learning, such privacy-preserving evaluation metrics will be essential to building trust, ensuring regulatory compliance, and enabling collaborative research across institutional boundaries.
 
 By combining advanced cryptographic techniques with statistical insights, we can continue to improve the accuracy, efficiency, and security of federated evaluation methods—ultimately helping to realize the promise of privacy-preserving medical AI.
-    `
-  }
+    `,
+    },
 ];
 
 export default technicalDeepDivesPosts;
