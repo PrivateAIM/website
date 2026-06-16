@@ -15,6 +15,9 @@ coverage
 *.local
 .env
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 /cypress/videos/
 /cypress/screenshots/
 

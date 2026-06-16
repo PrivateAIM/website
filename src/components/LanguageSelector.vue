@@ -5,8 +5,11 @@ import { LOCALES, useLocale } from '@/i18n'
 import FlagEN from '@/assets/flags/en-flag.svg'
 import FlagDE from '@/assets/flags/de-flag.svg'
 
-// Flag icon per locale; the locale list itself lives in @/i18n (single source of truth).
-const flags: Record<string, string> = { en: FlagEN, de: FlagDE }
+type LocaleCode = (typeof LOCALES)[number]['code']
+
+// Flag icon per locale; LOCALES (in @/i18n) is the single source of truth for the
+// locale list, and Record<LocaleCode, …> forces a flag entry for every locale.
+const flags: Record<LocaleCode, string> = { en: FlagEN, de: FlagDE }
 const languages = LOCALES.map((locale) => ({
   code: locale.code,
   label: locale.label,
@@ -15,6 +18,9 @@ const languages = LOCALES.map((locale) => ({
 
 const locale = useLocale()
 const activeLanguage = computed(() => locale.value)
+const activeLanguageEntry = computed(
+  () => languages.find((l) => l.code === activeLanguage.value) ?? languages[0],
+)
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
@@ -54,8 +60,8 @@ onUnmounted(() => {
         @click="toggleDropdown"
     >
         <img
-            :src="languages.find(l => l.code === activeLanguage)?.flag"
-            :alt="languages.find(l => l.code === activeLanguage)?.label"
+            :src="activeLanguageEntry.flag"
+            :alt="activeLanguageEntry.label"
             class="flag-icon"
         />
       <svg

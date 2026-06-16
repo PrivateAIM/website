@@ -18,7 +18,6 @@
                 <h4 class="news-title">{{ latestNewsItem.date }} {{ latestNewsItem.title }}</h4>
                 <p class="news-preview">{{ getNewsSummary(latestNewsItem.content) }}</p>
             </div>
-            <p v-else><ITranslate path="home.news.description" /></p>
           <router-link to="/news" class="card-link"><ITranslate path="home.news.button" /> →</router-link>
         </div>
       </div>

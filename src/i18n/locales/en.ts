@@ -70,7 +70,7 @@ export default defineLocale('en', [
         },
         news: {
             latestNews: 'Latest News',
-            description: 'Here you can find latest news and updates related PrivateAIM.',
+            description: 'Here you can find the latest news and updates related to PrivateAIM.',
             button: 'Read More',
         },
     })]),

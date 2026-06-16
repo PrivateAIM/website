@@ -12,7 +12,7 @@ const news: NewsByYear = {
         {
             date: "25/11/2025",
             title: "MIDI-Kolloquium",
-            content: "We are pleased to share the recording of the presentation given by Dr. Marius Herr on the FLAME platform, which provides a privacy-preserving, auditable framework for federated learning. In the talk, Marius explains the core architecture of FLAME, how it enables secure, distributed data analysis without exposing individual sensitive data, and outlines the path toward real-world deployment. The presentation also demonstrates a use case and the role of FLAME in privacy-preserving analytics.\nYou can watch the full presentation on <a href=\" https://www.youtube.com/watch?v=tXfg3kb0AIg\" target=\"_blank\">YouTube (English)</a> and learn more about how privateAIM and FLAME contribute to safe, compliant AI.",
+            content: "We are pleased to share the recording of the presentation given by Dr. Marius Herr on the FLAME platform, which provides a privacy-preserving, auditable framework for federated learning. In the talk, Marius explains the core architecture of FLAME, how it enables secure, distributed data analysis without exposing individual sensitive data, and outlines the path toward real-world deployment. The presentation also demonstrates a use case and the role of FLAME in privacy-preserving analytics.\nYou can watch the full presentation on <a href=\"https://www.youtube.com/watch?v=tXfg3kb0AIg\" target=\"_blank\">YouTube (English)</a> and learn more about how privateAIM and FLAME contribute to safe, compliant AI.",
         },
         {
             date: "17/10/2025",

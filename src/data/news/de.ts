@@ -12,7 +12,7 @@ const news: NewsByYear = {
         {
             date: "25/11/2025",
             title: "MIDI-Kolloquium",
-            content: "Wir freuen uns, die Aufzeichnung des Vortrags von Dr. Marius Herr zur FLAME-Plattform zu teilen. FLAME bietet ein datenschutzkonformes und auditierbares Framework für föderiertes Lernen. Im Vortrag erläutert Marius die Kernarchitektur von FLAME, zeigt auf, wie sichere verteilte Analysen ohne sensible Einzelinformationen offenzulegen möglich sind, und skizziert den Weg zur Umsetzung als reale Infrastruktur. Zudem wird ein konkreter Use Case vorgestellt und die Rolle von FLAME in der datenschutzbewahrenden Analyse demonstriert. Die vollständige Präsentation ist auf <a href=\" https://www.youtube.com/watch?v=tXfg3kb0AIg\" target=\"_blank\">YouTube (Englisch)</a> verfügbar.",
+            content: "Wir freuen uns, die Aufzeichnung des Vortrags von Dr. Marius Herr zur FLAME-Plattform zu teilen. FLAME bietet ein datenschutzkonformes und auditierbares Framework für föderiertes Lernen. Im Vortrag erläutert Marius die Kernarchitektur von FLAME, zeigt auf, wie sichere verteilte Analysen ohne sensible Einzelinformationen offenzulegen möglich sind, und skizziert den Weg zur Umsetzung als reale Infrastruktur. Zudem wird ein konkreter Use Case vorgestellt und die Rolle von FLAME in der datenschutzbewahrenden Analyse demonstriert. Die vollständige Präsentation ist auf <a href=\"https://www.youtube.com/watch?v=tXfg3kb0AIg\" target=\"_blank\">YouTube (Englisch)</a> verfügbar.",
         },
         {
             date: "17/10/2025",
