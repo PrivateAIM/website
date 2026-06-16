@@ -1,41 +1,80 @@
 <template>
-  <section class="partners-section">
-    <div class="section-container">
-      <h2><ITranslate path="home.partners.title" /></h2>
-      <div class="partners-grid">
-        <!-- Partner logos -->
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/UKT.png" alt="University Hospital Tübingen" />
+    <section class="partners-section">
+        <div class="section-container">
+            <h2><ITranslate path="home.partners.title" /></h2>
+            <div class="partners-grid">
+                <!-- Partner logos -->
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/UKT.png"
+                        alt="University Hospital Tübingen"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/CHARITE.svg"
+                        alt="Charité Berlin"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/TUM.svg"
+                        alt="TUM Munich"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/UKHD.png"
+                        alt="University Hospital Heidelberg"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/UKER.svg"
+                        alt="University Hospital Erlangen"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/UKL.png"
+                        alt="University Hospital Leipzig"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/UKFR.png"
+                        alt="University Hospital Freiburg"
+                    >
+                </div>
+                <div class="partner-logo">
+                    <img
+                        loading="lazy"
+                        src="/images/partners/LMU.png"
+                        alt="LMU Munich"
+                    >
+                </div>
+            </div>
+            <div class="partner-cta">
+                <router-link
+                    to="/partners"
+                    class="text-link"
+                >
+                    <ITranslate path="home.partners.viewAll" /> →
+                </router-link>
+            </div>
         </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/TUM.svg" alt="TUM Munich" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/UKHD.png" alt="University Hospital Heidelberg" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/UKER.svg" alt="University Hospital Erlangen" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/UKL.png" alt="University Hospital Leipzig" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/UKFR.png" alt="University Hospital Freiburg" />
-        </div>
-        <div class="partner-logo">
-          <img loading="lazy" src="/images/partners/LMU.png" alt="LMU Munich" />
-        </div>
-      </div>
-      <div class="partner-cta">
-        <router-link to="/partners" class="text-link"><ITranslate path="home.partners.viewAll" /> →</router-link>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
+<script setup lang="ts">
+</script>
 <style scoped>
 .partners-section {
   background-color: var(--footer-bg, #f7fafc);
@@ -106,5 +145,3 @@ h2 {
   }
 }
 </style>
-<script setup lang="ts">
-</script>

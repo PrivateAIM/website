@@ -1,22 +1,22 @@
 import type { BlogPost } from '../../types/BlogPost';
 
 export const privateaimInsightsPosts: BlogPost[] = [
-  {
-    id: '4',
-    slug: 'secure-data-collaboration',
-    title: 'How PrivateAIM Enables Secure Data Collaboration',
-    description: 'An in-depth look at the technology behind PrivateAIM and how it facilitates secure multi-party data collaboration.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
-    },
-    date: '2024-04-12',
-    tags: ['Security', 'Collaboration', 'Data Sharing', 'Privacy'],
-    category: 'PrivateAIM Insights',
-    readTime: 9,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '4',
+        slug: 'secure-data-collaboration',
+        title: 'How PrivateAIM Enables Secure Data Collaboration',
+        description: 'An in-depth look at the technology behind PrivateAIM and how it facilitates secure multi-party data collaboration.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-04-12',
+        tags: ['Security', 'Collaboration', 'Data Sharing', 'Privacy'],
+        category: 'PrivateAIM Insights',
+        readTime: 9,
+        image: '/images/blog/test.jpg',
+        content: `
 # How PrivateAIM Enables Secure Data Collaboration
 
 In the age of big data and artificial intelligence, the ability to collaborate across organizational boundaries has become essential for innovation. However, when sensitive data is involved, collaboration often falls victim to privacy concerns and regulatory restrictions. PrivateAIM addresses this fundamental challenge through a revolutionary approach to secure data collaboration.
@@ -162,24 +162,24 @@ PrivateAIM represents a fundamental shift in how we approach data collaboration.
 As organizations increasingly recognize that their most valuable data is also their most sensitive, approaches like PrivateAIM will become essential to unlocking the full potential of collaborative analytics while maintaining the trust of customers, patients, and regulators.
 
 The future of data collaboration isn't about sharing more data—it's about sharing insights while protecting what matters most.
-    `
-  },
-  {
-    id: '5',
-    slug: 'healthcare-use-cases',
-    title: 'Use Cases for PrivateAIM in Healthcare',
-    description: 'Exploring practical applications of PrivateAIM technology in transforming healthcare research and patient outcomes.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
+    `,
     },
-    date: '2024-04-19',
-    tags: ['Healthcare', 'Use Cases', 'Medical Research', 'Patient Care'],
-    category: 'PrivateAIM Insights',
-    readTime: 11,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '5',
+        slug: 'healthcare-use-cases',
+        title: 'Use Cases for PrivateAIM in Healthcare',
+        description: 'Exploring practical applications of PrivateAIM technology in transforming healthcare research and patient outcomes.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-04-19',
+        tags: ['Healthcare', 'Use Cases', 'Medical Research', 'Patient Care'],
+        category: 'PrivateAIM Insights',
+        readTime: 11,
+        image: '/images/blog/test.jpg',
+        content: `
 # Use Cases for PrivateAIM in Healthcare
 
 Healthcare stands at a pivotal moment, with unprecedented opportunities to leverage vast amounts of patient data for improved care, research, and outcomes. However, the sensitive nature of health information creates significant barriers to utilizing this data effectively. PrivateAIM's federated learning approach offers a revolutionary solution to this challenge, enabling powerful healthcare applications while maintaining rigorous privacy protection.
@@ -342,8 +342,8 @@ As adoption increases, we can expect to see:
 For healthcare organizations looking to maximize the value of their data while maintaining the highest standards of privacy and security, PrivateAIM offers a compelling path forward that aligns with both innovation goals and ethical responsibilities.
 
 The future of healthcare will be data-driven, and PrivateAIM ensures that this future can also be privacy-preserving.
-    `
-  }
+    `,
+    },
 ];
 
 export default privateaimInsightsPosts;

@@ -57,7 +57,12 @@ export function useTranslation(
     count?: MaybeRef<number>,
 ): Ref<string> {
     const { namespace, key } = splitPath(path);
-    return useIlingoTranslation({ namespace, key, data, count });
+    return useIlingoTranslation({
+        namespace, 
+        key, 
+        data, 
+        count, 
+    });
 }
 
 /** Reactive, writable active-locale ref. Assign `.value` to switch language. */

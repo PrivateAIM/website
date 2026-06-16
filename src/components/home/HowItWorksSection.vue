@@ -1,41 +1,52 @@
 <template>
-  <div class="how-it-works">
-    <h2><ITranslate path="home.howItWorks.title" /></h2>
+    <div class="how-it-works">
+        <h2><ITranslate path="home.howItWorks.title" /></h2>
 
-    <div class="steps-container">
-      <div class="step">
-        <div class="step-icon">1</div>
-        <div class="step-content">
-          <h3><ITranslate path="home.howItWorks.step1.title" /></h3>
-          <p><ITranslate path="home.howItWorks.step1.description" /></p>
-        </div>
-      </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-icon">
+                    1
+                </div>
+                <div class="step-content">
+                    <h3><ITranslate path="home.howItWorks.step1.title" /></h3>
+                    <p><ITranslate path="home.howItWorks.step1.description" /></p>
+                </div>
+            </div>
 
-      <div class="step">
-        <div class="step-icon">2</div>
-        <div class="step-content">
-          <h3><ITranslate path="home.howItWorks.step2.title" /></h3>
-          <p><ITranslate path="home.howItWorks.step2.description" /></p>
-        </div>
-      </div>
+            <div class="step">
+                <div class="step-icon">
+                    2
+                </div>
+                <div class="step-content">
+                    <h3><ITranslate path="home.howItWorks.step2.title" /></h3>
+                    <p><ITranslate path="home.howItWorks.step2.description" /></p>
+                </div>
+            </div>
 
-      <div class="step">
-        <div class="step-icon">3</div>
-        <div class="step-content">
-          <h3><ITranslate path="home.howItWorks.step3.title" /></h3>
-          <p><ITranslate path="home.howItWorks.step3.description" /></p>
+            <div class="step">
+                <div class="step-icon">
+                    3
+                </div>
+                <div class="step-content">
+                    <h3><ITranslate path="home.howItWorks.step3.title" /></h3>
+                    <p><ITranslate path="home.howItWorks.step3.description" /></p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="platform-cta">
+            <h3><ITranslate path="home.howItWorks.experienceFlame" /></h3>
+            <p><ITranslate path="home.howItWorks.flamePlatform" /></p>
+            <a
+                href="https://docs.privateaim.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button primary"
+            >
+                <ITranslate path="home.howItWorks.explorePlatform" />
+            </a>
+        </div>
     </div>
-
-    <div class="platform-cta">
-      <h3><ITranslate path="home.howItWorks.experienceFlame" /></h3>
-      <p><ITranslate path="home.howItWorks.flamePlatform" /></p>
-      <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="cta-button primary">
-        <ITranslate path="home.howItWorks.explorePlatform" />
-      </a>
-    </div>
-  </div>
 </template>
 
 <style scoped>

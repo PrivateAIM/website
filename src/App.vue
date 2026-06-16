@@ -1,20 +1,29 @@
 <template>
-  <LanguageProvider>
-    <div class="app">
-      <a href="#main-content" class="skip-link">Skip to content</a>
-      <RekaHeader />
-      <main id="main-content" class="main-content">
-        <router-view v-slot="{ Component }">
-          <transition name="page-fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view>
-      </main>
-      <CookieBanner />
-      <BackToTop />
-      <RekaFooter />
-    </div>
-  </LanguageProvider>
+    <LanguageProvider>
+        <div class="app">
+            <a
+                href="#main-content"
+                class="skip-link"
+            >Skip to content</a>
+            <RekaHeader />
+            <main
+                id="main-content"
+                class="main-content"
+            >
+                <router-view v-slot="{ Component }">
+                    <transition
+                        name="page-fade"
+                        mode="out-in"
+                    >
+                        <component :is="Component" />
+                    </transition>
+                </router-view>
+            </main>
+            <CookieBanner />
+            <BackToTop />
+            <RekaFooter />
+        </div>
+    </LanguageProvider>
 </template>
 
 <script setup lang="ts">

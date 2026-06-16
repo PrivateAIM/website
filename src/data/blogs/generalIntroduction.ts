@@ -1,23 +1,23 @@
 import type { BlogPost } from '../../types/BlogPost';
 
 export const generalIntroductionPosts: BlogPost[] = [
-  {
-    id: '1',
-    slug: 'understanding-federated-learning',
-    title: 'Understanding Federated Learning: A Beginner\'s Guide',
-    description: 'An introductory overview of federated learning concepts, benefits, and applications for newcomers to the field.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
-    },
-    date: '2024-03-15',
-    tags: ['Federated Learning', 'AI', 'Privacy', 'Beginner'],
-    category: 'General Introduction',
-    featured: true,
-    readTime: 8,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '1',
+        slug: 'understanding-federated-learning',
+        title: 'Understanding Federated Learning: A Beginner\'s Guide',
+        description: 'An introductory overview of federated learning concepts, benefits, and applications for newcomers to the field.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-03-15',
+        tags: ['Federated Learning', 'AI', 'Privacy', 'Beginner'],
+        category: 'General Introduction',
+        featured: true,
+        readTime: 8,
+        image: '/images/blog/test.jpg',
+        content: `
 # Understanding Federated Learning: A Beginner's Guide
 
 Federated Learning represents a paradigm shift in how we train machine learning models. Unlike traditional centralized approaches where all data is collected in one place, federated learning allows for model training across multiple decentralized devices or servers holding local data samples, without exchanging them.
@@ -87,24 +87,24 @@ If you're interested in experimenting with federated learning, several framework
 Federated learning represents an exciting direction for machine learning that addresses many of the privacy and practicality concerns of traditional approaches. As regulations around data privacy become stricter and consumer awareness grows, techniques like federated learning will become increasingly important in the machine learning ecosystem.
 
 In future articles, we'll dive deeper into specific implementations, explore advanced techniques for enhancing security, and examine how PrivateAIM is applying these principles to revolutionize healthcare analytics.
-    `
-  },
-  {
-    id: '2',
-    slug: 'importance-of-privacy-in-distributed-ml',
-    title: 'The Importance of Privacy in Distributed Machine Learning',
-    description: 'Exploring why privacy is crucial in modern distributed machine learning systems and how it shapes the future of AI development.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
+    `,
     },
-    date: '2024-03-22',
-    tags: ['Privacy', 'Machine Learning', 'Data Protection', 'GDPR'],
-    category: 'General Introduction',
-    readTime: 10,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '2',
+        slug: 'importance-of-privacy-in-distributed-ml',
+        title: 'The Importance of Privacy in Distributed Machine Learning',
+        description: 'Exploring why privacy is crucial in modern distributed machine learning systems and how it shapes the future of AI development.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-03-22',
+        tags: ['Privacy', 'Machine Learning', 'Data Protection', 'GDPR'],
+        category: 'General Introduction',
+        readTime: 10,
+        image: '/images/blog/test.jpg',
+        content: `
 # The Importance of Privacy in Distributed Machine Learning
 
 As machine learning and artificial intelligence become increasingly integrated into our daily lives, the question of data privacy has never been more important. This is especially true in distributed machine learning systems, where data from multiple sources is used to train models that make decisions affecting millions of people.
@@ -191,24 +191,24 @@ As we advance into an increasingly data-driven future, adopting a privacy-first 
 Privacy protection in distributed machine learning isn't just about compliance or avoiding negative consequences—it's about building a sustainable ecosystem where innovation and personal rights coexist harmoniously. By embracing privacy-preserving techniques like those pioneered by PrivateAIM, we can unlock the full potential of collaborative AI while respecting individual autonomy and dignity.
 
 The future of machine learning isn't just about building smarter systems; it's about building systems that are worthy of our trust.
-    `
-  },
-  {
-    id: '3',
-    slug: 'key-benefits-privateaim',
-    title: 'Key Benefits of PrivateAIM in Modern Analytics',
-    description: 'Discover how PrivateAIM is revolutionizing data analytics by maintaining privacy while enabling powerful collaborative insights.',
-    author: {
-      name: 'Test Test',
-      role: 'AI Researcher',
-      avatar: '/images/authors/test.jpg'
+    `,
     },
-    date: '2024-04-05',
-    tags: ['PrivateAIM', 'Analytics', 'Benefits', 'Healthcare'],
-    category: 'General Introduction',
-    readTime: 7,
-    image: '/images/blog/test.jpg',
-    content: `
+    {
+        id: '3',
+        slug: 'key-benefits-privateaim',
+        title: 'Key Benefits of PrivateAIM in Modern Analytics',
+        description: 'Discover how PrivateAIM is revolutionizing data analytics by maintaining privacy while enabling powerful collaborative insights.',
+        author: {
+            name: 'Test Test',
+            role: 'AI Researcher',
+            avatar: '/images/authors/test.jpg',
+        },
+        date: '2024-04-05',
+        tags: ['PrivateAIM', 'Analytics', 'Benefits', 'Healthcare'],
+        category: 'General Introduction',
+        readTime: 7,
+        image: '/images/blog/test.jpg',
+        content: `
 # Key Benefits of PrivateAIM in Modern Analytics
 
 In today's data-driven world, organizations face a critical challenge: how to extract meaningful insights from sensitive data while maintaining privacy and compliance with increasingly stringent regulations. PrivateAIM addresses this challenge head-on, offering a revolutionary approach to analytics that preserves privacy without sacrificing analytical power.
@@ -293,8 +293,8 @@ As organizations continue to recognize the value of data collaboration alongside
 By embracing PrivateAIM, organizations can position themselves at the forefront of responsible data science, building trust with their stakeholders while unlocking insights that were previously impossible due to privacy constraints.
 
 In an era where data is perhaps our most valuable resource, PrivateAIM offers a way forward that respects both the potential of data analytics and the fundamental right to privacy.
-    `
-  }
+    `,
+    },
 ];
 
 export default generalIntroductionPosts;

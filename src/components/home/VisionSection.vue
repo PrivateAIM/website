@@ -14,16 +14,30 @@ const paragraph3 = useTranslation('home.vision.paragraph3');
 
         <div class="vision-content">
             <div class="vision-text">
-                <LinkText :text="paragraph1" tag="p" />
-                <LinkText :text="paragraph2" tag="p" />
-                <LinkText :text="paragraph3" tag="p" />
+                <LinkText
+                    :text="paragraph1"
+                    tag="p"
+                />
+                <LinkText
+                    :text="paragraph2"
+                    tag="p"
+                />
+                <LinkText
+                    :text="paragraph3"
+                    tag="p"
+                />
             </div>
 
             <div class="action-card">
                 <div class="card-content">
                     <h3><ITranslate path="home.vision.contribute" /></h3>
                     <p><ITranslate path="home.vision.explanation" /></p>
-                    <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="card-link"><ITranslate path="home.vision.github" /> →</a>
+                    <a
+                        href="https://github.com/PrivateAIM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="card-link"
+                    ><ITranslate path="home.vision.github" /> →</a>
                 </div>
             </div>
         </div>

@@ -1,214 +1,377 @@
 <template>
-  <div class="partners-container">
-    <PageHeader :title="title" :subtitle="description" />
+    <div class="partners-container">
+        <PageHeader
+            :title="title"
+            :subtitle="description"
+        />
 
-    <div class="partners-content">
-      <section class="partners-section">
-        <h2 class="section-title"><ITranslate path="partners.subsection1" /></h2>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/CHARITE.svg" alt="Charité Berlin" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Charité Berlin</h3>
-              <a href="https://www.bihealth.org/de/forschung/arbeitsgruppe/ag-prasser-medizininformatik" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKT.png" alt="Universitätsklinikum Tübingen" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Tübingen</h3>
-              <a href="https://www.medizin.uni-tuebingen.de/de/das-klinikum/einrichtungen/institute/informationstechnologie-und-medizininformatik/translationale-bioinformatik" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/TUM.svg" alt="TUM Klinikum Rechts der Isar" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">TUM Klinikum Rechts der Isar</h3>
-              <a href="https://www.kiinformatik.mri.tum.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-        </div>
-      </section>
+        <div class="partners-content">
+            <section class="partners-section">
+                <h2 class="section-title">
+                    <ITranslate path="partners.subsection1" />
+                </h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/CHARITE.svg"
+                                alt="Charité Berlin"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Charité Berlin
+                            </h3>
+                            <a
+                                href="https://www.bihealth.org/de/forschung/arbeitsgruppe/ag-prasser-medizininformatik"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKT.png"
+                                alt="Universitätsklinikum Tübingen"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Tübingen
+                            </h3>
+                            <a
+                                href="https://www.medizin.uni-tuebingen.de/de/das-klinikum/einrichtungen/institute/informationstechnologie-und-medizininformatik/translationale-bioinformatik"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/TUM.svg"
+                                alt="TUM Klinikum Rechts der Isar"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                TUM Klinikum Rechts der Isar
+                            </h3>
+                            <a
+                                href="https://www.kiinformatik.mri.tum.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <section class="partners-section">
-        <h2 class="section-title"><ITranslate path="partners.subsection2" /></h2>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/LMU.png" alt="Ludwig-Maximilians-Universität München" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Ludwig-Maximilians-Universität München</h3>
-              <a href="https://www.ibe.med.uni-muenchen.de/index.html" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/DKFZ.png" alt="Deutsche Krebsforschungszentrum" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Deutsche Krebsforschungszentrum</h3>
-              <a href="https://www.dkfz.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/EKUT.png" alt="Eberhard Karls Universität Tübingnen" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Eberhard Karls Universität Tübingnen</h3>
-              <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/TMF.jpg" alt="TMF" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">TMF</h3>
-              <a href="https://www.tmf-ev.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKU.svg" alt="Universität Ulm" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Universität Ulm</h3>
-              <a href="https://sysbio.uni-ulm.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKER.svg" alt="Universitätsklinikum Erlangen" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Erlangen</h3>
-              <a href="https://www.imi.med.fau.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKFR.png" alt="Universitätsklinikum Freiburg" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Freiburg</h3>
-              <a href="https://www.uniklinik-freiburg.de/imbi.html" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKHD.png" alt="Universitätsklinikum Heidelberg" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Heidelberg</h3>
-              <a href="https://www.klinikum.uni-heidelberg.de/zentrum-fuer-innere-medizin-medizin-klinik/innere-medizin-iii-kardiologie-angiologie-und-pneumologie/forschung/forschung/klaus-tschira-institut-for-computational-cardiology" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKK.png" alt="Universitätsklinikum Köln" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Köln</h3>
-              <a href="https://www.uk-koeln.de/forschung/medical-data-integration-center-medic/" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKL.png" alt="Universitätsklinikum Leipzig" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Leipzig</h3>
-              <a href="https://www.uniklinikum-leipzig.de/einrichtungen/medical-data-science/" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/CISPA.svg" alt="CISPA" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">CISPA</h3>
-              <a href="https://cispa.de/de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UMM.svg" alt="Universitätsmedizin Mannheim" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name">Universitätsmedizin Mannheim</h3>
-              <a href="https://www.umm.uni-heidelberg.de/mi3/" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-        </div>
-      </section>
+            <section class="partners-section">
+                <h2 class="section-title">
+                    <ITranslate path="partners.subsection2" />
+                </h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/LMU.png"
+                                alt="Ludwig-Maximilians-Universität München"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Ludwig-Maximilians-Universität München
+                            </h3>
+                            <a
+                                href="https://www.ibe.med.uni-muenchen.de/index.html"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/DKFZ.png"
+                                alt="Deutsche Krebsforschungszentrum"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Deutsche Krebsforschungszentrum
+                            </h3>
+                            <a
+                                href="https://www.dkfz.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/EKUT.png"
+                                alt="Eberhard Karls Universität Tübingnen"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Eberhard Karls Universität Tübingnen
+                            </h3>
+                            <a
+                                href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/TMF.jpg"
+                                alt="TMF"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                TMF
+                            </h3>
+                            <a
+                                href="https://www.tmf-ev.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKU.svg"
+                                alt="Universität Ulm"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Universität Ulm
+                            </h3>
+                            <a
+                                href="https://sysbio.uni-ulm.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKER.svg"
+                                alt="Universitätsklinikum Erlangen"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Erlangen
+                            </h3>
+                            <a
+                                href="https://www.imi.med.fau.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKFR.png"
+                                alt="Universitätsklinikum Freiburg"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Freiburg
+                            </h3>
+                            <a
+                                href="https://www.uniklinik-freiburg.de/imbi.html"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKHD.png"
+                                alt="Universitätsklinikum Heidelberg"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Heidelberg
+                            </h3>
+                            <a
+                                href="https://www.klinikum.uni-heidelberg.de/zentrum-fuer-innere-medizin-medizin-klinik/innere-medizin-iii-kardiologie-angiologie-und-pneumologie/forschung/forschung/klaus-tschira-institut-for-computational-cardiology"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKK.png"
+                                alt="Universitätsklinikum Köln"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Köln
+                            </h3>
+                            <a
+                                href="https://www.uk-koeln.de/forschung/medical-data-integration-center-medic/"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKL.png"
+                                alt="Universitätsklinikum Leipzig"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Leipzig
+                            </h3>
+                            <a
+                                href="https://www.uniklinikum-leipzig.de/einrichtungen/medical-data-science/"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/CISPA.svg"
+                                alt="CISPA"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                CISPA
+                            </h3>
+                            <a
+                                href="https://cispa.de/de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UMM.svg"
+                                alt="Universitätsmedizin Mannheim"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                Universitätsmedizin Mannheim
+                            </h3>
+                            <a
+                                href="https://www.umm.uni-heidelberg.de/mi3/"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- Associated Partners Section -->
-      <section class="partners-section">
-        <h2 class="section-title"><ITranslate path="partners.subsection3" /></h2>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/IKIM.png" alt="University Hospital Essen" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Essen</h3>
-              <a href="https://www.ikim.uk-essen.de" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="partner-logo">
-              <img src="/images/partners/UKSH.png" alt="University Hospital Schleswig-Holstein" />
-            </div>
-            <div class="partner-info">
-              <h3 class="partner-name"><ITranslate path="partners.partner.name" /> Schleswig-Holstein</h3>
-              <a href="https://mi-ki.eu/de/willkommen/" class="partner-link"><ITranslate path="partners.partner.info" /></a>
-            </div>
-          </div>
-        </div>
-      </section>
+            <!-- Associated Partners Section -->
+            <section class="partners-section">
+                <h2 class="section-title">
+                    <ITranslate path="partners.subsection3" />
+                </h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/IKIM.png"
+                                alt="University Hospital Essen"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Essen
+                            </h3>
+                            <a
+                                href="https://www.ikim.uk-essen.de"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img
+                                src="/images/partners/UKSH.png"
+                                alt="University Hospital Schleswig-Holstein"
+                            >
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">
+                                <ITranslate path="partners.partner.name" /> Schleswig-Holstein
+                            </h3>
+                            <a
+                                href="https://mi-ki.eu/de/willkommen/"
+                                class="partner-link"
+                            ><ITranslate path="partners.partner.info" /></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- Become a Partner Section -->
-      <section class="become-partner">
-        <div class="become-partner-content">
-          <h2 class="become-partner-title"><ITranslate path="partners.network.title" /></h2>
-          <p class="become-partner-description">
-            <ITranslate path="partners.network.subtitle" />
-          </p>
-          <div class="partner-benefits">
-            <div class="benefit">
-              <h3 class="benefit-title"><ITranslate path="partners.network.box1.title" /></h3>
-              <p class="benefit-description">
-                <ITranslate path="partners.network.box1.text" />
-              </p>
-            </div>
-            <div class="benefit">
-              <h3 class="benefit-title"><ITranslate path="partners.network.box2.title" /></h3>
-              <p class="benefit-description">
-                <ITranslate path="partners.network.box2.text" />
-              </p>
-            </div>
-            <div class="benefit">
-              <h3 class="benefit-title"><ITranslate path="partners.network.box3.title" /></h3>
-              <p class="benefit-description">
-                <ITranslate path="partners.network.box3.text" />
-              </p>
-            </div>
-          </div>
-          <a href="mailto:info@bih-charite.de" class="contact-button"><ITranslate path="partners.network.button" /></a>
+            <!-- Become a Partner Section -->
+            <section class="become-partner">
+                <div class="become-partner-content">
+                    <h2 class="become-partner-title">
+                        <ITranslate path="partners.network.title" />
+                    </h2>
+                    <p class="become-partner-description">
+                        <ITranslate path="partners.network.subtitle" />
+                    </p>
+                    <div class="partner-benefits">
+                        <div class="benefit">
+                            <h3 class="benefit-title">
+                                <ITranslate path="partners.network.box1.title" />
+                            </h3>
+                            <p class="benefit-description">
+                                <ITranslate path="partners.network.box1.text" />
+                            </p>
+                        </div>
+                        <div class="benefit">
+                            <h3 class="benefit-title">
+                                <ITranslate path="partners.network.box2.title" />
+                            </h3>
+                            <p class="benefit-description">
+                                <ITranslate path="partners.network.box2.text" />
+                            </p>
+                        </div>
+                        <div class="benefit">
+                            <h3 class="benefit-title">
+                                <ITranslate path="partners.network.box3.title" />
+                            </h3>
+                            <p class="benefit-description">
+                                <ITranslate path="partners.network.box3.text" />
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="mailto:info@bih-charite.de"
+                        class="contact-button"
+                    ><ITranslate path="partners.network.button" /></a>
+                </div>
+            </section>
         </div>
-      </section>
     </div>
-  </div>
 </template>
 
+<script setup lang="ts">
+import PageHeader from '../components/PageHeader.vue';
+import { useTranslation } from '@/i18n';
+
+const title = useTranslation('partners.title');
+const description = useTranslation('partners.description');
+</script>
 <style scoped>
 .partners-container {
   width: 100%;
@@ -393,10 +556,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-import PageHeader from '../components/PageHeader.vue';
-import { useTranslation } from '@/i18n';
-
-const title = useTranslation('partners.title');
-const description = useTranslation('partners.description');
-</script>

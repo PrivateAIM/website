@@ -1,60 +1,116 @@
 <template>
-  <header class="header">
-    <div class="header-container">
-      <div class="logo-section">
-        <router-link to="/" class="logo">
-            <img src="/images/logo-sm.webp" alt="PrivateAIM Logo" class="header-logo" />
-            <span class="logo-text">PrivateAIM</span>
-                  </router-link>
-      </div>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <router-link
+                    to="/"
+                    class="logo"
+                >
+                    <img
+                        src="/images/logo-sm.webp"
+                        alt="PrivateAIM Logo"
+                        class="header-logo"
+                    >
+                    <span class="logo-text">PrivateAIM</span>
+                </router-link>
+            </div>
 
-      <!-- Navigation für Desktop und Mobile -->
-      <nav class="main-nav" :class="{ 'mobile-menu-open': isMobileMenuOpen }" aria-label="Main navigation">
-        <router-link to="/" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.home" /></router-link>
-        <router-link to="/news" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.news" /></router-link>
-          <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.blog" /></router-link>-->
-        <router-link to="/publications" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.publications" /></router-link>
-        <router-link to="/team" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.team" /></router-link>
-        <router-link to="/partners" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.partners" /></router-link>
-      </nav>
+            <!-- Navigation für Desktop und Mobile -->
+            <nav
+                class="main-nav"
+                :class="{ 'mobile-menu-open': isMobileMenuOpen }"
+                aria-label="Main navigation"
+            >
+                <router-link
+                    to="/"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.home" />
+                </router-link>
+                <router-link
+                    to="/news"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.news" />
+                </router-link>
+                <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.blog" /></router-link>-->
+                <router-link
+                    to="/publications"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.publications" />
+                </router-link>
+                <router-link
+                    to="/team"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.team" />
+                </router-link>
+                <router-link
+                    to="/partners"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.partners" />
+                </router-link>
+            </nav>
 
-      <div class="header-right">
-        <LanguageSelector />
-        <ThemeToggle />
-        <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="github-link">
-          <img
-              src="/images/icons/github-mark.svg"
-              class="icon-light logo-light"
-              alt="GitHub"
-          />
-          <img
-              src="/images/icons/github-mark-white.svg"
-              class="icon-dark logo-dark"
-              alt="GitHub"
-          />
-        </a>
-        <a href="https://discord.gg/yCTX7ePnhb" target="_blank" rel="noopener noreferrer" class="github-link">
-          <img
-              src="/images/icons/discord-mark.svg"
-              class="icon-light logo-light"
-              alt="Discord"
-          />
-          <img
-              src="/images/icons/discord-mark-white.svg"
-              class="icon-dark logo-dark"
-              alt="Discord"
-          />
-        </a>
+            <div class="header-right">
+                <LanguageSelector />
+                <ThemeToggle />
+                <a
+                    href="https://github.com/PrivateAIM"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-link"
+                >
+                    <img
+                        src="/images/icons/github-mark.svg"
+                        class="icon-light logo-light"
+                        alt="GitHub"
+                    >
+                    <img
+                        src="/images/icons/github-mark-white.svg"
+                        class="icon-dark logo-dark"
+                        alt="GitHub"
+                    >
+                </a>
+                <a
+                    href="https://discord.gg/yCTX7ePnhb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-link"
+                >
+                    <img
+                        src="/images/icons/discord-mark.svg"
+                        class="icon-light logo-light"
+                        alt="Discord"
+                    >
+                    <img
+                        src="/images/icons/discord-mark-white.svg"
+                        class="icon-dark logo-dark"
+                        alt="Discord"
+                    >
+                </a>
 
-        <!-- Burger-Menü Button (nur für mobile) -->
-        <button class="burger-menu-btn" :class="{ 'active': isMobileMenuOpen }" @click="toggleMobileMenu" aria-label="Toggle menu">
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
+                <!-- Burger-Menü Button (nur für mobile) -->
+                <button
+                    class="burger-menu-btn"
+                    :class="{ 'active': isMobileMenuOpen }"
+                    aria-label="Toggle menu"
+                    @click="toggleMobileMenu"
+                >
+                    <span class="burger-bar" />
+                    <span class="burger-bar" />
+                    <span class="burger-bar" />
+                </button>
+            </div>
+        </div>
+    </header>
 </template>
 
 <script setup lang="ts">
@@ -69,25 +125,25 @@ const route = useRoute();
 
 // Close mobile menu on any route change (including browser back/forward)
 watch(() => route.path, () => {
-  closeMobileMenu();
+    closeMobileMenu();
 });
 
 // Toggle Mobile Menu
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+    isMobileMenuOpen.value = !isMobileMenuOpen.value;
 
-  // Bei geöffnetem Menü Scrolling unterbinden
-  if (isMobileMenuOpen.value) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+    // Bei geöffnetem Menü Scrolling unterbinden
+    if (isMobileMenuOpen.value) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 };
 
 // Close Mobile Menu (when clicking a nav item)
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-  document.body.style.overflow = '';
+    isMobileMenuOpen.value = false;
+    document.body.style.overflow = '';
 };
 </script>
 

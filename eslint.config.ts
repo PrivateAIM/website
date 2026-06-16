@@ -1,33 +1,35 @@
-import pluginVue from 'eslint-plugin-vue'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import eslintConfig from '@tada5hi/eslint-config';
+import globals from 'globals';
 
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
-
-export default defineConfigWithVueTs(
-  {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
-  },
-
-  {
-    name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
-  },
-
-  pluginVue.configs['flat/essential'],
-  vueTsConfigs.recommended,
-  skipFormatting,
-
+export default eslintConfig(
     {
+        typescript: true,
+        vue: { typescript: true },
+    },
+    {
+        name: 'app/files-to-ignore',
+        ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+    },
+    {
+        // This is a browser SPA; the tada5hi base only provides Node globals.
+        name: 'app/browser-globals',
+        languageOptions: { globals: { ...globals.browser } },
+    },
+    {
+        name: 'app/rule-overrides',
         rules: {
-            "vue/multi-word-component-names": "off",
-            "vue/no-useless-template-attributes": "off",
-            "vue/no-deprecated-html-element-is": "off",
-            "@typescript-eslint/no-explicit-any": "off"
-        }
-    }
-)
+            'vue/multi-word-component-names': 'off',
+            'vue/no-useless-template-attributes': 'off',
+            'vue/no-deprecated-html-element-is': 'off',
+            // Rendered markdown/news content is bound via v-html by design.
+            'vue/no-v-html': 'off',
+            '@typescript-eslint/no-explicit-any': 'off',
+        },
+    },
+    {
+        // Inline SVG `<path d="…">` data in templates legitimately exceeds the line limit.
+        name: 'app/vue-template-overrides',
+        files: ['**/*.vue'],
+        rules: { '@stylistic/max-len': 'off' },
+    },
+);

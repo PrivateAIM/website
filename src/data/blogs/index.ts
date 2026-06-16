@@ -5,21 +5,19 @@ import technicalDeepDivesPosts from './technicalDeepDives';
 
 // Combine all blog posts
 const allBlogPosts = [
-  ...generalIntroductionPosts,
-  ...privateaimInsightsPosts,
-  ...technicalDeepDivesPosts,
-  // Add other categories as you create them
+    ...generalIntroductionPosts,
+    ...privateaimInsightsPosts,
+    ...technicalDeepDivesPosts,
+    // Add other categories as you create them
 ];
 
 // Sort them by date (newest first)
-const sortedBlogPosts = allBlogPosts.sort((a, b) => {
-  return new Date(b.date).getTime() - new Date(a.date).getTime();
-});
+const sortedBlogPosts = allBlogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export {
-  sortedBlogPosts,
-  generalIntroductionPosts,
-  privateaimInsightsPosts,
-  technicalDeepDivesPosts,
-  // Export other categories as you create them
+    sortedBlogPosts,
+    generalIntroductionPosts,
+    privateaimInsightsPosts,
+    technicalDeepDivesPosts,
+    // Export other categories as you create them
 };

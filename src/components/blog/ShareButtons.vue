@@ -1,47 +1,51 @@
 <template>
-  <div class="post-share">
-    <span class="share-label">Share this article:</span>
-    <div class="share-buttons" role="group" aria-label="Share options">
-      <button
-        class="share-button"
-        @click="shareOnTwitter"
-        aria-label="Share on Twitter"
-        :disabled="isSharing"
-      >
-        Twitter
-      </button>
-      <button
-        class="share-button"
-        @click="shareOnLinkedIn"
-        aria-label="Share on LinkedIn"
-        :disabled="isSharing"
-      >
-        LinkedIn
-      </button>
-      <button
-        class="share-button"
-        @click="copyLink"
-        aria-label="Copy link to clipboard"
-        :disabled="isSharing"
-        ref="copyButton"
-      >
-        Copy Link
-      </button>
+    <div class="post-share">
+        <span class="share-label">Share this article:</span>
+        <div
+            class="share-buttons"
+            role="group"
+            aria-label="Share options"
+        >
+            <button
+                class="share-button"
+                aria-label="Share on Twitter"
+                :disabled="isSharing"
+                @click="shareOnTwitter"
+            >
+                Twitter
+            </button>
+            <button
+                class="share-button"
+                aria-label="Share on LinkedIn"
+                :disabled="isSharing"
+                @click="shareOnLinkedIn"
+            >
+                LinkedIn
+            </button>
+            <button
+                ref="copyButton"
+                class="share-button"
+                aria-label="Copy link to clipboard"
+                :disabled="isSharing"
+                @click="copyLink"
+            >
+                Copy Link
+            </button>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 
 interface ShareButtonsProps {
-  title: string;
+    title: string;
 }
 
 const props = defineProps<ShareButtonsProps>();
 const emit = defineEmits<{
-  'linkCopied': [],
-  'copyError': []
+    'linkCopied': [],
+    'copyError': []
 }>();
 
 const isSharing = ref(false);
@@ -49,51 +53,51 @@ const copyButton = ref<HTMLButtonElement | null>(null);
 
 // Social sharing functions
 const shareOnTwitter = () => {
-  isSharing.value = true;
-  try {
-    const text = `Check out this article: "${props.title}"`;
-    const url = window.location.href;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    isSharing.value = true;
+    try {
+        const text = `Check out this article: "${props.title}"`;
+        const url = window.location.href;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
 
-    window.open(twitterUrl, '_blank');
-  } catch (error) {
-    console.error('Error sharing on Twitter:', error);
-  } finally {
-    isSharing.value = false;
-  }
+        window.open(twitterUrl, '_blank');
+    } catch (error) {
+        console.error('Error sharing on Twitter:', error);
+    } finally {
+        isSharing.value = false;
+    }
 };
 
 const shareOnLinkedIn = () => {
-  isSharing.value = true;
-  try {
-    const url = window.location.href;
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    isSharing.value = true;
+    try {
+        const url = window.location.href;
+        const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
 
-    window.open(linkedInUrl, '_blank');
-  } catch (error) {
-    console.error('Error sharing on LinkedIn:', error);
-  } finally {
-    isSharing.value = false;
-  }
+        window.open(linkedInUrl, '_blank');
+    } catch (error) {
+        console.error('Error sharing on LinkedIn:', error);
+    } finally {
+        isSharing.value = false;
+    }
 };
 
 const copyLink = async () => {
-  isSharing.value = true;
-  try {
-    const url = window.location.href;
-    await navigator.clipboard.writeText(url);
-    emit('linkCopied');
+    isSharing.value = true;
+    try {
+        const url = window.location.href;
+        await navigator.clipboard.writeText(url);
+        emit('linkCopied');
 
-    // Focus management for accessibility
-    if (copyButton.value) {
-      copyButton.value.focus();
+        // Focus management for accessibility
+        if (copyButton.value) {
+            copyButton.value.focus();
+        }
+    } catch (error) {
+        console.error('Failed to copy link:', error);
+        emit('copyError');
+    } finally {
+        isSharing.value = false;
     }
-  } catch (error) {
-    console.error('Failed to copy link:', error);
-    emit('copyError');
-  } finally {
-    isSharing.value = false;
-  }
 };
 
 </script>

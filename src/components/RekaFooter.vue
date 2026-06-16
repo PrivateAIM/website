@@ -1,41 +1,92 @@
 <template>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <router-link to="/" class="logo">
-            <img src="/images/logo-sm.webp" alt="PrivateAIM Logo" class="footer-logo" />
-            <span class="logo-text">PrivateAIM</span>
-        </router-link>
-      </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <router-link
+                    to="/"
+                    class="logo"
+                >
+                    <img
+                        src="/images/logo-sm.webp"
+                        alt="PrivateAIM Logo"
+                        class="footer-logo"
+                    >
+                    <span class="logo-text">PrivateAIM</span>
+                </router-link>
+            </div>
 
-      <nav class="footer-links" aria-label="Footer navigation">
-        <div class="footer-column">
-          <div class="footer-header"><ITranslate path="footer.documentation" /></div>
-          <a href="https://docs.privateaim.net/" target="_blank" rel="noopener noreferrer" class="footer-link"><ITranslate path="footer.flame" /></a>
-          <a href="https://github.com/PrivateAIM" target="_blank" rel="noopener noreferrer" class="footer-link"><ITranslate path="footer.github" /></a>
+            <nav
+                class="footer-links"
+                aria-label="Footer navigation"
+            >
+                <div class="footer-column">
+                    <div class="footer-header">
+                        <ITranslate path="footer.documentation" />
+                    </div>
+                    <a
+                        href="https://docs.privateaim.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-link"
+                    ><ITranslate path="footer.flame" /></a>
+                    <a
+                        href="https://github.com/PrivateAIM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-link"
+                    ><ITranslate path="footer.github" /></a>
+                </div>
+
+                <div class="footer-column">
+                    <div class="footer-header">
+                        <ITranslate path="footer.legal" />
+                    </div>
+                    <router-link
+                        to="/imprint"
+                        class="footer-link"
+                    >
+                        <ITranslate path="footer.imprint" />
+                    </router-link>
+                    <router-link
+                        to="/privacy"
+                        class="footer-link"
+                    >
+                        <ITranslate path="footer.privacy" />
+                    </router-link>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-header">
+                        <ITranslate path="footer.sponsor" />
+                    </div>
+                    <a
+                        href="https://www.gesundheitsforschung-bmftr.de/de/privateaim-medizininformatik-plattform-privatspharen-schutzende-analytik-in-der-medizin-16491.php"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="/images/BMFTR-dark.svg"
+                            alt="Sponsor Logo Dark"
+                            class="sponsor-logo sponsor-logo-dark"
+                        >
+                        <img
+                            src="/images/BMFTR-light.svg"
+                            alt="Sponsor Logo Light"
+                            class="sponsor-logo sponsor-logo-light"
+                        >
+                    </a>
+                </div>
+            </nav>
         </div>
 
-        <div class="footer-column">
-          <div class="footer-header"><ITranslate path="footer.legal" /></div>
-          <router-link to="/imprint" class="footer-link"><ITranslate path="footer.imprint" /></router-link>
-          <router-link to="/privacy" class="footer-link"><ITranslate path="footer.privacy" /></router-link>
+        <div class="copyright-container">
+            <div class="copyright">
+                <ITranslate
+                    path="footer.copyright"
+                    :data="{ year: currentYear }"
+                />
+            </div>
         </div>
-          <div class="footer-column">
-              <div class="footer-header"><ITranslate path="footer.sponsor" /></div>
-              <a href="https://www.gesundheitsforschung-bmftr.de/de/privateaim-medizininformatik-plattform-privatspharen-schutzende-analytik-in-der-medizin-16491.php" target="_blank" rel="noopener noreferrer">
-                  <img src="/images/BMFTR-dark.svg" alt="Sponsor Logo Dark" class="sponsor-logo sponsor-logo-dark" />
-                  <img src="/images/BMFTR-light.svg" alt="Sponsor Logo Light" class="sponsor-logo sponsor-logo-light" />
-              </a>
-          </div>
-      </nav>
-    </div>
-
-    <div class="copyright-container">
-      <div class="copyright">
-        <ITranslate path="footer.copyright" :data="{ year: currentYear }" />
-      </div>
-    </div>
-  </footer>
+    </footer>
 </template>
 
 <script setup lang="ts">

@@ -99,9 +99,7 @@ export default defineLocale('en', [
                 email: 'Email',
             },
         },
-        representation: {
-            title: 'Authorized representative',
-        },
+        representation: { title: 'Authorized representative' },
         contact: {
             title: 'Contact',
             department: 'AG Medizininformatik',
@@ -156,9 +154,7 @@ export default defineLocale('en', [
         },
     })]),
 
-    defineNamespace('privacy', [defineTranslations({
-        title: 'Privacy Policy',
-    })]),
+    defineNamespace('privacy', [defineTranslations({ title: 'Privacy Policy' })]),
 
     defineNamespace('cookie', [defineTranslations({
         title: 'Cookie Settings',
