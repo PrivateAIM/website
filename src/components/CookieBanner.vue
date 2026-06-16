@@ -133,12 +133,17 @@ onMounted(() => {
             ?.split('=')[1];
 
         if (cookieOptionsStr) {
-            const savedOptions = JSON.parse(decodeURIComponent(cookieOptionsStr));
-            cookieOptions.value = savedOptions;
+            try {
+                const savedOptions = JSON.parse(decodeURIComponent(cookieOptionsStr));
+                cookieOptions.value = savedOptions;
 
-            // Falls Analytics bereits akzeptiert wurde, initialisiere es
-            if (savedOptions.analytics) {
-                initGoogleAnalytics();
+                // Falls Analytics bereits akzeptiert wurde, initialisiere es
+                if (savedOptions.analytics) {
+                    initGoogleAnalytics();
+                }
+            } catch {
+                // Malformed cookie – show the banner to re-collect consent
+                isVisible.value = true;
             }
         }
     }

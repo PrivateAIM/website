@@ -12,7 +12,8 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `npm run build` — type-check (`vue-tsc`) then build (`vite build`)
 - `npm run build-only` — build without type-check
 - `npm run type-check` — run `vue-tsc --build --noEmit`
-- `npm run lint` — ESLint with auto-fix (also handles code formatting — there is no separate Prettier step)
+- `npm run lint` — ESLint check (non-mutating; this is the CI gate; also reports formatting — no separate Prettier step)
+- `npm run lint:fix` — ESLint with auto-fix (use locally)
 
 ## Architecture
 

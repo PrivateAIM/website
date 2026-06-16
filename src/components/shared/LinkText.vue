@@ -86,20 +86,21 @@ export default defineComponent({
 });
 </script>
 <template>
-    <template
-        :is="tag"
-        v-for="(part, index) in parts"
-        :key="index"
-    >
-        <LocalizedLink
-            v-if="part.isLink"
-            :url="part.url"
-            :internal="part.internal"
+    <component :is="tag">
+        <template
+            v-for="(part, index) in parts"
+            :key="index"
         >
-            {{ part.text }}
-        </LocalizedLink>
-        <template v-else>
-            {{ part.text }}
+            <LocalizedLink
+                v-if="part.isLink"
+                :url="part.url"
+                :internal="part.internal"
+            >
+                {{ part.text }}
+            </LocalizedLink>
+            <template v-else>
+                {{ part.text }}
+            </template>
         </template>
-    </template>
+    </component>
 </template>

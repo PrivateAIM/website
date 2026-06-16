@@ -8,7 +8,8 @@
         "preview": "vite preview",
         "build-only": "vite build",
         "type-check": "vue-tsc --build --noEmit",
-        "lint": "eslint . --fix"
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "engines": {
         "node": ">=22"
