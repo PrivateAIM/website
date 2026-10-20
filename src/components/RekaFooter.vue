@@ -37,6 +37,23 @@
                     ><ITranslate path="footer.github" /></a>
                 </div>
 
+                <div
+                    v-if="referenceLinks.length > 0"
+                    class="footer-column"
+                >
+                    <div class="footer-header">
+                        <ITranslate path="footer.references" />
+                    </div>
+                    <router-link
+                        v-for="reference in referenceLinks"
+                        :key="reference.slug"
+                        :to="`/references/${reference.slug}`"
+                        class="footer-link"
+                    >
+                        {{ reference.name }}
+                    </router-link>
+                </div>
+
                 <div class="footer-column">
                     <div class="footer-header">
                         <ITranslate path="footer.legal" />
@@ -91,9 +108,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useLocale } from '@/i18n';
+import { referenceContentForLocale, references } from '@/data/references';
 
 // Dynamic current year for copyright
 const currentYear = computed(() => new Date().getFullYear());
+
+const locale = useLocale();
+
+// One footer link per predecessor project, so new data files appear automatically
+const referenceLinks = computed(() => references.map((project) => ({
+    slug: project.slug,
+    name: referenceContentForLocale(project, locale.value).name,
+})));
 </script>
 
 <style scoped>
@@ -111,12 +138,14 @@ const currentYear = computed(() => new Date().getFullYear());
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
 .footer-left {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 
@@ -151,7 +180,9 @@ const currentYear = computed(() => new Date().getFullYear());
 
 .footer-links {
   display: flex;
-  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 2rem 3rem;
 }
 
 .footer-column {

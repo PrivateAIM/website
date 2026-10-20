@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 import { sendPageView } from '@/utils/analytics';
+import { findReference, referenceContentForLocale } from '@/data/references';
 
 declare module 'vue-router' {
     interface RouteMeta {
@@ -94,6 +95,16 @@ const routes: Array<RouteRecordRaw> = [
         },
     },
     {
+        path: '/references/:slug',
+        name: 'ReferenceProject',
+        component: () => import('@/views/ReferenceProject.vue'),
+        props: true,
+        meta: {
+            title: 'References — PrivateAIM',
+            description: 'Predecessor projects of PrivateAIM and FLAME, their publications, talks, and code.',
+        },
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: () => import('@/views/NotFound.vue'),
@@ -111,6 +122,25 @@ const router = createRouter({
             behavior: 'smooth',
         };
     },
+});
+
+// Resolve the dynamic title/description of reference pages before afterEach
+// writes them (and sends the page view). The view refines them per locale.
+router.beforeResolve((to) => {
+    if (to.name !== 'ReferenceProject') {
+        return;
+    }
+
+    const { slug } = to.params;
+    const project = typeof slug === 'string' ? findReference(slug) : undefined;
+    if (!project) {
+        to.meta.title = 'Page Not Found — PrivateAIM';
+        return;
+    }
+
+    const content = referenceContentForLocale(project, 'en');
+    to.meta.title = `${content.name} — PrivateAIM`;
+    to.meta.description = content.tagline;
 });
 
 // Update document title and meta description on each navigation

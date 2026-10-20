@@ -73,6 +73,7 @@ export default defineLocale('de', [
         documentation: 'Dokumentation',
         flame: 'FLAME Plattform',
         github: 'GitHub',
+        references: 'Referenzen',
         legal: 'Rechtliches',
         imprint: 'Impressum',
         privacy: 'Datenschutz',
@@ -190,5 +191,16 @@ export default defineLocale('de', [
         title: 'News',
         subtitle: 'Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.',
         noItems: 'Keine Neuigkeiten für dieses Jahr verfügbar.',
+    })]),
+
+    defineNamespace('references', [defineTranslations({
+        successorHeading: 'Jetzt Teil von FLAME',
+        learnMore: 'Mehr über FLAME',
+        publications: 'Publikationen',
+        readPaper: 'Publikation lesen',
+        talks: 'Vorträge',
+        slides: 'Folien',
+        opensInNewTab: 'öffnet in neuem Tab',
+        links: 'Links & Code',
     })]),
 ]);
