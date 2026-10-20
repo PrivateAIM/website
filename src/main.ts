@@ -7,13 +7,14 @@ import './assets/dark-mode.css';
 
 const app = createApp(App);
 
+app.use(router);
+
 const redirectPath = sessionStorage.getItem('redirect-path');
 if (redirectPath) {
     sessionStorage.removeItem('redirect-path');
     router.replace(redirectPath);
 }
 
-app.use(router);
 installTranslator(app);
 
 app.mount('#app');
