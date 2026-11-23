@@ -35,7 +35,6 @@
                 >
                     <ITranslate path="navigation.news" />
                 </router-link>
-                <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.blog" /></router-link>-->
                 <router-link
                     to="/publications"
                     class="nav-item"

@@ -32,7 +32,7 @@
                                 <span class="news-title">{{ newsItem.title }}</span>
                             </button>
                             <div
-                                v-if="openKey === `${year}-${index}`"
+                                v-show="openKey === `${year}-${index}`"
                                 class="news-detail-content"
                             >
                                 <p v-html="newsItem.content" />
@@ -45,6 +45,7 @@
                                         :key="imgIndex"
                                         :src="getImageUrl(image)"
                                         :alt="newsItem.title"
+                                        loading="lazy"
                                         class="news-image"
                                     >
                                 </div>

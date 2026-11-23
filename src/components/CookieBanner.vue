@@ -1,6 +1,7 @@
 // CookieBanner.vue
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+import { useMediaQuery } from '@vueuse/core';
 import { GA_TRACKING_ID, sendPageView } from '@/utils/analytics';
 
 interface CookieOptions {
@@ -15,6 +16,8 @@ interface WindowWithDataLayer extends Window {
 }
 
 const isVisible = ref(false);
+const isMobile = useMediaQuery('(max-width: 576px)');
+const showOptions = ref(false);
 const cookieOptions = ref<CookieOptions>({
     necessary: true,
     analytics: false,
@@ -111,8 +114,14 @@ const acceptNecessary = () => {
 
 // Benutzerdefinierte Auswahl speichern
 const savePreferences = () => {
+    // On mobile the options are collapsed, so the first tap reveals them
+    if (isMobile.value && !showOptions.value) {
+        showOptions.value = true;
+        return;
+    }
     setCookieConsent(cookieOptions.value);
     isVisible.value = false;
+    showOptions.value = false;
 };
 
 // Cookie-Einstellungen öffnen
@@ -162,7 +171,10 @@ onMounted(() => {
                     <ITranslate path="cookie.subtitle" />
                 </p>
 
-                <div class="cookie-options">
+                <div
+                    v-show="!isMobile || showOptions"
+                    class="cookie-options"
+                >
                     <div class="cookie-option">
                         <label>
                             <input
@@ -193,16 +205,16 @@ onMounted(() => {
 
                 <div class="cookie-actions">
                     <button
-                        class="btn btn-outline"
+                        class="btn btn-outline btn-deny"
                         @click="acceptNecessary"
                     >
                         <ITranslate path="cookie.deny" />
                     </button>
                     <button
-                        class="btn btn-outline"
+                        class="btn btn-outline btn-preferences"
                         @click="savePreferences"
                     >
-                        <ITranslate path="cookie.preference" />
+                        <ITranslate :path="isMobile && !showOptions ? 'cookie.customize' : 'cookie.preference'" />
                     </button>
                     <button
                         class="btn btn-primary"
@@ -356,6 +368,66 @@ h3 {
 
 .cookie-settings-button svg {
   margin-right: 6px;
+}
+
+@media (max-width: 576px) {
+  .cookie-banner {
+    padding: 12px 16px;
+    max-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  h3 {
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+
+  .cookie-content > p {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .cookie-options {
+    margin: 10px 0;
+  }
+
+  .cookie-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 6px 8px;
+  }
+
+  /* Reject and accept carry equal visual weight */
+  .btn-deny {
+    order: 1;
+    background-color: #0055b3;
+    border-color: #0055b3;
+    color: white;
+  }
+
+  .btn-deny:hover {
+    background-color: #0055b3;
+    opacity: 0.9;
+  }
+
+  .btn-primary {
+    order: 2;
+  }
+
+  .btn-preferences {
+    order: 3;
+    grid-column: 1 / -1;
+    min-height: 36px;
+    border: none;
+    font-weight: normal;
+    text-decoration: underline;
+  }
 }
 
 /* Slide-up transition for cookie banner */

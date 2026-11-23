@@ -14,7 +14,6 @@ export default defineLocale('en', [
     defineNamespace('navigation', [defineTranslations({
         home: 'Home',
         news: 'News',
-        blog: 'Blog',
         team: 'Team',
         partners: 'Partners',
         publications: 'Publications',
@@ -33,32 +32,32 @@ export default defineLocale('en', [
         },
         mission: {
             title: 'Our Mission',
-            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) is dedicated to bridging the gap between data privacy and medical innovation. Following the "Code to Data" principle, we ensure that patient data remains securely stored within university hospitals, while only analysis algorithms are exchanged.',
-            paragraph2: 'This federated approach guarantees that sensitive medical information never leaves its protected environment, safeguarding patient identities at all times.',
-            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) is at the heart of our initiative. It is a novel software platform designed to enable secure, decentralized data analysis within the Medical Informatics Initiative (MII).',
+            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) is dedicated to bridging the gap between data privacy and medical innovation. Following the "Code to Data" principle, patient data stays at each participating site: only analysis code travels to the data, and only aggregated results travel back.',
+            paragraph2: 'Every site reviews and approves the analysis code before it runs. Because aggregation alone does not guarantee anonymity, this review also assesses whether the returned results are appropriate, supported by safeguards such as end-to-end encrypted exchange between sites and optional local differential privacy.',
+            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) is at the heart of our initiative. It is the platform developed by PrivateAIM for secure distributed analysis of medical data within the Medical Informatics Initiative (MII).',
         },
         howItWorks: {
             title: 'How It Works',
             step1: {
                 title: 'Data Remains Local',
-                description: 'Patient data stays secure within hospital systems, never leaving its protected environment.',
+                description: 'Patient data stays at each participating site and is never transferred to a central system or to other sites.',
             },
             step2: {
                 title: 'Code to Data Approach',
-                description: 'Analysis algorithms travel to the data instead of moving sensitive information.',
+                description: 'Analysis code travels to the data, and each site reviews and approves it before it runs.',
             },
             step3: {
                 title: 'Federated Analysis',
-                description: 'Results are aggregated across institutions while preserving privacy and enhancing research quality.',
+                description: 'Only aggregated results are returned: the results of the sites are combined, and only this combined result is made available to the researcher.',
             },
             experienceFlame: 'Experience FLAME',
-            flamePlatform: 'Our innovative platform for secure, federated medical data analysis',
+            flamePlatform: 'Our platform for secure distributed medical data analysis',
             explorePlatform: 'Explore the Platform',
         },
         vision: {
             title: 'Our Vision',
             paragraph1: 'We envision a future where AI-driven medical research is seamlessly integrated with privacy-by-design principles. PrivateAIM is pioneering a new standard for secure, federated medical AI by fostering a collaborative network of hospitals, researchers, and patients.',
-            paragraph2: 'PrivateAIM actively involves patients, [partners](/partners:internal), and the public through workshops, educational materials, and open dialogue to ensure broad acceptance and transparency. We aim to demystify AI and federated learning, making all security guarantees and benefits understandable.',
+            paragraph2: 'PrivateAIM actively involves patients, [partners](/partners:internal), and the public through workshops, educational materials, and open dialogue to ensure broad acceptance and transparency. We aim to demystify AI and federated learning, making their safeguards, limits, and benefits understandable.',
             paragraph3: 'Over the project time, PrivateAIM and [FLAME](https://docs.privateaim.net:external) will provide the [MII](https://www.medizininformatik-initiative.de/de/start:external) with a secure and scalable solution for cross-institutional medical data analysis. We are shaping the future of trustworthy and impactful medical research by enabling AI-driven healthcare innovations while preserving patient privacy.',
             contribute: 'Open Source Contributions',
             explanation: 'Explore our code repositories and contribute to the future of privacy-preserving medical data research.',
@@ -162,6 +161,7 @@ export default defineLocale('en', [
         subtitle: 'This website uses cookies to improve your browsing experience and to perform analyses of website usage. You can choose which cookies you want to allow.\n',
         accept: 'Accept all',
         deny: 'Only necessary',
+        customize: 'Customize',
         preference: 'Save selection',
         setting: {
             required: {
@@ -170,7 +170,7 @@ export default defineLocale('en', [
             },
             analysis: {
                 title: 'Analysis Cookies',
-                description: 'These cookies allow us to count visits and traffic sources anonymously, so we can measure and improve the performance of our website.',
+                description: 'These optional cookies let us use Google Analytics to measure visits, traffic sources, and use of our website. Details are in our privacy policy.',
             },
         },
     })]),

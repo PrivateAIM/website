@@ -40,7 +40,7 @@
                                 <span class="publication-citation">{{ publication.citation }}</span>
                             </button>
                             <div
-                                v-if="openKey === `${year}-${index}`"
+                                v-show="openKey === `${year}-${index}`"
                                 class="publication-detail-content"
                             >
                                 <div class="publication-authors">

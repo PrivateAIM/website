@@ -24,12 +24,11 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 **Path alias:** `@` → `src/` (configured in both `tsconfig.json` and `vite.config.ts`).
 
 **Key directories:**
-- `src/views/` — page-level components, one per route (Home, BlogList, BlogPost, News, Team, Partners, Publications, Imprint, Privacy, NotFound)
-- `src/components/` — reusable components; `home/` has homepage sections, `blog/` has blog-specific components, `shared/` has generic components like LinkText and LocalizedLink
-- `src/data/blogs/` — blog post content as TypeScript modules organized by category (generalIntroduction, privateaimInsights, technicalDeepDives), aggregated in `index.ts`
+- `src/views/` — page-level components, one per route (Home, News, Team, Partners, Publications, Imprint, Privacy, NotFound)
+- `src/components/` — reusable components; `home/` has homepage sections, `shared/` has generic components like LinkText and LocalizedLink
 - `src/data/news/` — news content as TypeScript modules per locale (`en.ts`, `de.ts`), grouped by year and keyed by locale in `index.ts`
 - `src/i18n/locales/` — `en.ts` and `de.ts` ilingo catalogs built with `defineLocale`/`defineNamespace`/`defineTranslations`
-- `src/types/` — shared TypeScript interfaces (`BlogPost`, `NewsItem`)
+- `src/types/` — shared TypeScript interfaces (`NewsItem`)
 - `src/assets/` — CSS (dark-mode, fonts), SVG logo, flag icons
 
 **Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation. A session-storage-based redirect mechanism in `main.ts` handles SPA redirect after 404 pages on static hosting.
@@ -38,11 +37,9 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 **Theming:** Dark mode via CSS custom properties defined in `src/assets/dark-mode.css`, toggled by `ThemeToggle` component.
 
-**Blog system:** Blog posts are defined as typed objects (`BlogPost` interface) in `src/data/blogs/` files with markdown content strings. They are sorted by date in the index. Categories are a union type in `src/types/BlogPost.ts`.
-
 **News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 
-**Static assets:** Images go in `public/images/` with subdirectories per content type (blog, news, team, partners, authors). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
+**Static assets:** Images go in `public/images/` with subdirectories per content type (news, team, partners). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
 
 ## Preferences
 
@@ -76,13 +73,12 @@ Please test locally before I commit:
 - [ ] Verify navigation to/from the page works
 ```
 
-### Blog / News Content Changes
+### News Content Changes
 ```
 Please test locally before I commit:
 - [ ] `npm run build` passes
-- [ ] `npm run dev` — open /blog or /news
+- [ ] `npm run dev` — open /news
 - [ ] Verify the new/updated content renders correctly
-- [ ] Check markdown rendering (if blog post)
 - [ ] Check both EN and DE locale
 - [ ] Verify images load correctly (if any)
 ```

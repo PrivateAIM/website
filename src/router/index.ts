@@ -18,26 +18,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Home.vue'),
         meta: {
             title: 'PrivateAIM — Privacy-Preserving Analytics in Medicine',
-            description: 'PrivateAIM develops FLAME, a federated learning platform for secure, privacy-preserving medical data analysis across university hospitals within Germany\'s Medical Informatics Initiative.',
-        },
-    },
-    {
-        path: '/blog',
-        name: 'Blog',
-        component: () => import('@/views/BlogList.vue'),
-        meta: {
-            title: 'Blog — PrivateAIM',
-            description: 'Insights, tutorials, and developments in privacy-preserving medical analytics, federated learning, and secure computation from the PrivateAIM consortium.',
-        },
-    },
-    {
-        path: '/blog/:id',
-        name: 'BlogPost',
-        component: () => import('@/views/BlogPost.vue'),
-        props: true,
-        meta: {
-            title: 'Blog — PrivateAIM',
-            description: 'Read about privacy-preserving analytics and federated learning research from the PrivateAIM project.',
+            description: 'PrivateAIM develops FLAME, a federated learning and analysis platform for medical data. Patient data stays at each site and only aggregated results are returned.',
         },
     },
     {

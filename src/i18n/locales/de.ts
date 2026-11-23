@@ -8,7 +8,6 @@ export default defineLocale('de', [
     defineNamespace('navigation', [defineTranslations({
         home: 'Startseite',
         news: 'Neuigkeiten',
-        blog: 'Blog',
         team: 'Team',
         partners: 'Partner',
         publications: 'Publikationen',
@@ -27,32 +26,32 @@ export default defineLocale('de', [
         },
         mission: {
             title: 'Unsere Mission',
-            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip "Code to Data" stellen wir sicher, dass Patientendaten sicher in Universitätskliniken gespeichert bleiben, während nur Analysealgorithmen ausgetauscht werden.',
-            paragraph2: 'Dieser föderierte Ansatz garantiert, dass sensible medizinische Informationen ihre geschützte Umgebung nie verlassen und die Identität der Patienten jederzeit geschützt bleibt.',
-            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist eine neuartige Softwareplattform, die eine sichere, dezentrale Datenanalyse innerhalb der Medizininformatik-Initiative (MII) ermöglicht.',
+            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip "Code to Data" bleiben Patientendaten am jeweiligen teilnehmenden Standort: Nur der Analysecode gelangt zu den Daten, und nur aggregierte Ergebnisse werden zurückgegeben.',
+            paragraph2: 'Jeder Standort prüft und genehmigt den Analysecode, bevor er ausgeführt wird. Da Aggregation allein keine Anonymität garantiert, wird dabei auch bewertet, ob die zurückgegebenen Ergebnisse angemessen sind, unterstützt durch Schutzmaßnahmen wie den Ende-zu-Ende-verschlüsselten Austausch zwischen den Standorten und optionale lokale Differential Privacy.',
+            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist die von PrivateAIM entwickelte Plattform für die sichere verteilte Analyse medizinischer Daten innerhalb der Medizininformatik-Initiative (MII).',
         },
         howItWorks: {
             title: 'Wie es funktioniert',
             step1: {
                 title: 'Daten bleiben lokal',
-                description: 'Patientendaten bleiben in Krankenhaussystemen sicher und verlassen ihre geschützte Umgebung nie.',
+                description: 'Patientendaten bleiben am jeweiligen teilnehmenden Standort und werden nie an ein zentrales System oder andere Standorte übertragen.',
             },
             step2: {
                 title: 'Code-to-Data-Ansatz',
-                description: 'Analysealgorithmen reisen zu den Daten, anstatt sensible Informationen zu bewegen.',
+                description: 'Der Analysecode gelangt zu den Daten, und jeder Standort prüft und genehmigt ihn vor der Ausführung.',
             },
             step3: {
                 title: 'Föderierte Analyse',
-                description: 'Ergebnisse werden über Institutionen hinweg aggregiert, wobei die Privatsphäre gewahrt und die Forschungsqualität verbessert wird.',
+                description: 'Nur aggregierte Ergebnisse werden zurückgegeben: Die Ergebnisse der Standorte werden zusammengeführt, und nur dieses Gesamtergebnis wird den Forschenden bereitgestellt.',
             },
             experienceFlame: 'Erleben Sie FLAME',
-            flamePlatform: 'Unsere innovative Plattform für sichere, föderierte medizinische Datenanalyse',
+            flamePlatform: 'Unsere Plattform für die sichere verteilte Analyse medizinischer Daten',
             explorePlatform: 'Plattform erkunden',
         },
         vision: {
             title: 'Unsere Vision',
             paragraph1: 'Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.',
-            paragraph2: 'PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen.',
+            paragraph2: 'PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und ihre Schutzmaßnahmen, Grenzen und Vorteile verständlich machen.',
             paragraph3: 'Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.',
             contribute: 'Open-Source-Beiträge',
             explanation: 'Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.',
@@ -156,6 +155,7 @@ export default defineLocale('de', [
         subtitle: 'Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n',
         accept: 'Alle akzeptieren',
         deny: 'Nur notwendige',
+        customize: 'Anpassen',
         preference: 'Auswahl speichern',
         setting: {
             required: {
@@ -164,7 +164,7 @@ export default defineLocale('de', [
             },
             analysis: {
                 title: 'Analyse-Cookies',
-                description: 'Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können.',
+                description: 'Mit diesen optionalen Cookies nutzen wir Google Analytics, um Besuche, Verkehrsquellen und die Nutzung unserer Website zu messen. Details finden Sie in unserer Datenschutzerklärung.',
             },
         },
     })]),

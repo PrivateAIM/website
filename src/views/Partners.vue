@@ -312,7 +312,7 @@
                                 <ITranslate path="partners.partner.name" /> Schleswig-Holstein
                             </h3>
                             <a
-                                href="https://mi-ki.eu/de/willkommen/"
+                                href="https://mi-ki.eu/"
                                 class="partner-link"
                             ><ITranslate path="partners.partner.info" /></a>
                         </div>
