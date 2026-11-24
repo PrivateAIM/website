@@ -1,43 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://privateaim.de/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/flame</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/flame"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/flame"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/flame"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/flame</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/flame"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/flame"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/flame"/>
   </url>
   <url>
     <loc>https://privateaim.de/news</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/news"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/news</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/news"/>
   </url>
   <url>
     <loc>https://privateaim.de/publications</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/publications"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/publications"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/publications"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/publications</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/publications"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/publications"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/publications"/>
   </url>
   <url>
     <loc>https://privateaim.de/team</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/team"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/team"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/team"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/team</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/team"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/team"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/team"/>
   </url>
   <url>
     <loc>https://privateaim.de/partners</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/partners"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/partners"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/partners</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/partners"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/partners"/>
   </url>
   <url>
     <loc>https://privateaim.de/references/pht</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/references/pht"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/references/pht"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/references/pht"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/references/pht</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/references/pht"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/references/pht"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/references/pht"/>
   </url>
   <url>
     <loc>https://privateaim.de/imprint</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/imprint"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/imprint</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/imprint"/>
   </url>
   <url>
     <loc>https://privateaim.de/privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/privacy"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/privacy"/>
   </url>
 </urlset>
