@@ -3,6 +3,37 @@ import type { NewsByYear } from './types';
 const news: NewsByYear = {
     '2026': [
         {
+            date: '27/09-01/10/2026',
+            title: 'ISCB-GMDS 2026 in Freiburg',
+            content: 'From September 27 to October 1, 2026, the joint annual conference of the German Association for Medical Informatics, Biometry and Epidemiology (GMDS) and the International Society for Computational Biology (ISCB) took place in Freiburg. Under the motto “Big Data, Small Data, Your Data – Transitions in the Age of Biomedical AI,” the conference focused on the future of health data, biomedicine and AI.\nDr. Marius Herr from University Hospital Tübingen and Marlena Meyer from the German Cancer Research Center (DKFZ) led the well-attended workshop “Developing and Executing Privacy-Preserving Federated Analyses with FLAME” on the MII project PrivateAIM. The workshop was structured into three parts: the FLAME platform and its architecture, developing analyses for federated execution, and uploading analyses to the FLAME Hub and executing them across Nodes in a live demonstration. This showed the complete workflow from analysis development to distributed execution in practice.\nThe conference offered many insightful discussions and new perspectives on privacy-preserving federated analytics, secure processing environments and collaborative health data research.\n\nPhotos: Dr. Claudia Heine (MII)',
+            images: [
+                'gmds/news_gmds-2026_1.webp',
+                'gmds/news_gmds-2026_2.webp',
+            ],
+        },
+        {
+            date: '7-10/07/2026',
+            title: 'AIME 2026 in Ottawa',
+            content: 'From July 7 to 10, 2026, the International Conference on Artificial Intelligence in Medicine (AIME) took place in Ottawa, Canada. For more than 40 years, AIME has been one of the leading international conferences at the intersection of artificial intelligence and medicine, bringing together researchers from computer science, medicine and health policy.\nThe Medical Informatics Initiative (MII) was represented by PrivateAIM. In front of a full auditorium, Dr. Marius Herr from University Hospital Tübingen held the workshop “Privacy-Preserving Federated Learning and Analytics with FLAME.” It addressed how AI models for medical research can be trained securely and in compliance with data protection across sites, without bringing sensitive health data together centrally. International researchers and AI experts discussed the potential of federated learning, technical challenges, the transition of FLAME into productive use, future application scenarios and strategies for the sustainable use of the platform.\nWe thank the University of Ottawa and the Telfer School of Management, in particular Pavel Andreev, William Van Woensel and Antoine Sauré, for an excellent conference.\n\nPhotos: Dr. Claudia Heine (MII)',
+            images: [
+                'aime/news_aime-2026_1.webp',
+                'aime/news_aime-2026_2.webp',
+                'aime/news_aime-2026_3.webp',
+                'aime/news_aime-2026_4.webp',
+            ],
+        },
+        {
+            date: '17-19/06/2026',
+            title: 'Retreat 2026 at Lake Ammersee',
+            content: 'From June 17 to 19, 2026, the PrivateAIM consortium met for its seventh annual retreat in Herrsching at Lake Ammersee. Partners from all 15 participating sites came together to review the results of the past year, check the project progress and outline the final phase of the project. The focus was on the final preparations for the upcoming productive phase with the coordinated rollout of the FLAME platform across sites, as well as on how FLAME can be sustained after the end of the funding period.\nThe first day was dedicated to the state of the art: all work packages presented their current status, milestones reached and open challenges. On the second day, the “Workshop on FLAME” took center stage: an analysis was developed, tested locally and then executed via the FLAME Hub and Nodes. Using the long COVID project HALTA as an example, live demos showed how federated analyses can be carried out along the entire process chain in a real application scenario. In breakout sessions, the teams defined next steps for use cases, usability and benchmarking. The third day looked ahead to strategic topics, upcoming showcases, the long-term continuation of the platform and future collaboration, for example with the Network University Medicine (NUM).\nA joint hike to Andechs Abbey offered room for exchange beyond the agenda. The retreat showed that the technical foundations are in place; the next step is to make concrete applications visible and to bring the value of federated analyses into research and care.\n\nPhotos: Dr. Claudia Heine (MII)',
+            images: [
+                'retreat-2026/news_retreat-2026_1.webp',
+                'retreat-2026/news_retreat-2026_2.webp',
+                'retreat-2026/news_retreat-2026_3.webp',
+                'retreat-2026/news_retreat-2026_4.webp',
+            ],
+        },
+        {
             date: '19-22/05/2026',
             title: 'Medical Informatics Europe (MIE) 2026',
             content: 'From May 19 to 22, 2026, Medical Informatics Europe (MIE) 2026 took place in Genoa, Italy. Under the motto “Opening the Personal Gate between Technology and Health Care,” international experts from academia, healthcare, and technology came together to discuss current developments and future perspectives in digital medicine.\nThe PrivateAIM team was represented in Italy to foster international scientific exchange, establish new connections, and discuss the latest developments in privacy-preserving health data analytics. As part of the conference, we presented two poster contributions: PrivateAIM Coordinator Dr. Marius Herr from University Hospital Tübingen contributed “Enabling Privacy-Preserving Federated Learning in Healthcare,” while Dr. Hammam Abu Attieh from BIH presented “A Maturity Model for the Enforcement of PETs in Federated Settings,” introducing a framework for the systematic assessment and implementation of Privacy-Enhancing Technologies (PETs) in federated data ecosystems.',

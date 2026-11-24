@@ -97,12 +97,13 @@ const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year]
 
 /** Start date of a display date such as `19-22/05/2026` as ISO `2026-05-19`. */
 function isoDate(date: string): string | undefined {
-    const match = date.match(/^(\d{1,2})(?:-\d{1,2})?\/(\d{1,2})\/(\d{4})$/);
+    // "8/10/2025", "8-10/10/2025" or, across months, "27/09-01/10/2026"; the start date counts
+    const match = date.match(/^(\d{1,2})(?:\/(\d{1,2}))?(?:-\d{1,2})?\/(\d{1,2})\/(\d{4})$/);
     if (!match) {
         return undefined;
     }
-    const [, day, month, year] = match;
-    return `${year}-${month!.padStart(2, '0')}-${day!.padStart(2, '0')}`;
+    const [, day, startMonth, endMonth, year] = match;
+    return `${year}-${(startMonth ?? endMonth)!.padStart(2, '0')}-${day!.padStart(2, '0')}`;
 }
 
 /** Stable anchor per entry, e.g. #news-2026-05-19-mie-2026 */
@@ -245,6 +246,11 @@ onMounted(() => {
     padding: 0 1.25rem 1rem;
     color: var(--text-color, #4a5568);
     line-height: 1.6;
+}
+
+/* Keep the paragraph breaks (\n) of the news texts */
+.news-detail-content > p {
+    white-space: pre-line;
 }
 
 .news-images {

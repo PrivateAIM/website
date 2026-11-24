@@ -3,6 +3,37 @@ import type { NewsByYear } from './types';
 const news: NewsByYear = {
     '2026': [
         {
+            date: '27/09-01/10/2026',
+            title: 'ISCB-GMDS 2026 in Freiburg',
+            content: 'Vom 27. September bis 1. Oktober 2026 fand in Freiburg die gemeinsame Jahrestagung der Deutschen Gesellschaft für Medizinische Informatik, Biometrie und Epidemiologie (GMDS) und der International Society for Computational Biology (ISCB) statt. Unter dem Motto „Big Data, Small Data, Your Data – Transitions in the Age of Biomedical AI“ drehte sich alles um die Zukunft von Gesundheitsdaten, Biomedizin und KI.\nDr. Marius Herr vom Universitätsklinikum Tübingen und Marlena Meyer vom Deutschen Krebsforschungszentrum (DKFZ) leiteten den gut besuchten Workshop „Developing and Executing Privacy-Preserving Federated Analyses with FLAME“ zum MII-Projekt PrivateAIM. Der Workshop gliederte sich in drei Teile: die FLAME-Plattform und ihre Architektur, die Entwicklung von Analysen für die föderierte Ausführung sowie das Hochladen von Analysen in den FLAME Hub und ihre Ausführung über die Nodes in einer Live-Demonstration. So wurde der komplette Ablauf von der Analyseentwicklung bis zur verteilten Ausführung in der Praxis sichtbar.\nDie Tagung bot viele spannende Diskussionen und neue Perspektiven zu datenschutzkonformer föderierter Analytik, sicheren Verarbeitungsumgebungen und vernetzter Forschung mit Gesundheitsdaten.\n\nFotos: Dr. Claudia Heine (MII)',
+            images: [
+                'gmds/news_gmds-2026_1.webp',
+                'gmds/news_gmds-2026_2.webp',
+            ],
+        },
+        {
+            date: '7-10/07/2026',
+            title: 'AIME 2026 in Ottawa',
+            content: 'Vom 7. bis 10. Juli 2026 fand in Ottawa, Kanada, die International Conference on Artificial Intelligence in Medicine (AIME) statt. Seit mehr als 40 Jahren gehört die AIME zu den international renommiertesten Konferenzen an der Schnittstelle von Künstlicher Intelligenz und Medizin und bringt Forschende aus Informatik, Medizin und Gesundheitspolitik zusammen.\nDie Medizininformatik-Initiative (MII) war durch PrivateAIM vertreten. Vor vollem Auditorium hielt Dr. Marius Herr vom Universitätsklinikum Tübingen den Workshop „Privacy-Preserving Federated Learning and Analytics with FLAME“. Im Mittelpunkt stand die Frage, wie sich KI-Modelle für die medizinische Forschung datenschutzkonform, sicher und standortübergreifend trainieren lassen, ohne sensible Gesundheitsdaten zentral zusammenzuführen. Internationale Forschende und KI-Expert:innen diskutierten die Potenziale föderierten Lernens, technische Herausforderungen, den Übergang von FLAME in die Produktivphase, künftige Einsatzszenarien sowie Strategien für eine nachhaltige Nachnutzung der Plattform.\nWir bedanken uns bei der University of Ottawa und der Telfer School of Management, namentlich bei Pavel Andreev, William Van Woensel und Antoine Sauré, für eine hochkarätige Konferenz.\n\nFotos: Dr. Claudia Heine (MII)',
+            images: [
+                'aime/news_aime-2026_1.webp',
+                'aime/news_aime-2026_2.webp',
+                'aime/news_aime-2026_3.webp',
+                'aime/news_aime-2026_4.webp',
+            ],
+        },
+        {
+            date: '17-19/06/2026',
+            title: 'Retreat 2026 am Ammersee',
+            content: 'Vom 17. bis 19. Juni 2026 kam das PrivateAIM-Konsortium in Herrsching am Ammersee zu seinem siebten Jahres-Retreat zusammen. Partner aller 15 beteiligten Standorte evaluierten die Ergebnisse des vergangenen Jahres, prüften den Projektfortschritt und umrissen die finale Phase des Projekts. Im Mittelpunkt standen die finalen Vorbereitungen für die bevorstehende Produktivphase mit dem koordinierten standortübergreifenden Rollout der FLAME-Plattform sowie die Frage, wie FLAME nach dem Ende der Förderung verstetigt werden kann.\nDer erste Tag stand im Zeichen der Bestandsaufnahme: Alle Arbeitspakete stellten ihren aktuellen Entwicklungsstand, erreichte Meilensteine und offene Herausforderungen vor. Am zweiten Tag rückte der „Workshop on FLAME“ in den Mittelpunkt: Eine Analyse wurde entwickelt, lokal getestet und anschließend über FLAME Hub und Nodes ausgeführt. Am Beispiel des Long-COVID-Projekts HALTA zeigten Live-Demos, wie föderierte Analysen in einem realen Anwendungsszenario entlang der gesamten Prozesskette umgesetzt werden können. In Breakout-Sessions erarbeiteten die Teams nächste Schritte zu Use Cases, Usability und Benchmarking. Der dritte Tag richtete den Blick nach vorn: auf strategische Entwicklungsthemen, kommende Showcases, die Verstetigung der Plattform und künftige Zusammenarbeit, etwa mit dem Netzwerk Universitätsmedizin (NUM).\nDie gemeinsame Wanderung zum Kloster Andechs bot Raum für Austausch jenseits der Agenda. Das Retreat hat gezeigt: Die technischen Grundlagen stehen. Jetzt geht es darum, konkrete Anwendungen sichtbar zu machen und den Mehrwert föderierter Analysen in Forschung und Versorgung zu bringen.\n\nFotos: Dr. Claudia Heine (MII)',
+            images: [
+                'retreat-2026/news_retreat-2026_1.webp',
+                'retreat-2026/news_retreat-2026_2.webp',
+                'retreat-2026/news_retreat-2026_3.webp',
+                'retreat-2026/news_retreat-2026_4.webp',
+            ],
+        },
+        {
             date: '19-22/05/2026',
             title: 'Medical Informatics Europe (MIE) 2026',
             content: 'Vom 19. bis 22. Mai 2026 fand die Medical Informatics Europe (MIE) 2026 in Genua statt. Unter dem Motto „Opening the Personal Gate between Technology and Health Care“ kamen internationale Expert:innen aus Wissenschaft, Gesundheitsversorgung und Technologie zusammen, um aktuelle Entwicklungen und Zukunftsperspektiven der digitalen Medizin zu diskutieren.\nDas Team von PrivateAIM war in Italien vertreten, um den länderübergreifenden fachlichen Austausch zu fördern, neue Kontakte zu knüpfen und aktuelle Entwicklungen im Bereich datenschutzkonformer Gesundheitsdatenanalyse zu diskutieren. Im Rahmen der Konferenz präsentierten wir zwei Posterbeiträge: PrivateAIM-Koordinator Dr. Marius Herr von der UK Tübingen steuerte „Enabling Privacy-Preserving Federated Learning in Healthcare“ bei, während Dr. Hammam Abu Attieh vom BIH mit „A Maturity Model for the Enforcement of PETs in Federated Settings“ ein Konzept zur systematischen Bewertung und Umsetzung von Privacy-Enhancing Technologies (PETs) in föderierten Datenökosystemen vorstellte.',
