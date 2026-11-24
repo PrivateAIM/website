@@ -8,10 +8,12 @@ import { avatarDevServer, downloadAvatars } from './scripts/avatars';
 import {
     applyPageHead,
     moveLocaleHomes,
+    pageDates,
     prerenderPaths,
     writeLegacyRedirects,
     writeSitemap,
 } from './scripts/prerender';
+import { thumbnailDevServer, writeThumbnails } from './scripts/thumbnails';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,8 +21,10 @@ export default defineConfig({
         vue(),
         vueDevTools(),
         avatarDevServer(),
+        thumbnailDevServer(),
     ],
     assetsInclude: ['**/*.md'],
+    define: { __PAGE_DATES__: JSON.stringify(pageDates()) },
     resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
     ssgOptions: {
         // Flat files: GitHub Pages serves news.html at /news, while news/index.html would 301 to /news/
@@ -32,7 +36,7 @@ export default defineConfig({
             moveLocaleHomes('dist');
             writeSitemap('dist');
             writeLegacyRedirects('dist');
-            await downloadAvatars('dist');
+            await Promise.all([downloadAvatars('dist'), writeThumbnails('dist')]);
         },
     },
 });

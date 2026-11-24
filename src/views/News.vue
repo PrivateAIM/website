@@ -41,7 +41,7 @@
                                     <span class="news-thumb">
                                         <img
                                             v-if="newsItem.images?.[0]"
-                                            :src="getImageUrl(newsItem.images[0])"
+                                            :src="thumbnail(`news/${newsItem.images[0]}`, 192)"
                                             alt=""
                                             loading="lazy"
                                             width="120"
@@ -93,8 +93,8 @@
                                             @click="openGallery(newsItem, imgIndex)"
                                         >
                                             <img
-                                                :src="getImageUrl(image)"
-                                                :alt="newsItem.title"
+                                                :src="thumbnail(`news/${image}`, 640)"
+                                                :alt="`${newsItem.title}, ${t('news.gallery.photo', { index: imgIndex + 1, count: newsItem.images.length })}`"
                                                 loading="lazy"
                                             >
                                         </button>
@@ -120,6 +120,7 @@ import { computed, onMounted, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
 import AppIcon from '@/components/shared/AppIcon.vue';
 import ImageLightbox from '@/components/shared/ImageLightbox.vue';
+import { thumbnail } from '@/utils/thumbnail';
 import { useLocale, useTranslation, useTranslator } from '@/i18n';
 import {
     type NewsCategory,

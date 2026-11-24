@@ -5,6 +5,7 @@ import {
     writeFile, 
 } from 'node:fs/promises';
 import { join } from 'node:path';
+import sharp from 'sharp';
 import type { Plugin } from 'vite';
 
 /**
@@ -17,12 +18,15 @@ const AVATAR_PATH = /\/images\/avatars\/([A-Za-z0-9-]+)\.png/g;
 /** Twice the 4rem display size, for high-density screens. */
 const AVATAR_SIZE = 128;
 
-interface Avatar {
-    body: Buffer;
-    type: string;
+/** GitHub ignores the size parameter for default identicons (420 px), so resize them ourselves. */
+async function downscale(body: Buffer): Promise<Buffer> {
+    return sharp(body)
+        .resize(AVATAR_SIZE, AVATAR_SIZE, { fit: 'cover', withoutEnlargement: true })
+        .png({ compressionLevel: 9, palette: true })
+        .toBuffer();
 }
 
-async function fetchAvatar(user: string, attempts = 3): Promise<Avatar> {
+async function fetchAvatar(user: string, attempts = 3): Promise<Buffer> {
     let lastError: unknown;
     for (let attempt = 0; attempt < attempts; attempt++) {
         try {
@@ -30,11 +34,7 @@ async function fetchAvatar(user: string, attempts = 3): Promise<Avatar> {
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
             }
-            return {
-                 
-                body: Buffer.from(await response.arrayBuffer()),
-                type: response.headers.get('content-type') ?? 'image/png',
-            };
+            return await downscale(Buffer.from(await response.arrayBuffer()));
         } catch (error) {
             lastError = error;
         }
@@ -63,8 +63,7 @@ export async function downloadAvatars(outDir: string) {
     const avatarDir = join(outDir, 'images', 'avatars');
     await mkdir(avatarDir, { recursive: true });
     await Promise.all([...users].map(async (user) => {
-        const { body } = await fetchAvatar(user);
-        await writeFile(join(avatarDir, `${user}.png`), body);
+        await writeFile(join(avatarDir, `${user}.png`), await fetchAvatar(user));
     }));
 }
 
@@ -82,8 +81,8 @@ export function avatarDevServer(): Plugin {
                 }
 
                 try {
-                    const { body, type } = await fetchAvatar(user);
-                    res.setHeader('Content-Type', type);
+                    const body = await fetchAvatar(user);
+                    res.setHeader('Content-Type', 'image/png');
                     res.end(body);
                 } catch (error) {
                     next(error);

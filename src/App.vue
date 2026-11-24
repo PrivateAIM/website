@@ -43,9 +43,12 @@ import {
     projectNode,
     projectReferenceNode,
     publicationListId,
+    techArticleId,
+    techArticleNode,
     webPageNode,
     websiteNode,
 } from '@/seo/structuredData';
+import { pageDate } from '@/seo/pageDates';
 
 const route = useRoute();
 const locale = useLocale();
@@ -63,9 +66,12 @@ const pageNodes = computed(() => {
     const path = localePath(route.path, locale.value);
     const title = route.meta.title ?? 'PrivateAIM';
     const isHome = page === 'Home';
+    const hasBreadcrumb = !isHome && page !== 'NotFound';
+    const dateModified = page === 'NotFound' ? undefined : pageDate(path);
     let mainEntity: string | undefined;
     if (page === 'Publications') mainEntity = publicationListId(path);
     if (page === 'Flame') mainEntity = flameNode['@id'] as string;
+    if (page === 'FederatedAnalysis') mainEntity = techArticleId(path);
 
     return [
         websiteNode,
@@ -76,10 +82,13 @@ const pageNodes = computed(() => {
             locale: locale.value,
             type: PAGE_TYPES[page],
             mainEntity,
+            dateModified,
+            breadcrumb: hasBreadcrumb,
         }),
         ...(isHome ? [projectNode, flameNode] : [projectReferenceNode]),
         ...(page === 'Flame' ? [flameNode] : []),
-        ...(isHome || page === 'NotFound' ? [] : [breadcrumbNode(localePath('/', locale.value), 'PrivateAIM', path, title.split(' — ')[0] ?? title)]),
+        ...(page === 'FederatedAnalysis' ? [techArticleNode(path, title.split(' — ')[0] ?? title, route.meta.description ?? '', locale.value, dateModified)] : []),
+        ...(!hasBreadcrumb ? [] : [breadcrumbNode(localePath('/', locale.value), 'PrivateAIM', path, title.split(' — ')[0] ?? title)]),
     ];
 });
 </script>

@@ -386,6 +386,22 @@ onMounted(() => {
 }
 
 @media (max-width: 576px) {
+  /* Icon-only on phones, so the floating button covers less content (the aria-label names it) */
+  .cookie-settings-button {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  .cookie-settings-button svg {
+    margin-right: 0;
+  }
+
+  .cookie-settings-button span {
+    display: none;
+  }
+
   .cookie-banner {
     padding: 12px 16px;
     max-height: 100dvh;

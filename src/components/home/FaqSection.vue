@@ -2,7 +2,8 @@
 import { computed } from 'vue';
 import JsonLd from '@/components/shared/JsonLd';
 import LinkText from '@/components/shared/LinkText.vue';
-import { useTranslation } from '@/i18n';
+import { useLocalePath, useTranslation } from '@/i18n';
+import { faqId } from '@/seo/structuredData';
 
 const keys = ['q1', 'q2', 'q3', 'q4', 'q5'];
 const items = keys.map((key) => ({
@@ -14,8 +15,11 @@ const items = keys.map((key) => ({
 // Link markup "[text](url:type)" reduced to its text for the structured data
 const plain = (text: string) => text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
 
+const localePath = useLocalePath();
+
 const faqPage = computed(() => ({
     '@type': 'FAQPage',
+    '@id': faqId(localePath('/')),
     mainEntity: items.map(({ question, answer }) => ({
         '@type': 'Question',
         name: question.value,

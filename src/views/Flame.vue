@@ -20,6 +20,19 @@
                 <ITranslate path="flame.context" />
             </p>
 
+            <!-- On phones the audiences are far down: offer a shortcut -->
+            <router-link
+                :to="{ hash: '#audiences' }"
+                class="audience-jump"
+            >
+                <ITranslate path="flame.audiences.title" />
+                <AppIcon
+                    name="arrow"
+                    :size="16"
+                    class="audience-jump-icon"
+                />
+            </router-link>
+
             <router-link
                 :to="localePath('/federated-analysis')"
                 class="explainer-banner"
@@ -59,21 +72,13 @@
                     </li>
                 </ol>
                 <figure class="flame-figure">
+                    <!-- One image that follows the theme, set after mount so only one variant is downloaded -->
                     <img
-                        src="/images/flame/flame-architecture-light.webp"
+                        :src="isDark === undefined ? undefined : `/images/flame/flame-architecture-${isDark ? 'dark' : 'light'}.webp`"
                         :alt="figureAlt"
                         width="1596"
                         height="801"
                         loading="lazy"
-                        class="figure-light"
-                    >
-                    <img
-                        src="/images/flame/flame-architecture-dark.webp"
-                        :alt="figureAlt"
-                        width="1596"
-                        height="801"
-                        loading="lazy"
-                        class="figure-dark"
                     >
                     <figcaption><ITranslate path="flame.architecture.figureCaption" /></figcaption>
                 </figure>
@@ -107,7 +112,10 @@
                 </p>
             </section>
 
-            <section class="flame-section">
+            <section
+                id="audiences"
+                class="flame-section"
+            >
                 <h2 class="section-heading">
                     <ITranslate path="flame.audiences.title" />
                 </h2>
@@ -168,15 +176,19 @@
                     </li>
                 </ul>
             </section>
+            <LastUpdated path="flame.lastUpdated" />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import PageHeader from '@/components/PageHeader.vue';
+import LastUpdated from '@/components/shared/LastUpdated.vue';
+import { useDarkMode } from '@/utils/darkMode';
 import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath, useTranslation } from '@/i18n';
 
+const isDark = useDarkMode();
 const title = useTranslation('flame.title');
 const subtitle = useTranslation('flame.subtitle');
 const figureAlt = useTranslation('flame.architecture.figureAlt');
@@ -300,6 +312,25 @@ const resources = [
     margin-bottom: 2rem;
 }
 
+.audience-jump {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .audience-jump {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin: -1rem 0 2rem;
+        color: var(--link-color);
+        font-weight: 600;
+    }
+
+    .audience-jump-icon {
+        transform: rotate(90deg);
+    }
+}
+
 .explainer-banner {
     display: flex;
     align-items: center;
@@ -399,18 +430,6 @@ const resources = [
 .flame-figure img {
     width: 100%;
     height: auto;
-}
-
-.figure-dark {
-    display: none;
-}
-
-.dark-mode .figure-light {
-    display: none;
-}
-
-.dark-mode .figure-dark {
-    display: block;
 }
 
 .flame-figure figcaption {

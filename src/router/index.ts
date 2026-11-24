@@ -64,8 +64,8 @@ const pages: PageRoute[] = [
                 description: 'FLAME is the PrivateAIM platform for federated analysis of medical data: a Hub coordinates, a Node at each site computes, only aggregates leave.',
             },
             de: {
-                title: 'FLAME (Federated Learning and Analysis in Medicine) — die Plattform von PrivateAIM',
-                description: 'FLAME ist die PrivateAIM-Plattform für föderierte Analysen medizinischer Daten: Ein Hub koordiniert, Nodes an den Standorten rechnen, nur Aggregate gehen raus.',
+                title: 'FLAME (Federated Learning and Analysis in Medicine) — PrivateAIM',
+                description: 'FLAME ist die PrivateAIM-Plattform für föderierte Analysen medizinischer Daten: Ein Hub koordiniert, Nodes rechnen vor Ort, nur Aggregate gehen raus.',
             },
         },
     },
@@ -125,7 +125,7 @@ const pages: PageRoute[] = [
             },
             de: {
                 title: 'Partner — PrivateAIM',
-                description: 'Universitätskliniken und Forschungseinrichtungen, die gemeinsam an datenschutzfreundlichen föderierten Analysen medizinischer Daten in Deutschland arbeiten.',
+                description: 'Universitätskliniken und Forschungseinrichtungen, die an datenschutzfreundlichen föderierten Analysen medizinischer Daten in Deutschland arbeiten.',
             },
         },
     },
@@ -170,7 +170,7 @@ const pages: PageRoute[] = [
             },
             de: {
                 title: 'Datenschutzerklärung — PrivateAIM',
-                description: 'Datenschutzerklärung der PrivateAIM-Website: welche Daten beim Besuch verarbeitet werden, wie Analyse-Cookies funktionieren und welche Rechte Sie nach DSGVO haben.',
+                description: 'Datenschutzerklärung der PrivateAIM-Website: welche Daten beim Besuch verarbeitet werden, wie Analyse-Cookies funktionieren und Ihre Rechte nach DSGVO.',
             },
         },
     },
@@ -210,7 +210,8 @@ export const routes: RouteRecordRaw[] = [
 
 // Scroll to the linked news entry (/news#news-…), otherwise to the top
 export const scrollBehavior: RouterScrollBehavior = (to) => {
-    if (to.hash.startsWith('#news-')) {
+    // Anchors (news entries, #audiences on /flame) sit below the sticky header
+    if (to.hash) {
         return { el: to.hash, top: 80 };
     }
     return { top: 0, behavior: 'smooth' };
