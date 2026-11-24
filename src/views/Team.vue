@@ -195,7 +195,7 @@ const team: TeamMember[] = [
         github: 'Nightknight3000',
     },
     {
-        name: 'Mehrshad',
+        name: 'Mehrshad Jaberansary',
         role: 'Developer & Analyst',
         github: 'Mehrsary',
     },
@@ -208,11 +208,6 @@ const team: TeamMember[] = [
         name: 'Paul Brassel',
         role: 'Developer',
         github: 'pbrassel',
-    },
-    {
-        name: 'Hammam Abu Attieh',
-        role: 'Privacy Engineer',
-        github: 'AbuAttieh',
     },
     {
         name: 'Mehmed Halilovic',
@@ -310,6 +305,11 @@ const leadership: TeamMember[] = [
 ];
 
 const alumni: TeamMember[] = [
+    {
+        name: 'Hammam Abu Attieh',
+        role: 'Privacy Engineer',
+        github: 'AbuAttieh',
+    },
     {
         name: 'Maximilian Jugl',
         role: 'Former Node Lead & Developer',
