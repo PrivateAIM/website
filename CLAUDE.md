@@ -31,7 +31,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `src/data/news/` — news content as TypeScript modules per locale (`en.ts`, `de.ts`), grouped by year and keyed by locale in `index.ts`
 - `src/i18n/locales/` — `en.ts` and `de.ts` ilingo catalogs built with `defineLocale`/`defineNamespace`/`defineTranslations`
 - `src/types/` — shared TypeScript interfaces (`NewsItem`)
-- `src/assets/` — CSS (dark-mode, fonts), SVG logo, flag icons
+- `src/assets/` — CSS (colour tokens, fonts), flag icons
 
 **Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation.
 
@@ -39,7 +39,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 **i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Lookups are synchronous (ilingo's own `get()` is async and would prerender raw keys). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
 
-**Theming:** Dark mode via CSS custom properties defined in `src/assets/dark-mode.css`, toggled by `ThemeToggle` component.
+**Theming:** All colours are CSS custom properties in `src/assets/dark-mode.css` (light palette on `:root`, dark palette on `body.dark-mode`, toggled by `ThemeToggle`), derived from the PrivateAIM and FLAME logos. Components use `var(--token)` without fallbacks and no literal colours; derive shades with `color-mix()`. Yellow is never text on a light background, and FLAME orange is reserved for FLAME content. Bootstrap CSS is not imported.
 
 **News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 
