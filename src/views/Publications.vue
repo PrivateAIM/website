@@ -431,21 +431,21 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 .search-input {
     flex: 1;
     padding: 0.75rem 1rem;
-    border: 1px solid var(--border-color, #eaeaea);
+    border: 1px solid var(--text-muted);
     border-radius: 0.5rem;
     font-size: 1rem;
-    background-color: var(--card-bg, #ffffff);
-    color: var(--text-color, #1a202c);
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .search-input::placeholder {
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     opacity: 0.7;
 }
 
 .result-count {
     font-size: 0.9rem;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     white-space: nowrap;
 }
 
@@ -457,8 +457,8 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--text-color, #1a202c);
-    border-bottom: 2px solid var(--primary-color, #3182ce);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
@@ -469,11 +469,11 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 }
 
 .publication-item {
-    background-color: var(--card-bg, #ffffff);
+    background-color: var(--card-bg);
     border-radius: 0.5rem;
     overflow: hidden;
-    border: 1px solid var(--border-color, #eaeaea);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
 }
 
 .publication-details {
@@ -498,11 +498,11 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 }
 
 .publication-summary:hover {
-    background-color: var(--tag-bg, #f7fafc);
+    background-color: var(--tag-bg);
 }
 
 .publication-summary:focus-visible {
-    outline: 2px solid var(--primary-color, #3182ce);
+    outline: 2px solid var(--primary-color);
     outline-offset: -2px;
 }
 
@@ -518,8 +518,8 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
     line-height: 2rem;
     text-align: center;
     border-radius: 50%;
-    background-color: var(--tag-bg, #f0f4f8);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--tag-bg);
+    color: var(--link-color);
 }
 
 .publication-summary.open::after {
@@ -529,31 +529,31 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 .publication-title {
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     line-height: 1.5;
 }
 
 .publication-citation {
     font-size: 0.9rem;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     line-height: 1.4;
 }
 
 .publication-detail-content {
     padding: 0 1.25rem 1rem;
-    color: var(--text-color, #4a5568);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 .publication-authors {
     font-size: 0.9rem;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     margin-bottom: 0.75rem;
 }
 
 .publication-link {
     display: inline-block;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
 }
@@ -565,14 +565,14 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 .no-results {
     text-align: center;
     padding: 3rem 0;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
 }
 
 .reset-button {
     margin-top: 1rem;
     padding: 0.5rem 1.25rem;
-    background-color: var(--primary-color, #3182ce);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
     border: none;
     border-radius: 0.375rem;
     cursor: pointer;

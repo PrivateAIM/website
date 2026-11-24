@@ -22,13 +22,13 @@ h2 {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .mission-text {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: var(--text-color, #2d3748);
+  color: var(--text-color);
 }
 
 .mission-text p {
@@ -37,7 +37,7 @@ h2 {
 
 .mission-lead {
   padding-left: 1.25rem;
-  border-left: 4px solid var(--primary-color, #3182ce);
+  border-left: 4px solid var(--primary-color);
   font-size: 1.25rem;
 }
 </style>

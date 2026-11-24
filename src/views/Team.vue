@@ -187,16 +187,16 @@ const openLink = (url: string) => {
 
 const team: TeamMember[] = [
     {
-        name: 'Peter Placzek',
-        role: 'Technical Lead',
-        github: 'tada5hi',
-        linkedin: 'https://linkedin.com/in/peter-placzek-047a74210/',
-    },
-    {
         name: 'Marius Herr',
         role: 'Coordinator & Analyst',
         github: 'SirHerr',
         linkedin: 'https://de.linkedin.com/in/dr-marius-herr-60b89b18b',
+    },
+    {
+        name: 'Peter Placzek',
+        role: 'Technical Lead',
+        github: 'tada5hi',
+        linkedin: 'https://linkedin.com/in/peter-placzek-047a74210/',
     },
     {
         name: 'Bruce Schultz',
@@ -366,8 +366,8 @@ const alumni: TeamMember[] = [
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--text-color, #1a202c);
-    border-bottom: 2px solid var(--primary-color, #3182ce);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
@@ -382,10 +382,10 @@ const alumni: TeamMember[] = [
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.25rem;
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     color: inherit;
@@ -394,7 +394,7 @@ const alumni: TeamMember[] = [
 
 .member-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 12px color-mix(in srgb, var(--shadow-color) 8%, transparent);
 }
 
 .member-photo {
@@ -403,7 +403,7 @@ const alumni: TeamMember[] = [
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
-    background-color: var(--tag-bg, #f0f4f8);
+    background-color: var(--tag-bg);
 }
 
 
@@ -414,13 +414,13 @@ const alumni: TeamMember[] = [
 .member-name {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     margin: 0;
 }
 
 .member-role {
     font-size: 0.85rem;
-    color: var(--primary-color, #3182ce);
+    color: var(--primary-color); /* navy in light mode, yellow in dark mode */
     margin: 0.15rem 0 0;
 }
 
@@ -431,13 +431,13 @@ const alumni: TeamMember[] = [
 }
 
 .member-link-item {
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     display: flex;
     align-items: center;
 }
 
 .member-link-item:hover {
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
 }
 
 .member-card--alumni {
@@ -446,7 +446,7 @@ const alumni: TeamMember[] = [
 
 .alumni-note {
     font-size: 0.95rem;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     margin-bottom: 1rem;
     font-style: italic;
 }

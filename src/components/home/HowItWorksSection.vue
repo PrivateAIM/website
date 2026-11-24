@@ -56,7 +56,7 @@ const steps = [
   margin-bottom: 5rem;
   padding: 3rem;
   border-radius: 1rem;
-  background-color: var(--tag-bg, #f7fafc);
+  background-color: var(--tag-bg);
 }
 
 h2 {
@@ -64,7 +64,7 @@ h2 {
   font-weight: 700;
   margin-bottom: 2.5rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .steps-container {
@@ -88,7 +88,7 @@ h2 {
   top: 2rem;
   left: calc(50% + 2.75rem);
   width: calc(100% - 5.5rem + 2rem);
-  border-top: 2px dashed var(--primary-color, #3182ce);
+  border-top: 2px dashed var(--primary-color);
   opacity: 0.5;
 }
 
@@ -101,9 +101,9 @@ h2 {
   height: 4rem;
   margin-bottom: 1rem;
   border-radius: 1rem;
-  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-  color: #ffffff;
-  box-shadow: 0 8px 18px rgba(30, 144, 255, 0.3);
+  background-color: var(--primary-color);
+  color: var(--on-primary);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--primary-color) 30%, transparent);
 }
 
 .step-number {
@@ -116,23 +116,23 @@ h2 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background-color: var(--card-bg, #ffffff);
-  color: var(--primary-color, #3182ce);
+  background-color: var(--card-bg);
+  color: var(--link-color);
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--shadow-color) 15%, transparent);
 }
 
 .step h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .step p {
   margin: 0;
   line-height: 1.6;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 
 .platform-cta {
@@ -142,19 +142,19 @@ h2 {
   gap: 1.5rem;
   padding: 1.5rem 2rem;
   border-radius: 0.75rem;
-  background-color: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #e2e8f0);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 .platform-cta h3 {
   font-size: 1.35rem;
   margin-bottom: 0.25rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .platform-cta p {
   margin: 0;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 
 .cta-button {
@@ -164,15 +164,15 @@ h2 {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  background-color: var(--primary-color, #3182ce);
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
 .cta-button:hover {
-  background-color: #1a75d1;
+  background-color: var(--primary-hover);
 }
 
 @media (max-width: 768px) {

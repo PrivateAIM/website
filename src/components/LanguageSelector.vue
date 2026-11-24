@@ -142,7 +142,7 @@ onUnmounted(() => {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem;
-  color: var(--nav-text, #64748b);
+  color: var(--nav-text);
   background: none;
   border: none;
   cursor: pointer;
@@ -151,7 +151,7 @@ onUnmounted(() => {
 
 .language-trigger:hover,
 .language-trigger.active {
-  color: var(--text-color, #1e293b);
+  color: var(--text-color);
 }
 
 .chevron-icon {
@@ -169,9 +169,9 @@ onUnmounted(() => {
   right: 0;
   width: 80px;
   margin-top: 0.5rem;
-  background-color: var(--card-bg, white);
+  background-color: var(--card-bg);
   border-radius: 0.375rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--shadow-color) 10%, transparent);
   z-index: 50;
   overflow: hidden;
   animation: slideIn 0.1s ease-out;
@@ -183,7 +183,7 @@ onUnmounted(() => {
   box-sizing: border-box;
   text-align: center;
   padding: 0.5rem;
-  color: var(--nav-text, #64748b);
+  color: var(--nav-text);
   background: none;
   border: none;
   cursor: pointer;
@@ -191,13 +191,13 @@ onUnmounted(() => {
 }
 
 .language-option:hover {
-  background-color: var(--tag-bg, #f1f1f1);
-  color: var(--text-color, #1e293b);
+  background-color: var(--tag-bg);
+  color: var(--text-color);
 }
 
 .language-option.selected {
-  background-color: var(--tag-bg, #f1f1f1);
-  color: var(--primary-color, #3182ce);
+  background-color: var(--tag-bg);
+  color: var(--link-color);
 }
 
 .flag-icon {

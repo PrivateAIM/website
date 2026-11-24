@@ -54,7 +54,7 @@ h2 {
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .vision-content {
@@ -74,11 +74,11 @@ h2 {
 }
 
 .action-card {
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px color-mix(in srgb, var(--shadow-color) 5%, transparent);
     height: fit-content;
 }
 
@@ -89,14 +89,14 @@ h2 {
 .card-content h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .card-link {
     display: inline-block;
     margin-top: 1rem;
     padding-block: 3px;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     font-weight: 500;
     text-decoration: none;
 }

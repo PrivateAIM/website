@@ -89,8 +89,8 @@ const localePath = useLocalePath();
 <style scoped>
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-  color: white;
+  background-color: var(--band-bg);
+  color: var(--on-band);
   padding: 1rem 1rem 6rem;
   overflow: hidden;
 }
@@ -119,10 +119,7 @@ const localePath = useLocalePath();
   line-height: 1.1;
   overflow-wrap: break-word;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--on-band);
 }
 
 .hero-subtitle {
@@ -141,36 +138,36 @@ const localePath = useLocalePath();
 
 .primary-button {
   display: inline-block;
-  background-color: white;
-  color: #0055b3;
+  background-color: var(--brand-yellow);
+  color: var(--on-brand-yellow);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
   transition: all 0.2s ease;
-  border: 2px solid white;
+  border: 2px solid var(--brand-yellow);
 }
 
 .primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--shadow-color) 10%, transparent);
 }
 
 .secondary-button {
   display: inline-block;
   background-color: transparent;
-  color: white;
+  color: var(--on-band);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid color-mix(in srgb, var(--on-band) 50%, transparent);
   transition: all 0.2s ease;
 }
 
 .secondary-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: white;
+  background-color: color-mix(in srgb, var(--on-band) 10%, transparent);
+  border-color: var(--on-band);
   transform: translateY(-2px);
 }
 
@@ -190,8 +187,8 @@ const localePath = useLocalePath();
   gap: 0.4rem;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid color-mix(in srgb, var(--on-band) 35%, transparent);
+  background-color: color-mix(in srgb, var(--on-band) 12%, transparent);
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -231,7 +228,7 @@ const localePath = useLocalePath();
 }
 
 .wave-path {
-  fill: var(--body-bg, #ffffff);
+  fill: var(--body-bg);
   /* Remove any potential strokes */
   stroke: none;
   stroke-width: 0;
@@ -239,11 +236,6 @@ const localePath = useLocalePath();
   transform: translateY(1px);
   /* Add transition to match other elements */
   transition: fill 0.3s ease;
-}
-
-/* Dark mode adjustments */
-:global(.dark-mode) .wave-path {
-  fill: var(--body-bg, #171923);
 }
 
 /* Responsive adjustments */

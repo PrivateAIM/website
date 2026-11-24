@@ -49,20 +49,20 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
   height: 3rem;
   border-radius: 50%;
   border: none;
-  background-color: var(--primary-color, #3182ce);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--shadow-color) 15%, transparent);
   z-index: 50;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .back-to-top:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--shadow-color) 20%, transparent);
 }
 
 .fade-enter-active,

@@ -78,7 +78,7 @@ const summary = (content: string): string => {
 h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
   margin: 0;
 }
 
@@ -87,7 +87,7 @@ h2 {
   align-items: center;
   gap: 0.35rem;
   padding: 0.25rem 0;
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
   font-weight: 600;
   text-decoration: none;
 }
@@ -106,17 +106,17 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--border-color, #e2e8f0);
+  border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  background-color: var(--card-bg, #ffffff);
-  color: var(--text-color, #1a202c);
+  background-color: var(--card-bg);
+  color: var(--text-color);
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .news-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--shadow-color) 10%, transparent);
 }
 
 .news-card-image {
@@ -126,8 +126,8 @@ h2 {
   justify-content: center;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background-color: var(--tag-bg, #ebf8ff);
-  color: var(--primary-color, #3182ce);
+  background-color: var(--tag-bg);
+  color: var(--link-color);
 }
 
 .news-card-image img {
@@ -147,7 +147,7 @@ h2 {
 .news-card-body time {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
 }
 
 .news-card-body h3 {

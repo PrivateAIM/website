@@ -27,7 +27,7 @@ const paragraph2 = useTranslation('home.intro.paragraph2');
   margin: 0 auto 4rem;
   font-size: 1.125rem;
   line-height: 1.8;
-  color: var(--text-color, #2d3748);
+  color: var(--text-color);
 }
 
 h2 {
@@ -35,7 +35,7 @@ h2 {
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .intro-definition {

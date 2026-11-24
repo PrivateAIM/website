@@ -164,7 +164,7 @@ const localePath = useLocalePath();
     max-width: 860px;
     margin: 0 auto;
     padding: 1rem 1rem 3rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .explainer-intro {
@@ -200,7 +200,7 @@ const localePath = useLocalePath();
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    background-color: var(--tag-bg, #f7fafc);
+    background-color: var(--tag-bg);
 }
 
 .flow-node {
@@ -210,14 +210,14 @@ const localePath = useLocalePath();
     gap: 0.4rem;
     padding: 1rem;
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #e2e8f0);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     text-align: center;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
 }
 
 .flow-node strong {
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .flow-tag {
@@ -226,7 +226,7 @@ const localePath = useLocalePath();
     gap: 0.3rem;
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
-    background-color: rgba(30, 144, 255, 0.12);
+    background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
     font-size: 0.85rem;
     font-weight: 600;
 }
@@ -249,17 +249,28 @@ const localePath = useLocalePath();
     flex-direction: column;
 }
 
+/* Yellow is unreadable as text on light backgrounds, so light mode uses it as a highlight */
 .flow-hospital small {
-    color: #38a169;
+    align-self: flex-start;
+    padding: 0 0.35rem;
+    border-radius: 0.25rem;
+    background-color: var(--brand-yellow);
+    color: var(--on-brand-yellow);
     font-weight: 600;
 }
 
+.dark-mode .flow-hospital small {
+    padding: 0;
+    background-color: transparent;
+    color: var(--brand-yellow);
+}
+
 .flow-arrow {
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
 }
 
 .flow-result {
-    border-color: var(--primary-color, #3182ce);
+    border-color: var(--primary-color);
 }
 
 /* Cards */
@@ -272,9 +283,9 @@ const localePath = useLocalePath();
 .kind-card,
 .share-card {
     padding: 1.5rem;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
+    background-color: var(--card-bg);
 }
 
 .kind-card h3,
@@ -287,7 +298,7 @@ const localePath = useLocalePath();
 }
 
 .kind-card h3 svg {
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
 }
 
 .kind-card p {
@@ -301,22 +312,22 @@ const localePath = useLocalePath();
 }
 
 .share-travels {
-    border-top: 4px solid var(--primary-color, #3182ce);
+    border-top: 4px solid var(--link-color);
 }
 
 .share-stays {
-    border-top: 4px solid #38a169;
+    border-top: 4px solid var(--brand-yellow);
 }
 
 .protection-callout {
     padding: 1.5rem;
-    border-left: 4px solid #dd6b20;
+    border-left: 4px solid var(--link-color);
     border-radius: 0.5rem;
-    background-color: rgba(221, 107, 32, 0.08);
+    background-color: var(--brand-yellow-tint);
 }
 
 .protection-callout h2 {
-    color: #c05621;
+    color: var(--text-color);
     font-size: 1.35rem;
 }
 
@@ -327,12 +338,12 @@ const localePath = useLocalePath();
 .practice {
     padding: 2rem;
     border-radius: 1rem;
-    background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-    color: #ffffff;
+    background: var(--band-bg);
+    color: var(--on-band);
 }
 
 .practice h2 {
-    color: #ffffff;
+    color: var(--on-band);
 }
 
 .practice-actions {
@@ -346,24 +357,25 @@ const localePath = useLocalePath();
     display: inline-block;
     padding: 0.75rem 1.4rem;
     border-radius: 0.5rem;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    border: 2px solid var(--on-band);
+    color: var(--on-band);
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s ease;
 }
 
 .practice-button.primary {
-    background-color: #ffffff;
-    color: var(--primary-color, #3182ce);
+    border-color: var(--brand-yellow);
+    background-color: var(--brand-yellow);
+    color: var(--on-brand-yellow);
 }
 
 .practice-button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: color-mix(in srgb, var(--on-band) 15%, transparent);
 }
 
 .practice-button.primary:hover {
-    background-color: #ebf8ff;
+    background-color: var(--primary-hover);
 }
 
 @media (max-width: 760px) {

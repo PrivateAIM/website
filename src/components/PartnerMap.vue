@@ -177,27 +177,28 @@ svg {
 }
 
 .map-land {
-  fill: var(--tag-bg, #ebf8ff);
-  stroke: var(--primary-color, #3182ce);
+  fill: var(--tag-bg);
+  stroke: var(--link-color);
   stroke-width: 1.5;
   stroke-linejoin: round;
 }
 
 .site-dot {
-  stroke: var(--body-bg, #ffffff);
+  stroke: var(--body-bg);
   stroke-width: 2.5;
 }
 
-.site-coordination .site-dot { fill: var(--primary-color, #1e90ff); }
-.site-partner .site-dot { fill: #38a169; }
-.site-associated .site-dot { fill: #805ad5; }
+/* Coordination solid yellow with a ring, partners solid navy, associated sites a navy ring */
+.site-coordination .site-dot { fill: var(--brand-yellow); stroke: var(--text-color); }
+.site-partner .site-dot { fill: var(--link-color); }
+.site-associated .site-dot { fill: var(--body-bg); stroke: var(--link-color); }
 
 .site-label {
   font-size: 13px;
   font-weight: 600;
-  fill: var(--text-color, #1a202c);
+  fill: var(--text-color);
   paint-order: stroke;
-  stroke: var(--body-bg, #ffffff);
+  stroke: var(--body-bg);
   stroke-width: 3px;
   stroke-linejoin: round;
 }
@@ -209,7 +210,7 @@ svg {
   gap: 1rem;
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 
 .map-legend span {
@@ -225,7 +226,7 @@ svg {
   border-radius: 50%;
 }
 
-.legend-coordination { background-color: var(--primary-color, #1e90ff); }
-.legend-partner { background-color: #38a169; }
-.legend-associated { background-color: #805ad5; }
+.legend-coordination { background-color: var(--brand-yellow); box-shadow: inset 0 0 0 2px var(--text-color); }
+.legend-partner { background-color: var(--link-color); }
+.legend-associated { box-shadow: inset 0 0 0 2px var(--link-color); }
 </style>

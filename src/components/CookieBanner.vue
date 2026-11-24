@@ -271,12 +271,12 @@ onMounted(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--card-bg, #fff);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg);
+  box-shadow: 0 -2px 10px color-mix(in srgb, var(--shadow-color) 10%, transparent);
   z-index: 1000;
   padding: 20px;
-  border-top: 1px solid var(--border-color, #eee);
-  color: var(--text-color, #333);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .cookie-content {
@@ -298,7 +298,7 @@ onMounted(() => {
 .cookie-option {
   margin-bottom: 10px;
   padding: 10px;
-  background-color: var(--tag-bg, #f9f9f9);
+  background-color: var(--tag-bg);
   border-radius: 4px;
 }
 
@@ -320,7 +320,7 @@ onMounted(() => {
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 0.9em;
-  color: var(--nav-text, #666);
+  color: var(--nav-text);
 }
 
 .cookie-actions {
@@ -339,18 +339,18 @@ onMounted(() => {
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--border-color, #ccc);
-  color: var(--text-color, #333);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .btn-outline:hover {
-  background-color: var(--tag-bg, #f0f0f0);
+  background-color: var(--tag-bg);
 }
 
 .btn-primary {
-  background-color: #0055b3;
-  border: 1px solid #0055b3;
-  color: white;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--on-primary);
 }
 
 .btn-primary:hover {
@@ -364,21 +364,21 @@ onMounted(() => {
   left: 20px;
   display: flex;
   align-items: center;
-  background-color: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #ddd);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   padding: 8px 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px color-mix(in srgb, var(--shadow-color) 10%, transparent);
   cursor: pointer;
   z-index: 990;
   font-size: 14px;
-  color: var(--text-color, #333);
+  color: var(--text-color);
   transition: all 0.2s ease;
 }
 
 .cookie-settings-button:hover {
-  background-color: var(--tag-bg, #f5f5f5);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--tag-bg);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--shadow-color) 15%, transparent);
 }
 
 .cookie-settings-button svg {
@@ -421,13 +421,13 @@ onMounted(() => {
   /* Reject and accept carry equal visual weight */
   .btn-deny {
     order: 1;
-    background-color: #0055b3;
-    border-color: #0055b3;
-    color: white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--on-primary);
   }
 
   .btn-deny:hover {
-    background-color: #0055b3;
+    background-color: var(--primary-color);
     opacity: 0.9;
   }
 

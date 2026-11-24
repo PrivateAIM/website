@@ -182,8 +182,8 @@ const closeMobileMenu = () => {
 <style scoped>
 /* Header */
 .header {
-  background-color: var(--header-bg, #ffffff);
-  border-bottom: 1px solid var(--border-color, #eaeaea);
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -194,11 +194,11 @@ const closeMobileMenu = () => {
 
 .header.scrolled {
   border-bottom-color: transparent;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--shadow-color) 8%, transparent);
 }
 
 .dark-mode .header.scrolled {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--shadow-color) 50%, transparent);
 }
 
 .header-container {
@@ -221,7 +221,7 @@ const closeMobileMenu = () => {
 
 .logo {
   text-decoration: none;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
   display: flex;
   align-items: center;
 }
@@ -279,14 +279,14 @@ const closeMobileMenu = () => {
 
 .nav-item {
   text-decoration: none;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   font-size: 0.95rem;
   font-weight: 500;
 }
 
 .nav-item.router-link-active {
-  color: var(--primary-color, #3182ce);
-  border-bottom: 2px solid var(--primary-color, #3182ce);
+  color: var(--link-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 2px;
 }
 
@@ -299,7 +299,7 @@ const closeMobileMenu = () => {
 
 .github-link {
   text-decoration: none;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -326,12 +326,8 @@ const closeMobileMenu = () => {
 .burger-bar {
   width: 100%;
   height: 2px;
-  background-color: var(--text-color, #1a202c);
+  background-color: var(--text-color);
   transition: all 0.3s ease;
-}
-
-.dark-mode .burger-bar {
-  background-color: #ffffff;
 }
 
 /* Responsive adjustments */
@@ -380,8 +376,8 @@ const closeMobileMenu = () => {
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: var(--header-bg, #ffffff);
-    border-bottom: 1px solid var(--border-color, #eaeaea);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem;
     gap: 1.5rem;
     height: auto;
@@ -401,7 +397,7 @@ const closeMobileMenu = () => {
 
   /* Dunkler Modus für mobile Navigation */
   .dark-mode .main-nav.mobile-menu-open {
-    background-color: var(--header-bg, #1a1a1a);
+    background-color: var(--header-bg);
   }
 
   /* Animation für Burger Icon */

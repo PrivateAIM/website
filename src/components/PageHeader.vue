@@ -40,9 +40,9 @@ defineProps<PageHeaderProps>();
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.14) 1px, transparent 0) 0 0 / 22px 22px,
-    linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-  color: white;
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--on-band) 14%, transparent) 1px, transparent 0) 0 0 / 22px 22px,
+    var(--band-bg);
+  color: var(--on-band);
   padding: 4rem 1rem 5.5rem;
   text-align: center;
 }
@@ -76,7 +76,7 @@ defineProps<PageHeaderProps>();
 }
 
 .wave-path {
-  fill: var(--body-bg, #ffffff);
+  fill: var(--body-bg);
 }
 
 /* Responsive adjustments */

@@ -218,11 +218,11 @@ watch([content, () => route.fullPath], () => {
 }
 
 .successor-notice {
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
-    border-left: 4px solid var(--primary-color, #3182ce);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
     padding: 1.5rem 1.75rem;
     margin-bottom: 2.5rem;
 }
@@ -231,11 +231,11 @@ watch([content, () => route.fullPath], () => {
     font-size: 1.35rem;
     font-weight: 700;
     margin: 0 0 0.75rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .successor-body {
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     line-height: 1.7;
 }
 
@@ -243,8 +243,8 @@ watch([content, () => route.fullPath], () => {
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.6rem 1.25rem;
-    background-color: var(--primary-color, #3182ce);
-    color: #ffffff !important;
+    background-color: var(--primary-color);
+    color: var(--on-primary) !important;
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: 600;
@@ -255,7 +255,7 @@ watch([content, () => route.fullPath], () => {
 }
 
 .successor-button:focus-visible {
-    outline: 2px solid var(--text-color, #1a202c);
+    outline: 2px solid var(--text-color);
     outline-offset: 2px;
 }
 
@@ -267,13 +267,13 @@ watch([content, () => route.fullPath], () => {
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--text-color, #1a202c);
-    border-bottom: 2px solid var(--primary-color, #3182ce);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
 .section-body {
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     line-height: 1.8;
     font-size: 1.05rem;
 }
@@ -294,24 +294,25 @@ watch([content, () => route.fullPath], () => {
 }
 
 .markdown-body :deep(a) {
-    color: var(--primary-color, #3182ce);
-    text-decoration: none;
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .markdown-body :deep(a:hover) {
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .markdown-body :deep(h3) {
     font-size: 1.25rem;
     margin: 1.5rem 0 0.75rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .markdown-body :deep(blockquote) {
-    border-left: 3px solid var(--border-color, #eaeaea);
+    border-left: 3px solid var(--border-color);
     padding-left: 1rem;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
     margin: 0 0 1rem;
 }
 
@@ -326,10 +327,10 @@ watch([content, () => route.fullPath], () => {
 }
 
 .item-card {
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
     padding: 1rem 1.25rem;
     display: flex;
     flex-direction: column;
@@ -354,31 +355,31 @@ watch([content, () => route.fullPath], () => {
     flex: 0 0 6.5rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
 }
 
 .item-title {
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     line-height: 1.5;
 }
 
 .item-authors {
     font-size: 0.9rem;
-    color: var(--nav-text, #4a5568);
+    color: var(--nav-text);
 }
 
 .item-meta {
     font-size: 0.9rem;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     line-height: 1.4;
 }
 
 .item-link {
     display: inline-block;
     padding-block: 5px;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
     white-space: nowrap;
@@ -392,8 +393,8 @@ watch([content, () => route.fullPath], () => {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     padding: 0.85rem 1.25rem;
     text-decoration: none;
@@ -401,17 +402,17 @@ watch([content, () => route.fullPath], () => {
 }
 
 .link-item:hover {
-    border-color: var(--primary-color, #3182ce);
+    border-color: var(--primary-color);
 }
 
 .link-label {
     font-weight: 600;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .link-url {
     font-size: 0.85rem;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     overflow-wrap: anywhere;
 }
 
