@@ -1,0 +1,1 @@
+var e=`/images/partners/UKT.webp`,t=`/images/partners/CHARITE.svg`,n=`/images/partners/TUM.svg`,r=`/images/partners/UKHD.webp`,i=`/images/partners/UKER.svg`,a=`/images/partners/UKL.webp`,o=`/images/partners/UKFR.webp`,s=`/images/partners/LMU.webp`;export{r as a,e as c,i,o as n,n as o,a as r,t as s,s as t};
