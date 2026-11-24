@@ -29,6 +29,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/flame"/>
   </url>
   <url>
+    <loc>https://privateaim.de/federated-analysis</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/federated-analysis"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/federated-analysis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/federated-analysis"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/de/federated-analysis</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/federated-analysis"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/federated-analysis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/federated-analysis"/>
+  </url>
+  <url>
     <loc>https://privateaim.de/news</loc>
     <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/news"/>
@@ -125,5 +139,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://privateaim.de/privacy"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://privateaim.de/de/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://privateaim.de/privacy"/>
+  </url>
+  <url>
+    <loc>https://privateaim.de/files/FLAME-GMDS2025.pdf</loc>
+    <lastmod>2025-09-17</lastmod>
+  </url>
+  <url>
+    <loc>https://privateaim.de/files/Flyer-Datenschutz.pdf</loc>
+    <lastmod>2025-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://privateaim.de/files/Flyer-Patienten.pdf</loc>
+    <lastmod>2025-10-20</lastmod>
   </url>
 </urlset>

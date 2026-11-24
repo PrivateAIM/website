@@ -1,63 +1,91 @@
 {
   "\u0000plugin-vue:export-helper": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "\u0000vite/modulepreload-polyfill.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "\u0000vite/preload-helper.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/BMFTR-dark.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/BMFTR-light.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
+  "../../../../../images/flame/flame-architecture-dark.webp": [
+    "/assets/Flame-DQgnXl_1.js",
+    "/assets/Flame-BMcDCkJw.css"
+  ],
+  "../../../../../images/flame/flame-architecture-light.webp": [
+    "/assets/Flame-DQgnXl_1.js",
+    "/assets/Flame-BMcDCkJw.css"
+  ],
   "../../../../../images/home/server-analysis.svg": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "../../../../../images/icons/discord-mark-white.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/icons/discord-mark.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/icons/github-mark-white.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/icons/github-mark.svg": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/logo-sm.webp": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "../../../../../images/partners/CHARITE.svg": [
     "/assets/LMU-Ci6y2DFA.js"
   ],
   "../../../../../images/partners/CISPA.svg": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/DKFZ.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/EKUT.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/IKIM.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/LMU.webp": [
     "/assets/LMU-Ci6y2DFA.js"
   ],
   "../../../../../images/partners/TMF.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/TUM.svg": [
     "/assets/LMU-Ci6y2DFA.js"
@@ -72,456 +100,659 @@
     "/assets/LMU-Ci6y2DFA.js"
   ],
   "../../../../../images/partners/UKK.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/UKL.webp": [
     "/assets/LMU-Ci6y2DFA.js"
   ],
   "../../../../../images/partners/UKSH.webp": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/UKT.webp": [
     "/assets/LMU-Ci6y2DFA.js"
   ],
   "../../../../../images/partners/UKU.svg": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "../../../../../images/partners/UMM.svg": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "index.html": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@ilingo/vue/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@unhead/vue/dist/client.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@unhead/vue/dist/shared/vue.Cd6dkybA.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vueuse/core/dist/index.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/@vueuse/shared/dist/index.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/ilingo/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/marked/lib/marked.esm.js": [
     "/assets/marked.esm-DKjyhwJX.js"
   ],
   "node_modules/pathtrace/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/reka-ui/dist/ConfigProvider/ConfigProvider.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/reka-ui/dist/shared/createContext.js": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/smob/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/dist/client.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/dist/shared/unhead.0TIQaUam.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/dist/shared/unhead.AvDFlk_u.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/dist/shared/unhead.ByHeIeZd.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/dist/shared/unhead.ChXiQvI8.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/unhead/node_modules/hookable/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/vite-ssg/dist/index.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.C6pK7rvr.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.ETIvV-80.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/vue-router/dist/devtools-EWN81iOl.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "node_modules/vue-router/dist/vue-router.mjs": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/App.vue?vue&type=style&index=0&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/assets/dark-mode.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/assets/flags/de-flag.svg": [
+  "src/assets/flags/de-flag.svg?no-inline": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/assets/flags/en-flag.svg": [
+  "src/assets/flags/en-flag.svg?no-inline": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/assets/fonts.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/BackToTop.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/BackToTop.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/BackToTop.vue?vue&type=style&index=0&scoped=fe9d0c07&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/CookieBanner.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/CookieBanner.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/components/CookieBanner.vue?vue&type=style&index=0&scoped=88f42bb7&lang.css": [
+  "src/components/CookieBanner.vue?vue&type=style&index=0&scoped=6b8cb4c8&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/LanguageProvider.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/LanguageSelector.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/LanguageSelector.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/components/LanguageSelector.vue?vue&type=style&index=0&scoped=2fcf8cac&lang.css": [
+  "src/components/LanguageSelector.vue?vue&type=style&index=0&scoped=77618e03&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/PageHeader.vue": [
-    "/assets/PageHeader-D8LrxOVb.js",
-    "/assets/PageHeader-3Lhs61w_.css"
+    "/assets/PageHeader-D9cnjSi5.js",
+    "/assets/PageHeader-CHonKZti.css"
   ],
   "src/components/PageHeader.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/PageHeader-D8LrxOVb.js",
-    "/assets/PageHeader-3Lhs61w_.css"
+    "/assets/PageHeader-D9cnjSi5.js",
+    "/assets/PageHeader-CHonKZti.css"
   ],
-  "src/components/PageHeader.vue?vue&type=style&index=0&scoped=aa023700&lang.css": [
-    "/assets/PageHeader-D8LrxOVb.js",
-    "/assets/PageHeader-3Lhs61w_.css"
+  "src/components/PageHeader.vue?vue&type=style&index=0&scoped=55b2efb8&lang.css": [
+    "/assets/PageHeader-D9cnjSi5.js",
+    "/assets/PageHeader-CHonKZti.css"
+  ],
+  "src/components/PartnerMap.vue": [
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
+  ],
+  "src/components/PartnerMap.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
+  ],
+  "src/components/PartnerMap.vue?vue&type=style&index=0&scoped=fb4c544f&lang.css": [
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "src/components/RekaFooter.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/RekaFooter.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/components/RekaFooter.vue?vue&type=style&index=0&scoped=7323165c&lang.css": [
+  "src/components/RekaFooter.vue?vue&type=style&index=0&scoped=310e42f7&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/RekaHeader.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/RekaHeader.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
-  "src/components/RekaHeader.vue?vue&type=style&index=0&scoped=578a6063&lang.css": [
+  "src/components/RekaHeader.vue?vue&type=style&index=0&scoped=6c95c4e3&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/ThemeToggle.vue": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/ThemeToggle.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/ThemeToggle.vue?vue&type=style&index=0&scoped=56e5fc40&lang.css": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
+  "src/components/home/CapabilitiesSection.vue": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/CapabilitiesSection.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/CapabilitiesSection.vue?vue&type=style&index=0&scoped=4a2388fe&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/FaqSection.vue": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/FaqSection.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/FaqSection.vue?vue&type=style&index=0&scoped=627fa45f&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
   "src/components/home/HeroSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/HeroSection.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/components/home/HeroSection.vue?vue&type=style&index=0&scoped=0f45aad4&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/components/home/HeroSection.vue?vue&type=style&index=0&scoped=a840943b&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/HowItWorksSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/HowItWorksSection.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/components/home/HowItWorksSection.vue?vue&type=style&index=0&scoped=0769d87e&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/components/home/HowItWorksSection.vue?vue&type=style&index=0&scoped=99b6e612&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/IntroductionSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/components/home/IntroductionSection.vue?vue&type=style&index=0&scoped=f64a639d&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/components/home/IntroductionSection.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/IntroductionSection.vue?vue&type=style&index=0&scoped=f34d595a&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/LatestNewsSection.vue": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/LatestNewsSection.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/home/LatestNewsSection.vue?vue&type=style&index=0&scoped=bcb7fcbe&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/MissionSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/components/home/MissionSection.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
-  ],
-  "src/components/home/MissionSection.vue?vue&type=style&index=0&scoped=36817a66&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/components/home/MissionSection.vue?vue&type=style&index=0&scoped=3ec75eaa&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/PartnersSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/PartnersSection.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/PartnersSection.vue?vue&type=style&index=0&scoped=a150659d&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/ProjectFacts.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/ProjectFacts.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/components/home/ProjectFacts.vue?vue&type=style&index=0&scoped=2833e1c6&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/components/home/ProjectFacts.vue?vue&type=style&index=0&scoped=7f1b8568&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/VisionSection.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/VisionSection.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/home/VisionSection.vue?vue&type=style&index=0&scoped=85d04746&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
+  ],
+  "src/components/shared/AppIcon.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
+    "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
+  ],
+  "src/components/shared/ImageLightbox.vue": [
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
+  ],
+  "src/components/shared/ImageLightbox.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
+  ],
+  "src/components/shared/ImageLightbox.vue?vue&type=style&index=0&scoped=a5381d39&lang.css": [
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
   ],
   "src/components/shared/JsonLd.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/components/shared/LinkText.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/shared/LinkText.vue?vue&type=script&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/shared/LocalizedLink.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/shared/LocalizedLink.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/components/shared/LocalizedLink.vue?vue&type=style&index=0&scoped=a95a5e53&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/data/news/de.ts": [
-    "/assets/index-D7uvmhhp.js"
+    "/assets/index-Dc3Duxo8.js"
   ],
   "src/data/news/en.ts": [
-    "/assets/index-D7uvmhhp.js"
+    "/assets/index-Dc3Duxo8.js"
   ],
   "src/data/news/index.ts": [
-    "/assets/index-D7uvmhhp.js"
+    "/assets/index-Dc3Duxo8.js"
   ],
   "src/data/privacy/privacy.de.md?raw": [
-    "/assets/Privacy-Dj-J8m9f.js",
-    "/assets/Privacy-BEeeVk63.css"
+    "/assets/Privacy-DNX2m1w-.js",
+    "/assets/Privacy-B7-cPVD4.css"
   ],
   "src/data/privacy/privacy.en.md?raw": [
-    "/assets/Privacy-Dj-J8m9f.js",
-    "/assets/Privacy-BEeeVk63.css"
+    "/assets/Privacy-DNX2m1w-.js",
+    "/assets/Privacy-B7-cPVD4.css"
   ],
   "src/data/references/index.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/data/references/pht.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/i18n/index.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/i18n/locales/de.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/i18n/locales/en.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/main.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/router/index.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/seo/structuredData.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
   "src/utils/analytics.ts": [
+    "/assets/en-flag-efvNEZ5Y.svg",
+    "/assets/de-flag-BUl1H-71.svg",
     "/assets/HelveticaNeueRoman-AxTiJMN_.woff2"
   ],
+  "src/views/FederatedAnalysis.vue": [
+    "/assets/FederatedAnalysis-Cvt7RAks.js",
+    "/assets/FederatedAnalysis-Ci5wNKcU.css"
+  ],
+  "src/views/FederatedAnalysis.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/FederatedAnalysis-Cvt7RAks.js",
+    "/assets/FederatedAnalysis-Ci5wNKcU.css"
+  ],
+  "src/views/FederatedAnalysis.vue?vue&type=style&index=0&scoped=9f2143b3&lang.css": [
+    "/assets/FederatedAnalysis-Cvt7RAks.js",
+    "/assets/FederatedAnalysis-Ci5wNKcU.css"
+  ],
   "src/views/Flame.vue": [
-    "/assets/Flame-BVc2BOBY.js",
-    "/assets/Flame-i8Qyo2Ye.css"
+    "/assets/Flame-DQgnXl_1.js",
+    "/assets/Flame-BMcDCkJw.css"
   ],
   "src/views/Flame.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Flame-BVc2BOBY.js",
-    "/assets/Flame-i8Qyo2Ye.css"
+    "/assets/Flame-DQgnXl_1.js",
+    "/assets/Flame-BMcDCkJw.css"
   ],
-  "src/views/Flame.vue?vue&type=style&index=0&scoped=453d14da&lang.css": [
-    "/assets/Flame-BVc2BOBY.js",
-    "/assets/Flame-i8Qyo2Ye.css"
+  "src/views/Flame.vue?vue&type=style&index=0&scoped=0215c603&lang.css": [
+    "/assets/Flame-DQgnXl_1.js",
+    "/assets/Flame-BMcDCkJw.css"
   ],
   "src/views/Home.vue": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/views/Home.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
-  "src/views/Home.vue?vue&type=style&index=0&scoped=1221633c&lang.css": [
-    "/assets/Home-DPH_aa7b.js",
-    "/assets/Home-CciNfUbq.css"
+  "src/views/Home.vue?vue&type=style&index=0&scoped=bdec8d03&lang.css": [
+    "/assets/Home-BNx_Lr-A.js",
+    "/assets/Home-yhbr26O1.css"
   ],
   "src/views/Imprint.vue": [
-    "/assets/Imprint-BClVCPNd.js",
-    "/assets/Imprint-Bg5rJcW9.css"
+    "/assets/Imprint-COeU56F5.js",
+    "/assets/Imprint-DQx6DpWw.css"
   ],
-  "src/views/Imprint.vue?vue&type=style&index=0&scoped=8df1100d&lang.css": [
-    "/assets/Imprint-BClVCPNd.js",
-    "/assets/Imprint-Bg5rJcW9.css"
+  "src/views/Imprint.vue?vue&type=script&setup=true&lang.ts": [
+    "/assets/Imprint-COeU56F5.js",
+    "/assets/Imprint-DQx6DpWw.css"
+  ],
+  "src/views/Imprint.vue?vue&type=style&index=0&scoped=666607ba&lang.css": [
+    "/assets/Imprint-COeU56F5.js",
+    "/assets/Imprint-DQx6DpWw.css"
   ],
   "src/views/News.vue": [
-    "/assets/News-DoXvguZD.js",
-    "/assets/News-Dx3Cv5it.css"
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
   ],
   "src/views/News.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/News-DoXvguZD.js",
-    "/assets/News-Dx3Cv5it.css"
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
   ],
-  "src/views/News.vue?vue&type=style&index=0&scoped=196cfbb1&lang.css": [
-    "/assets/News-DoXvguZD.js",
-    "/assets/News-Dx3Cv5it.css"
+  "src/views/News.vue?vue&type=style&index=0&scoped=12acee6c&lang.css": [
+    "/assets/News-Dh7XC_Kx.js",
+    "/assets/News-BCj1qGsI.css"
   ],
   "src/views/NotFound.vue": [
-    "/assets/NotFound-Bvl_cNI8.js",
-    "/assets/NotFound-_sSfaRrV.css"
+    "/assets/NotFound-DgEN460b.js",
+    "/assets/NotFound-o65-4KPR.css"
   ],
   "src/views/NotFound.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/NotFound-Bvl_cNI8.js",
-    "/assets/NotFound-_sSfaRrV.css"
+    "/assets/NotFound-DgEN460b.js",
+    "/assets/NotFound-o65-4KPR.css"
   ],
-  "src/views/NotFound.vue?vue&type=style&index=0&scoped=cfa13aad&lang.css": [
-    "/assets/NotFound-Bvl_cNI8.js",
-    "/assets/NotFound-_sSfaRrV.css"
+  "src/views/NotFound.vue?vue&type=style&index=0&scoped=ee9d9bf0&lang.css": [
+    "/assets/NotFound-DgEN460b.js",
+    "/assets/NotFound-o65-4KPR.css"
   ],
   "src/views/Partners.vue": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "src/views/Partners.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
-  "src/views/Partners.vue?vue&type=style&index=0&scoped=43f70899&lang.css": [
-    "/assets/Partners-wTBaSI_m.js",
-    "/assets/Partners-p6HZ-pFR.css"
+  "src/views/Partners.vue?vue&type=style&index=0&scoped=1a5b3164&lang.css": [
+    "/assets/Partners-CqWGchDC.js",
+    "/assets/Partners-DYunpFsO.css"
   ],
   "src/views/Privacy.vue": [
-    "/assets/Privacy-Dj-J8m9f.js",
-    "/assets/Privacy-BEeeVk63.css"
+    "/assets/Privacy-DNX2m1w-.js",
+    "/assets/Privacy-B7-cPVD4.css"
   ],
   "src/views/Privacy.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Privacy-Dj-J8m9f.js",
-    "/assets/Privacy-BEeeVk63.css"
+    "/assets/Privacy-DNX2m1w-.js",
+    "/assets/Privacy-B7-cPVD4.css"
   ],
-  "src/views/Privacy.vue?vue&type=style&index=0&scoped=532a316f&lang.css": [
-    "/assets/Privacy-Dj-J8m9f.js",
-    "/assets/Privacy-BEeeVk63.css"
+  "src/views/Privacy.vue?vue&type=style&index=0&scoped=1380c5d5&lang.css": [
+    "/assets/Privacy-DNX2m1w-.js",
+    "/assets/Privacy-B7-cPVD4.css"
   ],
   "src/views/Publications.vue": [
-    "/assets/Publications-qMSFVzJ5.js",
-    "/assets/Publications-CVOzdwqa.css"
+    "/assets/Publications-gBbcWaXN.js",
+    "/assets/Publications-CwC5uCEr.css"
   ],
   "src/views/Publications.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Publications-qMSFVzJ5.js",
-    "/assets/Publications-CVOzdwqa.css"
+    "/assets/Publications-gBbcWaXN.js",
+    "/assets/Publications-CwC5uCEr.css"
   ],
-  "src/views/Publications.vue?vue&type=style&index=0&scoped=e3d6ac34&lang.css": [
-    "/assets/Publications-qMSFVzJ5.js",
-    "/assets/Publications-CVOzdwqa.css"
+  "src/views/Publications.vue?vue&type=style&index=0&scoped=bf23605b&lang.css": [
+    "/assets/Publications-gBbcWaXN.js",
+    "/assets/Publications-CwC5uCEr.css"
   ],
   "src/views/ReferenceProject.vue": [
-    "/assets/ReferenceProject-BjKZamXS.js",
-    "/assets/ReferenceProject-wspFHixd.css"
+    "/assets/ReferenceProject-D-51b0Bt.js",
+    "/assets/ReferenceProject-CBt9JK9k.css"
   ],
   "src/views/ReferenceProject.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/ReferenceProject-BjKZamXS.js",
-    "/assets/ReferenceProject-wspFHixd.css"
+    "/assets/ReferenceProject-D-51b0Bt.js",
+    "/assets/ReferenceProject-CBt9JK9k.css"
   ],
-  "src/views/ReferenceProject.vue?vue&type=style&index=0&scoped=0f882ad7&lang.css": [
-    "/assets/ReferenceProject-BjKZamXS.js",
-    "/assets/ReferenceProject-wspFHixd.css"
+  "src/views/ReferenceProject.vue?vue&type=style&index=0&scoped=5d0d7025&lang.css": [
+    "/assets/ReferenceProject-D-51b0Bt.js",
+    "/assets/ReferenceProject-CBt9JK9k.css"
   ],
   "src/views/Team.vue": [
-    "/assets/Team-DN8WLPhN.js",
-    "/assets/Team-CyRA-Hnm.css"
+    "/assets/Team--TjLJyVX.js",
+    "/assets/Team-lZYGeemf.css"
   ],
   "src/views/Team.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/Team-DN8WLPhN.js",
-    "/assets/Team-CyRA-Hnm.css"
+    "/assets/Team--TjLJyVX.js",
+    "/assets/Team-lZYGeemf.css"
   ],
-  "src/views/Team.vue?vue&type=style&index=0&scoped=7c2e0512&lang.css": [
-    "/assets/Team-DN8WLPhN.js",
-    "/assets/Team-CyRA-Hnm.css"
+  "src/views/Team.vue?vue&type=style&index=0&scoped=d51702e0&lang.css": [
+    "/assets/Team--TjLJyVX.js",
+    "/assets/Team-lZYGeemf.css"
   ]
 }
