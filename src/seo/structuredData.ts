@@ -27,6 +27,20 @@ export const projectNode: JsonLdNode = {
         alternateName: 'Bundesministerium für Bildung und Forschung (BMBF)',
         url: 'https://www.bmftr.bund.de/',
     },
+    // The coordinating institutions, as named on the partners page
+    member: [
+        ['University Hospital Tübingen', 'https://www.medizin.uni-tuebingen.de/'],
+        ['Berlin Institute of Health at Charité (BIH)', 'https://www.bihealth.org/'],
+        ['Technical University of Munich', 'https://www.tum.de/'],
+    ].map(([name, url]) => ({
+        '@type': 'OrganizationRole',
+        roleName: 'Coordinator',
+        member: {
+            '@type': 'Organization', 
+            name, 
+            url, 
+        },
+    })),
     parentOrganization: {
         '@type': 'Organization',
         name: 'Medical Informatics Initiative (MII)',
