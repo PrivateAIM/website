@@ -26,7 +26,7 @@ export default defineLocale('de', [
         intro: {
             title: 'Was ist PrivateAIM?',
             definition: 'PrivateAIM (Privacy-Preserving Analytics in Medicine) ist ein Forschungskonsortium aus 15 Partnern der Medizininformatik-Initiative (MII), gefördert vom Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) von April 2023 bis zum 31. März 2027. Es entwickelt [FLAME](/flame:internal) (Federated Learning and Analysis in Medicine), eine quelloffene Plattform im produktiven Einsatz, die medizinische Daten über Universitätskliniken hinweg analysiert: Patientendaten bleiben am jeweiligen Standort, nur der Analysecode kommt zu den Daten, und nur aggregierte Ergebnisse werden zurückgegeben.',
-            paragraph2: 'Medizinische Forschung und insbesondere KI brauchen Daten aus vielen Kliniken, um belastbare Ergebnisse zu liefern. Gesundheitsdaten sind jedoch sensibel und streng geschützt. Föderierte Analysen lösen diesen Konflikt: Statt Daten zentral zu sammeln, schicken Forschende ihre Analyse zu den Daten.',
+            paragraph2: 'Medizinische Forschung und insbesondere KI brauchen Daten aus vielen Kliniken, um belastbare Ergebnisse zu liefern. Gesundheitsdaten sind jedoch sensibel und streng geschützt. [Föderierte Analysen](/federated-analysis:internal) lösen diesen Konflikt: Statt Daten zentral zu sammeln, schicken Forschende ihre Analyse zu den Daten.',
         },
         capabilities: {
             title: 'Was Sie mit FLAME machen können',
@@ -128,10 +128,59 @@ export default defineLocale('de', [
         },
     })]),
 
+    defineNamespace('explainer', [defineTranslations({
+        title: 'Was ist föderierte Analyse?',
+        subtitle: 'Eine kurze Einführung in die Analyse medizinischer Daten ohne zentrale Datensammlung',
+        intro: 'Föderierte Analyse bedeutet, Daten auszuwerten, die auf mehrere Einrichtungen verteilt sind, ohne sie an einem Ort zusammenzuführen. Statt Patientendaten in eine zentrale Datenbank zu kopieren, wird die Analyse an jede Einrichtung geschickt, läuft dort bei den lokalen Daten, und nur die Ergebnisse kommen zurück. Zusammengeführt beantworten diese Ergebnisse dieselbe Forschungsfrage wie eine zentrale Analyse.',
+        problem: {
+            title: 'Warum nicht einfach zentral sammeln?',
+            body: 'Viele Forschungsfragen, von seltenen Erkrankungen bis zum Training verlässlicher KI-Modelle, brauchen Daten von mehr Patientinnen und Patienten, als eine einzelne Klinik hat. Eine zentrale Sammlung dieser Daten stößt auf rechtliche, organisatorische und sicherheitstechnische Hürden: Gesundheitsdaten sind besonders geschützt, jede Übermittlung muss begründet sein, und eine zentrale Datenbank ist ein attraktives Angriffsziel. Föderierte Analysen umgehen diese Hürden, weil die Daten die Klinik nie verlassen müssen.',
+        },
+        idea: {
+            title: 'Die Idee: Die Analyse kommt zu den Daten',
+            body: 'Forschende schreiben die Analyse einmal. Jede teilnehmende Klinik prüft sie, führt sie auf ihren eigenen Daten aus und gibt nur ein Zwischenergebnis zurück, zum Beispiel eine Anzahl oder ein Modell-Update. Ein Aggregator führt diese Zwischenergebnisse zum Endergebnis für die Forschenden zusammen.',
+            researcher: 'Forschende',
+            code: 'Analysecode',
+            hospital: 'Klinik',
+            data: 'Daten bleiben hier',
+            result: 'Gesamtergebnis',
+        },
+        kinds: {
+            title: 'Föderierte Analyse und föderiertes Lernen',
+            analysis: 'Föderierte Analyse',
+            analysisBody: 'Statistiken wie Anzahlen, Mittelwerte oder Regressionsmodelle werden an jedem Standort berechnet und einmal zusammengeführt. Beispiel: Wie viele Patientinnen und Patienten haben über alle Standorte hinweg eine bestimmte Diagnose?',
+            learning: 'Föderiertes Lernen',
+            learningBody: 'Ein Machine-Learning-Modell wird über mehrere Runden trainiert. In jeder Runde trainieren die Standorte auf ihren lokalen Daten und teilen nur die aktualisierten Modellparameter, die zu einem besseren gemeinsamen Modell zusammengeführt werden.',
+        },
+        shared: {
+            title: 'Was geteilt wird und was nicht',
+            sharedTitle: 'Wandert zwischen den Standorten',
+            shared1: 'Der Analysecode, nachdem er geprüft wurde',
+            shared2: 'Zwischen- und Gesamtergebnisse, etwa Anzahlen oder Modellparameter',
+            notSharedTitle: 'Bleibt an jedem Standort',
+            notShared1: 'Patientenbezogene Einzeldaten',
+            notShared2: 'Der direkte Zugriff auf die lokalen Datenbanken',
+        },
+        protection: {
+            title: 'Föderiert heißt nicht automatisch anonym',
+            body: 'Auch aggregierte Ergebnisse können Rückschlüsse auf einzelne Personen erlauben, etwa wenn eine Gruppe sehr klein ist. Föderierte Analysen werden deshalb mit weiteren Schutzmaßnahmen kombiniert: Jeder Standort prüft den Code und die zu erwartenden Ergebnisse, bevor er läuft, Differential Privacy versieht Ergebnisse mit kalibriertem Rauschen, und homomorphe Verschlüsselung erlaubt es, Werte zusammenzuführen, ohne die Beiträge der anderen Standorte zu sehen.',
+        },
+        practice: {
+            title: 'Föderierte Analyse in der Praxis: FLAME',
+            body: 'FLAME (Federated Learning and Analysis in Medicine) ist die von PrivateAIM entwickelte Plattform für föderierte Analysen und föderiertes Lernen an deutschen Universitätskliniken innerhalb der Medizininformatik-Initiative (MII). Sie ist quelloffen und im produktiven Einsatz.',
+            flame: 'So funktioniert FLAME',
+            docs: 'Zur FLAME-Dokumentation (Englisch)',
+        },
+    })]),
+
     defineNamespace('flame', [defineTranslations({
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
         status: 'FLAME ist im produktiven Einsatz.',
+        explainer: {
+            title: 'Neu bei föderierter Analyse?',
+            text: 'Eine kurze Einführung: wie Analysen ohne zentrale Datensammlung funktionieren und wo ihre Grenzen liegen.',
+        },
         context: 'FLAME (Federated Learning and Analysis in Medicine) wird von PrivateAIM entwickelt, einem vom BMFTR geförderten Konsortium der Medizininformatik-Initiative (MII). Mit anderen Softwareprojekten namens Flame hat es nichts zu tun.',
         lead: 'Mit FLAME können Forschende medizinische Daten mehrerer Einrichtungen analysieren, ohne dass die Daten diese jemals verlassen. Statt Daten zentral zu sammeln, bringt FLAME den Analysecode zu den Daten. Zurückgegeben werden nur aggregierte Ergebnisse.',
         architecture: {
@@ -141,6 +190,8 @@ export default defineLocale('de', [
             step2: 'Jeder Standort entscheidet selbst, ob er an einem Projekt teilnimmt, prüft den Analysecode vor der Ausführung und startet die Ausführung selbst.',
             step3: 'Die Analyse läuft an jedem Standort. Ein Aggregator führt die Ergebnisse der Standorte zusammen, und nur dieses Gesamtergebnis wird den Forschenden bereitgestellt.',
             step4: 'Bei iterativen Verfahren wie föderiertem Lernen wiederholt sich das über mehrere Runden.',
+            figureAlt: 'FLAME-Architektur: Die Hub-Dienste bauen das Analyse-Image und speichern Ergebnisse, ein Node in jeder Klinik lädt das Image und führt es bei den lokalen Daten aus',
+            figureCaption: 'Ablauf einer Analyse in FLAME (Quelle: FLAME-Dokumentation)',
         },
         safeguards: {
             title: 'Schutzmaßnahmen',
@@ -193,6 +244,7 @@ export default defineLocale('de', [
     defineNamespace('footer', [defineTranslations({
         documentation: 'Dokumentation',
         flame: 'FLAME Plattform',
+        explainer: 'Was ist föderierte Analyse?',
         github: 'GitHub',
         references: 'Referenzen',
         legal: 'Rechtliches',

@@ -23,6 +23,7 @@ interface PrerenderRoute {
 const PRERENDER_ROUTES: PrerenderRoute[] = [
     { path: '/', sources: ['src/views/Home.vue', 'src/components/home', 'src/i18n/locales'] },
     { path: '/flame', sources: ['src/views/Flame.vue', 'src/i18n/locales'] },
+    { path: '/federated-analysis', sources: ['src/views/FederatedAnalysis.vue', 'src/i18n/locales'] },
     { path: '/news', sources: ['src/views/News.vue', 'src/data/news'] },
     { path: '/publications', sources: ['src/views/Publications.vue'] },
     { path: '/team', sources: ['src/views/Team.vue'] },

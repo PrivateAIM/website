@@ -70,6 +70,21 @@ const pages: PageRoute[] = [
         },
     },
     {
+        path: '/federated-analysis',
+        name: 'FederatedAnalysis',
+        component: () => import('@/views/FederatedAnalysis.vue'),
+        meta: {
+            en: {
+                title: 'What is federated analysis? — PrivateAIM',
+                description: 'A short introduction to federated analysis and federated learning: how medical data is analyzed without collecting it centrally, and where the limits are.',
+            },
+            de: {
+                title: 'Was ist föderierte Analyse? — PrivateAIM',
+                description: 'Kurze Einführung in föderierte Analysen und föderiertes Lernen: wie medizinische Daten ohne zentrale Sammlung ausgewertet werden und wo die Grenzen liegen.',
+            },
+        },
+    },
+    {
         path: '/team',
         name: 'Team',
         component: () => import('@/views/Team.vue'),

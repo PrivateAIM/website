@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue';
 import { computed } from 'vue';
 import { marked } from 'marked';
-import { useLocale } from '@/i18n';
+import { useLocale, useTranslation } from '@/i18n';
 import policyEn from '@/data/privacy/privacy.en.md?raw';
 import policyDe from '@/data/privacy/privacy.de.md?raw';
 
 const locale = useLocale();
+const pageTitle = useTranslation('privacy.title');
 
 // Compute the rendered HTML from the Markdown content. Both locales are bundled
 // so the policy is part of the prerendered page.
@@ -14,9 +16,7 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
 
 <template>
     <div class="legal-container">
-        <div class="page-header">
-            <h1><ITranslate path="privacy.title" /></h1>
-        </div>
+        <PageHeader :title="pageTitle" />
 
         <div class="legal-content">
             <!-- Language notice - only shown for English -->
@@ -46,18 +46,7 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
   width: 100%;
 }
 
-.page-header {
-  background-color: var(--primary-color, #3182ce);
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-}
 
-.page-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-}
 
 .legal-content {
   max-width: 800px;
@@ -151,13 +140,7 @@ body.dark-mode .alert-info {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .page-header {
-    padding: 2rem 1rem;
-  }
 
-  .page-header h1 {
-    font-size: 2rem;
-  }
 
   .legal-content {
     padding: 2rem 1rem 3rem;

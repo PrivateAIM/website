@@ -7,6 +7,10 @@
 
         <div class="flame-content">
             <p class="flame-status">
+                <span
+                    class="status-dot"
+                    aria-hidden="true"
+                />
                 <ITranslate path="flame.status" />
             </p>
             <p class="flame-lead">
@@ -16,6 +20,24 @@
                 <ITranslate path="flame.context" />
             </p>
 
+            <router-link
+                :to="localePath('/federated-analysis')"
+                class="explainer-banner"
+            >
+                <AppIcon
+                    name="book"
+                    :size="28"
+                />
+                <span class="explainer-text">
+                    <strong><ITranslate path="flame.explainer.title" /></strong>
+                    <span><ITranslate path="flame.explainer.text" /></span>
+                </span>
+                <AppIcon
+                    name="arrow"
+                    class="explainer-arrow"
+                />
+            </router-link>
+
             <section class="flame-section">
                 <h2 class="section-heading">
                     <ITranslate path="flame.architecture.title" />
@@ -23,32 +45,61 @@
                 <p class="section-body">
                     <ITranslate path="flame.architecture.body" />
                 </p>
-                <ol class="section-body flame-steps">
+                <ol class="flame-steps">
                     <li
-                        v-for="step in steps"
+                        v-for="(step, index) in steps"
                         :key="step"
+                        class="flame-step"
                     >
-                        <ITranslate :path="`flame.architecture.${step}`" />
+                        <span
+                            class="step-number"
+                            aria-hidden="true"
+                        >{{ index + 1 }}</span>
+                        <span><ITranslate :path="`flame.architecture.${step}`" /></span>
                     </li>
                 </ol>
+                <figure class="flame-figure">
+                    <img
+                        src="/images/flame/flame-architecture-light.webp"
+                        :alt="figureAlt"
+                        width="1596"
+                        height="801"
+                        loading="lazy"
+                        class="figure-light"
+                    >
+                    <img
+                        src="/images/flame/flame-architecture-dark.webp"
+                        :alt="figureAlt"
+                        width="1596"
+                        height="801"
+                        loading="lazy"
+                        class="figure-dark"
+                    >
+                    <figcaption><ITranslate path="flame.architecture.figureCaption" /></figcaption>
+                </figure>
             </section>
 
             <section class="flame-section">
                 <h2 class="section-heading">
                     <ITranslate path="flame.safeguards.title" />
                 </h2>
-                <ul class="section-body">
+                <ul class="safeguard-grid">
                     <li
                         v-for="safeguard in safeguards"
-                        :key="safeguard"
+                        :key="safeguard.key"
+                        class="safeguard"
                     >
-                        <ITranslate :path="`flame.safeguards.${safeguard}`" />
+                        <span class="safeguard-icon">
+                            <AppIcon :name="safeguard.icon" />
+                        </span>
+                        <span><ITranslate :path="`flame.safeguards.${safeguard.key}`" /></span>
                     </li>
                 </ul>
             </section>
 
-            <section class="flame-section">
-                <h2 class="section-heading">
+            <section class="flame-section limits-callout">
+                <h2 class="callout-heading">
+                    <AppIcon name="alert" />
                     <ITranslate path="flame.limits.title" />
                 </h2>
                 <p class="section-body">
@@ -66,6 +117,9 @@
                         :key="audience.key"
                         class="audience-card"
                     >
+                        <span class="audience-icon">
+                            <AppIcon :name="audience.icon" />
+                        </span>
                         <h3 class="audience-title">
                             <ITranslate :path="`flame.audiences.${audience.key}.title`" />
                         </h3>
@@ -88,43 +142,29 @@
                 <h2 class="section-heading">
                     <ITranslate path="flame.resources.title" />
                 </h2>
-                <ul class="section-body flame-resources">
-                    <li>
-                        <a
-                            href="https://docs.privateaim.net/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        ><ITranslate path="flame.resources.docs" /></a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/PrivateAIM"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        ><ITranslate path="flame.resources.code" /></a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.youtube.com/watch?v=tXfg3kb0AIg"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        ><ITranslate path="flame.resources.talk" /></a>
-                    </li>
-                    <li>
-                        <a
-                            href="/files/FLAME-GMDS2025.pdf"
-                            target="_blank"
-                        ><ITranslate path="flame.resources.slides" /></a>
-                    </li>
-                    <li>
-                        <router-link :to="localePath('/publications')">
-                            <ITranslate path="flame.resources.publications" />
+                <ul class="resource-grid">
+                    <li
+                        v-for="resource in resources"
+                        :key="resource.key"
+                    >
+                        <router-link
+                            v-if="resource.internal"
+                            :to="localePath(resource.href)"
+                            class="resource-card"
+                        >
+                            <AppIcon :name="resource.icon" />
+                            <ITranslate :path="`flame.resources.${resource.key}`" />
                         </router-link>
-                    </li>
-                    <li>
-                        <router-link :to="localePath('/references/pht')">
-                            <ITranslate path="flame.resources.predecessor" />
-                        </router-link>
+                        <a
+                            v-else
+                            :href="resource.href"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="resource-card"
+                        >
+                            <AppIcon :name="resource.icon" />
+                            <ITranslate :path="`flame.resources.${resource.key}`" />
+                        </a>
                     </li>
                 </ul>
             </section>
@@ -134,27 +174,84 @@
 
 <script setup lang="ts">
 import PageHeader from '@/components/PageHeader.vue';
+import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath, useTranslation } from '@/i18n';
 
 const title = useTranslation('flame.title');
 const subtitle = useTranslation('flame.subtitle');
+const figureAlt = useTranslation('flame.architecture.figureAlt');
 const localePath = useLocalePath();
 
 const steps = ['step1', 'step2', 'step3', 'step4'];
-const safeguards = ['review', 'isolation', 'encryption', 'hub', 'privacy', 'access'];
+const safeguards = [
+    { key: 'review', icon: 'eye' },
+    { key: 'isolation', icon: 'box' },
+    { key: 'encryption', icon: 'lock' },
+    { key: 'hub', icon: 'server' },
+    { key: 'privacy', icon: 'shield' },
+    { key: 'access', icon: 'users' },
+];
 
 const DOCS = 'https://docs.privateaim.net';
 const audiences = [
-    { key: 'researchers', links: [{ href: `${DOCS}/guide/user/run-your-first-analysis`, label: 'link' }] },
-    { key: 'sites', links: [{ href: `${DOCS}/guide/deployment/node-installation`, label: 'link' }] },
+    {
+        key: 'researchers', 
+        icon: 'user', 
+        links: [{ href: `${DOCS}/guide/user/run-your-first-analysis`, label: 'link' }], 
+    },
+    {
+        key: 'sites', 
+        icon: 'server', 
+        links: [{ href: `${DOCS}/guide/deployment/node-installation`, label: 'link' }], 
+    },
     {
         key: 'dpo',
+        icon: 'shield',
         links: [
             { href: `${DOCS}/guide/faqs/faqs-of-security-privacy`, label: 'link' },
             { href: '/files/Flyer-Datenschutz.pdf', label: 'flyer' },
         ],
     },
-    { key: 'patients', links: [{ href: '/files/Flyer-Patienten.pdf', label: 'link' }] },
+    {
+        key: 'patients', 
+        icon: 'heart', 
+        links: [{ href: '/files/Flyer-Patienten.pdf', label: 'link' }], 
+    },
+];
+
+const resources = [
+    {
+        key: 'docs', 
+        icon: 'book', 
+        href: `${DOCS}/`, 
+    },
+    {
+        key: 'code', 
+        icon: 'code', 
+        href: 'https://github.com/PrivateAIM', 
+    },
+    {
+        key: 'talk', 
+        icon: 'play', 
+        href: 'https://www.youtube.com/watch?v=tXfg3kb0AIg', 
+    },
+    {
+        key: 'slides', 
+        icon: 'file', 
+        href: '/files/FLAME-GMDS2025.pdf', 
+    },
+    {
+        key: 'publications', 
+        icon: 'file', 
+        href: '/publications', 
+        internal: true,
+    },
+    {
+        key: 'predecessor', 
+        icon: 'archive', 
+        href: '/references/pht', 
+        internal: true,
+    },
 ];
 </script>
 
@@ -164,13 +261,15 @@ const audiences = [
 }
 
 .flame-content {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 3rem;
 }
 
 .flame-status {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 1.25rem;
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
@@ -179,8 +278,16 @@ const audiences = [
     font-weight: 600;
 }
 
+.status-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: #38a169;
+    box-shadow: 0 0 0 4px rgba(56, 161, 105, 0.2);
+}
+
 .flame-lead {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: 1.7;
     color: var(--text-color, #1a202c);
     margin-bottom: 1rem;
@@ -190,17 +297,53 @@ const audiences = [
     line-height: 1.7;
     color: var(--text-color, #1a202c);
     opacity: 0.85;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.explainer-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.12), rgba(66, 153, 225, 0.04));
+    border: 1px solid rgba(30, 144, 255, 0.35);
+    color: var(--primary-color, #3182ce);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explainer-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(30, 144, 255, 0.18);
+}
+
+.explainer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex-grow: 1;
+    color: var(--text-color, #1a202c);
+}
+
+.explainer-text strong {
+    color: var(--primary-color, #3182ce);
+    font-size: 1.1rem;
+}
+
+.explainer-arrow {
+    flex-shrink: 0;
 }
 
 .flame-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .section-heading {
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     color: var(--text-color, #1a202c);
     border-bottom: 2px solid var(--primary-color, #3182ce);
     padding-bottom: 0.5rem;
@@ -212,39 +355,154 @@ const audiences = [
     font-size: 1.05rem;
 }
 
-.section-body li {
-    margin-bottom: 0.5rem;
+.flame-steps {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
 }
 
-.flame-resources a {
-    display: inline-block;
-    padding-block: 3px;
-    color: var(--primary-color, #3182ce);
-    font-weight: 500;
+.flame-step {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem;
+    border-radius: 0.75rem;
+    background-color: var(--tag-bg, #f7fafc);
+    color: var(--text-color, #1a202c);
+    line-height: 1.6;
 }
+
+.step-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--primary-color, #3182ce);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.flame-figure {
+    margin: 2rem 0 0;
+    padding: 1rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 0.75rem;
+    background-color: var(--card-bg, #ffffff);
+}
+
+.flame-figure img {
+    width: 100%;
+    height: auto;
+}
+
+.figure-dark {
+    display: none;
+}
+
+.dark-mode .figure-light {
+    display: none;
+}
+
+.dark-mode .figure-dark {
+    display: block;
+}
+
+.flame-figure figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-color, #4a5568);
+    opacity: 0.8;
+}
+
+.safeguard-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.safeguard {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 0.75rem;
+    background-color: var(--card-bg, #ffffff);
+    color: var(--text-color, #1a202c);
+    line-height: 1.6;
+}
+
+.safeguard-icon,
+.audience-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    background-color: var(--tag-bg, #ebf8ff);
+    color: var(--primary-color, #3182ce);
+}
+
+.limits-callout {
+    padding: 1.5rem;
+    border-left: 4px solid #dd6b20;
+    border-radius: 0.5rem;
+    background-color: rgba(221, 107, 32, 0.08);
+}
+
+.callout-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #c05621;
+}
+
+.limits-callout .section-body {
+    margin: 0;
+}
+
 .audience-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
 }
 
-@media (max-width: 640px) {
-    .audience-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
-}
-
 .audience-card {
     display: flex;
     flex-direction: column;
-    padding: 1.25rem;
+    padding: 1.5rem;
     border: 1px solid var(--border-color, #e2e8f0);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     background-color: var(--card-bg, #ffffff);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.audience-icon {
+    margin-bottom: 0.75rem;
 }
 
 .audience-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin: 0 0 0.5rem;
     color: var(--text-color, #1a202c);
 }
@@ -266,5 +524,54 @@ const audiences = [
 
 .audience-link:hover {
     text-decoration: underline;
+}
+
+.resource-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.resource-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    height: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 0.75rem;
+    background-color: var(--card-bg, #ffffff);
+    color: var(--primary-color, #3182ce);
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+    border-color: var(--primary-color, #3182ce);
+    box-shadow: 0 4px 14px rgba(30, 144, 255, 0.15);
+}
+
+.resource-card svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .flame-steps,
+    .safeguard-grid,
+    .audience-grid,
+    .resource-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 </style>

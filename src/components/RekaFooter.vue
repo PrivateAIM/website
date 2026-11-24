@@ -29,6 +29,12 @@
                         rel="noopener noreferrer"
                         class="footer-link"
                     ><ITranslate path="footer.flame" /></a>
+                    <router-link
+                        :to="localePath('/federated-analysis')"
+                        class="footer-link"
+                    >
+                        <ITranslate path="footer.explainer" />
+                    </router-link>
                     <a
                         href="https://github.com/PrivateAIM"
                         target="_blank"

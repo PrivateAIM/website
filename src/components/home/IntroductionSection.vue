@@ -4,6 +4,7 @@ import { useTranslation } from '@/i18n';
 
 // A self-contained definition of PrivateAIM and FLAME, quotable on its own
 const definition = useTranslation('home.intro.definition');
+const paragraph2 = useTranslation('home.intro.paragraph2');
 </script>
 <template>
     <section class="intro-text">
@@ -13,9 +14,10 @@ const definition = useTranslation('home.intro.definition');
             tag="p"
             class="intro-definition"
         />
-        <p>
-            <ITranslate path="home.intro.paragraph2" />
-        </p>
+        <LinkText
+            :text="paragraph2"
+            tag="p"
+        />
     </section>
 </template>
 

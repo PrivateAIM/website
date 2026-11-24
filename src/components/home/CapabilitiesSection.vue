@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import AppIcon from '@/components/shared/AppIcon.vue';
 import LinkText from '@/components/shared/LinkText.vue';
 import { useTranslation } from '@/i18n';
 
 // What FLAME supports, as described in the FLAME documentation (getting started)
-const capabilities = ['statistics', 'learning', 'privacy', 'code'];
+const capabilities = [
+    { key: 'statistics', icon: 'chart' },
+    { key: 'learning', icon: 'layers' },
+    { key: 'privacy', icon: 'shield' },
+    { key: 'code', icon: 'code' },
+];
 const examples = useTranslation('home.capabilities.examples');
 </script>
 <template>
@@ -12,11 +18,16 @@ const examples = useTranslation('home.capabilities.examples');
         <div class="capability-grid">
             <div
                 v-for="capability in capabilities"
-                :key="capability"
+                :key="capability.key"
                 class="capability"
             >
-                <h3><ITranslate :path="`home.capabilities.${capability}.title`" /></h3>
-                <p><ITranslate :path="`home.capabilities.${capability}.description`" /></p>
+                <span class="capability-icon">
+                    <AppIcon :name="capability.icon" />
+                </span>
+                <div>
+                    <h3><ITranslate :path="`home.capabilities.${capability.key}.title`" /></h3>
+                    <p><ITranslate :path="`home.capabilities.${capability.key}.description`" /></p>
+                </div>
             </div>
         </div>
         <LinkText
@@ -48,11 +59,31 @@ h2 {
 }
 
 .capability {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
   padding: 1.5rem;
   border: 1px solid var(--border-color, #e2e8f0);
-  border-left: 4px solid var(--primary-color, #3182ce);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background-color: var(--card-bg, #ffffff);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capability:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.capability-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
+  color: #ffffff;
 }
 
 .capability h3 {

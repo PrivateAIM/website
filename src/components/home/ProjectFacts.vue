@@ -9,7 +9,13 @@
                 :key="fact"
                 class="fact"
             >
-                <dt><ITranslate :path="`home.facts.${fact}`" /></dt>
+                <dt>
+                    <AppIcon
+                        :name="FACT_ICONS[fact] ?? 'zap'"
+                        :size="18"
+                    />
+                    <ITranslate :path="`home.facts.${fact}`" />
+                </dt>
                 <dd>
                     <a
                         v-if="fact === 'code'"
@@ -34,10 +40,18 @@
 </template>
 
 <script setup lang="ts">
+import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath } from '@/i18n';
 
 const localePath = useLocalePath();
 const facts = ['funding', 'network', 'platform', 'end', 'code'];
+const FACT_ICONS: Record<string, string> = {
+    funding: 'award',
+    network: 'share',
+    platform: 'zap',
+    end: 'calendar',
+    code: 'code',
+};
 </script>
 
 <style scoped>
@@ -63,16 +77,25 @@ const facts = ['funding', 'network', 'platform', 'end', 'code'];
     padding: 1rem 1.25rem;
     background-color: var(--card-bg, #ffffff);
     border: 1px solid var(--border-color, #eaeaea);
+    border-top: 3px solid var(--primary-color, #3182ce);
     border-radius: 0.5rem;
 }
 
 .fact dt {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--nav-text, #64748b);
     margin-bottom: 0.35rem;
+}
+
+.fact dt svg {
+    flex-shrink: 0;
+    color: var(--primary-color, #3182ce);
 }
 
 .fact dd {

@@ -32,7 +32,7 @@ export default defineLocale('en', [
         intro: {
             title: 'What is PrivateAIM?',
             definition: 'PrivateAIM (Privacy-Preserving Analytics in Medicine) is a research consortium of 15 partners within Germany’s Medical Informatics Initiative (MII), funded by the Federal Ministry of Research, Technology and Space (BMFTR) from April 2023 until 31 March 2027. It develops [FLAME](/flame:internal) (Federated Learning and Analysis in Medicine), an open-source platform in productive use that analyzes medical data across university hospitals: patient data stays at each site, only the analysis code travels to the data, and only aggregated results are returned.',
-            paragraph2: 'Medical research, and AI in particular, needs data from many hospitals to produce reliable results. But health data is sensitive and strictly protected. Federated analysis resolves this conflict: instead of collecting data centrally, researchers send their analysis to the data.',
+            paragraph2: 'Medical research, and AI in particular, needs data from many hospitals to produce reliable results. But health data is sensitive and strictly protected. [Federated analysis](/federated-analysis:internal) resolves this conflict: instead of collecting data centrally, researchers send their analysis to the data.',
         },
         capabilities: {
             title: 'What you can do with FLAME',
@@ -134,10 +134,59 @@ export default defineLocale('en', [
         },
     })]),
 
+    defineNamespace('explainer', [defineTranslations({
+        title: 'What is federated analysis?',
+        subtitle: 'A short introduction to analyzing medical data without collecting it centrally',
+        intro: 'Federated analysis means analyzing data that is spread across several institutions without bringing it together in one place. Instead of copying patient data into a central database, the analysis is sent to each institution, runs there next to the local data, and only the results come back. Combined, these results answer the same research question as a central analysis would.',
+        problem: {
+            title: 'Why not collect the data centrally?',
+            body: 'Many research questions, from rare diseases to training reliable AI models, need data from more patients than a single hospital has. Collecting this data centrally raises legal, organizational and security hurdles: health data is especially protected, every transfer has to be justified, and a central database is an attractive target. Federated analysis avoids these hurdles because the data never has to leave the hospital.',
+        },
+        idea: {
+            title: 'The idea: bring the analysis to the data',
+            body: 'A researcher writes the analysis once. Each participating hospital reviews it, runs it on its own data and returns only an intermediate result, for example a count or a model update. An aggregator combines these intermediate results into the final result for the researcher.',
+            researcher: 'Researcher',
+            code: 'Analysis code',
+            hospital: 'Hospital',
+            data: 'Data stays here',
+            result: 'Combined result',
+        },
+        kinds: {
+            title: 'Federated analysis and federated learning',
+            analysis: 'Federated analysis',
+            analysisBody: 'Statistics such as counts, means or regression models are computed at each site and combined once. Example: how many patients across all sites have a certain diagnosis?',
+            learning: 'Federated learning',
+            learningBody: 'A machine learning model is trained over several rounds. In each round the sites train on their local data and share only the updated model parameters, which are combined into a better global model.',
+        },
+        shared: {
+            title: 'What is shared, and what is not',
+            sharedTitle: 'Travels between sites',
+            shared1: 'The analysis code, after it has been reviewed',
+            shared2: 'Intermediate and aggregated results, such as counts or model parameters',
+            notSharedTitle: 'Stays at each site',
+            notShared1: 'Patient-level data',
+            notShared2: 'Direct access to the local databases',
+        },
+        protection: {
+            title: 'Federated does not automatically mean anonymous',
+            body: 'Aggregated results can still reveal information about individuals, for example when a group is very small. Federated analysis is therefore combined with further safeguards: each site reviews the code and its expected results before it runs, differential privacy adds calibrated noise to results, and homomorphic encryption lets sites combine values without seeing each other’s contributions.',
+        },
+        practice: {
+            title: 'Federated analysis in practice: FLAME',
+            body: 'FLAME (Federated Learning and Analysis in Medicine) is the platform developed by PrivateAIM for federated analysis and federated learning at German university hospitals within the Medical Informatics Initiative (MII). It is open source and in productive use.',
+            flame: 'Learn how FLAME works',
+            docs: 'Read the FLAME documentation',
+        },
+    })]),
+
     defineNamespace('flame', [defineTranslations({
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: the platform developed by PrivateAIM',
         status: 'FLAME is in productive use.',
+        explainer: {
+            title: 'New to federated analysis?',
+            text: 'A short introduction: how analyzing data without collecting it works, and where its limits are.',
+        },
         context: 'FLAME (Federated Learning and Analysis in Medicine) is developed by PrivateAIM, a consortium of the German Medical Informatics Initiative (MII) funded by the BMFTR. It is not related to other software projects named Flame.',
         lead: 'FLAME lets researchers analyze medical data from several institutions without the data ever leaving them. Instead of collecting data centrally, FLAME sends the analysis code to the data. Only aggregated results are returned.',
         architecture: {
@@ -147,6 +196,8 @@ export default defineLocale('en', [
             step2: 'Every site decides whether it takes part in a project, reviews the analysis code before it runs, and starts the execution itself.',
             step3: 'The analysis runs at each site. The results of the sites are combined by an aggregator, and only this combined result is made available to the researcher.',
             step4: 'For iterative methods such as federated learning, this repeats over several rounds.',
+            figureAlt: 'FLAME architecture: the Hub services build the analysis image and store results, and a Node in each hospital pulls the image and runs it next to the local data',
+            figureCaption: 'Execution flow of an analysis in FLAME (source: FLAME documentation)',
         },
         safeguards: {
             title: 'Safeguards',
@@ -199,6 +250,7 @@ export default defineLocale('en', [
     defineNamespace('footer', [defineTranslations({
         documentation: 'Documentation',
         flame: 'FLAME Platform',
+        explainer: 'What is federated analysis?',
         github: 'GitHub',
         references: 'References',
         legal: 'Legal',
