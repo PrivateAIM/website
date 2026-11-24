@@ -11,6 +11,8 @@
                 >
                     <img
                         src="/images/logo-sm.webp"
+                        width="84"
+                        height="96"
                         alt="PrivateAIM Logo"
                         class="header-logo"
                     >

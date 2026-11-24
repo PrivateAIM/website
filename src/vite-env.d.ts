@@ -13,4 +13,9 @@ declare module 'vue' {
     }
 }
 
+declare global {
+    /** Last commit date (YYYY-MM-DD) of each route's sources, keyed by route path; injected in vite.config.ts. */
+    const __PAGE_DATES__: Record<string, string>;
+}
+
 export {};

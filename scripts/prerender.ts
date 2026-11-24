@@ -155,6 +155,14 @@ function lastModified(sources: string[]): string | undefined {
     }
 }
 
+/** Last-modified date per route path, compiled into the app (see src/seo/pageDates.ts). */
+export function pageDates(): Record<string, string> {
+    return Object.fromEntries(PRERENDER_ROUTES.flatMap(({ path, sources }) => {
+        const date = lastModified(sources);
+        return date ? [[path, date]] : [];
+    }));
+}
+
 export function writeSitemap(outDir: string) {
     const urls = PRERENDER_ROUTES.flatMap(({ path, sources }) => {
         const lastmod = lastModified(sources);
@@ -206,7 +214,8 @@ const LEGACY_REDIRECTS: Record<string, string> = {
 
 /**
  * GitHub Pages cannot send 301s, so each legacy URL gets a static page with an
- * immediate meta refresh, which Google treats as a permanent redirect.
+ * immediate meta refresh, which Google treats as a permanent redirect. The stub
+ * itself is noindex, so only the target is indexed.
  */
 export function writeLegacyRedirects(outDir: string) {
     for (const [from, to] of Object.entries(LEGACY_REDIRECTS)) {
@@ -218,7 +227,8 @@ export function writeLegacyRedirects(outDir: string) {
             '<html lang="en">',
             '<head>',
             '<meta charset="utf-8">',
-            '<title>PrivateAIM</title>',
+            `<title>PrivateAIM — moved to ${target}</title>`,
+            '<meta name="robots" content="noindex">',
             `<link rel="canonical" href="${target}">`,
             `<meta http-equiv="refresh" content="0; url=${target}">`,
             '</head>',

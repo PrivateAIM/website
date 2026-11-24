@@ -21,6 +21,8 @@ export const projectNode: JsonLdNode = {
     description: 'PrivateAIM develops FLAME, a federated learning and analysis platform for privacy-preserving medical data analysis within ' +
         'Germany\'s Medical Informatics Initiative (MII). Patient data stays at each participating site, and only aggregated results are returned.',
     foundingDate: '2023-04-01',
+    // End of the BMFTR funding period
+    endDate: '2027-03-31',
     funder: {
         '@type': 'GovernmentOrganization',
         name: 'Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)',
@@ -72,7 +74,12 @@ export const flameNode: JsonLdNode = {
     url: `${SITE_URL}/flame`,
     license: 'https://www.apache.org/licenses/LICENSE-2.0',
     softwareHelp: { '@type': 'CreativeWork', url: 'https://docs.privateaim.net/' },
-    sameAs: ['https://github.com/PrivateAIM', 'https://docs.privateaim.net/'],
+    sameAs: [
+        'https://github.com/PrivateAIM',
+        'https://github.com/PrivateAIM/hub',
+        'https://github.com/PrivateAIM/node',
+        'https://docs.privateaim.net/',
+    ],
     creator: { '@id': PROJECT_ID },
 };
 
@@ -102,6 +109,10 @@ interface WebPageInput {
     type?: string;
     /** @id of the page's main entity */
     mainEntity?: string;
+    /** Last-modified date (YYYY-MM-DD) */
+    dateModified?: string;
+    /** Whether the page has a BreadcrumbList (see breadcrumbNode) */
+    breadcrumb?: boolean;
 }
 
 export function webPageNode({
@@ -111,6 +122,8 @@ export function webPageNode({
     locale, 
     type = 'WebPage', 
     mainEntity,
+    dateModified,
+    breadcrumb,
 }: WebPageInput): JsonLdNode {
     const url = `${SITE_URL}${path}`;
     return {
@@ -123,7 +136,31 @@ export function webPageNode({
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': PROJECT_ID },
         ...(mainEntity ? { mainEntity: { '@id': mainEntity } } : {}),
+        ...(dateModified ? { dateModified } : {}),
+        ...(breadcrumb ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
     };
+}
+
+/** The explainer page's article, its main entity. */
+export function techArticleNode(path: string, headline: string, description: string, locale: string, dateModified?: string): JsonLdNode {
+    const url = `${SITE_URL}${path}`;
+    return {
+        '@type': 'TechArticle',
+        '@id': techArticleId(path),
+        headline,
+        description,
+        inLanguage: locale,
+        url,
+        mainEntityOfPage: { '@id': `${url}#webpage` },
+        about: ['Federated analysis', 'Federated learning', { '@id': FLAME_ID }],
+        author: { '@id': PROJECT_ID },
+        publisher: { '@id': PROJECT_ID },
+        ...(dateModified ? { dateModified } : {}),
+    };
+}
+
+export function techArticleId(path: string): string {
+    return `${SITE_URL}${path}#article`;
 }
 
 /** Home > page, for every page below the home page. */
@@ -146,6 +183,11 @@ export function breadcrumbNode(homePath: string, homeName: string, path: string,
             },
         ],
     };
+}
+
+/** The FAQ on a locale's home page. */
+export function faqId(path: string): string {
+    return `${SITE_URL}${path}#faq`;
 }
 
 /** The publication list of a locale's publications page. */

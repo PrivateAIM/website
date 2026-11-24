@@ -23,7 +23,7 @@
                 <div class="news-card-image">
                     <img
                         v-if="item.images?.[0]"
-                        :src="`/images/news/${item.images[0]}`"
+                        :src="thumbnail(`news/${item.images[0]}`, 640)"
                         alt=""
                         loading="lazy"
                         width="400"
@@ -50,6 +50,7 @@ import { computed } from 'vue';
 import AppIcon from '@/components/shared/AppIcon.vue';
 import { anchorFor, isoDate, latestNews } from '@/data/news';
 import { useLocale, useLocalePath } from '@/i18n';
+import { thumbnail } from '@/utils/thumbnail';
 
 const locale = useLocale();
 const localePath = useLocalePath();
@@ -69,9 +70,10 @@ const summary = (content: string): string => {
 
 .latest-news-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.25rem 1rem;
   margin-bottom: 1.5rem;
 }
 

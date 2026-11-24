@@ -140,12 +140,14 @@
                     ><ITranslate path="explainer.practice.docs" /></a>
                 </div>
             </section>
+            <LastUpdated path="explainer.lastUpdated" />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import PageHeader from '@/components/PageHeader.vue';
+import LastUpdated from '@/components/shared/LastUpdated.vue';
 import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath, useTranslation } from '@/i18n';
 

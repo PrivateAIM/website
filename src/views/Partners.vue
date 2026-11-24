@@ -24,6 +24,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/CHARITE.svg"
+                                width="800"
+                                height="295"
                                 alt="Charité Berlin"
                             >
                         </div>
@@ -43,6 +45,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKT.webp"
+                                width="300"
+                                height="51"
                                 alt="Universitätsklinikum Tübingen"
                             >
                         </div>
@@ -62,6 +66,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/TUM.svg"
+                                width="266"
+                                height="40"
                                 alt="TUM Klinikum Rechts der Isar"
                             >
                         </div>
@@ -89,6 +95,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/LMU.webp"
+                                width="300"
+                                height="142"
                                 alt="Ludwig-Maximilians-Universität München"
                             >
                         </div>
@@ -108,6 +116,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/DKFZ.webp"
+                                width="600"
+                                height="72"
                                 alt="Deutsches Krebsforschungszentrum"
                             >
                         </div>
@@ -127,6 +137,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/EKUT.webp"
+                                width="269"
+                                height="70"
                                 alt="Eberhard Karls Universität Tübingen"
                             >
                         </div>
@@ -146,6 +158,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/TMF.webp"
+                                width="300"
+                                height="231"
                                 alt="TMF"
                             >
                         </div>
@@ -165,6 +179,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKU.svg"
+                                width="285"
+                                height="81"
                                 alt="Universität Ulm"
                             >
                         </div>
@@ -184,6 +200,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKER.svg"
+                                width="371"
+                                height="103"
                                 alt="Universitätsklinikum Erlangen"
                             >
                         </div>
@@ -203,6 +221,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKFR.webp"
+                                width="300"
+                                height="51"
                                 alt="Universitätsklinikum Freiburg"
                             >
                         </div>
@@ -222,6 +242,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKHD.webp"
+                                width="300"
+                                height="66"
                                 alt="Universitätsklinikum Heidelberg"
                             >
                         </div>
@@ -241,6 +263,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKK.webp"
+                                width="300"
+                                height="300"
                                 alt="Universitätsklinikum Köln"
                             >
                         </div>
@@ -260,6 +284,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKL.webp"
+                                width="300"
+                                height="70"
                                 alt="Universitätsklinikum Leipzig"
                             >
                         </div>
@@ -279,6 +305,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/CISPA.svg"
+                                width="3000"
+                                height="1000"
                                 alt="CISPA"
                             >
                         </div>
@@ -298,6 +326,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UMM.svg"
+                                width="240"
+                                height="71"
                                 alt="Universitätsmedizin Mannheim"
                             >
                         </div>
@@ -326,6 +356,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/IKIM.webp"
+                                width="650"
+                                height="137"
                                 alt="University Hospital Essen"
                             >
                         </div>
@@ -345,6 +377,8 @@
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/partners/UKSH.webp"
+                                width="300"
+                                height="75"
                                 alt="University Hospital Schleswig-Holstein"
                             >
                         </div>
@@ -480,6 +514,8 @@ const description = useTranslation('partners.description');
 }
 
 .partner-logo img {
+  width: auto;
+  height: auto;
   max-width: 80%;
   max-height: 100px;
   object-fit: contain;

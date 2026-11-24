@@ -43,7 +43,7 @@ export default defineLocale('de', [
             },
             privacy: {
                 title: 'Datenschutzfördernde Technologien',
-                description: 'Ergänzen Sie die Ergebnisse um lokale Differential Privacy, oder nutzen Sie homomorphe Verschlüsselung, sodass nur das Gesamtergebnis aller Standorte sichtbar ist.',
+                description: 'Ergänzen Sie ein numerisches Ergebnis um lokale Differential Privacy, oder nutzen Sie homomorphe Verschlüsselung, sodass nur das Gesamtergebnis aller Standorte sichtbar ist.',
             },
             code: {
                 title: 'Eigene Python-Analysen',
@@ -63,7 +63,7 @@ export default defineLocale('de', [
             },
             q3: {
                 question: 'Wer kann FLAME nutzen?',
-                answer: 'Forschende reichen Analysen über den FLAME Hub ein. Universitätskliniken und andere Einrichtungen nehmen teil, indem sie einen FLAME Node betreiben, und entscheiden für jedes Projekt selbst, ob sie mitmachen. Die [FLAME-Seite](/flame:internal) bietet Einstiege für Forschende, Standorte, Datenschutzbeauftragte sowie Patientinnen und Patienten.',
+                answer: 'Forschende reichen Analysen über den FLAME Hub ein. Universitätskliniken und andere Einrichtungen nehmen teil, indem sie einen FLAME Node betreiben, und entscheiden für jedes Projekt selbst, ob sie mitmachen. Die [FLAME-Seite](/flame#audiences:internal) bietet Einstiege für Forschende, Standorte, Datenschutzbeauftragte sowie Patientinnen und Patienten.',
             },
             q4: {
                 question: 'Ist FLAME Open Source?',
@@ -138,12 +138,13 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('explainer', [defineTranslations({
+        lastUpdated: 'Zuletzt aktualisiert: {{date}}',
         title: 'Was ist föderierte Analyse?',
         subtitle: 'Eine kurze Einführung in die Analyse medizinischer Daten ohne zentrale Datensammlung',
-        intro: 'Föderierte Analyse bedeutet, Daten auszuwerten, die auf mehrere Einrichtungen verteilt sind, ohne sie an einem Ort zusammenzuführen. Statt Patientendaten in eine zentrale Datenbank zu kopieren, wird die Analyse an jede Einrichtung geschickt, läuft dort bei den lokalen Daten, und nur die Ergebnisse kommen zurück. Zusammengeführt beantworten diese Ergebnisse dieselbe Forschungsfrage wie eine zentrale Analyse.',
+        intro: 'Föderierte Analyse bedeutet, Daten auszuwerten, die auf mehrere Einrichtungen verteilt sind, ohne sie an einem Ort zusammenzuführen. Statt Patientendaten in eine zentrale Datenbank zu kopieren, wird die Analyse an jede Einrichtung geschickt, läuft dort bei den lokalen Daten, und nur die Ergebnisse kommen zurück. Zusammengeführt beantworten diese Ergebnisse dieselbe Forschungsfrage wie eine zentrale Analyse, mit gleichen oder sehr ähnlichen Ergebnissen.',
         problem: {
             title: 'Warum nicht einfach zentral sammeln?',
-            body: 'Viele Forschungsfragen, von seltenen Erkrankungen bis zum Training verlässlicher KI-Modelle, brauchen Daten von mehr Patientinnen und Patienten, als eine einzelne Klinik hat. Eine zentrale Sammlung dieser Daten stößt auf rechtliche, organisatorische und sicherheitstechnische Hürden: Gesundheitsdaten sind besonders geschützt, jede Übermittlung muss begründet sein, und eine zentrale Datenbank ist ein attraktives Angriffsziel. Föderierte Analysen umgehen diese Hürden, weil die Daten die Klinik nie verlassen müssen.',
+            body: 'Viele Forschungsfragen, von seltenen Erkrankungen bis zum Training verlässlicher KI-Modelle, brauchen Daten von mehr Patientinnen und Patienten, als eine einzelne Klinik hat. Eine zentrale Sammlung dieser Daten stößt auf rechtliche, organisatorische und sicherheitstechnische Hürden: Gesundheitsdaten sind besonders geschützt, jede Übermittlung muss begründet sein, und eine zentrale Datenbank ist ein attraktives Angriffsziel. Föderierte Analysen verringern diese Hürden, weil die Daten die Klinik nie verlassen müssen.',
         },
         idea: {
             title: 'Die Idee: Die Analyse kommt zu den Daten',
@@ -183,6 +184,7 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('flame', [defineTranslations({
+        lastUpdated: 'Zuletzt aktualisiert: {{date}}',
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
         status: 'FLAME ist im produktiven Einsatz.',
@@ -208,7 +210,7 @@ export default defineLocale('de', [
             isolation: 'Jede Analyse läuft in einem eigenen Container ohne Internetzugang.',
             encryption: 'Alle Verbindungen nutzen TLS. Nachrichten und Zwischenergebnisse zwischen den Nodes sind zusätzlich Ende-zu-Ende-verschlüsselt, sodass der Hub sie nicht lesen kann.',
             hub: 'Der Hub hat nie Zugriff auf Patientendaten.',
-            privacy: 'Analysen können datenschutzfördernde Verfahren wie lokale Differential Privacy nutzen.',
+            privacy: 'Analysen können datenschutzfördernde Verfahren wie lokale Differential Privacy nutzen (derzeit für ein einzelnes numerisches Ergebnis).',
             access: 'Nutzende, Rollen und Berechtigungen werden je Organisation verwaltet. Das Starten von Analysen und das Einrichten von Datenquellen ist dem Personal des Standorts vorbehalten.',
         },
         limits: {
@@ -233,7 +235,7 @@ export default defineLocale('de', [
             },
             sites: {
                 title: 'Datenintegrationszentren und Standorte',
-                body: 'Jeder Standort betreibt einen FLAME Node auf einem eigenen Kubernetes-Server. Der Node benötigt nur ausgehendes HTTPS, ohne eingehenden Zugriff aus dem Internet. Analysen können Daten im FHIR-Format abfragen, etwa den MII-Kerndatensatz.',
+                body: 'Jeder Standort betreibt einen FLAME Node in einem eigenen Kubernetes-Cluster. Der Node benötigt nur ausgehendes HTTPS, ohne eingehenden Zugriff aus dem Internet. Analysen können Daten im FHIR-Format abfragen, etwa den MII-Kerndatensatz.',
                 link: 'Node installieren (Englisch)',
             },
             dpo: {
@@ -399,6 +401,7 @@ export default defineLocale('de', [
         },
         gallery: {
             open: 'Foto {{index}} von {{count}} öffnen',
+            photo: 'Foto {{index}} von {{count}}',
             close: 'Schließen',
             previous: 'Vorheriges Foto',
             next: 'Nächstes Foto',

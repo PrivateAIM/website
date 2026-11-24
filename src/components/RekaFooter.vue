@@ -8,6 +8,8 @@
                 >
                     <img
                         src="/images/logo-sm.webp"
+                        width="84"
+                        height="96"
                         alt="PrivateAIM Logo"
                         class="footer-logo"
                     >
@@ -118,6 +120,8 @@
                     <img
                         loading="lazy"
                         src="/images/BMFTR-dark.svg"
+                        width="214"
+                        height="84"
                         alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
                         class="sponsor-logo"
                     >
@@ -353,6 +357,11 @@ const referenceLinks = computed(() => references.map((project) => ({
 }
 
 @media (max-width: 560px) {
+  /* Room for the floating cookie and back-to-top buttons below the last line */
+  .footer {
+    padding-bottom: 4.5rem;
+  }
+
   .footer-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

@@ -9,6 +9,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/UKT.webp"
+                        width="300"
+                        height="51"
                         alt="University Hospital Tübingen"
                     >
                 </div>
@@ -17,6 +19,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/CHARITE.svg"
+                        width="800"
+                        height="295"
                         alt="Charité Berlin"
                     >
                 </div>
@@ -25,6 +29,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/TUM.svg"
+                        width="266"
+                        height="40"
                         alt="TUM Klinikum Rechts der Isar"
                     >
                 </div>
@@ -33,6 +39,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/UKHD.webp"
+                        width="300"
+                        height="66"
                         alt="University Hospital Heidelberg"
                     >
                 </div>
@@ -41,6 +49,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/UKER.svg"
+                        width="371"
+                        height="103"
                         alt="University Hospital Erlangen"
                     >
                 </div>
@@ -49,6 +59,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/UKL.webp"
+                        width="300"
+                        height="70"
                         alt="University Hospital Leipzig"
                     >
                 </div>
@@ -57,6 +69,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/UKFR.webp"
+                        width="300"
+                        height="51"
                         alt="University Hospital Freiburg"
                     >
                 </div>
@@ -65,6 +79,8 @@
                         loading="lazy"
                         decoding="async"
                         src="/images/partners/LMU.webp"
+                        width="300"
+                        height="142"
                         alt="LMU Munich"
                     >
                 </div>
@@ -125,6 +141,8 @@ h2 {
 }
 
 .partner-logo img {
+  width: auto;
+  height: auto;
   max-width: 90%;
   max-height: 140px;
   object-fit: contain;

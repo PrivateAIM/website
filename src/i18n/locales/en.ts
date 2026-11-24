@@ -49,7 +49,7 @@ export default defineLocale('en', [
             },
             privacy: {
                 title: 'Privacy-enhancing technologies',
-                description: 'Add local differential privacy to the results, or use homomorphic encryption so that only the combined result of all sites is visible.',
+                description: 'Add local differential privacy to a numeric result, or use homomorphic encryption so that only the combined result of all sites is visible.',
             },
             code: {
                 title: 'Your own Python analysis',
@@ -69,7 +69,7 @@ export default defineLocale('en', [
             },
             q3: {
                 question: 'Who can use FLAME?',
-                answer: 'Researchers submit analyses through the FLAME Hub. University hospitals and other institutions take part by running a FLAME Node and decide for each project whether they participate. The [FLAME page](/flame:internal) has entry points for researchers, sites, data protection officers and patients.',
+                answer: 'Researchers submit analyses through the FLAME Hub. University hospitals and other institutions take part by running a FLAME Node and decide for each project whether they participate. The [FLAME page](/flame#audiences:internal) has entry points for researchers, sites, data protection officers and patients.',
             },
             q4: {
                 question: 'Is FLAME open source?',
@@ -144,12 +144,13 @@ export default defineLocale('en', [
     })]),
 
     defineNamespace('explainer', [defineTranslations({
+        lastUpdated: 'Last updated: {{date}}',
         title: 'What is federated analysis?',
         subtitle: 'A short introduction to analyzing medical data without collecting it centrally',
-        intro: 'Federated analysis means analyzing data that is spread across several institutions without bringing it together in one place. Instead of copying patient data into a central database, the analysis is sent to each institution, runs there next to the local data, and only the results come back. Combined, these results answer the same research question as a central analysis would.',
+        intro: 'Federated analysis means analyzing data that is spread across several institutions without bringing it together in one place. Instead of copying patient data into a central database, the analysis is sent to each institution, runs there next to the local data, and only the results come back. Combined, these results answer the same research question as a central analysis, with the same or very similar results.',
         problem: {
             title: 'Why not collect the data centrally?',
-            body: 'Many research questions, from rare diseases to training reliable AI models, need data from more patients than a single hospital has. Collecting this data centrally raises legal, organizational and security hurdles: health data is especially protected, every transfer has to be justified, and a central database is an attractive target. Federated analysis avoids these hurdles because the data never has to leave the hospital.',
+            body: 'Many research questions, from rare diseases to training reliable AI models, need data from more patients than a single hospital has. Collecting this data centrally raises legal, organizational and security hurdles: health data is especially protected, every transfer has to be justified, and a central database is an attractive target. Federated analysis reduces these hurdles because the data never has to leave the hospital.',
         },
         idea: {
             title: 'The idea: bring the analysis to the data',
@@ -189,6 +190,7 @@ export default defineLocale('en', [
     })]),
 
     defineNamespace('flame', [defineTranslations({
+        lastUpdated: 'Last updated: {{date}}',
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: the platform developed by PrivateAIM',
         status: 'FLAME is in productive use.',
@@ -214,7 +216,7 @@ export default defineLocale('en', [
             isolation: 'Every analysis runs in its own container without internet access.',
             encryption: 'All connections use TLS. Messages and intermediate results exchanged between nodes are additionally encrypted end to end, so the Hub cannot read them.',
             hub: 'The Hub never has access to patient data.',
-            privacy: 'Analyses can use privacy-enhancing techniques such as local differential privacy.',
+            privacy: 'Analyses can use privacy-enhancing techniques such as local differential privacy (currently for a single numeric result).',
             access: 'Users, roles and permissions are managed per organization. Starting an analysis and configuring data stores is reserved for the staff of the site.',
         },
         limits: {
@@ -239,7 +241,7 @@ export default defineLocale('en', [
             },
             sites: {
                 title: 'Data integration centres and sites',
-                body: 'Each site runs a FLAME Node on its own Kubernetes server. The Node only needs outbound HTTPS, with no inbound access from the internet. Analyses can query data in FHIR format, such as the MII core dataset.',
+                body: 'Each site runs a FLAME Node in its own Kubernetes cluster. The Node only needs outbound HTTPS, with no inbound access from the internet. Analyses can query data in FHIR format, such as the MII core dataset.',
                 link: 'Install a Node',
             },
             dpo: {
@@ -405,6 +407,7 @@ export default defineLocale('en', [
         },
         gallery: {
             open: 'Open photo {{index}} of {{count}}',
+            photo: 'Photo {{index}} of {{count}}',
             close: 'Close',
             previous: 'Previous photo',
             next: 'Next photo',
