@@ -36,9 +36,9 @@ export const projectNode: JsonLdNode = {
         '@type': 'OrganizationRole',
         roleName: 'Coordinator',
         member: {
-            '@type': 'Organization', 
-            name, 
-            url, 
+            '@type': 'Organization',
+            name,
+            url,
         },
     })),
     parentOrganization: {
@@ -66,10 +66,22 @@ export const flameNode: JsonLdNode = {
     alternateName: 'Federated Learning and Analysis in Medicine',
     description: 'FLAME is the platform developed by PrivateAIM for secure distributed analysis of medical data. One central Hub coordinates, ' +
         'and a Node at every participating site computes next to its own data.',
+    disambiguatingDescription: 'The federated analysis platform of the PrivateAIM consortium in the Medical Informatics Initiative (MII), ' +
+        'not to be confused with other software named Flame.',
     applicationCategory: 'Research software',
-    url: 'https://docs.privateaim.net/',
-    sameAs: ['https://github.com/PrivateAIM'],
+    url: `${SITE_URL}/flame`,
+    license: 'https://www.apache.org/licenses/LICENSE-2.0',
+    softwareHelp: { '@type': 'CreativeWork', url: 'https://docs.privateaim.net/' },
+    sameAs: ['https://github.com/PrivateAIM', 'https://docs.privateaim.net/'],
     creator: { '@id': PROJECT_ID },
+};
+
+/** Pages other than the home page reference the project by @id; this keeps the reference resolvable on every page. */
+export const projectReferenceNode: JsonLdNode = {
+    '@type': 'ResearchProject',
+    '@id': PROJECT_ID,
+    name: 'PrivateAIM',
+    url: `${SITE_URL}/`,
 };
 
 export const websiteNode: JsonLdNode = {
@@ -81,10 +93,28 @@ export const websiteNode: JsonLdNode = {
     publisher: { '@id': PROJECT_ID },
 };
 
-export function webPageNode(path: string, name: string, description: string | undefined, locale: string): JsonLdNode {
+interface WebPageInput {
+    path: string;
+    name: string;
+    description?: string;
+    locale: string;
+    /** schema.org WebPage subtype, e.g. CollectionPage or AboutPage */
+    type?: string;
+    /** @id of the page's main entity */
+    mainEntity?: string;
+}
+
+export function webPageNode({
+    path, 
+    name, 
+    description, 
+    locale, 
+    type = 'WebPage', 
+    mainEntity,
+}: WebPageInput): JsonLdNode {
     const url = `${SITE_URL}${path}`;
     return {
-        '@type': 'WebPage',
+        '@type': type,
         '@id': `${url}#webpage`,
         url,
         name,
@@ -92,5 +122,33 @@ export function webPageNode(path: string, name: string, description: string | un
         inLanguage: locale,
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': PROJECT_ID },
+        ...(mainEntity ? { mainEntity: { '@id': mainEntity } } : {}),
     };
+}
+
+/** Home > page, for every page below the home page. */
+export function breadcrumbNode(homePath: string, homeName: string, path: string, name: string): JsonLdNode {
+    return {
+        '@type': 'BreadcrumbList',
+        '@id': `${SITE_URL}${path}#breadcrumb`,
+        itemListElement: [
+            {
+                '@type': 'ListItem', 
+                position: 1, 
+                name: homeName, 
+                item: `${SITE_URL}${homePath}`,
+            },
+            {
+                '@type': 'ListItem', 
+                position: 2, 
+                name, 
+                item: `${SITE_URL}${path}`,
+            },
+        ],
+    };
+}
+
+/** The publication list of a locale's publications page. */
+export function publicationListId(path: string): string {
+    return `${SITE_URL}${path}#list`;
 }

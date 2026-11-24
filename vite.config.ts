@@ -9,6 +9,7 @@ import {
     applyPageHead,
     moveLocaleHomes,
     prerenderPaths,
+    writeLegacyRedirects,
     writeSitemap,
 } from './scripts/prerender';
 
@@ -30,6 +31,7 @@ export default defineConfig({
         onFinished: async () => {
             moveLocaleHomes('dist');
             writeSitemap('dist');
+            writeLegacyRedirects('dist');
             await downloadAvatars('dist');
         },
     },

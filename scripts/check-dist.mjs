@@ -38,6 +38,9 @@ for (const loc of locs) {
         fail(`${loc}: no file in dist`);
         continue;
     }
+    if (!file.endsWith('.html')) {
+        continue;
+    }
 
     const html = read(file);
     const title = attr(html, /<title>([^<]*)<\/title>/);
@@ -57,6 +60,13 @@ for (const loc of locs) {
     }
 }
 
+// Nothing listed in the sitemap may be blocked for crawlers
+const disallowed = [...read(join(DIST, 'robots.txt')).matchAll(/^Disallow:\s*(\S+)/gm)].map((match) => match[1]);
+for (const loc of locs) {
+    const blocked = disallowed.find((prefix) => loc.slice(SITE_URL.length).startsWith(prefix));
+    if (blocked) fail(`${loc}: blocked by robots.txt (Disallow: ${blocked})`);
+}
+
 const notFound = read(join(DIST, '404.html'));
 if (!/content="noindex"/.test(notFound) || /rel="canonical"/.test(notFound)) {
     fail('404.html must be noindex without a canonical');
@@ -67,7 +77,7 @@ const forbidden = [
     [/Test Test|test\.jpg/, 'placeholder content'],
     [/href="\/(de\/)?blog/, 'a link to the removed blog'],
     [/github\.com\/[\w-]+\.png|avatars\.githubusercontent\.com/, 'an avatar hotlinked from GitHub'],
-    [/>\s*(navigation|home|footer|news|team|partners|publications|imprint|privacy|cookie|references)\.[a-zA-Z.]+\s*</, 'an untranslated i18n key'],
+    [/>\s*(navigation|home|flame|explainer|notFound|footer|news|team|partners|publications|imprint|privacy|cookie|references)\.[a-zA-Z.]+\s*</, 'an untranslated i18n key'],
 ];
 for (const file of htmlFiles) {
     const html = read(join(DIST, file));

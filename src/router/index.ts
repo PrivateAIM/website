@@ -6,7 +6,7 @@ import type {
     RouterScrollBehavior,
 } from 'vue-router';
 import { sendPageView } from '@/utils/analytics';
-import { findReference, referenceContentForLocale } from '@/data/references';
+import { findReference, referenceContentForLocale, referenceTitle } from '@/data/references';
 import {
     DEFAULT_LOCALE,
     LOCALES,
@@ -46,11 +46,11 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'PrivateAIM — Privacy-Preserving Analytics in Medicine',
-                description: 'PrivateAIM develops FLAME, a federated learning and analysis platform for medical data. Patient data stays at each site and only aggregated results are returned.',
+                description: 'PrivateAIM develops FLAME, an open-source platform for federated learning and analysis of medical data across German university hospitals in the MII.',
             },
             de: {
                 title: 'PrivateAIM — Datenschutzfreundliche Analytik in der Medizin',
-                description: 'PrivateAIM entwickelt FLAME, eine Plattform für föderiertes Lernen und föderierte Analysen medizinischer Daten. Patientendaten bleiben am Standort, nur aggregierte Ergebnisse werden zurückgegeben.',
+                description: 'PrivateAIM entwickelt FLAME, eine quelloffene Plattform für föderiertes Lernen und föderierte Analysen medizinischer Daten an Universitätskliniken der MII.',
             },
         },
     },
@@ -61,11 +61,26 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'FLAME — Federated Learning and Analysis in Medicine — PrivateAIM',
-                description: 'FLAME is the PrivateAIM platform for federated analysis of medical data: one Hub coordinates, a Node at each site computes, and only aggregated results leave the sites.',
+                description: 'FLAME is the PrivateAIM platform for federated analysis of medical data: a Hub coordinates, a Node at each site computes, only aggregates leave.',
             },
             de: {
-                title: 'FLAME — Föderiertes Lernen und Analysen in der Medizin — PrivateAIM',
-                description: 'FLAME ist die PrivateAIM-Plattform für föderierte Analysen medizinischer Daten: Ein Hub koordiniert, ein Node an jedem Standort rechnet, und nur aggregierte Ergebnisse verlassen die Standorte.',
+                title: 'FLAME (Federated Learning and Analysis in Medicine) — die Plattform von PrivateAIM',
+                description: 'FLAME ist die PrivateAIM-Plattform für föderierte Analysen medizinischer Daten: Ein Hub koordiniert, Nodes an den Standorten rechnen, nur Aggregate gehen raus.',
+            },
+        },
+    },
+    {
+        path: '/federated-analysis',
+        name: 'FederatedAnalysis',
+        component: () => import('@/views/FederatedAnalysis.vue'),
+        meta: {
+            en: {
+                title: 'What is federated analysis? — PrivateAIM',
+                description: 'A short introduction to federated analysis and federated learning: how medical data is analyzed without collecting it centrally, and where the limits are.',
+            },
+            de: {
+                title: 'Was ist föderierte Analyse? — PrivateAIM',
+                description: 'Kurze Einführung in föderierte Analysen und föderiertes Lernen: wie medizinische Daten ohne zentrale Sammlung ausgewertet werden und wo die Grenzen liegen.',
             },
         },
     },
@@ -110,7 +125,7 @@ const pages: PageRoute[] = [
             },
             de: {
                 title: 'Partner — PrivateAIM',
-                description: 'Universitätskliniken und Forschungseinrichtungen, die gemeinsam an datenschutzfreundlichem föderiertem Lernen für die Analyse medizinischer Daten in Deutschland arbeiten.',
+                description: 'Universitätskliniken und Forschungseinrichtungen, die gemeinsam an datenschutzfreundlichen föderierten Analysen medizinischer Daten in Deutschland arbeiten.',
             },
         },
     },
@@ -121,11 +136,11 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'Publications — PrivateAIM',
-                description: 'Publications and preprints on federated learning, differential privacy, secure computation, and privacy-preserving medical data analysis from the PrivateAIM consortium.',
+                description: 'Publications and preprints from the PrivateAIM consortium on federated learning, differential privacy and secure computation in medicine.',
             },
             de: {
                 title: 'Publikationen — PrivateAIM',
-                description: 'Publikationen und Preprints des PrivateAIM-Konsortiums zu föderiertem Lernen, Differential Privacy, sicherer Berechnung und datenschutzfreundlicher Analyse medizinischer Daten.',
+                description: 'Publikationen und Preprints des PrivateAIM-Konsortiums zu föderiertem Lernen, Differential Privacy und sicherer Berechnung in der Medizin.',
             },
         },
     },
@@ -136,11 +151,11 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'Imprint — PrivateAIM',
-                description: 'Legal information and imprint for the PrivateAIM website.',
+                description: 'Imprint of the PrivateAIM website: provider, authorized representative and contact details of the BMFTR-funded research consortium.',
             },
             de: {
                 title: 'Impressum — PrivateAIM',
-                description: 'Rechtliche Angaben und Impressum der PrivateAIM-Website.',
+                description: 'Impressum der PrivateAIM-Website: Anbieter, vertretungsberechtigte Person und Kontaktdaten des vom BMFTR geförderten Forschungskonsortiums.',
             },
         },
     },
@@ -151,11 +166,11 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'Privacy Policy — PrivateAIM',
-                description: 'Privacy policy for the PrivateAIM website.',
+                description: 'Privacy policy of the PrivateAIM website: which data is processed when you visit, how analytics cookies work, and your rights under the GDPR.',
             },
             de: {
                 title: 'Datenschutzerklärung — PrivateAIM',
-                description: 'Datenschutzerklärung der PrivateAIM-Website.',
+                description: 'Datenschutzerklärung der PrivateAIM-Website: welche Daten beim Besuch verarbeitet werden, wie Analyse-Cookies funktionieren und welche Rechte Sie nach DSGVO haben.',
             },
         },
     },
@@ -193,21 +208,29 @@ export const routes: RouteRecordRaw[] = [
     },
 ];
 
-// Always scroll to top when navigating to a new page
-export const scrollBehavior: RouterScrollBehavior = () => ({
-    top: 0,
-    behavior: 'smooth',
-});
+// Scroll to the linked news entry (/news#news-…), otherwise to the top
+export const scrollBehavior: RouterScrollBehavior = (to) => {
+    if (to.hash.startsWith('#news-')) {
+        return { el: to.hash, top: 80 };
+    }
+    return { top: 0, behavior: 'smooth' };
+};
 
 export function installRouterHooks(router: Router, locale: Ref<string>) {
-    // GitHub Pages also serves the prerendered files at their .html URLs
+    // GitHub Pages also serves the prerendered files at their .html URLs, and serves
+    // the 404 page for /news/: send both to the canonical URL (the locale homes keep their slash)
+    const localeHomes = LOCALES.filter(({ code }) => code !== DEFAULT_LOCALE).map(({ code }) => `/${code}/`);
     router.beforeEach((to) => {
-        if (!to.path.endsWith('.html')) {
+        let path = to.path.replace(/(\/index)?\.html$/, '') || '/';
+        if (path.endsWith('/') && path !== '/' && !localeHomes.includes(path)) {
+            path = path.replace(/\/+$/, '');
+        }
+        if (path === to.path) {
             return undefined;
         }
 
         return {
-            path: to.path.replace(/(\/index)?\.html$/, '') || '/',
+            path: localeHomes.includes(`${path}/`) ? `${path}/` : path,
             query: to.query,
             hash: to.hash,
             replace: true,
@@ -222,7 +245,7 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
     // Resolve the dynamic title/description of reference pages before afterEach
     // writes them (and sends the page view). The view refines them per locale.
     router.beforeResolve((to) => {
-        if (to.name !== 'ReferenceProject') {
+        if (to.name !== 'ReferenceProject' && to.name !== 'ReferenceProject-de') {
             return;
         }
 
@@ -233,8 +256,9 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
             return;
         }
 
-        const content = referenceContentForLocale(project, to.meta.locale ?? DEFAULT_LOCALE);
-        to.meta.title = `${content.name} — PrivateAIM`;
+        const locale = to.meta.locale ?? DEFAULT_LOCALE;
+        const content = referenceContentForLocale(project, locale);
+        to.meta.title = referenceTitle(content, locale);
         to.meta.description = content.tagline;
     });
 

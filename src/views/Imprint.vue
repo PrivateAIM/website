@@ -1,8 +1,6 @@
 <template>
     <div class="legal-container">
-        <div class="page-header">
-            <h1><ITranslate path="imprint.title" /></h1>
-        </div>
+        <PageHeader :title="pageTitle" />
 
         <div class="legal-content">
             <section class="legal-section">
@@ -42,23 +40,19 @@
     </div>
 </template>
 
+<script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue';
+import { useTranslation } from '@/i18n';
+
+const pageTitle = useTranslation('imprint.title');
+</script>
+
 <style scoped>
 .legal-container {
   width: 100%;
 }
 
-.page-header {
-  background-color: var(--primary-color, #3182ce);
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-}
 
-.page-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-}
 
 .legal-content {
   max-width: 800px;
@@ -102,13 +96,7 @@ strong {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .page-header {
-    padding: 2rem 1rem;
-  }
 
-  .page-header h1 {
-    font-size: 2rem;
-  }
 
   .legal-content {
     padding: 2rem 1rem 3rem;

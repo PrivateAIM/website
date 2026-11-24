@@ -6,27 +6,36 @@
         <dl class="facts-list">
             <div
                 v-for="fact in facts"
-                :key="fact"
+                :key="fact.key"
                 class="fact"
             >
-                <dt><ITranslate :path="`home.facts.${fact}`" /></dt>
+                <dt>
+                    <AppIcon
+                        :name="fact.icon"
+                        :size="18"
+                    />
+                    <ITranslate :path="`home.facts.${fact.key}`" />
+                </dt>
                 <dd>
                     <a
-                        v-if="fact === 'code'"
+                        v-if="fact.key === 'code'"
                         href="https://github.com/PrivateAIM"
                         target="_blank"
                         rel="noopener noreferrer"
-                    ><ITranslate :path="`home.facts.${fact}Value`" /></a>
+                        class="fact-headline"
+                    ><ITranslate :path="`home.facts.${fact.key}Headline`" /></a>
                     <router-link
-                        v-else-if="fact === 'platform'"
+                        v-else-if="fact.key === 'platform'"
                         :to="localePath('/flame')"
+                        class="fact-headline"
                     >
-                        <ITranslate :path="`home.facts.${fact}Value`" />
+                        <ITranslate :path="`home.facts.${fact.key}Headline`" />
                     </router-link>
-                    <ITranslate
+                    <span
                         v-else
-                        :path="`home.facts.${fact}Value`"
-                    />
+                        class="fact-headline"
+                    ><ITranslate :path="`home.facts.${fact.key}Headline`" /></span>
+                    <span class="fact-detail"><ITranslate :path="`home.facts.${fact.key}Value`" /></span>
                 </dd>
             </div>
         </dl>
@@ -34,57 +43,113 @@
 </template>
 
 <script setup lang="ts">
+import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath } from '@/i18n';
 
 const localePath = useLocalePath();
-const facts = ['funding', 'network', 'platform', 'end', 'code'];
+const facts = [
+    { key: 'funding', icon: 'award' },
+    { key: 'network', icon: 'share' },
+    { key: 'platform', icon: 'zap' },
+    { key: 'end', icon: 'calendar' },
+    { key: 'code', icon: 'code' },
+];
 </script>
 
 <style scoped>
 .project-facts {
-    margin: 3rem 0;
+    margin: 0 0 5rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0) 0 0 / 22px 22px,
+        linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
+    color: #ffffff;
 }
 
 .facts-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: var(--text-color, #1a202c);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    opacity: 0.9;
 }
 
 .facts-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
     margin: 0;
 }
 
 .fact {
-    padding: 1rem 1.25rem;
-    background-color: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #eaeaea);
-    border-radius: 0.5rem;
+    text-align: center;
 }
 
 .fact dt {
-    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--nav-text, #64748b);
-    margin-bottom: 0.35rem;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
 }
 
 .fact dd {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
     margin: 0;
-    color: var(--text-color, #1a202c);
-    line-height: 1.5;
 }
 
-.fact a {
-    display: inline-block;
-    padding-block: 5px;
-    color: var(--primary-color, #3182ce);
-    font-weight: 500;
+.fact-headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.fact-headline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+a.fact-headline:hover {
+    text-decoration-color: #ffffff;
+}
+
+.fact-detail {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .facts-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .project-facts {
+        padding: 1.5rem 1rem;
+    }
+
+    .facts-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fact-headline {
+        font-size: 1.6rem;
+    }
 }
 </style>

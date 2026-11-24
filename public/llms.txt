@@ -5,6 +5,7 @@
 ## Pages
 
 - [FLAME](https://privateaim.de/flame): how the platform works, its safeguards and its limits
+- [What is federated analysis?](https://privateaim.de/federated-analysis): a short introduction to federated analysis and federated learning
 - [Publications](https://privateaim.de/publications): publications and preprints of the consortium
 - [News](https://privateaim.de/news): events, workshops and project milestones
 - [Team](https://privateaim.de/team): the people behind PrivateAIM and FLAME

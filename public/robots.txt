@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /files/Flyer-Datenschutz.pdf
-Allow: /files/Flyer-Patienten.pdf
-
-# Disallow non-content paths
-Disallow: /files/
 
 Sitemap: https://privateaim.de/sitemap.xml

@@ -1,284 +1,180 @@
-## Einleitung und Überblick
-Wir haben diese Datenschutzerklärung (Fassung 01.12.2021-311891618) verfasst, um Ihnen gemäß der Vorgaben der [Datenschutz-Grundverordnung (EU) 2016/679](https://eur-lex.europa.eu/legal-content/DE/ALL/?uri=celex%3A32016R0679&tid=311891618) und anwendbaren nationalen Gesetzen zu erklären, welche personenbezogenen Daten (kurz Daten) wir als Verantwortliche – und die von uns beauftragten Auftragsverarbeiter (z. B. Provider) – verarbeiten, zukünftig verarbeiten werden und welche rechtmäßigen Möglichkeiten Sie haben. Die verwendeten Begriffe sind geschlechtsneutral zu verstehen.
+Eine Nutzung der Internetseite privateaim.de ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Die Website stellt das vom Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) geförderte Verbundprojekt PrivateAIM vor und wird vom Berliner Institut für Gesundheitsforschung in der Charité betrieben.
 
-**Kurz gesagt**: Wir informieren Sie umfassend über Daten, die wir über Sie verarbeiten.
+Die Verarbeitung personenbezogener Daten erfolgt stets im Einklang mit der Datenschutz-Grundverordnung (DS-GVO) und in Übereinstimmung mit den für das Berliner Institut für Gesundheitsforschung geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchten wir Sie über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Zudem werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.
 
-Datenschutzerklärungen klingen für gewöhnlich sehr technisch und verwenden juristische Fachbegriffe. Diese Datenschutzerklärung soll Ihnen hingegen die wichtigsten Dinge so einfach und transparent wie möglich beschreiben. Soweit es der Transparenz förderlich ist, werden technische Begriffe leserfreundlich erklärt, Links zu weiterführenden Informationen geboten und Grafiken zum Einsatz gebracht. Wir informieren damit in klarer und einfacher Sprache, dass wir im Rahmen unserer Geschäftstätigkeiten nur dann personenbezogene Daten verarbeiten, wenn eine entsprechende gesetzliche Grundlage gegeben ist. Das ist sicher nicht möglich, wenn man möglichst knappe, unklare und juristisch-technische Erklärungen abgibt, so wie sie im Internet oft Standard sind, wenn es um Datenschutz geht. Ich hoffe, Sie finden die folgenden Erläuterungen interessant und informativ und vielleicht ist die eine oder andere Information dabei, die Sie noch nicht kannten.
-
-Wenn trotzdem Fragen bleiben, möchten wir Sie bitten, sich an die unten bzw. im Impressum genannte verantwortliche Stelle zu wenden, den vorhandenen Links zu folgen und sich weitere Informationen auf Drittseiten anzusehen. Unsere Kontaktdaten finden Sie selbstverständlich auch im Impressum.
+Das Berliner Institut für Gesundheitsforschung hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.
 
 ---
 
-## Anwendungsbereich
-Diese Datenschutzerklärung gilt für alle von uns im Unternehmen verarbeiteten personenbezogenen Daten und für alle personenbezogenen Daten, die von uns beauftragte Firmen (Auftragsverarbeiter) verarbeiten. Mit personenbezogenen Daten meinen wir Informationen im Sinne des Art. 4 Nr. 1 DSGVO wie zum Beispiel Name, E-Mail-Adresse und postalische Anschrift einer Person. Die Verarbeitung personenbezogener Daten sorgt dafür, dass wir unsere Dienstleistungen und Produkte anbieten und abrechnen können, sei es online oder offline. Der Anwendungsbereich dieser Datenschutzerklärung umfasst:
+## 1. Begriffsbestimmungen
 
-* alle Onlineauftritte (Websites, Onlineshops), die wir betreiben
-* Social Media Auftritte und E-Mail-Kommunikation
-* mobile Apps für Smartphones und andere Geräte
+Diese Datenschutzerklärung beruht auf den Begrifflichkeiten, die durch den Europäischen Gesetzgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:
 
-Kurz gesagt: Die Datenschutzerklärung gilt für alle Bereiche, in denen personenbezogene Daten im Unternehmen über die genannten Kanäle strukturiert verarbeitet werden. Sollten wir außerhalb dieser Kanäle mit Ihnen in Rechtsbeziehungen eintreten, werden wir Sie gegebenenfalls gesondert informieren.
+**a) Personenbezogene Daten:** Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“) beziehen. Als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind, identifiziert werden kann.
 
----
+**b) Betroffene Person:** Betroffene Person ist jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten von dem für die Verarbeitung Verantwortlichen verarbeitet werden.
 
-## Rechtsgrundlagen
-In der folgenden Datenschutzerklärung geben wir Ihnen transparente Informationen zu den rechtlichen Grundsätzen und Vorschriften, also den Rechtsgrundlagen der Datenschutz-Grundverordnung, die uns ermöglichen, personenbezogene Daten zu verarbeiten.
+**c) Verarbeitung:** Verarbeitung ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.
 
-Was das EU-Recht betrifft, beziehen wir uns auf die VERORDNUNG (EU) 2016/679 DES EUROPÄISCHEN PARLAMENTS UND DES RATES vom 27. April 2016. Diese Datenschutz-Grundverordnung der EU können Sie selbstverständlich online auf EUR-Lex, dem Zugang zum EU-Recht, unter https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=celex%3A32016R0679 nachlesen.
+**d) Einschränkung der Verarbeitung:** Einschränkung der Verarbeitung ist die Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.
 
-Wir verarbeiten Ihre Daten nur, wenn mindestens eine der folgenden Bedingungen zutrifft:
+**e) Profiling:** Profiling ist jede Art der automatisierten Verarbeitung personenbezogener Daten, die darin besteht, dass diese personenbezogenen Daten verwendet werden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen, zu bewerten, insbesondere, um Aspekte bezüglich Arbeitsleistung, wirtschaftlicher Lage, Gesundheit, persönlicher Vorlieben, Interessen, Zuverlässigkeit, Verhalten, Aufenthaltsort oder Ortswechsel dieser natürlichen Person zu analysieren oder vorherzusagen.
 
-1. **Einwilligung** (Artikel 6 Absatz 1 lit. a DSGVO): Sie haben uns Ihre Einwilligung gegeben, Daten zu einem bestimmten Zweck zu verarbeiten. Ein Beispiel wäre die Speicherung Ihrer eingegebenen Daten eines Kontaktformulars.
-2. **Vertrag** (Artikel 6 Absatz 1 lit. b DSGVO): Um einen Vertrag oder vorvertragliche Verpflichtungen mit Ihnen zu erfüllen, verarbeiten wir Ihre Daten. Wenn wir zum Beispiel einen Kaufvertrag mit Ihnen abschließen, benötigen wir vorab personenbezogene Informationen.
-3. **Rechtliche Verpflichtung** (Artikel 6 Absatz 1 lit. c DSGVO): Wenn wir einer rechtlichen Verpflichtung unterliegen, verarbeiten wir Ihre Daten. Zum Beispiel sind wir gesetzlich verpflichtet Rechnungen für die Buchhaltung aufzuheben. Diese enthalten in der Regel personenbezogene Daten.
-4. **Berechtigte Interessen** (Artikel 6 Absatz 1 lit. f DSGVO): Im Falle berechtigter Interessen, die Ihre Grundrechte nicht einschränken, behalten wir uns die Verarbeitung personenbezogener Daten vor. Wir müssen zum Beispiel gewisse Daten verarbeiten, um unsere Website sicher und wirtschaftlich effizient betreiben zu können. Diese Verarbeitung ist somit ein berechtigtes Interesse.
+**f) Pseudonymisierung:** Pseudonymisierung ist die Verarbeitung personenbezogener Daten in einer Weise, auf welche die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und technischen und organisatorischen Maßnahmen unterliegen, die gewährleisten, dass die personenbezogenen Daten nicht einer identifizierten oder identifizierbaren natürlichen Person zugewiesen werden.
 
-Weitere Bedingungen wie die Wahrnehmung von Aufnahmen im öffentlichen Interesse und Ausübung öffentlicher Gewalt sowie dem Schutz lebenswichtiger Interessen treten bei uns in der Regel nicht auf. Soweit eine solche Rechtsgrundlage doch einschlägig sein sollte, wird diese an der entsprechenden Stelle ausgewiesen.
+**g) Verantwortlicher oder für die Verarbeitung Verantwortlicher:** Verantwortlicher oder für die Verarbeitung Verantwortlicher ist die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
 
-Zusätzlich zu der EU-Verordnung gelten auch noch nationale Gesetze:
+**h) Auftragsverarbeiter:** Auftragsverarbeiter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.
 
-* In Österreich ist dies das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutzgesetz), kurz DSG.
-* In Deutschland gilt das Bundesdatenschutzgesetz, kurz BDSG.
+**i) Empfänger:** Empfänger ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, der personenbezogene Daten offengelegt werden, unabhängig davon, ob es sich bei ihr um einen Dritten handelt oder nicht. Behörden, die im Rahmen eines bestimmten Untersuchungsauftrags nach dem Unionsrecht oder dem Recht der Mitgliedstaaten möglicherweise personenbezogene Daten erhalten, gelten jedoch nicht als Empfänger.
 
-Sofern weitere regionale oder nationale Gesetze zur Anwendung kommen, informieren wir Sie in den folgenden Abschnitten darüber.
+**j) Dritter:** Dritter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle außer der betroffenen Person, dem Verantwortlichen, dem Auftragsverarbeiter und den Personen, die unter der unmittelbaren Verantwortung des Verantwortlichen oder des Auftragsverarbeiters befugt sind, die personenbezogenen Daten zu verarbeiten.
+
+**k) Einwilligung:** Einwilligung ist jede von der betroffenen Person freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung in Form einer Erklärung oder einer sonstigen eindeutigen bestätigenden Handlung, mit der die betroffene Person zu verstehen gibt, dass sie mit der Verarbeitung der sie betreffenden personenbezogenen Daten einverstanden ist.
 
 ---
 
-## Kontaktdaten des Verantwortlichen
-Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:
+## 2. Name und Anschrift des Verantwortlichen
 
 Berliner Institut für Gesundheitsforschung in der Charité  
-Translationsforschungsbereich  
-der Charité – Universitätsmedizin Berlin  
+Translationsforschungsbereich der Charité – Universitätsmedizin Berlin  
 Anna-Louisa-Karsch-Str. 2  
 10178 Berlin
 
 E-Mail: info@bih-charite.de  
-Telefon: 030 450 543 049  
-Impressum: https://www.bihealth.org/de/impressum
+Telefon: +49 30 450 543 049
 
 ---
 
-## Kontaktdaten des Datenschutzbeauftragten
-Nachfolgend finden Sie die Kontaktdaten des Datenschutzbeauftragten:
+## 3. Name und Anschrift der zuständigen Aufsichtsbehörde
 
-Stabsstelle Datenschutz  
+Berliner Beauftragte für Datenschutz und Informationsfreiheit  
+Alt-Moabit 59-61  
+10555 Berlin  
+E-Mail: mailbox@datenschutz-berlin.de  
+Telefon: +49 30 13889-0
+
+---
+
+## 4. Name und Anschrift des Datenschutzbeauftragten
+
+Der Datenschutzbeauftragte des für die Verarbeitung Verantwortlichen ist:
+
+Datenschutzbeauftragte der Charité – Universitätsmedizin Berlin  
 Charitéplatz 1  
-10117 Berlin
-
-E-Mail: datenschutz@charite.de  
-Telefon: +49 30 450 580 016
-
----
-
-## Speicherdauer
-Dass wir personenbezogene Daten nur so lange speichern, wie es für die Bereitstellung unserer Dienstleistungen und Produkte unbedingt notwendig ist, gilt als generelles Kriterium bei uns. Das bedeutet, dass wir personenbezogene Daten löschen, sobald der Grund für die Datenverarbeitung nicht mehr vorhanden ist. In einigen Fällen sind wir gesetzlich dazu verpflichtet, bestimmte Daten auch nach Wegfall des ursprünglichen Zwecks zu speichern, zum Beispiel zu Zwecken der Buchführung.
-
-Sollten Sie die Löschung Ihrer Daten wünschen oder die Einwilligung zur Datenverarbeitung widerrufen, werden die Daten so rasch wie möglich und soweit keine Pflicht zur Speicherung besteht, gelöscht.
-
-Über die konkrete Dauer der jeweiligen Datenverarbeitung informieren wir Sie weiter unten, sofern wir weitere Informationen dazu haben.
+10117 Berlin  
+Telefon: +49 30 450 580 016  
+E-Mail: datenschutzbeauftragte@charite.de
 
 ---
 
-## Rechte laut Datenschutz-Grundverordnung
-Laut Artikel 13 DSGVO stehen Ihnen die folgenden Rechte zu, damit es zu einer fairen und transparenten Verarbeitung von Daten kommt:
+## 5. Hosting und Erfassung von allgemeinen Daten und Informationen
 
-* Sie haben laut Artikel 15 DSGVO ein Auskunftsrecht darüber, ob wir Daten von Ihnen verarbeiten. Sollte das zutreffen, haben Sie Recht darauf eine Kopie der Daten zu erhalten und die folgenden Informationen zu erfahren:
-  * zu welchem Zweck wir die Verarbeitung durchführen;
-  * die Kategorien, also die Arten von Daten, die verarbeitet werden;
-  * wer diese Daten erhält und wenn die Daten an Drittländer übermittelt werden, wie die Sicherheit garantiert werden kann;
-  * wie lange die Daten gespeichert werden;
-  * das Bestehen des Rechts auf Berichtigung, Löschung oder Einschränkung der Verarbeitung und dem Widerspruchsrecht gegen die Verarbeitung;
-  * dass Sie sich bei einer Aufsichtsbehörde beschweren können (Links zu diesen Behörden finden Sie weiter unten);
-  * die Herkunft der Daten, wenn wir sie nicht bei Ihnen erhoben haben;
-  * ob Profiling durchgeführt wird, ob also Daten automatisch ausgewertet werden, um zu einem persönlichen Profil von Ihnen zu gelangen.
-* Sie haben laut Artikel 16 DSGVO ein Recht auf Berichtigung der Daten, was bedeutet, dass wir Daten richtig stellen müssen, falls Sie Fehler finden.
-* Sie haben laut Artikel 17 DSGVO das Recht auf Löschung („Recht auf Vergessenwerden“), was konkret bedeutet, dass Sie die Löschung Ihrer Daten verlangen dürfen.
-* Sie haben laut Artikel 18 DSGVO das Recht auf Einschränkung der Verarbeitung, was bedeutet, dass wir die Daten nur mehr speichern dürfen aber nicht weiter verwenden.
-* Sie haben laut Artikel 19 DSGVO das Recht auf Datenübertragbarkeit, was bedeutet, dass wir Ihnen auf Anfrage Ihre Daten in einem gängigen Format zur Verfügung stellen.
-* Sie haben laut Artikel 21 DSGVO ein Widerspruchsrecht, welches nach Durchsetzung eine Änderung der Verarbeitung mit sich bringt.
-  * Wenn die Verarbeitung Ihrer Daten auf Artikel 6 Abs. 1 lit. e (öffentliches Interesse, Ausübung öffentlicher Gewalt) oder Artikel 6 Abs. 1 lit. f (berechtigtes Interesse) basiert, können Sie gegen die Verarbeitung Widerspruch einlegen. Wir prüfen danach so rasch wie möglich, ob wir diesem Widerspruch rechtlich nachkommen können.
-  * Werden Daten verwendet, um Direktwerbung zu betreiben, können Sie jederzeit gegen diese Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Direktmarketing verwenden.
-  * Werden Daten verwendet, um Profiling zu betreiben, können Sie jederzeit gegen diese Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Profiling verwenden.
-* Sie haben laut Artikel 22 DSGVO unter Umständen das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung (zum Beispiel Profiling) beruhenden Entscheidung unterworfen zu werden.
+Diese Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Mit jedem Aufruf der Website durch eine betroffene Person oder ein automatisiertes System erfasst GitHub eine Reihe von allgemeinen Daten und Informationen in den Logfiles des Servers. Erfasst werden können
 
-**Kurz gesagt**: Sie haben Rechte – zögern Sie nicht, die oben gelistete verantwortliche Stelle bei uns zu kontaktieren!
+* die IP-Adresse des zugreifenden Systems,
+* das Datum und die Uhrzeit des Zugriffs,
+* die aufgerufene Unterseite,
+* die Internetseite, von welcher ein zugreifendes System auf unsere Website gelangt (sogenannter Referrer),
+* der verwendete Browsertyp und die Browserversion sowie das Betriebssystem.
 
-Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche in sonst einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren. Diese ist für Österreich die Datenschutzbehörde, deren Website Sie unter https://www.dsb.gv.at/ finden. In Deutschland gibt es für jedes Bundesland einen Datenschutzbeauftragten. Für nähere Informationen können Sie sich an die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI) wenden. Für unser Unternehmen ist die folgende lokale Datenschutzbehörde zuständig:
+Diese Daten werden benötigt, um die Inhalte der Website korrekt auszuliefern und die dauerhafte Funktionsfähigkeit und Sicherheit der Website zu gewährleisten, insbesondere zur Abwehr von Angriffen. Das Berliner Institut für Gesundheitsforschung zieht aus diesen Daten keine Rückschlüsse auf die betroffene Person und hat keinen Zugriff auf die Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DS-GVO; unser berechtigtes Interesse liegt in der sicheren und zuverlässigen Bereitstellung der Website.
+
+Dabei können Daten in die USA übermittelt werden. GitHub Inc. ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage die Europäische Kommission ein angemessenes Datenschutzniveau festgestellt hat. Weitere Informationen finden Sie in der [Datenschutzerklärung von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).
+
+Schriften, Bilder und alle übrigen Inhalte der Website werden von demselben Server geladen. Es werden keine Inhalte von Drittanbietern eingebettet.
 
 ---
 
-## Berliner Datenschutzbehörde
-Landesbeauftragte für Datenschutz: Meike Kamp  
-Adresse: Alt-Moabit 59-61, 10555 Berlin  
-Telefonnr.: +49 30 13889-0  
-E-Mail-Adresse: mailbox@datenschutz-berlin.de  
-Website: https://www.datenschutz-berlin.de/
+## 6. Cookies und lokale Speicherung
+
+Diese Website setzt nur die folgenden Cookies und Einträge im lokalen Speicher Ihres Browsers:
+
+* **cookie-consent** und **cookie-options** (Cookies, Speicherdauer 6 Monate): speichern, dass Sie eine Auswahl im Cookie-Banner getroffen haben und welche. Sie sind technisch notwendig, damit der Banner nicht bei jedem Seitenaufruf erneut erscheint. Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG in Verbindung mit Art. 6 Abs. 1 lit. c DS-GVO.
+* **theme** (lokaler Speicher, bis zur Löschung durch Sie): speichert, ob Sie die helle oder dunkle Darstellung gewählt haben. Dieser Eintrag wird nicht an uns übertragen und enthält keine personenbezogenen Daten. Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG.
+* **Google-Analytics-Cookies** (nur nach Ihrer Einwilligung, siehe Abschnitt 7).
+
+Sie können Cookies und den lokalen Speicher jederzeit über die Einstellungen Ihres Browsers löschen.
 
 ---
 
-## Cookies
-### Cookies Zusammenfassung
-Betroffene: Besucher der Website  
-Zweck: abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.  
-Verarbeitete Daten: Abhängig vom jeweils eingesetzten Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.  
-Speicherdauer: abhängig vom jeweiligen Cookie, kann von Stunden bis hin zu Jahren variieren  
-Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)  
+## 7. Webanalyse mit Google Analytics
 
-## Was sind Cookies?
-Unsere Website verwendet HTTP-Cookies, um nutzerspezifische Daten zu speichern.
-Im Folgenden erklären wir, was Cookies sind und warum Sie genutzt werden, damit Sie die folgende Datenschutzerklärung besser verstehen.
+Sofern Sie im Cookie-Banner „Alle akzeptieren“ wählen oder Analyse-Cookies aktivieren, setzen wir Google Analytics 4 ein, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“). Ohne Ihre Einwilligung wird Google Analytics nicht geladen, und es wird keine Verbindung zu Google aufgebaut.
 
-Immer wenn Sie durch das Internet surfen, verwenden Sie einen Browser. Bekannte Browser sind beispielsweise Chrome, Safari, Firefox, Internet Explorer und Microsoft Edge. Die meisten Websites speichern kleine Text-Dateien in Ihrem Browser. Diese Dateien nennt man Cookies.
+Google Analytics setzt Cookies (insbesondere `_ga` und `_ga_<ID>`, Speicherdauer bis zu 2 Jahre), um Ihr Endgerät wiederzuerkennen und auszuwerten, welche Seiten wie genutzt werden. Dabei werden insbesondere die aufgerufenen Seiten, Datum und Uhrzeit, ungefährer Standort, Gerätetyp, Browser sowie die Herkunft des Aufrufs verarbeitet. Nach Angaben von Google werden IP-Adressen in Google Analytics 4 nicht gespeichert. Die Auswertungen nutzen wir ausschließlich, um die Website zu verbessern.
 
-Eines ist nicht von der Hand zu weisen: Cookies sind echt nützliche Helferlein. Fast alle Websites verwenden Cookies. Genauer gesprochen sind es HTTP-Cookies, da es auch noch andere Cookies für andere Anwendungsbereiche gibt. HTTP-Cookies sind kleine Dateien, die von unserer Website auf Ihrem Computer gespeichert werden. Diese Cookie-Dateien werden automatisch im Cookie-Ordner, quasi dem “Hirn” Ihres Browsers, untergebracht. Ein Cookie besteht aus einem Namen und einem Wert. Bei der Definition eines Cookies müssen zusätzlich ein oder mehrere Attribute angegeben werden.
+Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DS-GVO und § 25 Abs. 1 TDDDG. Dabei können Daten an Google LLC in den USA übermittelt werden. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen finden Sie in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).
 
-Cookies speichern gewisse Nutzerdaten von Ihnen, wie beispielsweise Sprache oder persönliche Seiteneinstellungen. Wenn Sie unsere Seite wieder aufrufen, übermittelt Ihr Browser die „userbezogenen“ Informationen an unsere Seite zurück. Dank der Cookies weiß unsere Website, wer Sie sind und bietet Ihnen die Einstellung, die Sie gewohnt sind. In einigen Browsern hat jedes Cookie eine eigene Datei, in anderen wie beispielsweise Firefox sind alle Cookies in einer einzigen Datei gespeichert.
-
-Es gibt sowohl Erstanbieter-Cookies als auch Drittanbieter-Cookies. Erstanbieter-Cookies werden direkt von unserer Seite erstellt, Drittanbieter-Cookies werden von Partner-Websites (z.B. Google Analytics) erstellt. Jedes Cookie ist individuell zu bewerten, da jedes Cookie andere Daten speichert. Auch die Ablaufzeit eines Cookies variiert von ein paar Minuten bis hin zu ein paar Jahren. Cookies sind keine Software-Programme und enthalten keine Viren, Trojaner oder andere „Schädlinge“. Cookies können auch nicht auf Informationen Ihres PCs zugreifen.
-
-So können zum Beispiel Cookie-Daten aussehen:
-
-**Name**: _ga  
-**Wert**: GA1.2.1326744211.152311891618-9  
-**Verwendungszweck**: Unterscheidung der Websitebesucher  
-**Ablaufdatum**: nach 2 Jahren
-
-Diese Mindestgrößen sollte ein Browser unterstützen können:
-
-* Mindestens 4096 Bytes pro Cookie
-* Mindestens 50 Cookies pro Domain
-* Mindestens 3000 Cookies insgesamt
+Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie über die Schaltfläche „Cookies“ unten links auf jeder Seite die Cookie-Einstellungen öffnen und die Analyse-Cookies deaktivieren oder „Nur notwendige“ wählen.
 
 ---
 
-## Welche Arten von Cookies gibt es?
-Die Frage welche Cookies wir im Speziellen verwenden, hängt von den verwendeten Diensten ab und wird in den folgenden Abschnitten der Datenschutzerklärung geklärt. An dieser Stelle möchten wir kurz auf die verschiedenen Arten von HTTP-Cookies eingehen.
+## 8. Links zu externen Angeboten
 
-Man kann 4 Arten von Cookies unterscheiden:
-
-- **Unerlässliche Cookies:** Diese Cookies sind nötig, um grundlegende Funktionen der Website sicherzustellen.
-- **Analyse Cookies:** Diese Cookies sammeln Infos über das Userverhalten und ob der User etwaige Fehlermeldungen bekommt.
-
-Üblicherweise werden Sie beim erstmaligen Besuch einer Website gefragt, welche dieser Cookiearten Sie zulassen möchten. Und natürlich wird diese Entscheidung auch in einem Cookie gespeichert.
-
-Wenn Sie mehr über Cookies wissen möchten und technische Dokumentationen nicht scheuen, empfehlen wir https://tools.ietf.org/html/rfc6265, dem Request for Comments der Internet Engineering Task Force (IETF) namens “HTTP State Management Mechanism”.
+Diese Website enthält Links zu externen Angeboten, zum Beispiel zu GitHub, Discord, YouTube, wissenschaftlichen Verlagen und den Websites unserer Partnerinstitutionen. Diese Inhalte sind nicht eingebettet. Erst wenn Sie einen solchen Link anklicken, werden Daten an den jeweiligen Anbieter übertragen. Für die Verarbeitung dort ist der jeweilige Anbieter verantwortlich; bitte beachten Sie dessen Datenschutzhinweise.
 
 ---
 
-## Webanalyse und Optimierung
+## 9. Routinemäßige Löschung und Sperrung von personenbezogenen Daten
 
-Damit wir Besucherströme auf unserem Onlineangebot auswerten können, setzen wir Tools zur Webanalyse bzw. Reichweitenmessung ein. Hierfür erheben wir Informationen über das Verhalten, die Interessen oder demografische Informationen zu unseren Besuchern, beispielsweise Alter, Geschlecht o. ä. Dies hilft uns zu erkennen, zu welcher Zeit unser Onlineangebot, dessen Funktionen oder Inhalte am stärksten frequentiert sind oder zu einem wiederholten Aufruf einladen. Zudem können wir anhand der erhobenen Informationen feststellen, ob unser Onlineangebot optimierungs- oder anpassungsbedürftig ist.
+Der für die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch den Europäischen Richtlinien- und Verordnungsgeber oder einen anderen Gesetzgeber in Gesetzen oder Vorschriften, welchen der für die Verarbeitung Verantwortliche unterliegt, vorgesehen wurde.
 
-Die zu diesem Zweck erhobenen Informationen werden in Cookies gespeichert oder ähnliche Verfahren eingesetzt und werden zur Reichweitenmessung und Optimierung genutzt. Zu den in den Cookies gespeicherten Daten können betrachtete Inhalte, besuchte Onlineauftritte, Einstellungen und verwendete Funktionen und Systeme zählen. Regelmäßig werden für die beschriebenen Zwecke jedoch keine Klardaten der Nutzer verarbeitet. Die Daten werden in diesem Fall so verändert, dass die tatsächliche Identität der Nutzer weder uns noch dem Anbieter des eingesetzten Tools bekannt ist. Die so veränderten Daten werden häufig in Nutzerprofilen gespeichert.
-### Google Analytics
-|                                       |                                                                                                                                                                                                                       |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Eingesetzter Dienst:**              | Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland                                                                                                                                                |
-| **Datenschutz:**                      | [https://policies.google.com/privacy?hl=de&gl=de](https://policies.google.com/privacy?hl=de&gl=de)                                                                                                                    |
-| **Opt-Out-Link**                      | [https://tools.google.com/dlpage/gaoptout?hl=de](https://tools.google.com/dlpage/gaoptout?hl=de) oder [https://myaccount.google.com/](https://myaccount.google.com/)                                                  |
-| **Garantie Drittstaatentransfer:** | Auf Grundlage des [Angemessenheitsbeschlusses der Europäischen Kommission](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) für das Land USA |
-
+Entfällt der Speicherungszweck oder läuft eine vom Europäischen Richtlinien- und Verordnungsgeber oder einem anderen zuständigen Gesetzgeber vorgeschriebene Speicherfrist ab, werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.
 
 ---
 
-## Zweck der Verarbeitung über Cookies
-Der Zweck ist letztendlich abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, die das Cookie setzt.
+## 10. Rechte der betroffenen Person
+
+Zur Ausübung der folgenden Rechte kann sich die betroffene Person jederzeit an den Datenschutzbeauftragten (Abschnitt 4) oder an den Verantwortlichen (Abschnitt 2) wenden.
+
+**a) Recht auf Bestätigung:** Jede betroffene Person hat das Recht, von dem für die Verarbeitung Verantwortlichen eine Bestätigung darüber zu verlangen, ob sie betreffende personenbezogene Daten verarbeitet werden.
+
+**b) Recht auf Auskunft:** Jede betroffene Person hat das Recht, jederzeit von dem für die Verarbeitung Verantwortlichen unentgeltliche Auskunft über die zu ihrer Person gespeicherten personenbezogenen Daten und eine Kopie dieser Auskunft zu erhalten. Die Auskunft umfasst
+
+* die Verarbeitungszwecke,
+* die Kategorien personenbezogener Daten, die verarbeitet werden,
+* die Empfänger oder Kategorien von Empfängern, gegenüber denen die personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden, insbesondere bei Empfängern in Drittländern oder bei internationalen Organisationen,
+* falls möglich die geplante Dauer, für die die personenbezogenen Daten gespeichert werden, oder, falls dies nicht möglich ist, die Kriterien für die Festlegung dieser Dauer,
+* das Bestehen eines Rechts auf Berichtigung oder Löschung der sie betreffenden personenbezogenen Daten oder auf Einschränkung der Verarbeitung durch den Verantwortlichen oder eines Widerspruchsrechts gegen diese Verarbeitung,
+* das Bestehen eines Beschwerderechts bei einer Aufsichtsbehörde,
+* wenn die personenbezogenen Daten nicht bei der betroffenen Person erhoben werden: alle verfügbaren Informationen über die Herkunft der Daten,
+* das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling gemäß Art. 22 Abs. 1 und 4 DS-GVO und – zumindest in diesen Fällen – aussagekräftige Informationen über die involvierte Logik sowie die Tragweite und die angestrebten Auswirkungen einer derartigen Verarbeitung für die betroffene Person.
+
+Ferner steht der betroffenen Person ein Auskunftsrecht darüber zu, ob personenbezogene Daten an ein Drittland oder an eine internationale Organisation übermittelt wurden. Sofern dies der Fall ist, steht der betroffenen Person im Übrigen das Recht zu, Auskunft über die geeigneten Garantien im Zusammenhang mit der Übermittlung zu erhalten.
+
+**c) Recht auf Berichtigung:** Jede betroffene Person hat das Recht, die unverzügliche Berichtigung sie betreffender unrichtiger personenbezogener Daten zu verlangen. Ferner steht der betroffenen Person das Recht zu, unter Berücksichtigung der Zwecke der Verarbeitung, die Vervollständigung unvollständiger personenbezogener Daten – auch mittels einer ergänzenden Erklärung – zu verlangen.
+
+**d) Recht auf Löschung (Recht auf Vergessenwerden):** Jede betroffene Person hat das Recht, von dem Verantwortlichen zu verlangen, dass die sie betreffenden personenbezogenen Daten unverzüglich gelöscht werden, sofern einer der folgenden Gründe zutrifft und soweit die Verarbeitung nicht erforderlich ist:
+
+* Die personenbezogenen Daten wurden für solche Zwecke erhoben oder auf sonstige Weise verarbeitet, für welche sie nicht mehr notwendig sind.
+* Die betroffene Person widerruft ihre Einwilligung, auf die sich die Verarbeitung gemäß Art. 6 Abs. 1 lit. a DS-GVO oder Art. 9 Abs. 2 lit. a DS-GVO stützte, und es fehlt an einer anderweitigen Rechtsgrundlage für die Verarbeitung.
+* Die betroffene Person legt gemäß Art. 21 Abs. 1 DS-GVO Widerspruch gegen die Verarbeitung ein, und es liegen keine vorrangigen berechtigten Gründe für die Verarbeitung vor, oder die betroffene Person legt gemäß Art. 21 Abs. 2 DS-GVO Widerspruch gegen die Verarbeitung ein.
+* Die personenbezogenen Daten wurden unrechtmäßig verarbeitet.
+* Die Löschung der personenbezogenen Daten ist zur Erfüllung einer rechtlichen Verpflichtung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten erforderlich, dem der Verantwortliche unterliegt.
+* Die personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gemäß Art. 8 Abs. 1 DS-GVO erhoben.
+
+**e) Recht auf Einschränkung der Verarbeitung:** Jede betroffene Person hat das Recht, von dem Verantwortlichen die Einschränkung der Verarbeitung zu verlangen, wenn eine der folgenden Voraussetzungen gegeben ist:
+
+* Die Richtigkeit der personenbezogenen Daten wird von der betroffenen Person bestritten, und zwar für eine Dauer, die es dem Verantwortlichen ermöglicht, die Richtigkeit der personenbezogenen Daten zu überprüfen.
+* Die Verarbeitung ist unrechtmäßig, die betroffene Person lehnt die Löschung der personenbezogenen Daten ab und verlangt stattdessen die Einschränkung der Nutzung der personenbezogenen Daten.
+* Der Verantwortliche benötigt die personenbezogenen Daten für die Zwecke der Verarbeitung nicht länger, die betroffene Person benötigt sie jedoch zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+* Die betroffene Person hat Widerspruch gegen die Verarbeitung gemäß Art. 21 Abs. 1 DS-GVO eingelegt, und es steht noch nicht fest, ob die berechtigten Gründe des Verantwortlichen gegenüber denen der betroffenen Person überwiegen.
+
+**f) Recht auf Datenübertragbarkeit:** Jede betroffene Person hat das Recht, die sie betreffenden personenbezogenen Daten, welche durch die betroffene Person einem Verantwortlichen bereitgestellt wurden, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese Daten einem anderen Verantwortlichen zu übermitteln, sofern die Verarbeitung auf einer Einwilligung gemäß Art. 6 Abs. 1 lit. a DS-GVO oder Art. 9 Abs. 2 lit. a DS-GVO oder auf einem Vertrag gemäß Art. 6 Abs. 1 lit. b DS-GVO beruht und die Verarbeitung mithilfe automatisierter Verfahren erfolgt, sofern die Verarbeitung nicht für die Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt, welche dem Verantwortlichen übertragen wurde.
+
+**g) Recht auf Widerspruch:** Jede betroffene Person hat das Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DS-GVO erfolgt, Widerspruch einzulegen. Das Berliner Institut für Gesundheitsforschung verarbeitet die personenbezogenen Daten im Falle des Widerspruchs nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die die Interessen, Rechte und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+
+**h) Recht auf Widerruf einer datenschutzrechtlichen Einwilligung:** Jede betroffene Person hat das Recht, eine Einwilligung zur Verarbeitung personenbezogener Daten jederzeit mit Wirkung für die Zukunft zu widerrufen. Ihre Einwilligung in Google Analytics können Sie direkt über die Cookie-Einstellungen widerrufen (Abschnitt 11).
+
+**i) Recht auf Beschwerde bei einer Aufsichtsbehörde:** Jede betroffene Person hat das Recht, sich bei einer Aufsichtsbehörde zu beschweren, insbesondere bei der in Abschnitt 3 genannten Berliner Beauftragten für Datenschutz und Informationsfreiheit.
 
 ---
 
-## Welche Daten werden verarbeitet?
-Cookies sind kleine Gehilfen für viele verschiedene Aufgaben. Welche Daten in Cookies gespeichert werden, kann man leider nicht verallgemeinern, aber wir werden Sie im Rahmen der folgenden Datenschutzerklärung über die verarbeiteten bzw. gespeicherten Daten informieren.
+## 11. Cookie-Einstellungen ändern
+
+Über die Schaltfläche „Cookies“ unten links auf jeder Seite können Sie den Cookie-Banner jederzeit erneut öffnen und Ihre Auswahl ändern oder Ihre Einwilligung widerrufen.
 
 ---
 
-## Speicherdauer von Cookies
-Die Speicherdauer hängt vom jeweiligen Cookie ab und wird weiter unten präzisiert. Manche Cookies werden nach weniger als einer Stunde gelöscht, andere können mehrere Jahre auf einem Computer gespeichert bleiben.
-
-Sie haben außerdem selbst Einfluss auf die Speicherdauer. Sie können über Ihren Browser sämtliche Cookies jederzeit manuell löschen (siehe auch unten "Widerspruchsrecht"). Ferner werden Cookies, die auf einer Einwilligung beruhen, spätestens nach Widerruf Ihrer Einwilligung gelöscht, wobei die Rechtmäßigkeit der Speicherung bis dahin unberührt bleibt.
-
----
-
-## Widerspruchsrecht – Wie kann ich Cookies löschen?
-Wie und ob Sie Cookies verwenden möchten, entscheiden Sie selbst. Unabhängig davon, von welchem Service oder welcher Website die Cookies stammen, haben Sie immer die Möglichkeit, Cookies zu löschen, zu deaktivieren oder nur teilweise zuzulassen. Zum Beispiel können Sie Cookies von Drittanbietern blockieren, aber alle anderen Cookies zulassen.
-
-Wenn Sie feststellen möchten, welche Cookies in Ihrem Browser gespeichert wurden, Cookie-Einstellungen ändern oder Cookies löschen möchten, können Sie dies in Ihren Browser-Einstellungen finden:
-
-**Chrome:** [Cookies in Chrome löschen, aktivieren und verwalten](https://support.google.com/chrome/answer/95647?hl=de)  
-**Safari:** [Verwalten von Cookies und Websitedaten mit Safari](https://support.apple.com/de-de/guide/safari/sfri11471/mac)  
-**Firefox:** [Cookies löschen, um Daten zu entfernen, die Websites auf Ihrem Computer abgelegt haben](https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen)  
-**Microsoft Edge:** [Löschen und Verwalten von Cookies](https://support.microsoft.com/de-de/windows/verwalten-von-cookies-in-microsoft-edge-anzeigen-zulassen-blockieren-l%C3%B6schen-und-verwenden-168dab11-0753-043d-7c16-ede5947fc64d)  
-
-Falls Sie grundsätzlich keine Cookies haben möchten, können Sie Ihren Browser so einrichten, dass er Sie immer informiert, wenn ein Cookie gesetzt werden soll. So können Sie bei jedem einzelnen Cookie entscheiden, ob Sie das Cookie erlauben oder nicht. Die Vorgehensweise ist je nach Browser verschieden. Am besten suchen Sie die Anleitung in Google mit dem Suchbegriff "Cookies löschen Chrome" oder "Cookies deaktivieren Chrome", falls Sie den Chrome-Browser verwenden.
-
----
-
-## Rechtsgrundlage
-Seit 2009 gibt es die sogenannten „Cookie-Richtlinien“. Darin ist festgehalten, dass das Speichern von Cookies eine Einwilligung (Artikel 6 Abs. 1 lit. a DSGVO) von Ihnen verlangt. Innerhalb der EU-Länder gibt es allerdings noch sehr unterschiedliche Reaktionen auf diese Richtlinien. In Österreich erfolgte aber die Umsetzung dieser Richtlinie in § 96 Abs. 3 des Telekommunikationsgesetzes (TKG). In Deutschland wurden die Cookie-Richtlinien nicht als nationales Recht umgesetzt. Stattdessen erfolgte die Umsetzung dieser Richtlinie weitgehend in § 15 Abs.3 des Telemediengesetzes (TMG).
-
-Für unbedingt notwendige Cookies, auch soweit keine Einwilligung vorliegt. bestehen berechtigte Interessen (Artikel 6 Abs. 1 lit. f DSGVO), die in den meisten Fällen wirtschaftlicher Natur sind. Wir möchten den Besuchern der Website eine angenehme Benutzererfahrung bescheren und dafür sind bestimmte Cookies oft unbedingt notwendig.
-
-Soweit nicht unbedingt erforderliche Cookies zum Einsatz kommen, geschieht dies nur im Falle Ihrer Einwilligung. Rechtsgrundlage ist insoweit Art. 6 Abs. 1 lit. a DSGVO.
-
-In den folgenden Abschnitten werden Sie genauer über den Einsatz von Cookies informiert, sofern eingesetzte Software Cookies verwendet.
-
----
-
-## Webhosting
-### Webhosting Zusammenfassung
-Betroffene: Besucher der Website  
-Zweck: professionelles Hosting der Website und Absicherung des Betriebs  
-Verarbeitete Daten: IP-Adresse, Zeitpunkt des Websitebesuchs, verwendeter Browser und weitere Daten. Mehr Details dazu finden Sie weiter unten bzw. beim jeweils eingesetzten Webhosting Provider.  
-Speicherdauer: abhängig vom jeweiligen Provider, aber in der Regel 2 Wochen  
-Rechtsgrundlagen: Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)  
-
----
-
-## Was ist Webhosting?
-Wenn Sie heutzutage Websites besuchen, werden gewisse Informationen - auch personenbezogene Daten - automatisch erstellt und gespeichert, so auch auf dieser Website. Diese Daten sollten möglichst sparsam und nur mit Begründung verarbeitet werden. Mit Website meinen wir übrigens die Gesamtheit aller Webseiten auf einer Domain, d.h. alles von der Startseite (Homepage) bis hin zur aller letzten Unterseite (wie dieser hier). Mit Domain meinen wir zum Beispiel beispiel.de oder musterbeispiel.com.
-
-Wenn Sie eine Website auf einem Bildschirm ansehen möchten, verwenden Sie dafür ein Programm, das sich Webbrowser nennt. Sie kennen vermutlich einige Webbrowser beim Namen: Google Chrome, Microsoft Edge, Mozilla Firefox und Apple Safari.
-
-Dieser Webbrowser muss sich zu einem anderen Computer verbinden, wo der Code der Website gespeichert ist: dem Webserver. Der Betrieb eines Webservers ist eine komplizierte und aufwendige Aufgabe, weswegen dies in der Regel von professionellen Anbietern, den Providern, übernommen wird. Diese bieten Webhosting an und sorgen damit für eine verlässliche und fehlerfreie Speicherung der Daten von Websites.
-
-Bei der Verbindungsaufnahme des Browsers auf Ihrem Computer (Desktop, Laptop, Smartphone) und während der Datenübertragung zu und vom Webserver kann es zu einer Verarbeitung personenbezogener Daten kommen. Einerseits speichert Ihr Computer Daten, andererseits muss auch der Webserver Daten eine Zeit lang speichern, um einen ordentlichen Betrieb zu gewährleisten.
-
----
-
-## Warum verarbeiten wir personenbezogene Daten?
-Die Zwecke der Datenverarbeitung sind:
-
-1. Professionelles Hosting der Website und Absicherung des Betriebs
-2. Aufrechterhaltung der Betriebs- und IT-Sicherheit
-3. Anonyme Auswertung des Zugriffsverhaltens zur Verbesserung unseres Angebots und ggf. zur Strafverfolgung bzw. Verfolgung von Ansprüchen
-
----
-
-## Welche Daten werden verarbeitet?
-Auch während Sie unsere Website jetzt gerade besuchen, speichert unser Webserver, das ist der Computer, auf dem diese Webseite gespeichert ist, in der Regel automatisch Daten wie:
-
-* die komplette Internetadresse (URL) der aufgerufenen Webseite (z. B. https://www.beispielwebsite.de/beispielunterseite.html?tid=311891618)
-* Browser und Browserversion (z. B. Chrome 87)
-* das verwendete Betriebssystem (z. B. Windows 10)
-* die Adresse (URL) der zuvor besuchten Seite (Referrer URL) (z. B. https://www.beispielquellsite.de/vondabinichgekommen.html/)
-* den Hostnamen und die IP-Adresse des Geräts, von dem aus zugegriffen wird (z. B. COMPUTERNAME und 194.23.43.121)
-* Datum und Uhrzeit
-
-Diese Daten werden in Dateien, den sogenannten Webserver-Logfiles, gespeichert.
-
----
-
-## Wie lange werden Daten gespeichert?
-In der Regel werden die oben genannten Daten zwei Wochen gespeichert und danach automatisch gelöscht. Wir geben diese Daten nicht weiter, können jedoch nicht ausschließen, dass diese Daten beim Vorliegen von rechtswidrigem Verhalten von Behörden eingesehen werden.
-
-Kurz gesagt: Ihr Besuch wird durch unseren Provider (Firma, die unsere Website auf speziellen Computern (Servern) laufen lässt), protokolliert, aber wir geben Ihre Daten nicht ohne Zustimmung weiter!
-
----
-
-## Rechtsgrundlage
-Die Rechtmäßigkeit der Verarbeitung personenbezogener Daten im Rahmen des Webhosting ergibt sich aus Art. 6 Abs. 1 lit. f DSGVO (Wahrung der berechtigten Interessen), denn die Nutzung von professionellem Hosting bei einem Provider ist notwendig, um das Unternehmen im Internet sicher und nutzerfreundlich präsentieren und Angriffe und Forderungen hieraus gegebenenfalls verfolgen zu können.
-
-Zwischen uns und dem Hostingprovider besteht in der Regel ein Vertrag über die Auftragsverarbeitung gemäß Art. 28 f. DSGVO, der die Einhaltung von Datenschutz gewährleistet und Datensicherheit garantiert.
-
-Alle Texte sind urheberrechtlich geschützt.
-
-Quelle: Erstellt mit dem [Datenschutz Generator](https://www.adsimple.de/datenschutz-generator/) von AdSimple
+Stand: November 2026

@@ -18,6 +18,8 @@ export default defineLocale('en', [
         team: 'Team',
         partners: 'Partners',
         publications: 'Publications',
+        skipToContent: 'Skip to content',
+        changeLanguage: 'Change language',
     })]),
 
     defineNamespace('home', [defineTranslations({
@@ -26,10 +28,57 @@ export default defineLocale('en', [
             subtitle: 'PrivateAIM develops FLAME, a federated platform that brings the analysis to the data at German university hospitals.',
             explorePlatform: 'Explore Our Platform',
             joinNetwork: 'Join Our Network',
+            badgeFunding: 'Funded by the BMFTR',
+            badgeMii: 'Part of the Medical Informatics Initiative',
+            badgeOpenSource: 'Open source',
         },
         intro: {
-            paragraph1: 'Medical data analysis is crucial in advancing healthcare research, enabling more precise diagnoses, innovative treatments, and future-ready patient care. However, due to the sensitivity of such data, strict privacy safeguards are essential to comply with legal regulations and protect patient confidentiality.',
-            paragraph2: 'This challenge is particularly evident in Artificial Intelligence (AI) medical applications, where large-scale datasets are required to achieve reliable and meaningful results.',
+            title: 'What is PrivateAIM?',
+            definition: 'PrivateAIM (Privacy-Preserving Analytics in Medicine) is a research consortium of 15 partners within Germany’s Medical Informatics Initiative (MII), funded by the Federal Ministry of Research, Technology and Space (BMFTR) from April 2023 until 31 March 2027. It develops [FLAME](/flame:internal) (Federated Learning and Analysis in Medicine), an open-source platform in productive use that analyzes medical data across university hospitals: patient data stays at each site, only the analysis code travels to the data, and only aggregated results are returned.',
+            paragraph2: 'Medical research, and AI in particular, needs data from many hospitals to produce reliable results. But health data is sensitive and strictly protected. [Federated analysis](/federated-analysis:internal) resolves this conflict: instead of collecting data centrally, researchers send their analysis to the data.',
+        },
+        capabilities: {
+            title: 'What you can do with FLAME',
+            statistics: {
+                title: 'Statistics and cohort counts',
+                description: 'Count cohorts and compute descriptive statistics across sites, on FHIR data such as the MII core dataset or on files such as CSV or VCF.',
+            },
+            learning: {
+                title: 'Federated learning',
+                description: 'Train machine learning models over several rounds, while the training data never leaves the participating hospitals.',
+            },
+            privacy: {
+                title: 'Privacy-enhancing technologies',
+                description: 'Add local differential privacy to the results, or use homomorphic encryption so that only the combined result of all sites is visible.',
+            },
+            code: {
+                title: 'Your own Python analysis',
+                description: 'Write your analysis in Python with the FLAME SDK, test it locally and choose a master image with the dependencies you need.',
+            },
+            examples: 'Example analyses in the [FLAME documentation](https://docs.privateaim.net/guide/user/analysis-coding:external) cover long COVID (PASC), survival regression, logistic regression, image classification and quality control of genomic data.',
+        },
+        faq: {
+            title: 'Frequently asked questions',
+            q1: {
+                question: 'Does patient data leave the hospital?',
+                answer: 'No. Every participating site runs a FLAME Node next to its own data. Only the analysis code travels to the data, and only aggregated results are returned. The central FLAME Hub never has access to patient data.',
+            },
+            q2: {
+                question: 'Are the results anonymous?',
+                answer: 'Aggregation alone does not guarantee anonymity. That is why every site reviews each analysis before it runs, including whether its results are appropriate. Local differential privacy and homomorphic encryption can add further protection. The [FLAME page](/flame:internal) describes the safeguards and their limits.',
+            },
+            q3: {
+                question: 'Who can use FLAME?',
+                answer: 'Researchers submit analyses through the FLAME Hub. University hospitals and other institutions take part by running a FLAME Node and decide for each project whether they participate. The [FLAME page](/flame:internal) has entry points for researchers, sites, data protection officers and patients.',
+            },
+            q4: {
+                question: 'Is FLAME open source?',
+                answer: 'Yes. The source code of the FLAME Hub and Node is publicly available on [GitHub](https://github.com/PrivateAIM:external), and the [documentation](https://docs.privateaim.net/getting-started/:external) explains installation and use.',
+            },
+            q5: {
+                question: 'Who is behind PrivateAIM?',
+                answer: 'PrivateAIM brings together 15 [partners](/partners:internal) from all four consortia of the Medical Informatics Initiative (MII), coordinated by the University Hospital Tübingen, the Berlin Institute of Health at Charité and the Technical University of Munich. The project is funded by the BMFTR until 31 March 2027.',
+            },
         },
         mission: {
             title: 'Our Mission',
@@ -60,13 +109,18 @@ export default defineLocale('en', [
             funding: 'Funding',
             fundingValue: 'Federal Ministry of Research, Technology and Space (BMFTR)',
             network: 'Network',
-            networkValue: '15 partners from all four consortia of the Medical Informatics Initiative (MII)',
+            networkValue: 'from all four consortia of the Medical Informatics Initiative (MII)',
             platform: 'Platform',
-            platformValue: 'FLAME, in productive use',
+            platformValue: 'in productive use',
             end: 'Regular project end',
             endValue: '31 March 2027',
             code: 'Code',
-            codeValue: 'Open source on GitHub',
+            codeValue: 'on GitHub',
+            fundingHeadline: 'BMFTR',
+            networkHeadline: '15 partners',
+            platformHeadline: 'FLAME',
+            endHeadline: '2027',
+            codeHeadline: 'Open source',
         },
         vision: {
             title: 'Our Vision',
@@ -85,6 +139,52 @@ export default defineLocale('en', [
             latestNews: 'Latest News',
             description: 'Here you can find the latest news and updates related to PrivateAIM.',
             button: 'Read More',
+            allNews: 'All news',
+        },
+    })]),
+
+    defineNamespace('explainer', [defineTranslations({
+        title: 'What is federated analysis?',
+        subtitle: 'A short introduction to analyzing medical data without collecting it centrally',
+        intro: 'Federated analysis means analyzing data that is spread across several institutions without bringing it together in one place. Instead of copying patient data into a central database, the analysis is sent to each institution, runs there next to the local data, and only the results come back. Combined, these results answer the same research question as a central analysis would.',
+        problem: {
+            title: 'Why not collect the data centrally?',
+            body: 'Many research questions, from rare diseases to training reliable AI models, need data from more patients than a single hospital has. Collecting this data centrally raises legal, organizational and security hurdles: health data is especially protected, every transfer has to be justified, and a central database is an attractive target. Federated analysis avoids these hurdles because the data never has to leave the hospital.',
+        },
+        idea: {
+            title: 'The idea: bring the analysis to the data',
+            body: 'A researcher writes the analysis once. Each participating hospital reviews it, runs it on its own data and returns only an intermediate result, for example a count or a model update. An aggregator combines these intermediate results into the final result for the researcher.',
+            researcher: 'Researcher',
+            code: 'Analysis code',
+            hospital: 'Hospital',
+            data: 'Data stays here',
+            result: 'Combined result',
+        },
+        kinds: {
+            title: 'Federated analysis and federated learning',
+            analysis: 'Federated analysis',
+            analysisBody: 'Statistics such as counts, means or regression models are computed at each site and combined once. Example: how many patients across all sites have a certain diagnosis?',
+            learning: 'Federated learning',
+            learningBody: 'A machine learning model is trained over several rounds. In each round the sites train on their local data and share only the updated model parameters, which are combined into a better global model.',
+        },
+        shared: {
+            title: 'What is shared, and what is not',
+            sharedTitle: 'Travels between sites',
+            shared1: 'The analysis code, after it has been reviewed',
+            shared2: 'Intermediate and aggregated results, such as counts or model parameters',
+            notSharedTitle: 'Stays at each site',
+            notShared1: 'Patient-level data',
+            notShared2: 'Direct access to the local databases',
+        },
+        protection: {
+            title: 'Federated does not automatically mean anonymous',
+            body: 'Aggregated results can still reveal information about individuals, for example when a group is very small. Federated analysis is therefore combined with further safeguards: each site reviews the code and its expected results before it runs, differential privacy adds calibrated noise to results, and homomorphic encryption lets sites combine values without seeing each other’s contributions.',
+        },
+        practice: {
+            title: 'Federated analysis in practice: FLAME',
+            body: 'FLAME (Federated Learning and Analysis in Medicine) is the platform developed by PrivateAIM for federated analysis and federated learning at German university hospitals within the Medical Informatics Initiative (MII). It is open source and in productive use.',
+            flame: 'Learn how FLAME works',
+            docs: 'Read the FLAME documentation',
         },
     })]),
 
@@ -92,6 +192,11 @@ export default defineLocale('en', [
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: the platform developed by PrivateAIM',
         status: 'FLAME is in productive use.',
+        explainer: {
+            title: 'New to federated analysis?',
+            text: 'A short introduction: how analyzing data without collecting it works, and where its limits are.',
+        },
+        context: 'FLAME (Federated Learning and Analysis in Medicine) is developed by PrivateAIM, a consortium of the German Medical Informatics Initiative (MII) funded by the BMFTR. It is not related to other software projects named Flame.',
         lead: 'FLAME lets researchers analyze medical data from several institutions without the data ever leaving them. Instead of collecting data centrally, FLAME sends the analysis code to the data. Only aggregated results are returned.',
         architecture: {
             title: 'How FLAME works',
@@ -100,6 +205,8 @@ export default defineLocale('en', [
             step2: 'Every site decides whether it takes part in a project, reviews the analysis code before it runs, and starts the execution itself.',
             step3: 'The analysis runs at each site. The results of the sites are combined by an aggregator, and only this combined result is made available to the researcher.',
             step4: 'For iterative methods such as federated learning, this repeats over several rounds.',
+            figureAlt: 'FLAME architecture: the Hub services build the analysis image and store results, and a Node in each hospital pulls the image and runs it next to the local data',
+            figureCaption: 'Execution flow of an analysis in FLAME (source: FLAME documentation)',
         },
         safeguards: {
             title: 'Safeguards',
@@ -120,12 +227,55 @@ export default defineLocale('en', [
             code: 'Source code on GitHub',
             publications: 'Publications from the PrivateAIM consortium',
             predecessor: 'The predecessor project: Personal Health Train (PHT)',
+            talk: 'Talk on the FLAME platform (MIDI colloquium, video)',
+            slides: 'FLAME architecture and policy framework (GMDS 2025, slides)',
+        },
+        audiences: {
+            title: 'Who is FLAME for?',
+            researchers: {
+                title: 'Researchers',
+                body: 'Write an analysis, test it locally with the FLAME SDK and run it across several sites. You only ever receive aggregated results.',
+                link: 'Run your first analysis',
+            },
+            sites: {
+                title: 'Data integration centres and sites',
+                body: 'Each site runs a FLAME Node on its own Kubernetes server. The Node only needs outbound HTTPS, with no inbound access from the internet. Analyses can query data in FHIR format, such as the MII core dataset.',
+                link: 'Install a Node',
+            },
+            dpo: {
+                title: 'Data protection officers',
+                body: 'Every site reviews and approves each analysis before it runs. Analyses run in isolated containers, patient data stays on site, and only aggregated results are returned. See also the limits above.',
+                link: 'Security and privacy FAQ',
+                flyer: 'Data protection information (PDF, in German)',
+            },
+            patients: {
+                title: 'Patients and the public',
+                body: 'With FLAME, your data stays at your hospital. Researchers send their analysis to the data instead of collecting the data centrally.',
+                link: 'Information for patients (PDF, in German)',
+            },
+        },
+    })]),
+
+    defineNamespace('notFound', [defineTranslations({
+        title: 'Page not found',
+        text: 'The page you are looking for does not exist or has moved. These pages might help:',
+        linksLabel: 'Suggested pages',
+        links: {
+            home: { title: 'Home', text: 'PrivateAIM at a glance' },
+            flame: { title: 'FLAME', text: 'The federated analysis platform' },
+            explainer: { title: 'What is federated analysis?', text: 'A short introduction' },
+            news: { title: 'News', text: 'Events and milestones' },
         },
     })]),
 
     defineNamespace('footer', [defineTranslations({
         documentation: 'Documentation',
-        flame: 'FLAME Platform',
+        flame: 'FLAME documentation',
+        project: 'Project',
+        tagline: 'Privacy-preserving analytics in medicine: federated analysis of medical data across German university hospitals.',
+        partOf: 'Part of the',
+        mii: 'Medical Informatics Initiative (MII)',
+        explainer: 'What is federated analysis?',
         github: 'GitHub',
         references: 'References',
         legal: 'Legal',
@@ -177,6 +327,8 @@ export default defineLocale('en', [
     defineNamespace('partners', [defineTranslations({
         title: 'Our partners',
         description: 'The PrivateAIM project involves a total of 15 partners from all four consortia of the Medical Informatics Initiative (MII). Three MII-funded junior research groups are also involved. The project is coordinated by the University Hospital of Tübingen, the Berlin Institute of Health at the Charité and the Technical University of Munich.\n\nHere you will find a list of participating universities and research institutes:',
+        subtitle: '15 partners from all four consortia of the Medical Informatics Initiative',
+        map: { label: 'Map of Germany with the locations of the PrivateAIM partners' },
         subsection1: 'Coordination',
         subsection2: 'Project partners',
         subsection3: 'Associated partners',
@@ -187,6 +339,7 @@ export default defineLocale('en', [
         network: {
             title: 'Join Our Network',
             subtitle: " Interested in collaborating with PrivateAIM? We're always looking to expand our network of partners who share our vision of privacy-preserving medical research.\n",
+            button: 'Get started with FLAME',
             box1: {
                 title: 'Access to Cutting-Edge Technology',
                 text: 'Work with our team to implement state-of-the-art federated learning systems.',
@@ -199,7 +352,6 @@ export default defineLocale('en', [
                 title: 'Shape the Future of Medical Research',
                 text: 'Help define standards and best practices for privacy-preserving analytics.',
             },
-            button: 'Contact Us to Discuss Partnership',
         },
     })]),
 
@@ -211,6 +363,7 @@ export default defineLocale('en', [
         accept: 'Accept all',
         deny: 'Only necessary',
         customize: 'Customize',
+        settings: 'Open cookie settings',
         preference: 'Save selection',
         setting: {
             required: {
@@ -244,6 +397,18 @@ export default defineLocale('en', [
     })]),
 
     defineNamespace('news', [defineTranslations({
+        categories: {
+            conference: 'Conference & talk',
+            retreat: 'Retreat',
+            workshop: 'Workshop',
+            milestone: 'Milestone',
+        },
+        gallery: {
+            open: 'Open photo {{index}} of {{count}}',
+            close: 'Close',
+            previous: 'Previous photo',
+            next: 'Next photo',
+        },
         title: 'News',
         subtitle: 'Here you will find an overview of the latest news in the context of PrivateAIM.',
         noItems: 'No news items available for this year.',

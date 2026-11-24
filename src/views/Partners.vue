@@ -2,10 +2,17 @@
     <div class="partners-container">
         <PageHeader
             :title="title"
-            :subtitle="description"
+            :subtitle="subtitle"
         />
 
         <div class="partners-content">
+            <section class="partners-intro">
+                <p class="intro-text">
+                    {{ description }}
+                </p>
+                <PartnerMap />
+            </section>
+
             <section class="partners-section">
                 <h2 class="section-title">
                     <ITranslate path="partners.subsection1" />
@@ -390,7 +397,9 @@
                         </div>
                     </div>
                     <a
-                        href="mailto:info@bih-charite.de"
+                        href="https://docs.privateaim.net/getting-started/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="contact-button"
                     ><ITranslate path="partners.network.button" /></a>
                 </div>
@@ -401,9 +410,11 @@
 
 <script setup lang="ts">
 import PageHeader from '../components/PageHeader.vue';
+import PartnerMap from '../components/PartnerMap.vue';
 import { useTranslation } from '@/i18n';
 
 const title = useTranslation('partners.title');
+const subtitle = useTranslation('partners.subtitle');
 const description = useTranslation('partners.description');
 </script>
 <style scoped>
@@ -562,23 +573,43 @@ const description = useTranslation('partners.description');
   line-height: 1.6;
 }
 
+.partners-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  white-space: pre-line;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color, #2d3748);
+}
+
 .contact-button {
   display: block;
-  background-color: #0055b3;
-  color: white;
-  font-weight: 500;
-  font-size: 1rem;
+  max-width: 320px;
+  margin: 2rem auto 0;
   padding: 0.875rem 1.75rem;
   border-radius: 0.5rem;
+  background-color: var(--primary-color, #3182ce);
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease;
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 .contact-button:hover {
-  background-color: #2c5282;
+  background-color: #1a75d1;
+}
+
+@media (max-width: 860px) {
+  .partners-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* Responsive adjustments */
