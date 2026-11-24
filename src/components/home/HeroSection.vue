@@ -16,12 +16,14 @@
                     >
                         <ITranslate path="home.hero.explorePlatform" />
                     </router-link>
-                    <router-link
-                        :to="localePath('/partners')"
+                    <a
+                        href="https://docs.privateaim.net/getting-started/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="secondary-button"
                     >
                         <ITranslate path="home.hero.joinNetwork" />
-                    </router-link>
+                    </a>
                 </div>
             </div>
 

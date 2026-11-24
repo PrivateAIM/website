@@ -117,6 +117,32 @@ export default defineLocale('de', [
             code: 'Quellcode auf GitHub',
             publications: 'Publikationen des PrivateAIM-Konsortiums',
             predecessor: 'Das Vorgängerprojekt: Personal Health Train (PHT)',
+            talk: 'Vortrag zur FLAME-Plattform (MIDI-Kolloquium, Video, Englisch)',
+            slides: 'FLAME-Architektur und Policy-Framework (GMDS 2025, Folien)',
+        },
+        audiences: {
+            title: 'Für wen ist FLAME?',
+            researchers: {
+                title: 'Forschende',
+                body: 'Schreiben Sie eine Analyse, testen Sie sie lokal mit dem FLAME-SDK und führen Sie sie an mehreren Standorten aus. Sie erhalten ausschließlich aggregierte Ergebnisse.',
+                link: 'Erste Analyse ausführen (Englisch)',
+            },
+            sites: {
+                title: 'Datenintegrationszentren und Standorte',
+                body: 'Jeder Standort betreibt einen FLAME Node auf einem eigenen Kubernetes-Server. Der Node benötigt nur ausgehendes HTTPS, ohne eingehenden Zugriff aus dem Internet. Analysen können Daten im FHIR-Format abfragen, etwa den MII-Kerndatensatz.',
+                link: 'Node installieren (Englisch)',
+            },
+            dpo: {
+                title: 'Datenschutzbeauftragte',
+                body: 'Jeder Standort prüft und genehmigt jede Analyse, bevor sie läuft. Analysen laufen in isolierten Containern, Patientendaten bleiben am Standort, und nur aggregierte Ergebnisse werden zurückgegeben. Beachten Sie auch die Grenzen oben.',
+                link: 'FAQ zu Sicherheit und Datenschutz (Englisch)',
+                flyer: 'Informationen zum Datenschutz (PDF)',
+            },
+            patients: {
+                title: 'Patientinnen, Patienten und Öffentlichkeit',
+                body: 'Mit FLAME bleiben Ihre Daten in Ihrer Klinik. Forschende schicken ihre Analyse zu den Daten, statt die Daten zentral zu sammeln.',
+                link: 'Informationen für Patientinnen und Patienten (PDF)',
+            },
         },
     })]),
 

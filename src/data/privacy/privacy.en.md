@@ -1,300 +1,180 @@
-## Introduction and Overview
+The website privateaim.de can generally be used without providing any personal data. It presents the joint project PrivateAIM, funded by the German Federal Ministry of Research, Technology and Space (BMFTR), and is operated by the Berlin Institute of Health at Charité.
 
-We have drafted this privacy policy (version 01.12.2021-311891618) to explain to you – in accordance with the requirements of the [General Data Protection Regulation (EU) 2016/679](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32016R0679) and applicable national laws – what personal data (in short, data) we as controllers – and those processors commissioned by us (e.g., providers) – process, will process in the future, and what lawful options you have. The terms used are to be understood in a gender-neutral manner.
+Personal data is always processed in accordance with the General Data Protection Regulation (GDPR) and the state data protection regulations that apply to the Berlin Institute of Health. With this privacy policy, we inform you about the nature, scope and purpose of the personal data we collect, use and process. This privacy policy also informs data subjects of their rights.
 
-In short: We comprehensively inform you about the data we process about you.
-
-Privacy policies typically sound very technical and use legal jargon. However, this privacy policy is intended to describe the most important points as clearly and transparently as possible. Wherever possible, technical terms are explained in easy-to-understand language, links to further information are provided, and graphics are used. We thus inform you—in clear and plain language—that we process personal data in the course of our business only when a corresponding legal basis exists. This cannot be achieved if one provides overly brief, unclear, and legally technical explanations, as is often the case online when it comes to data protection. We hope that you find the following explanations interesting and informative—and that some information there might be new to you.
-
-If you still have questions, please contact the responsible party listed below (or as provided in the imprint), follow the provided links, and refer to further information on third-party websites. Our contact details can also be found in the imprint.
+As the controller, the Berlin Institute of Health has implemented numerous technical and organizational measures to ensure the most complete protection of personal data processed through this website. However, Internet-based data transmissions may in principle have security gaps, so absolute protection cannot be guaranteed. For this reason, every data subject is free to transmit personal data to us by alternative means, for example by telephone.
 
 ---
 
-## Scope of Application
+## 1. Definitions
 
-This privacy policy applies to all personal data processed by us within the company as well as all personal data processed by companies (processors) commissioned by us. By personal data, we mean information as defined in Article 4 (1) GDPR, such as a person’s name, email address, or postal address. The processing of personal data ensures that we can offer and bill our services and products, whether online or offline. The scope of this privacy policy includes:
+This privacy policy is based on the terms used by the European legislator in adopting the General Data Protection Regulation (GDPR). In this privacy policy, we use, among others, the following terms:
 
-- All online presences (websites, online shops) that we operate
-- Social media appearances and email communications
-- Mobile apps for smartphones and other devices
+**a) Personal data:** Personal data means any information relating to an identified or identifiable natural person ("data subject"). An identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
 
-In short: The privacy policy applies to all areas where personal data is structurally processed through the stated channels within our company. Should we enter into legal relations with you outside these channels, we will inform you separately if necessary.
+**b) Data subject:** A data subject is any identified or identifiable natural person whose personal data is processed by the controller.
 
----
+**c) Processing:** Processing is any operation or set of operations which is performed on personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.
 
-## Legal Bases
+**d) Restriction of processing:** Restriction of processing is the marking of stored personal data with the aim of limiting its processing in the future.
 
-In the following privacy policy, we provide you with transparent information regarding the legal principles and regulations – that is, the legal bases of the General Data Protection Regulation – which enable us to process personal data.
+**e) Profiling:** Profiling means any form of automated processing of personal data consisting of the use of personal data to evaluate certain personal aspects relating to a natural person, in particular to analyze or predict aspects concerning that natural person's performance at work, economic situation, health, personal preferences, interests, reliability, behavior, location or movements.
 
-With regard to EU law, we refer to the **REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL** dated 27 April 2016. You can read this EU General Data Protection Regulation online on [EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32016R0679).
+**f) Pseudonymization:** Pseudonymization is the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organizational measures to ensure that the personal data is not attributed to an identified or identifiable natural person.
 
-We process your data only if at least one of the following conditions applies:
+**g) Controller:** The controller is the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.
 
-1. **Consent** (Article 6(1)(a) GDPR):
-   You have given us your consent to process data for a specific purpose – for example, storing the information you enter in a contact form.
-2. **Contract** (Article 6(1)(b) GDPR):
-   To fulfill a contract or pre-contractual obligations with you, we process your data. For example, if we conclude a purchase contract with you, certain personal information is required in advance.
-3. **Legal Obligation** (Article 6(1)(c) GDPR):
-   We process your data if we are legally obligated to do so – for instance, to retain invoices for accounting purposes.
-4. **Legitimate Interests** (Article 6(1)(f) GDPR):
-   In the case of legitimate interests that do not restrict your fundamental rights, we reserve the right to process personal data. For example, we must process certain data to operate our website securely and economically. This processing is thus based on legitimate interests.
+**h) Processor:** A processor is a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.
 
-Additional conditions, such as processing in the public interest or for the exercise of official authority, generally do not apply to us. Should such a legal basis be relevant, it will be indicated in the respective section.
+**i) Recipient:** A recipient is a natural or legal person, public authority, agency or other body to which the personal data is disclosed, whether a third party or not. However, public authorities which may receive personal data in the framework of a particular inquiry in accordance with Union or Member State law are not regarded as recipients.
 
-Furthermore, national laws also apply:
+**j) Third party:** A third party is a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorized to process personal data.
 
-- **In Austria:** The Federal Act on the Protection of Natural Persons in Data Processing (Data Protection Act, abbreviated DSG).
-- **In Germany:** The Federal Data Protection Act, abbreviated BDSG.
-
-If additional regional or national laws apply, we will inform you in the following sections.
+**k) Consent:** Consent of the data subject is any freely given, specific, informed and unambiguous indication of the data subject's wishes by which they, by a statement or by a clear affirmative action, signify agreement to the processing of personal data relating to them.
 
 ---
 
-## Contact Details of the Responsible Party
+## 2. Name and address of the controller
 
-If you have any questions regarding data protection, please find below the contact details of the responsible person or entity:
-
-**Berliner Institut für Gesundheitsforschung in der Charité**  
-Translational Research Department  
-of Charité – University Medicine Berlin  
+Berlin Institute of Health at Charité (BIH)  
+Translational research unit of Charité – Universitätsmedizin Berlin  
 Anna-Louisa-Karsch-Str. 2  
-10178 Berlin 
+10178 Berlin, Germany
 
-E-mail: [info@bih-charite.de](mailto:info@bih-charite.de)  
-Telephone: 030 450 543 049  
-Imprint: [https://www.bihealth.org/de/impressum](https://www.bihealth.org/de/impressum)  
+E-mail: info@bih-charite.de  
+Phone: +49 30 450 543 049
 
 ---
 
-## Contact Details of the Data Protection Officer
+## 3. Name and address of the competent supervisory authority
 
-Below you will find the contact details of our Data Protection Officer:
+Berlin Commissioner for Data Protection and Freedom of Information (Berliner Beauftragte für Datenschutz und Informationsfreiheit)  
+Alt-Moabit 59-61  
+10555 Berlin, Germany  
+E-mail: mailbox@datenschutz-berlin.de  
+Phone: +49 30 13889-0
 
-**Data Protection Office**  
+---
+
+## 4. Name and address of the data protection officer
+
+The data protection officer of the controller is:
+
+Data Protection Officer of Charité – Universitätsmedizin Berlin  
 Charitéplatz 1  
-10117 Berlin  
-
-E-mail: [datenschutz@charite.de](mailto:datenschutz@charite.de)  
-Telephone: +49 30 450 580 016  
-
----
-
-## Retention Period
-
-As a general rule, we store personal data only as long as is absolutely necessary to provide our services and products. This means that we delete personal data as soon as the reason for its processing ceases to exist. In certain cases, we are legally obligated to retain certain data even after the original purpose has ended (for accounting purposes, for instance).
-
-If you wish to have your data deleted or revoke your consent to data processing, we will delete your data as promptly as possible, provided that no retention obligation exists.
-
-We will provide further information on the specific retention period for each case in the subsequent sections if additional details are available.
+10117 Berlin, Germany  
+Phone: +49 30 450 580 016  
+E-mail: datenschutzbeauftragte@charite.de
 
 ---
 
-## Rights Under the General Data Protection Regulation
+## 5. Hosting and collection of general data and information
 
-Under Article 13 GDPR, you have the following rights to ensure fair and transparent data processing:
+This website is served via GitHub Pages, a service of GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Each time the website is accessed by a data subject or an automated system, GitHub collects a series of general data and information in its server log files. This may include
 
-- **Right to Information and Access (Article 15 GDPR):**
-  You have the right to know whether we process your data. If so, you may request a copy of your data and the following information:
-  - The purpose of the processing
-  - The categories of data processed
-  - Who receives the data and, if data is transferred to third countries, how security is ensured
-  - The duration of data storage
-  - The right to rectification, deletion, or restriction of processing and the right to object
-  - The source of the data if it was not collected from you
-  - Whether profiling is carried out (i.e., if data is automatically evaluated to create a personal profile)
-- **Right to Rectification (Article 16 GDPR):**
-  You can demand that incorrect data be corrected.
-- **Right to Erasure (Article 17 GDPR, “Right to be Forgotten”):**
-  You can require the deletion of your data.
-- **Right to Restriction of Processing (Article 18 GDPR):**
-  You can require that your data be stored but not further processed.
-- **Right to Data Portability (Article 19 GDPR):**
-  You can ask us to provide your data in a common format.
-- **Right to Object (Article 21 GDPR):**
-  You have the right to object to the processing of your data, which may result in changes to the processing if upheld:
-  - If processing is based on Article 6(1)(e) (public interest or official authority) or Article 6(1)(f) (legitimate interests), you can object.
-  - If data is used for direct marketing, you can object at any time, after which your data will no longer be used for direct marketing.
-  - If data is used for profiling, you can object at any time, and your data will no longer be used for profiling.
-- **Right not to be Subject to Automated Decisions (Article 22 GDPR):**
-  In some cases, you have the right not to be subject to decisions based solely on automated processing (such as profiling).
+* the IP address of the accessing system,
+* the date and time of access,
+* the page accessed,
+* the website from which the accessing system reaches our website (referrer),
+* the browser type and version and the operating system used.
 
-In short: You have these rights – please do not hesitate to contact the above-mentioned responsible party if you wish to exercise any of them.
+This data is needed to deliver the content of the website correctly and to ensure the continued operation and security of the website, in particular to defend against attacks. The Berlin Institute of Health does not draw any conclusions about the data subject from this data and has no access to the log files. The legal basis is Art. 6(1)(f) GDPR; our legitimate interest lies in providing the website securely and reliably.
 
-If you believe that the processing of your data contravenes data protection law or that your rights have been violated, you can file a complaint with the relevant supervisory authority. In Austria, this is the [Data Protection Authority](https://www.dsb.gv.at/); in Germany, each federal state has its own Data Protection Commissioner. For further details, please contact the Federal Commissioner for Data Protection and Freedom of Information (BfDI). For our company, the following local data protection authority is responsible.
+Data may be transferred to the USA. GitHub Inc. is certified under the EU-US Data Privacy Framework, on the basis of which the European Commission has found an adequate level of data protection. For more information, see the [GitHub privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+
+Fonts, images and all other content of the website are loaded from the same server. No third-party content is embedded.
 
 ---
 
-## Berliner Data Protection Authority
+## 6. Cookies and local storage
 
-**Data Protection Commissioner:** Meike Kamp  
-**Address:** Alt-Moabit 59-61, 10555 Berlin  
-**Telephone:** +49 30 13889-0  
-**E-mail:** [mailbox@datenschutz-berlin.de](mailto:mailbox@datenschutz-berlin.de)  
-**Website:** [https://www.datenschutz-berlin.de/](https://www.datenschutz-berlin.de/)  
+This website only sets the following cookies and entries in your browser's local storage:
 
----
+* **cookie-consent** and **cookie-options** (cookies, stored for 6 months): store that you have made a choice in the cookie banner and which one. They are technically necessary so that the banner does not reappear on every page. The legal basis is Section 25(2) no. 2 TDDDG in conjunction with Art. 6(1)(c) GDPR.
+* **theme** (local storage, until you delete it): stores whether you chose the light or dark display. This entry is not transmitted to us and contains no personal data. The legal basis is Section 25(2) no. 2 TDDDG.
+* **Google Analytics cookies** (only with your consent, see section 7).
 
-## Cookies
-
-### Cookies Summary
-
-- **Affected:** Visitors of the website
-- **Purpose:** Depends on the specific cookie. More details are provided in the following sections or by the software manufacturer that sets the cookie.
-- **Processed Data:** Varies by cookie
-- **Retention Period:** Varies depending on the cookie, from a few hours to several years
-- **Legal Bases:** Article 6(1)(a) GDPR (Consent) and Article 6(1)(f) GDPR (Legitimate Interests)
-
-### What Are Cookies?
-
-Our website uses HTTP cookies to store user-specific data. When you browse the internet, you use a browser – for example, Chrome, Safari, Firefox, Internet Explorer, or Microsoft Edge. Most websites store small text files, known as cookies, in your browser.
-
-Cookies serve as helpful tools—they can store, for example, language settings or personal site preferences. There are:
-- **First-Party Cookies:** Created directly by our website.
-- **Third-Party Cookies:** Created by partner websites (e.g., Google Analytics).
-
-Each cookie stores different data and may have different expiration times (ranging from a few minutes to several years). Cookies are not programs, do not contain viruses or Trojan horses, and cannot access personal data on your computer.
-
-*For example:*
-
-- **Name:** _ga
-- **Value:** GA1.2.1326744211.152311891618-9
-- **Purpose:** Distinguishing website visitors
-- **Expiration:** After 2 years
-
-A browser should support at least:
-- 4096 bytes per cookie
-- 50 cookies per domain
-- 3000 cookies in total
-
-### What Types of Cookies Exist?
-
-Depending on the service, cookies are used in different ways. Generally, one distinguishes four categories:
-
-- **Essential Cookies:** Necessary to ensure the basic functions of the website (e.g., keeping a shopping cart intact even if you leave the site).
-- **Analysis Cookies:** Collect information about user behavior and any error messages.
-
-Typically, upon visiting a website for the first time, you are asked which types of cookies you wish to allow; this decision is then stored in a cookie.
-
-If you want to learn more about cookies, we recommend reviewing [RFC 6265](https://tools.ietf.org/html/rfc6265) by the IETF, titled “HTTP State Management Mechanism.”
-
----
-## Web analysis and optimization
-
-We use tools for web analysis and reach measurement so that we can evaluate visitor flows on our website. For this purpose, we collect information about the behavior, interests or demographic information of our visitors, such as age, gender or similar. This helps us to recognize at what time our online offer, its functions or content are most frequented or invite repeated visits. We can also use the information collected to determine whether our online offering needs to be optimized or adapted.
-
-The information collected for this purpose is stored in cookies or similar procedures and is used for range measurement and optimization. The data stored in the cookies may include content viewed, online presences visited, settings and functions and systems used. As a rule, however, no clear user data is processed for the purposes described. In this case, the data is modified in such a way that neither we nor the provider of the tool used know the actual identity of the user. The data modified in this way is often stored in user profiles.
-### Google Analytics
-|                           |                                                                                                                                                                    |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Service used:**         | Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland                                                                                             |
-| **Privacy Policy:**       | [https://policies.google.com/privacy?hl=de&gl=de](https://policies.google.com/privacy?hl=de&gl=de)                                                                 |
-| **Opt-out link**          | [https://tools.google.com/dlpage/gaoptout?hl=de](https://tools.google.com/dlpage/gaoptout?hl=de) or [https://myaccount.google.com/](https://myaccount.google.com/) |
-| **Guarantee third country transfer:** | Based on the [adequacy decision of the European Commission](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) for the country USA                                                                                      |
+You can delete cookies and local storage at any time in your browser settings.
 
 ---
 
-## Purpose of Processing via Cookies
+## 7. Web analytics with Google Analytics
 
-The purpose is ultimately dependent on the specific cookie. More details on this can be found in the sections below or by referring to the respective software manufacturer's documentation.
+If you choose "Accept all" in the cookie banner or enable analytics cookies, we use Google Analytics 4, a web analytics service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland ("Google"). Without your consent, Google Analytics is not loaded and no connection to Google is established.
 
----
+Google Analytics sets cookies (in particular `_ga` and `_ga_<ID>`, stored for up to 2 years) to recognize your device and to evaluate which pages are used and how. This involves processing in particular the pages visited, date and time, approximate location, device type, browser and the source of the visit. According to Google, IP addresses are not stored in Google Analytics 4. We use the reports solely to improve the website.
 
-## What Data Is Processed? (Cookies)
+The legal basis is your consent under Art. 6(1)(a) GDPR and Section 25(1) TDDDG. Data may be transferred to Google LLC in the USA. Google LLC is certified under the EU-US Data Privacy Framework. For more information, see the [Google privacy policy](https://policies.google.com/privacy?hl=en).
 
-Cookies serve as small assistants for various tasks. It is not possible to generalize which data is stored in cookies, but in this privacy policy, we will inform you about the data that is processed or stored.
-
----
-
-## Retention Period for Cookies
-
-The duration for which a cookie is stored depends on the specific cookie. Some cookies are deleted within less than an hour, while others may be stored on your computer for several years.
-
-You also have control over the retention period by manually deleting cookies via your browser settings. Cookies based on consent are deleted at the latest after you revoke your consent, although the legality of their storage remains unaffected until that point.
+You can withdraw your consent at any time with effect for the future by opening the cookie settings with the "Cookies" button at the bottom left of every page and disabling analytics cookies or choosing "Only necessary".
 
 ---
 
-## Right to Object – How Can I Delete Cookies?
+## 8. Links to external services
 
-How and whether you use cookies is entirely up to you. Regardless of the cookie's source, you always have the option to delete, disable, or partially allow cookies—for example, you can block third-party cookies while allowing others.
-
-If you wish to view the cookies stored in your browser, change your cookie settings, or delete cookies, please refer to your browser's settings:
-
-- **Chrome:** [Delete, enable, and manage cookies in Chrome](https://support.google.com/chrome/answer/95647?hl=en)  
-- **Safari:** [Manage cookies and website data with Safari](https://support.apple.com/en-us/guide/safari/sfri11471/mac)  
-- **Firefox:** [Delete cookies to remove data that websites have stored on your computer](https://support.mozilla.org/en-US/kb/delete-cookies-remove-data-websites-stored-your-computer)  
-- **Microsoft Edge:** [Delete and manage cookies](https://support.microsoft.com/en-us/topic/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)  
-
-If you do not wish to have any cookies at all, you can configure your browser to always notify you before a cookie is set, allowing you to decide individually.
+This website contains links to external services, for example GitHub, Discord, YouTube, scientific publishers and the websites of our partner institutions. This content is not embedded. Data is only transmitted to the respective provider when you click such a link. The respective provider is responsible for the processing there; please refer to its privacy notices.
 
 ---
 
-## Legal Basis (Cookies)
+## 9. Routine erasure and blocking of personal data
 
-Since 2009, there have been so-called “cookie guidelines” stating that the storage of cookies requires your consent (Article 6(1)(a) GDPR). However, responses vary among EU countries. In Austria, this directive was implemented in § 96 Abs. 3 of the Telecommunications Act (TKG), while in Germany it has largely been implemented in § 15 Abs.3 of the Telemedia Act (TMG).
+The controller processes and stores personal data of the data subject only for the period necessary to achieve the purpose of storage, or as far as this is provided for by the European legislator or other legislators in laws or regulations to which the controller is subject.
 
-For essential cookies, even without consent, legitimate interests (Article 6(1)(f) GDPR) may exist, which are usually of an economic nature in order to provide a good user experience. Cookies that are not absolutely necessary are set only with your consent.
-
----
-
-## Web Hosting
-
-### Web Hosting Summary
-
-- **Affected:** Visitors of the website  
-- **Purpose:** Professional hosting of the website and ensuring its operation
-- **Processed Data:** IP address, time of website visit, browser used, and additional data (varies by provider)
-- **Retention Period:** Generally 2 weeks
-- **Legal Bases:** Article 6(1)(f) GDPR (Legitimate Interests)
-
-### What Is Web Hosting?
-
-Web hosting refers to the provision of storage and computing power for hosting websites. It encompasses all the webpages within a domain—for example, everything from the homepage to the last subpage (e.g., example.com or sampleexample.com).
-
-To view a website, you use a browser (e.g., Google Chrome, Microsoft Edge, Mozilla Firefox, or Apple Safari). The browser connects to a web server where the website’s code is stored. The operation of a web server is a complex and labor-intensive task, and professional providers typically manage web hosting to ensure reliable and error-free storage of website data.
-
-During the connection between your browser and the web server, personal data may be processed. Your browser stores data, and the web server must also store data for a certain period to ensure proper operation.
+If the storage purpose no longer applies, or if a storage period prescribed by the European legislator or another competent legislator expires, the personal data is routinely blocked or erased in accordance with legal requirements.
 
 ---
 
-## Why Do We Process Personal Data? (Web Hosting)
+## 10. Rights of the data subject
 
-The purposes of data processing in web hosting include:
+To exercise the following rights, the data subject may contact the data protection officer (section 4) or the controller (section 2) at any time.
 
-1. Professional hosting of the website and ensuring its operation
-2. Maintaining operational and IT security
-3. Anonymous analysis of access behavior to improve our offering and, if necessary, to pursue legal claims
+**a) Right of confirmation:** Every data subject has the right to obtain from the controller confirmation as to whether or not personal data concerning them is being processed.
+
+**b) Right of access:** Every data subject has the right to obtain from the controller, free of charge and at any time, information about the personal data stored about them and a copy of this information. This information covers
+
+* the purposes of the processing,
+* the categories of personal data concerned,
+* the recipients or categories of recipients to whom the personal data has been or will be disclosed, in particular recipients in third countries or international organizations,
+* where possible, the envisaged period for which the personal data will be stored, or, if not possible, the criteria used to determine that period,
+* the existence of the right to request rectification or erasure of personal data or restriction of processing, or to object to such processing,
+* the existence of the right to lodge a complaint with a supervisory authority,
+* where the personal data is not collected from the data subject, any available information as to its source,
+* the existence of automated decision-making, including profiling, referred to in Art. 22(1) and (4) GDPR and, at least in those cases, meaningful information about the logic involved, as well as the significance and envisaged consequences of such processing for the data subject.
+
+The data subject also has the right to know whether personal data has been transferred to a third country or to an international organization. Where this is the case, the data subject has the right to be informed of the appropriate safeguards relating to the transfer.
+
+**c) Right to rectification:** Every data subject has the right to obtain without undue delay the rectification of inaccurate personal data concerning them. Taking into account the purposes of the processing, the data subject also has the right to have incomplete personal data completed, including by means of a supplementary statement.
+
+**d) Right to erasure (right to be forgotten):** Every data subject has the right to obtain from the controller the erasure of personal data concerning them without undue delay where one of the following grounds applies, as long as the processing is not necessary:
+
+* The personal data is no longer necessary in relation to the purposes for which it was collected or otherwise processed.
+* The data subject withdraws consent on which the processing is based according to Art. 6(1)(a) GDPR or Art. 9(2)(a) GDPR, and there is no other legal ground for the processing.
+* The data subject objects to the processing pursuant to Art. 21(1) GDPR and there are no overriding legitimate grounds for the processing, or the data subject objects to the processing pursuant to Art. 21(2) GDPR.
+* The personal data has been unlawfully processed.
+* The personal data must be erased for compliance with a legal obligation in Union or Member State law to which the controller is subject.
+* The personal data has been collected in relation to the offer of information society services referred to in Art. 8(1) GDPR.
+
+**e) Right to restriction of processing:** Every data subject has the right to obtain from the controller restriction of processing where one of the following applies:
+
+* The accuracy of the personal data is contested by the data subject, for a period enabling the controller to verify the accuracy of the personal data.
+* The processing is unlawful and the data subject opposes the erasure of the personal data and requests the restriction of its use instead.
+* The controller no longer needs the personal data for the purposes of the processing, but it is required by the data subject for the establishment, exercise or defense of legal claims.
+* The data subject has objected to processing pursuant to Art. 21(1) GDPR pending the verification whether the legitimate grounds of the controller override those of the data subject.
+
+**f) Right to data portability:** Every data subject has the right to receive the personal data concerning them, which was provided to a controller, in a structured, commonly used and machine-readable format, and to transmit this data to another controller, where the processing is based on consent pursuant to Art. 6(1)(a) GDPR or Art. 9(2)(a) GDPR or on a contract pursuant to Art. 6(1)(b) GDPR and the processing is carried out by automated means, unless the processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller.
+
+**g) Right to object:** Every data subject has the right to object, on grounds relating to their particular situation, at any time to processing of personal data concerning them which is based on Art. 6(1)(e) or (f) GDPR. In the event of an objection, the Berlin Institute of Health will no longer process the personal data unless we can demonstrate compelling legitimate grounds for the processing which override the interests, rights and freedoms of the data subject, or the processing serves the establishment, exercise or defense of legal claims.
+
+**h) Right to withdraw consent:** Every data subject has the right to withdraw consent to the processing of personal data at any time with effect for the future. You can withdraw your consent to Google Analytics directly in the cookie settings (section 11).
+
+**i) Right to lodge a complaint with a supervisory authority:** Every data subject has the right to lodge a complaint with a supervisory authority, in particular with the Berlin Commissioner for Data Protection and Freedom of Information named in section 3.
 
 ---
 
-## What Data Is Processed? (Web Hosting)
+## 11. Change cookie settings
 
-While you visit our website, our web server automatically stores data such as:
-
-- The complete URL of the accessed page (e.g., `https://www.examplewebsite.com/samplepage.html?tid=311891618`)
-- Browser and browser version (e.g., Chrome 87)
-- The operating system used (e.g., Windows 10)
-- The URL of the previously visited page (referrer URL), e.g., `https://www.sourcewebsite.com/`
-- The hostname and IP address of the accessing device (e.g., `COMPUTERNAME` and `194.23.43.121`)
-- Date and time
-
-This data is stored in webserver log files.
+With the "Cookies" button at the bottom left of every page, you can reopen the cookie banner at any time to change your choice or withdraw your consent.
 
 ---
 
-## How Long Is Data Stored? (Web Hosting)
-
-Generally, the above-mentioned data is stored for about two weeks and then automatically deleted. We do not share these data, although we cannot rule out that, in the event of unlawful behavior, authorities might view these logs.
-
-In short: Your visit is logged by our provider, but we will not share your data without your consent.
-
----
-
-## Legal Basis (Web Hosting)
-
-The legality of processing personal data in the context of web hosting is based on Article 6(1)(f) GDPR (protection of legitimate interests), as the use of professional hosting is necessary to present the company securely and user-friendly on the internet and to pursue claims in the event of an attack or other issues.
-
-Usually, there is a contract between us and the hosting provider for processing according to Article 28 GDPR, which ensures data protection and guarantees data security.
-
-All texts are copyright protected.
-
-*Source: Created with the [Privacy Policy Generator from AdSimple](https://www.adsimple.de)*
+Last updated: November 2026

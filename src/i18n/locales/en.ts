@@ -123,6 +123,32 @@ export default defineLocale('en', [
             code: 'Source code on GitHub',
             publications: 'Publications from the PrivateAIM consortium',
             predecessor: 'The predecessor project: Personal Health Train (PHT)',
+            talk: 'Talk on the FLAME platform (MIDI colloquium, video)',
+            slides: 'FLAME architecture and policy framework (GMDS 2025, slides)',
+        },
+        audiences: {
+            title: 'Who is FLAME for?',
+            researchers: {
+                title: 'Researchers',
+                body: 'Write an analysis, test it locally with the FLAME SDK and run it across several sites. You only ever receive aggregated results.',
+                link: 'Run your first analysis',
+            },
+            sites: {
+                title: 'Data integration centres and sites',
+                body: 'Each site runs a FLAME Node on its own Kubernetes server. The Node only needs outbound HTTPS, with no inbound access from the internet. Analyses can query data in FHIR format, such as the MII core dataset.',
+                link: 'Install a Node',
+            },
+            dpo: {
+                title: 'Data protection officers',
+                body: 'Every site reviews and approves each analysis before it runs. Analyses run in isolated containers, patient data stays on site, and only aggregated results are returned. See also the limits above.',
+                link: 'Security and privacy FAQ',
+                flyer: 'Data protection information (PDF, in German)',
+            },
+            patients: {
+                title: 'Patients and the public',
+                body: 'With FLAME, your data stays at your hospital. Researchers send their analysis to the data instead of collecting the data centrally.',
+                link: 'Information for patients (PDF, in German)',
+            },
         },
     })]),
 
