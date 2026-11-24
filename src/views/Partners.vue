@@ -14,6 +14,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/CHARITE.svg"
                                 alt="Charité Berlin"
                             >
@@ -23,7 +25,7 @@
                                 Charité Berlin
                             </h3>
                             <a
-                                href="https://www.bihealth.org/de/forschung/forschungsgruppen/detail-arbeitsgruppen/ag-prasser-medizininformatik"
+                                href="https://mi.bihealth.org"
                                 class="partner-link"
                             ><ITranslate path="partners.partner.info" /></a>
                         </div>
@@ -31,7 +33,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKT.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKT.webp"
                                 alt="Universitätsklinikum Tübingen"
                             >
                         </div>
@@ -48,6 +52,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/TUM.svg"
                                 alt="TUM Klinikum Rechts der Isar"
                             >
@@ -73,7 +79,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/LMU.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/LMU.webp"
                                 alt="Ludwig-Maximilians-Universität München"
                             >
                         </div>
@@ -90,13 +98,15 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/DKFZ.png"
-                                alt="Deutsche Krebsforschungszentrum"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/DKFZ.webp"
+                                alt="Deutsches Krebsforschungszentrum"
                             >
                         </div>
                         <div class="partner-info">
                             <h3 class="partner-name">
-                                Deutsche Krebsforschungszentrum
+                                Deutsches Krebsforschungszentrum
                             </h3>
                             <a
                                 href="https://www.dkfz.de"
@@ -107,13 +117,15 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/EKUT.png"
-                                alt="Eberhard Karls Universität Tübingnen"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/EKUT.webp"
+                                alt="Eberhard Karls Universität Tübingen"
                             >
                         </div>
                         <div class="partner-info">
                             <h3 class="partner-name">
-                                Eberhard Karls Universität Tübingnen
+                                Eberhard Karls Universität Tübingen
                             </h3>
                             <a
                                 href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/"
@@ -124,7 +136,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/TMF.jpg"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/TMF.webp"
                                 alt="TMF"
                             >
                         </div>
@@ -141,6 +155,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/UKU.svg"
                                 alt="Universität Ulm"
                             >
@@ -158,6 +174,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/UKER.svg"
                                 alt="Universitätsklinikum Erlangen"
                             >
@@ -175,7 +193,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKFR.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKFR.webp"
                                 alt="Universitätsklinikum Freiburg"
                             >
                         </div>
@@ -192,7 +212,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKHD.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKHD.webp"
                                 alt="Universitätsklinikum Heidelberg"
                             >
                         </div>
@@ -209,7 +231,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKK.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKK.webp"
                                 alt="Universitätsklinikum Köln"
                             >
                         </div>
@@ -226,7 +250,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKL.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKL.webp"
                                 alt="Universitätsklinikum Leipzig"
                             >
                         </div>
@@ -243,6 +269,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/CISPA.svg"
                                 alt="CISPA"
                             >
@@ -260,6 +288,8 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/partners/UMM.svg"
                                 alt="Universitätsmedizin Mannheim"
                             >
@@ -286,7 +316,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/IKIM.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/IKIM.webp"
                                 alt="University Hospital Essen"
                             >
                         </div>
@@ -303,7 +335,9 @@
                     <div class="partner-card">
                         <div class="partner-logo">
                             <img
-                                src="/images/partners/UKSH.png"
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/partners/UKSH.webp"
                                 alt="University Hospital Schleswig-Holstein"
                             >
                         </div>
@@ -312,7 +346,7 @@
                                 <ITranslate path="partners.partner.name" /> Schleswig-Holstein
                             </h3>
                             <a
-                                href="https://mi-ki.eu/de/willkommen/"
+                                href="https://mi-ki.eu/"
                                 class="partner-link"
                             ><ITranslate path="partners.partner.info" /></a>
                         </div>
@@ -460,6 +494,8 @@ const description = useTranslation('partners.description');
 }
 
 .partner-link {
+  display: inline-block;
+  padding-block: 5px;
   color: var(--primary-color, #3182ce);
   text-decoration: none;
   font-weight: 500;

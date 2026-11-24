@@ -10,8 +10,10 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 - `npm run dev` — start dev server
 - `npm run build` — type-check (`vue-tsc`) then build (`vite build`)
-- `npm run build-only` — build without type-check
+- `npm run build-only` — prerender with `vite-ssg build`, without type-check
 - `npm run type-check` — run `vue-tsc --build --noEmit`
+- `npm run check-dist` — check the build output (sitemap URLs, head tags, hreflang, no placeholder/blog content); runs in CI after the build
+- `npm run check-links` — check all external links in `dist/` (weekly in CI via `links.yml`; 401/403/429 count as bot protection, not broken)
 - `npm run lint` — ESLint check (non-mutating; this is the CI gate; also reports formatting — no separate Prettier step)
 - `npm run lint:fix` — ESLint with auto-fix (use locally)
 
@@ -24,25 +26,24 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 **Path alias:** `@` → `src/` (configured in both `tsconfig.json` and `vite.config.ts`).
 
 **Key directories:**
-- `src/views/` — page-level components, one per route (Home, BlogList, BlogPost, News, Team, Partners, Publications, Imprint, Privacy, NotFound)
-- `src/components/` — reusable components; `home/` has homepage sections, `blog/` has blog-specific components, `shared/` has generic components like LinkText and LocalizedLink
-- `src/data/blogs/` — blog post content as TypeScript modules organized by category (generalIntroduction, privateaimInsights, technicalDeepDives), aggregated in `index.ts`
+- `src/views/` — page-level components, one per route (Home, News, Team, Partners, Publications, Imprint, Privacy, NotFound)
+- `src/components/` — reusable components; `home/` has homepage sections, `shared/` has generic components like LinkText and LocalizedLink
 - `src/data/news/` — news content as TypeScript modules per locale (`en.ts`, `de.ts`), grouped by year and keyed by locale in `index.ts`
 - `src/i18n/locales/` — `en.ts` and `de.ts` ilingo catalogs built with `defineLocale`/`defineNamespace`/`defineTranslations`
-- `src/types/` — shared TypeScript interfaces (`BlogPost`, `NewsItem`)
+- `src/types/` — shared TypeScript interfaces (`NewsItem`)
 - `src/assets/` — CSS (dark-mode, fonts), SVG logo, flag icons
 
-**Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation. A session-storage-based redirect mechanism in `main.ts` handles SPA redirect after 404 pages on static hosting.
+**Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation.
 
-**i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
+**Prerendering:** `vite-ssg` renders the allowlist in `scripts/prerender.ts` to flat files (`dist/news.html`, because GitHub Pages would 301 `news/index.html` to `/news/`), writes per-route head tags, and generates `dist/sitemap.xml` and a `noindex` `dist/404.html`. Add new indexable routes to that list. Team avatars are fetched from GitHub at build time (`scripts/avatars.ts`); a daily scheduled deploy picks up new profile pictures. The web font in `src/assets/fonts/` is subset to Latin-1 plus the characters the site uses (fonttools `pyftsubset`); characters outside it fall back to the system font. Code that runs during setup must be SSR-safe: no `window`/`document` outside `onMounted` or an `import.meta.env.SSR` guard.
+
+**i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Lookups are synchronous (ilingo's own `get()` is async and would prerender raw keys). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
 
 **Theming:** Dark mode via CSS custom properties defined in `src/assets/dark-mode.css`, toggled by `ThemeToggle` component.
 
-**Blog system:** Blog posts are defined as typed objects (`BlogPost` interface) in `src/data/blogs/` files with markdown content strings. They are sorted by date in the index. Categories are a union type in `src/types/BlogPost.ts`.
-
 **News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 
-**Static assets:** Images go in `public/images/` with subdirectories per content type (blog, news, team, partners, authors). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
+**Static assets:** Images go in `public/images/` with subdirectories per content type (news, team, partners). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
 
 ## Preferences
 
@@ -76,13 +77,12 @@ Please test locally before I commit:
 - [ ] Verify navigation to/from the page works
 ```
 
-### Blog / News Content Changes
+### News Content Changes
 ```
 Please test locally before I commit:
 - [ ] `npm run build` passes
-- [ ] `npm run dev` — open /blog or /news
+- [ ] `npm run dev` — open /news
 - [ ] Verify the new/updated content renders correctly
-- [ ] Check markdown rendering (if blog post)
 - [ ] Check both EN and DE locale
 - [ ] Verify images load correctly (if any)
 ```

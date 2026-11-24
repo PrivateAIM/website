@@ -38,8 +38,8 @@ const news: NewsByYear = {
         },
         {
             date: '17/10/2025',
-            title: 'Patientenflyer',
-            content: 'Secure research with medical data: Our commitment to data protection with PrivateAIM (Privacy-Preserving Analytics in Medicine)\nPrivateAIM and FLAME form an innovative approach to analyzing medical data that offers the highest level of data protection. The goal is to gain valuable insights into health data while protecting patient privacy as much as possible.\nThrough PrivateAIM, we are making an important contribution to improving medicine while setting new standards in data protection. <a href="/files/Flyer-Patienten.pdf" target="_blank">View the information for patients (german)</a>\n\n <a href="/files/Flyer-Datenschutz.pdf" target="_blank">View the information for data protection (german)</a> \n\n#PatientSafety #DataProtection #PrivateAIM #MedicalInformatics #Innovation #HealthData #MedicalCare #MedicalResearch',
+            title: 'Patient flyer',
+            content: 'Secure research with medical data: Our commitment to data protection with PrivateAIM (Privacy-Preserving Analytics in Medicine)\nPrivateAIM and FLAME form an innovative approach to analyzing medical data in which patient data stays at each participating site. The goal is to gain valuable insights into health data while protecting patient privacy as much as possible.\nThrough PrivateAIM, we are making an important contribution to improving medicine while setting new standards in data protection. <a href="/files/Flyer-Patienten.pdf" target="_blank">View the information for patients (in German)</a>\n\n <a href="/files/Flyer-Datenschutz.pdf" target="_blank">View the information for data protection (in German)</a>',
         },
         {
             date: '8-10/10/2025',
@@ -55,7 +55,7 @@ const news: NewsByYear = {
         {
             date: '28-30/04/2025',
             title: 'Retreat in Herrsching',
-            content: 'In an inspiring setting by Lake Ammersee, we focused on the next phase of our project: deployment and implementation. Through intensive sessions, thoughtful roadmap planning, and close team coordination, we laid the foundation for a focused rollout and defined concrete next steps.\n\nA special highlight was our hike to Andechs Abbey – a perfect blend of fresh air, great conversations, and Bavarian hospitality.\n\nWe’re feeling motivated and aligned – ready for whatever comes next.\n\n#PrivateAIM #Retreat #Deployment #NextSteps #Teamwork #KlosterAndechs',
+            content: 'In an inspiring setting by Lake Ammersee, we focused on the next phase of our project: deployment and implementation. Through intensive sessions, thoughtful roadmap planning, and close team coordination, we laid the foundation for a focused rollout and defined concrete next steps.\n\nA special highlight was our hike to Andechs Abbey – a perfect blend of fresh air, great conversations, and Bavarian hospitality.\n\nWe’re feeling motivated and aligned – ready for whatever comes next.\n\nPrivateAIM',
             images: ['news_herrsching.jpeg'],
         },
         {
@@ -69,7 +69,7 @@ const news: NewsByYear = {
         {
             date: '25-27/09/2024',
             title: 'Retreat in Potsdam',
-            content: 'Our three-day retreat in beautiful Potsdam has come to an end! Through inspiring presentations and lively discussions, we generated fresh ideas and strategies, setting key impulses for the next stages of the project. #PrivateAIM #Retreat #Teamwork',
+            content: 'Our three-day retreat in beautiful Potsdam has come to an end! Through inspiring presentations and lively discussions, we generated fresh ideas and strategies, setting key impulses for the next stages of the project.',
             images: [
                 'potsdam/news_potsdam_retreat.jpg',
                 'potsdam/news_potsdam_retreat_2.jpg',
@@ -79,7 +79,7 @@ const news: NewsByYear = {
         {
             date: '06-07/05/2024',
             title: 'Workshop in Leipzig',
-            content: 'At our two-day #PrivateAIM workshop in the venerable Albertina Library of the @UniLeipzig, the Minimal Viable Product (MVP) of the FLAME platform was presented. In various breakout sessions, topics related to the FLAME architecture were then addressed in depth, various use cases and DIZ integration were discussed and next steps were defined. Many thanks to all participants for the interesting exchange! #PrivateAIM #Workshop #Leipzig #FLAME',
+            content: 'At our two-day PrivateAIM workshop in the venerable Albertina Library of Leipzig University, the Minimal Viable Product (MVP) of the FLAME platform was presented. In various breakout sessions, topics related to the FLAME architecture were then addressed in depth, various use cases and DIZ integration were discussed and next steps were defined. Many thanks to all participants for the interesting exchange!',
             images: [
                 'leipzig/news_leipzig-workshop.jpg',
                 'leipzig/news_leipzig-workshop_2.jpg',

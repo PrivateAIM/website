@@ -19,6 +19,7 @@
                     </transition>
                 </router-view>
             </main>
+            <JsonLd :nodes="pageNodes" />
             <CookieBanner />
             <BackToTop />
             <RekaFooter />
@@ -32,6 +33,27 @@ import RekaFooter from './components/RekaFooter.vue';
 import LanguageProvider from './components/LanguageProvider.vue';
 import CookieBanner from './components/CookieBanner.vue';
 import BackToTop from './components/BackToTop.vue';
+import JsonLd from './components/shared/JsonLd';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { localePath, useLocale } from '@/i18n';
+import {
+    flameNode,
+    projectNode,
+    webPageNode,
+    websiteNode,
+} from '@/seo/structuredData';
+
+const route = useRoute();
+const locale = useLocale();
+
+// The project and FLAME are described on the home pages; other pages link to them by @id
+const pageNodes = computed(() => [
+    websiteNode,
+    webPageNode(localePath(route.path, locale.value), route.meta.title ?? 'PrivateAIM', route.meta.description, locale.value),
+    ...(route.name === 'Home' || route.name === 'Home-de' ? [projectNode, flameNode] : []),
+    ...(route.name === 'Flame' || route.name === 'Flame-de' ? [flameNode] : []),
+]);
 </script>
 
 <style>

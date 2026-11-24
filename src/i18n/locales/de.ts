@@ -7,8 +7,8 @@ import { defineLocale, defineNamespace, defineTranslations } from 'ilingo';
 export default defineLocale('de', [
     defineNamespace('navigation', [defineTranslations({
         home: 'Startseite',
+        flame: 'FLAME',
         news: 'Neuigkeiten',
-        blog: 'Blog',
         team: 'Team',
         partners: 'Partner',
         publications: 'Publikationen',
@@ -16,8 +16,8 @@ export default defineLocale('de', [
 
     defineNamespace('home', [defineTranslations({
         hero: {
-            title: 'Willkommen bei PrivateAIM',
-            subtitle: 'Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik',
+            title: 'Datenschutzfreundliche Analytik für die medizinische Forschung',
+            subtitle: 'PrivateAIM entwickelt FLAME, eine föderierte Plattform, die die Analyse zu den Daten an deutschen Universitätskliniken bringt.',
             explorePlatform: 'Unsere Plattform entdecken',
             joinNetwork: 'Netzwerk beitreten',
         },
@@ -27,45 +27,93 @@ export default defineLocale('de', [
         },
         mission: {
             title: 'Unsere Mission',
-            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip "Code to Data" stellen wir sicher, dass Patientendaten sicher in Universitätskliniken gespeichert bleiben, während nur Analysealgorithmen ausgetauscht werden.',
-            paragraph2: 'Dieser föderierte Ansatz garantiert, dass sensible medizinische Informationen ihre geschützte Umgebung nie verlassen und die Identität der Patienten jederzeit geschützt bleibt.',
-            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist eine neuartige Softwareplattform, die eine sichere, dezentrale Datenanalyse innerhalb der Medizininformatik-Initiative (MII) ermöglicht.',
+            paragraph1: 'PrivateAIM (Privacy-preserving Analytics in Medicine) widmet sich der Überbrückung der Kluft zwischen Datenschutz und medizinischer Innovation. Nach dem Prinzip "Code to Data" bleiben Patientendaten am jeweiligen teilnehmenden Standort: Nur der Analysecode gelangt zu den Daten, und nur aggregierte Ergebnisse werden zurückgegeben.',
+            paragraph2: 'Jeder Standort prüft und genehmigt den Analysecode, bevor er ausgeführt wird. Da Aggregation allein keine Anonymität garantiert, wird dabei auch bewertet, ob die zurückgegebenen Ergebnisse angemessen sind, unterstützt durch Schutzmaßnahmen wie den Ende-zu-Ende-verschlüsselten Austausch zwischen den Standorten und optionale lokale Differential Privacy.',
+            paragraph3: 'FLAME (Federated Learning and Analysis in Medicine) steht im Mittelpunkt unserer Initiative. Es ist die von PrivateAIM entwickelte Plattform für die sichere verteilte Analyse medizinischer Daten innerhalb der Medizininformatik-Initiative (MII).',
         },
         howItWorks: {
             title: 'Wie es funktioniert',
             step1: {
                 title: 'Daten bleiben lokal',
-                description: 'Patientendaten bleiben in Krankenhaussystemen sicher und verlassen ihre geschützte Umgebung nie.',
+                description: 'Patientendaten bleiben am jeweiligen teilnehmenden Standort und werden nie an ein zentrales System oder andere Standorte übertragen.',
             },
             step2: {
                 title: 'Code-to-Data-Ansatz',
-                description: 'Analysealgorithmen reisen zu den Daten, anstatt sensible Informationen zu bewegen.',
+                description: 'Der Analysecode gelangt zu den Daten, und jeder Standort prüft und genehmigt ihn vor der Ausführung.',
             },
             step3: {
                 title: 'Föderierte Analyse',
-                description: 'Ergebnisse werden über Institutionen hinweg aggregiert, wobei die Privatsphäre gewahrt und die Forschungsqualität verbessert wird.',
+                description: 'Nur aggregierte Ergebnisse werden zurückgegeben: Die Ergebnisse der Standorte werden zusammengeführt, und nur dieses Gesamtergebnis wird den Forschenden bereitgestellt.',
             },
             experienceFlame: 'Erleben Sie FLAME',
-            flamePlatform: 'Unsere innovative Plattform für sichere, föderierte medizinische Datenanalyse',
+            flamePlatform: 'Unsere Plattform für die sichere verteilte Analyse medizinischer Daten',
             explorePlatform: 'Plattform erkunden',
+        },
+        facts: {
+            title: 'Das Projekt im Überblick',
+            funding: 'Förderung',
+            fundingValue: 'Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)',
+            network: 'Netzwerk',
+            networkValue: '15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII)',
+            platform: 'Plattform',
+            platformValue: 'FLAME, im produktiven Einsatz',
+            end: 'Reguläres Projektende',
+            endValue: '31. März 2027',
+            code: 'Code',
+            codeValue: 'Open Source auf GitHub',
         },
         vision: {
             title: 'Unsere Vision',
             paragraph1: 'Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.',
-            paragraph2: 'PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und alle Sicherheitsgarantien und Vorteile verständlich machen.',
-            paragraph3: 'Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.',
+            paragraph2: 'PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und ihre Schutzmaßnahmen, Grenzen und Vorteile verständlich machen.',
+            paragraph3: 'Mit [FLAME](/flame:internal) stellt PrivateAIM der [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bereit, die produktiv im Einsatz ist. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.',
             contribute: 'Open-Source-Beiträge',
             explanation: 'Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.',
             github: 'GitHub öffnen',
         },
         partners: {
-            title: 'Vertraut von führenden Institutionen',
+            title: 'Unsere Konsortialpartner',
             viewAll: 'Alle Partner anzeigen',
         },
         news: {
-            latestNews: 'Neueste Nachrichten',
-            description: 'Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.',
+            latestNews: 'Aktuelle Neuigkeiten',
+            description: 'Hier finden Sie aktuelle Neuigkeiten und Updates zu PrivateAIM.',
             button: 'Mehr lesen',
+        },
+    })]),
+
+    defineNamespace('flame', [defineTranslations({
+        title: 'FLAME',
+        subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
+        status: 'FLAME ist im produktiven Einsatz.',
+        lead: 'Mit FLAME können Forschende medizinische Daten mehrerer Einrichtungen analysieren, ohne dass die Daten diese jemals verlassen. Statt Daten zentral zu sammeln, bringt FLAME den Analysecode zu den Daten. Zurückgegeben werden nur aggregierte Ergebnisse.',
+        architecture: {
+            title: 'So funktioniert FLAME',
+            body: 'FLAME besteht aus zwei Teilen: einem zentralen Hub und einem Node an jedem teilnehmenden Standort. Der Hub koordiniert, die Nodes rechnen.',
+            step1: 'Jeder teilnehmende Standort betreibt einen Node direkt bei seinen eigenen Daten. Patientendaten werden nie an den Hub oder an andere Standorte übertragen.',
+            step2: 'Jeder Standort entscheidet selbst, ob er an einem Projekt teilnimmt, prüft den Analysecode vor der Ausführung und startet die Ausführung selbst.',
+            step3: 'Die Analyse läuft an jedem Standort. Ein Aggregator führt die Ergebnisse der Standorte zusammen, und nur dieses Gesamtergebnis wird den Forschenden bereitgestellt.',
+            step4: 'Bei iterativen Verfahren wie föderiertem Lernen wiederholt sich das über mehrere Runden.',
+        },
+        safeguards: {
+            title: 'Schutzmaßnahmen',
+            review: 'Eine Analyse wird erst gebaut und ausgeführt, wenn alle teilnehmenden Nodes ihren Code genehmigt haben.',
+            isolation: 'Jede Analyse läuft in einem eigenen Container ohne Internetzugang.',
+            encryption: 'Alle Verbindungen nutzen TLS. Nachrichten und Zwischenergebnisse zwischen den Nodes sind zusätzlich Ende-zu-Ende-verschlüsselt, sodass der Hub sie nicht lesen kann.',
+            hub: 'Der Hub hat nie Zugriff auf Patientendaten.',
+            privacy: 'Analysen können datenschutzfördernde Verfahren wie lokale Differential Privacy nutzen.',
+            access: 'Nutzende, Rollen und Berechtigungen werden je Organisation verwaltet. Das Starten von Analysen und das Einrichten von Datenquellen ist dem Personal des Standorts vorbehalten.',
+        },
+        limits: {
+            title: 'Grenzen',
+            body: 'Aggregation allein garantiert keine Anonymität. FLAME erzwingt nicht automatisch Mindestfallzahlen, k-Anonymitäts-Schwellen oder andere Ausgabeprüfungen. Ob die zurückgegebenen Ergebnisse angemessen sind, wird deshalb bei der Prüfung jeder Analyse bewertet.',
+        },
+        resources: {
+            title: 'Mehr erfahren',
+            docs: 'Dokumentation für Forschende und Standort-Administration',
+            code: 'Quellcode auf GitHub',
+            publications: 'Publikationen des PrivateAIM-Konsortiums',
+            predecessor: 'Das Vorgängerprojekt: Personal Health Train (PHT)',
         },
     })]),
 
@@ -122,7 +170,7 @@ export default defineLocale('de', [
 
     defineNamespace('partners', [defineTranslations({
         title: 'Unsere Partner',
-        description: 'Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:',
+        description: 'Insgesamt sind 15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:',
         subsection1: 'Koordination',
         subsection2: 'Projektpartner',
         subsection3: 'Assoziierte Partner',
@@ -156,6 +204,7 @@ export default defineLocale('de', [
         subtitle: 'Diese Website verwendet Cookies, um Ihr Browsing-Erlebnis zu verbessern und Analysen zur Website-Nutzung durchzuführen. Sie können selbst entscheiden, welche Cookies Sie zulassen möchten.\n',
         accept: 'Alle akzeptieren',
         deny: 'Nur notwendige',
+        customize: 'Anpassen',
         preference: 'Auswahl speichern',
         setting: {
             required: {
@@ -164,7 +213,7 @@ export default defineLocale('de', [
             },
             analysis: {
                 title: 'Analyse-Cookies',
-                description: 'Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen anonymisiert zu zählen, damit wir die Leistung unserer Website messen und verbessern können.',
+                description: 'Mit diesen optionalen Cookies nutzen wir Google Analytics, um Besuche, Verkehrsquellen und die Nutzung unserer Website zu messen. Details finden Sie in unserer Datenschutzerklärung.',
             },
         },
     })]),
@@ -172,6 +221,7 @@ export default defineLocale('de', [
     defineNamespace('team', [defineTranslations({
         title: 'Unser Team',
         subtitle: 'Lernen Sie die engagierten Personen kennen, die an der Weiterentwicklung datenschutzfreundlicher Analytik in der Medizin arbeiten.',
+        core: 'Kernteam',
         leadership: 'Projektleitung',
         alumni: 'Alumni',
         alumniNote: 'Wir danken unseren Alumni für ihre wertvollen Beiträge zum Projekt.',
@@ -188,8 +238,8 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('news', [defineTranslations({
-        title: 'News',
-        subtitle: 'Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.',
+        title: 'Neuigkeiten',
+        subtitle: 'Hier finden Sie eine Übersicht der aktuellen Neuigkeiten rund um PrivateAIM.',
         noItems: 'Keine Neuigkeiten für dieses Jahr verfügbar.',
     })]),
 

@@ -1,8 +1,9 @@
 /// <reference types="vite/client" />
 
-import type { ITranslate, ITranslateT } from '@ilingo/vue';
+import type { ITranslateT } from '@ilingo/vue';
+import type { ITranslate } from '@/i18n';
 
-// Make the globally-registered @ilingo/vue components known to vue-tsc so they
+// Make the globally-registered translation components known to vue-tsc so they
 // can be used in templates without a per-component import (they are registered
 // app-wide by `installTranslator`).
 declare module 'vue' {

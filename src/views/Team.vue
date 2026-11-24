@@ -8,6 +8,9 @@
         <div class="team-content">
             <!-- Team Members -->
             <section class="team-section">
+                <h2 class="section-heading">
+                    <ITranslate path="team.core" />
+                </h2>
                 <div class="team-grid">
                     <a
                         v-for="member in team"
@@ -18,8 +21,10 @@
                         class="member-card"
                     >
                         <img
-                            :src="`https://github.com/${member.github}.png`"
+                            :src="`/images/avatars/${member.github}.png`"
                             :alt="member.name"
+                            width="64"
+                            height="64"
                             class="member-photo"
                             loading="lazy"
                         >
@@ -70,8 +75,10 @@
                         class="member-card"
                     >
                         <img
-                            :src="`https://github.com/${member.github}.png`"
+                            :src="`/images/avatars/${member.github}.png`"
                             :alt="member.name"
+                            width="64"
+                            height="64"
                             class="member-photo"
                             loading="lazy"
                         >
@@ -108,11 +115,14 @@
                         :key="member.name"
                         :href="`https://github.com/${member.github}`"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="member-card member-card--alumni"
                     >
                         <img
-                            :src="`https://github.com/${member.github}.png`"
+                            :src="`/images/avatars/${member.github}.png`"
                             :alt="member.name"
+                            width="64"
+                            height="64"
                             class="member-photo"
                             loading="lazy"
                         >
@@ -185,7 +195,7 @@ const team: TeamMember[] = [
         github: 'Nightknight3000',
     },
     {
-        name: 'Mehrshad',
+        name: 'Mehrshad Jaberansary',
         role: 'Developer & Analyst',
         github: 'Mehrsary',
     },
@@ -198,11 +208,6 @@ const team: TeamMember[] = [
         name: 'Paul Brassel',
         role: 'Developer',
         github: 'pbrassel',
-    },
-    {
-        name: 'Hammam Abu Attieh',
-        role: 'Privacy Engineer',
-        github: 'AbuAttieh',
     },
     {
         name: 'Mehmed Halilovic',
@@ -300,6 +305,11 @@ const leadership: TeamMember[] = [
 ];
 
 const alumni: TeamMember[] = [
+    {
+        name: 'Hammam Abu Attieh',
+        role: 'Privacy Engineer',
+        github: 'AbuAttieh',
+    },
     {
         name: 'Maximilian Jugl',
         role: 'Former Node Lead & Developer',

@@ -1,20 +1,11 @@
-import { createApp } from 'vue';
+import { ViteSSG } from 'vite-ssg';
 import App from './App.vue';
-import router from './router';
-import { installTranslator } from './i18n';
+import { installRouterHooks, routes, scrollBehavior } from './router';
+import { appLocale, installTranslator } from './i18n';
 import './assets/fonts.css';
 import './assets/dark-mode.css';
 
-const app = createApp(App);
-
-app.use(router);
-
-const redirectPath = sessionStorage.getItem('redirect-path');
-if (redirectPath) {
-    sessionStorage.removeItem('redirect-path');
-    router.replace(redirectPath);
-}
-
-installTranslator(app);
-
-app.mount('#app');
+export const createApp = ViteSSG(App, { routes, scrollBehavior }, ({ app, router }) => {
+    installTranslator(app);
+    installRouterHooks(router, appLocale(app));
+});

@@ -19,20 +19,30 @@
                 <div class="news-items">
                     <div
                         v-for="(newsItem, index) in getNewsItemsByYear(year)"
+                        :id="anchorFor(newsItem)"
                         :key="index"
                         class="news-item"
                     >
                         <div class="news-details">
-                            <button
-                                class="news-summary"
-                                :class="{ open: openKey === `${year}-${index}` }"
-                                @click="toggle(`${year}-${index}`)"
-                            >
-                                <span class="news-date">{{ newsItem.date }}</span>
-                                <span class="news-title">{{ newsItem.title }}</span>
-                            </button>
+                            <h3 class="news-heading">
+                                <button
+                                    type="button"
+                                    class="news-summary"
+                                    :class="{ open: openKey === `${year}-${index}` }"
+                                    :aria-expanded="openKey === `${year}-${index}`"
+                                    :aria-controls="`${anchorFor(newsItem)}-content`"
+                                    @click="toggle(`${year}-${index}`)"
+                                >
+                                    <time
+                                        class="news-date"
+                                        :datetime="isoDate(newsItem.date)"
+                                    >{{ newsItem.date }}</time>
+                                    <span class="news-title">{{ newsItem.title }}</span>
+                                </button>
+                            </h3>
                             <div
-                                v-if="openKey === `${year}-${index}`"
+                                v-show="openKey === `${year}-${index}`"
+                                :id="`${anchorFor(newsItem)}-content`"
                                 class="news-detail-content"
                             >
                                 <p v-html="newsItem.content" />
@@ -45,6 +55,7 @@
                                         :key="imgIndex"
                                         :src="getImageUrl(image)"
                                         :alt="newsItem.title"
+                                        loading="lazy"
                                         class="news-image"
                                     >
                                 </div>
@@ -58,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
 import { useLocale, useTranslation } from '@/i18n';
 import { type NewsEntry, newsForLocale } from '@/data/news';
@@ -84,9 +95,54 @@ const getImageUrl = (imagePath: string): string => `/images/news/${imagePath}`;
 // Function to get news items for a specific year
 const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? [];
 
+/** Start date of a display date such as `19-22/05/2026` as ISO `2026-05-19`. */
+function isoDate(date: string): string | undefined {
+    const match = date.match(/^(\d{1,2})(?:-\d{1,2})?\/(\d{1,2})\/(\d{4})$/);
+    if (!match) {
+        return undefined;
+    }
+    const [, day, month, year] = match;
+    return `${year}-${month!.padStart(2, '0')}-${day!.padStart(2, '0')}`;
+}
+
+/** Stable anchor per entry, e.g. #news-2026-05-19-mie-2026 */
+function anchorFor(item: NewsEntry): string {
+    const slug = item.title
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+        .slice(0, 40)
+        .replace(/-$/, '');
+    return `news-${isoDate(item.date) ?? item.date}-${slug}`;
+}
+
+// Open the entry a link points to (/news#news-…)
+onMounted(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) {
+        return;
+    }
+    for (const year of years.value) {
+        const index = getNewsItemsByYear(year).findIndex((item) => anchorFor(item) === id);
+        if (index !== -1) {
+            openKey.value = `${year}-${index}`;
+            document.getElementById(id)?.scrollIntoView();
+            return;
+        }
+    }
+});
+
 </script>
 
 <style scoped>
+.news-heading {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 .news-container {
     width: 100%;
 }

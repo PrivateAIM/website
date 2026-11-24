@@ -31,16 +31,22 @@
                         class="publication-item"
                     >
                         <div class="publication-details">
-                            <button
-                                class="publication-summary"
-                                :class="{ open: openKey === `${year}-${index}` }"
-                                @click="toggle(`${year}-${index}`)"
-                            >
-                                <span class="publication-title">{{ publication.title }}</span>
-                                <span class="publication-citation">{{ publication.citation }}</span>
-                            </button>
+                            <h3 class="publication-heading">
+                                <button
+                                    type="button"
+                                    class="publication-summary"
+                                    :class="{ open: openKey === `${year}-${index}` }"
+                                    :aria-expanded="openKey === `${year}-${index}`"
+                                    :aria-controls="`publication-${year}-${index}`"
+                                    @click="toggle(`${year}-${index}`)"
+                                >
+                                    <span class="publication-title">{{ publication.title }}</span>
+                                    <span class="publication-citation">{{ publication.citation }}</span>
+                                </button>
+                            </h3>
                             <div
-                                v-if="openKey === `${year}-${index}`"
+                                v-show="openKey === `${year}-${index}`"
+                                :id="`publication-${year}-${index}`"
                                 class="publication-detail-content"
                             >
                                 <div class="publication-authors">
@@ -61,6 +67,8 @@
                 </div>
             </div>
 
+            <JsonLd :nodes="[publicationList]" />
+
             <div
                 v-if="filteredPublications.length === 0"
                 class="no-results"
@@ -80,7 +88,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
+import JsonLd from '@/components/shared/JsonLd';
 import { useTranslation } from '@/i18n';
+import { SITE_URL } from '@/seo/structuredData';
 
 const title = useTranslation('publications.title');
 const subtitle = useTranslation('publications.subtitle');
@@ -355,6 +365,26 @@ const toggle = (key: string) => {
     openKey.value = openKey.value === key ? null : key;
 };
 
+// Linked publications as schema.org articles (authors stay text: no Person entities from "et al.")
+const publicationList = {
+    '@type': 'ItemList',
+    '@id': `${SITE_URL}/publications#list`,
+    name: 'PrivateAIM publications',
+    itemListElement: publications
+        .filter((publication) => publication.link)
+        .map((publication, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'ScholarlyArticle',
+                headline: publication.title.replace(/\.$/, ''),
+                datePublished: String(publication.year),
+                url: publication.link,
+                ...(publication.link?.includes('doi.org/') ? { sameAs: publication.link } : {}),
+            },
+        })),
+};
+
 const filteredPublications = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
     if (!query) return publications;
@@ -373,6 +403,12 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 </script>
 
 <style scoped>
+.publication-heading {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 .publications-container {
     width: 100%;
 }

@@ -23,10 +23,13 @@ jobs:
             -   name: Install
                 uses: ./.github/actions/install
                 with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
+                    node-version: ${{ env.NODE_VERSION }}
 
             -   name: Build
                 uses: ./.github/actions/build
+
+            -   name: Check build output
+                run: npm run check-dist
     lint:
         runs-on: ubuntu-latest
         needs:
@@ -37,7 +40,7 @@ jobs:
             -   name: Install
                 uses: ./.github/actions/install
                 with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
+                    node-version: ${{ env.NODE_VERSION }}
 
             -   name: Build
                 uses: ./.github/actions/build

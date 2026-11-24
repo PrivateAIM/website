@@ -6,7 +6,9 @@
         "dev": "vite",
         "build": "run-p type-check build-only",
         "preview": "vite preview",
-        "build-only": "vite build",
+        "build-only": "vite-ssg build",
+        "check-dist": "node scripts/check-dist.mjs",
+        "check-links": "node scripts/check-links.mjs",
         "type-check": "vue-tsc --build --noEmit",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
@@ -41,6 +43,7 @@
         "typescript-eslint": "^8.61.1",
         "vite": "^6.4.5",
         "vite-plugin-vue-devtools": "^7.7.6",
+        "vite-ssg": "^28.3.0",
         "vue-tsc": "^2.2.10"
     }
 }

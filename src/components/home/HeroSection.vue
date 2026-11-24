@@ -10,16 +10,14 @@
                 </p>
 
                 <div class="hero-cta">
-                    <a
-                        href="https://docs.privateaim.net/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <router-link
+                        :to="localePath('/flame')"
                         class="primary-button"
                     >
                         <ITranslate path="home.hero.explorePlatform" />
-                    </a>
+                    </router-link>
                     <router-link
-                        to="/partners"
+                        :to="localePath('/partners')"
                         class="secondary-button"
                     >
                         <ITranslate path="home.hero.joinNetwork" />
@@ -30,7 +28,10 @@
             <div class="hero-visual">
                 <img
                     src="/images/home/server-analysis.svg"
-                    alt="Server Analysis Graphic"
+                    alt="Illustration of an analysis running on servers at several sites"
+                    width="2500"
+                    height="2500"
+                    fetchpriority="high"
                     class="hero-graphic"
                 >
             </div>
@@ -51,6 +52,12 @@
         </div>
     </section>
 </template>
+
+<script setup lang="ts">
+import { useLocalePath } from '@/i18n';
+
+const localePath = useLocalePath();
+</script>
 
 <style scoped>
 .hero-section {
@@ -201,9 +208,9 @@
     align-items: center;
   }
 
+  /* Text and calls to action before the illustration */
   .hero-visual {
     height: 300px;
-    order: -1;
   }
 
   .hero-title {
@@ -226,6 +233,7 @@
   .hero-visual {
       position: relative;
       width: 100%;
+      height: 220px;
   }
 
   .hero-title {

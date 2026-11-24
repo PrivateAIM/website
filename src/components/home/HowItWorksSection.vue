@@ -37,17 +37,21 @@
         <div class="platform-cta">
             <h3><ITranslate path="home.howItWorks.experienceFlame" /></h3>
             <p><ITranslate path="home.howItWorks.flamePlatform" /></p>
-            <a
-                href="https://docs.privateaim.net/"
-                target="_blank"
-                rel="noopener noreferrer"
+            <router-link
+                :to="localePath('/flame')"
                 class="cta-button primary"
             >
                 <ITranslate path="home.howItWorks.explorePlatform" />
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { useLocalePath } from '@/i18n';
+
+const localePath = useLocalePath();
+</script>
 
 <style scoped>
 .how-it-works {

@@ -7,13 +7,15 @@
                 <div class="partner-logo">
                     <img
                         loading="lazy"
-                        src="/images/partners/UKT.png"
+                        decoding="async"
+                        src="/images/partners/UKT.webp"
                         alt="University Hospital Tübingen"
                     >
                 </div>
                 <div class="partner-logo">
                     <img
                         loading="lazy"
+                        decoding="async"
                         src="/images/partners/CHARITE.svg"
                         alt="Charité Berlin"
                     >
@@ -21,20 +23,23 @@
                 <div class="partner-logo">
                     <img
                         loading="lazy"
+                        decoding="async"
                         src="/images/partners/TUM.svg"
-                        alt="TUM Munich"
+                        alt="TUM Klinikum Rechts der Isar"
                     >
                 </div>
                 <div class="partner-logo">
                     <img
                         loading="lazy"
-                        src="/images/partners/UKHD.png"
+                        decoding="async"
+                        src="/images/partners/UKHD.webp"
                         alt="University Hospital Heidelberg"
                     >
                 </div>
                 <div class="partner-logo">
                     <img
                         loading="lazy"
+                        decoding="async"
                         src="/images/partners/UKER.svg"
                         alt="University Hospital Erlangen"
                     >
@@ -42,28 +47,31 @@
                 <div class="partner-logo">
                     <img
                         loading="lazy"
-                        src="/images/partners/UKL.png"
+                        decoding="async"
+                        src="/images/partners/UKL.webp"
                         alt="University Hospital Leipzig"
                     >
                 </div>
                 <div class="partner-logo">
                     <img
                         loading="lazy"
-                        src="/images/partners/UKFR.png"
+                        decoding="async"
+                        src="/images/partners/UKFR.webp"
                         alt="University Hospital Freiburg"
                     >
                 </div>
                 <div class="partner-logo">
                     <img
                         loading="lazy"
-                        src="/images/partners/LMU.png"
+                        decoding="async"
+                        src="/images/partners/LMU.webp"
                         alt="LMU Munich"
                     >
                 </div>
             </div>
             <div class="partner-cta">
                 <router-link
-                    to="/partners"
+                    :to="localePath('/partners')"
                     class="text-link"
                 >
                     <ITranslate path="home.partners.viewAll" /> →
@@ -74,6 +82,9 @@
 </template>
 
 <script setup lang="ts">
+import { useLocalePath } from '@/i18n';
+
+const localePath = useLocalePath();
 </script>
 <style scoped>
 .partners-section {
@@ -124,6 +135,8 @@ h2 {
 }
 
 .text-link {
+  display: inline-block;
+  padding-block: 5px;
   color: var(--primary-color, #3182ce);
   text-decoration: none;
   font-weight: 500;

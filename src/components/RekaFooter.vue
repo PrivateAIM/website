@@ -3,7 +3,7 @@
         <div class="footer-container">
             <div class="footer-left">
                 <router-link
-                    to="/"
+                    :to="localePath('/')"
                     class="logo"
                 >
                     <img
@@ -47,7 +47,7 @@
                     <router-link
                         v-for="reference in referenceLinks"
                         :key="reference.slug"
-                        :to="`/references/${reference.slug}`"
+                        :to="localePath(`/references/${reference.slug}`)"
                         class="footer-link"
                     >
                         {{ reference.name }}
@@ -59,13 +59,13 @@
                         <ITranslate path="footer.legal" />
                     </div>
                     <router-link
-                        to="/imprint"
+                        :to="localePath('/imprint')"
                         class="footer-link"
                     >
                         <ITranslate path="footer.imprint" />
                     </router-link>
                     <router-link
-                        to="/privacy"
+                        :to="localePath('/privacy')"
                         class="footer-link"
                     >
                         <ITranslate path="footer.privacy" />
@@ -81,13 +81,15 @@
                         rel="noopener noreferrer"
                     >
                         <img
+                            loading="lazy"
                             src="/images/BMFTR-dark.svg"
-                            alt="Sponsor Logo Dark"
+                            alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
                             class="sponsor-logo sponsor-logo-dark"
                         >
                         <img
+                            loading="lazy"
                             src="/images/BMFTR-light.svg"
-                            alt="Sponsor Logo Light"
+                            alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
                             class="sponsor-logo sponsor-logo-light"
                         >
                     </a>
@@ -108,8 +110,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useLocale } from '@/i18n';
+import { useLocale, useLocalePath } from '@/i18n';
 import { referenceContentForLocale, references } from '@/data/references';
+
+const localePath = useLocalePath();
 
 // Dynamic current year for copyright
 const currentYear = computed(() => new Date().getFullYear());
@@ -205,6 +209,7 @@ const referenceLinks = computed(() => references.map((project) => ({
   transition: color 0.2s;
   display: inline-flex;
   align-items: center;
+  min-height: 24px;
 }
 
 .footer-link:hover {

@@ -2,6 +2,7 @@
     "extends": "@tada5hi/tsconfig",
     "include": [
         "vite.config.*",
+        "scripts/**/*.ts",
         "vitest.config.*",
         "cypress.config.*",
         "nightwatch.conf.*",

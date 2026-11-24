@@ -3,7 +3,7 @@
         <div class="header-container">
             <div class="logo-section">
                 <router-link
-                    to="/"
+                    :to="localePath('/')"
                     class="logo"
                 >
                     <img
@@ -22,36 +22,42 @@
                 aria-label="Main navigation"
             >
                 <router-link
-                    to="/"
+                    :to="localePath('/')"
                     class="nav-item"
                     @click="closeMobileMenu"
                 >
                     <ITranslate path="navigation.home" />
                 </router-link>
                 <router-link
-                    to="/news"
+                    :to="localePath('/flame')"
+                    class="nav-item"
+                    @click="closeMobileMenu"
+                >
+                    <ITranslate path="navigation.flame" />
+                </router-link>
+                <router-link
+                    :to="localePath('/news')"
                     class="nav-item"
                     @click="closeMobileMenu"
                 >
                     <ITranslate path="navigation.news" />
                 </router-link>
-                <!-- <router-link to="/blog" class="nav-item" @click="closeMobileMenu"><ITranslate path="navigation.blog" /></router-link>-->
                 <router-link
-                    to="/publications"
+                    :to="localePath('/publications')"
                     class="nav-item"
                     @click="closeMobileMenu"
                 >
                     <ITranslate path="navigation.publications" />
                 </router-link>
                 <router-link
-                    to="/team"
+                    :to="localePath('/team')"
                     class="nav-item"
                     @click="closeMobileMenu"
                 >
                     <ITranslate path="navigation.team" />
                 </router-link>
                 <router-link
-                    to="/partners"
+                    :to="localePath('/partners')"
                     class="nav-item"
                     @click="closeMobileMenu"
                 >
@@ -69,11 +75,13 @@
                     class="github-link"
                 >
                     <img
+                        loading="lazy"
                         src="/images/icons/github-mark.svg"
                         class="icon-light logo-light"
                         alt="GitHub"
                     >
                     <img
+                        loading="lazy"
                         src="/images/icons/github-mark-white.svg"
                         class="icon-dark logo-dark"
                         alt="GitHub"
@@ -86,11 +94,13 @@
                     class="github-link"
                 >
                     <img
+                        loading="lazy"
                         src="/images/icons/discord-mark.svg"
                         class="icon-light logo-light"
                         alt="Discord"
                     >
                     <img
+                        loading="lazy"
                         src="/images/icons/discord-mark-white.svg"
                         class="icon-dark logo-dark"
                         alt="Discord"
@@ -116,8 +126,11 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { useLocalePath } from '@/i18n';
 import LanguageSelector from './LanguageSelector.vue';
 import ThemeToggle from './ThemeToggle.vue';
+
+const localePath = useLocalePath();
 
 // Mobile Menu State
 const isMobileMenuOpen = ref(false);
@@ -272,7 +285,10 @@ const closeMobileMenu = () => {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  /* 54x44px touch target around the 30x20px icon, without moving it */
+  box-sizing: content-box;
+  padding: 12px;
+  margin: -12px;
   z-index: 20;
   flex-shrink: 0;
 }
