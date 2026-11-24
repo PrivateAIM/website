@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
 import type {} from 'vite-ssg';
-import { avatarDevServer, downloadAvatars } from './scripts/avatars';
+import { avatarDevServer, downloadAvatars } from './scripts/avatars.ts';
 import {
     applyPageHead,
     moveLocaleHomes,
@@ -12,8 +12,8 @@ import {
     prerenderPaths,
     writeLegacyRedirects,
     writeSitemap,
-} from './scripts/prerender';
-import { thumbnailDevServer, writeThumbnails } from './scripts/thumbnails';
+} from './scripts/prerender.ts';
+import { thumbnailDevServer, writeThumbnails } from './scripts/thumbnails.ts';
 
 // https://vite.dev/config/
 export default defineConfig({

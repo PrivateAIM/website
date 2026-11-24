@@ -2,7 +2,7 @@ import { mkdir, readdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import sharp from 'sharp';
 import type { Plugin } from 'vite';
-import { THUMBNAIL_WIDTHS } from '../src/utils/thumbnail';
+import { THUMBNAIL_WIDTHS } from '../src/utils/thumbnail.ts';
 
 /**
  * Downscaled copies of the news photos, served as /images/thumbs/<width>/<path>.webp

@@ -35,7 +35,7 @@ async function status(url) {
     }
 }
 
-const results = await Promise.all([...urls.keys()].map(async (url) => [url, await status(url)]));
+const results = await Promise.all(urls.keys().map(async (url) => [url, await status(url)]).toArray());
 // 401/403/429 usually mean bot protection, not a dead link
 const blocked = results.filter(([, code]) => [401, 403, 429].includes(code));
 const broken = results.filter(([, code]) => !(typeof code === 'number' && (code < 400 || [401, 403, 429].includes(code))));

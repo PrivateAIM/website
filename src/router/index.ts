@@ -292,7 +292,7 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
 
         const base = stripLocale(to.path);
         const setAlternate = (hreflang: string, path: string) => {
-            document.querySelector(`link[hreflang="${hreflang}"]`)?.setAttribute('href', `https://privateaim.de${path}`);
+            document.querySelector(`link[hreflang="${CSS.escape(hreflang)}"]`)?.setAttribute('href', `https://privateaim.de${path}`);
         };
         for (const { code } of LOCALES) {
             setAlternate(code, localePath(base, code));
