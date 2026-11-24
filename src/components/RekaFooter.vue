@@ -81,11 +81,13 @@
                         rel="noopener noreferrer"
                     >
                         <img
+                            loading="lazy"
                             src="/images/BMFTR-dark.svg"
                             alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
                             class="sponsor-logo sponsor-logo-dark"
                         >
                         <img
+                            loading="lazy"
                             src="/images/BMFTR-light.svg"
                             alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
                             class="sponsor-logo sponsor-logo-light"

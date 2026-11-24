@@ -222,7 +222,6 @@ If you wish to view the cookies stored in your browser, change your cookie setti
 - **Chrome:** [Delete, enable, and manage cookies in Chrome](https://support.google.com/chrome/answer/95647?hl=en)  
 - **Safari:** [Manage cookies and website data with Safari](https://support.apple.com/en-us/guide/safari/sfri11471/mac)  
 - **Firefox:** [Delete cookies to remove data that websites have stored on your computer](https://support.mozilla.org/en-US/kb/delete-cookies-remove-data-websites-stored-your-computer)  
-- **Internet Explorer:** [Delete and manage cookies](https://support.microsoft.com/en-us/topic/manage-cookies-in-internet-explorer-9c3e70f9-41b1-74d8-b0d0-841e0b68e4c3)  
 - **Microsoft Edge:** [Delete and manage cookies](https://support.microsoft.com/en-us/topic/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)  
 
 If you do not wish to have any cookies at all, you can configure your browser to always notify you before a cookie is set, allowing you to decide individually.

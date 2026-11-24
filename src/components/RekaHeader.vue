@@ -75,11 +75,13 @@
                     class="github-link"
                 >
                     <img
+                        loading="lazy"
                         src="/images/icons/github-mark.svg"
                         class="icon-light logo-light"
                         alt="GitHub"
                     >
                     <img
+                        loading="lazy"
                         src="/images/icons/github-mark-white.svg"
                         class="icon-dark logo-dark"
                         alt="GitHub"
@@ -92,11 +94,13 @@
                     class="github-link"
                 >
                     <img
+                        loading="lazy"
                         src="/images/icons/discord-mark.svg"
                         class="icon-light logo-light"
                         alt="Discord"
                     >
                     <img
+                        loading="lazy"
                         src="/images/icons/discord-mark-white.svg"
                         class="icon-dark logo-dark"
                         alt="Discord"

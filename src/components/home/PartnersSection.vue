@@ -8,7 +8,7 @@
                     <img
                         loading="lazy"
                         decoding="async"
-                        src="/images/partners/UKT.png"
+                        src="/images/partners/UKT.webp"
                         alt="University Hospital Tübingen"
                     >
                 </div>
@@ -32,7 +32,7 @@
                     <img
                         loading="lazy"
                         decoding="async"
-                        src="/images/partners/UKHD.png"
+                        src="/images/partners/UKHD.webp"
                         alt="University Hospital Heidelberg"
                     >
                 </div>
@@ -48,7 +48,7 @@
                     <img
                         loading="lazy"
                         decoding="async"
-                        src="/images/partners/UKL.png"
+                        src="/images/partners/UKL.webp"
                         alt="University Hospital Leipzig"
                     >
                 </div>
@@ -56,7 +56,7 @@
                     <img
                         loading="lazy"
                         decoding="async"
-                        src="/images/partners/UKFR.png"
+                        src="/images/partners/UKFR.webp"
                         alt="University Hospital Freiburg"
                     >
                 </div>
@@ -64,7 +64,7 @@
                     <img
                         loading="lazy"
                         decoding="async"
-                        src="/images/partners/LMU.png"
+                        src="/images/partners/LMU.webp"
                         alt="LMU Munich"
                     >
                 </div>

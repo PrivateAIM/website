@@ -2,6 +2,7 @@
 import HeroSection from '../components/home/HeroSection.vue';
 import IntroductionSection from '../components/home/IntroductionSection.vue';
 import MissionSection from '../components/home/MissionSection.vue';
+import ProjectFacts from '../components/home/ProjectFacts.vue';
 import HowItWorksSection from '../components/home/HowItWorksSection.vue';
 import VisionSection from '../components/home/VisionSection.vue';
 import PartnersSection from '../components/home/PartnersSection.vue';
@@ -14,6 +15,7 @@ import PartnersSection from '../components/home/PartnersSection.vue';
             <div class="content-container">
                 <IntroductionSection />
                 <MissionSection />
+                <ProjectFacts />
                 <HowItWorksSection />
                 <VisionSection />
             </div>

@@ -49,11 +49,24 @@ export default defineLocale('de', [
             flamePlatform: 'Unsere Plattform für die sichere verteilte Analyse medizinischer Daten',
             explorePlatform: 'Plattform erkunden',
         },
+        facts: {
+            title: 'Das Projekt im Überblick',
+            funding: 'Förderung',
+            fundingValue: 'Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)',
+            network: 'Netzwerk',
+            networkValue: '15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII)',
+            platform: 'Plattform',
+            platformValue: 'FLAME, im produktiven Einsatz',
+            end: 'Reguläres Projektende',
+            endValue: '31. März 2027',
+            code: 'Code',
+            codeValue: 'Open Source auf GitHub',
+        },
         vision: {
             title: 'Unsere Vision',
             paragraph1: 'Wir stellen uns eine Zukunft vor, in der KI-gestützte medizinische Forschung nahtlos mit Datenschutz-by-Design-Prinzipien integriert ist. PrivateAIM setzt neue Maßstäbe für sichere, föderierte medizinische KI, indem es ein Kooperationsnetzwerk aus Krankenhäusern, Forschern und Patienten fördert.',
             paragraph2: 'PrivateAIM bindet Patienten, [Partner](/partners:internal) und die Öffentlichkeit aktiv durch Workshops, Bildungsmaterialien und offenen Dialog ein, um breite Akzeptanz und Transparenz zu gewährleisten. Wir wollen KI und föderiertes Lernen entmystifizieren und ihre Schutzmaßnahmen, Grenzen und Vorteile verständlich machen.',
-            paragraph3: 'Während der Projektlaufzeit werden PrivateAIM und [FLAME](https://docs.privateaim.net:external) dem [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bieten. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.',
+            paragraph3: 'Mit [FLAME](/flame:internal) stellt PrivateAIM der [MII](https://www.medizininformatik-initiative.de/de/start:external) eine sichere und skalierbare Lösung für die einrichtungsübergreifende Analyse medizinischer Daten bereit, die produktiv im Einsatz ist. Wir gestalten die Zukunft einer vertrauenswürdigen und wirkungsvollen medizinischen Forschung, indem wir KI-gesteuerte Innovationen im Gesundheitswesen ermöglichen und gleichzeitig die Privatsphäre der Patienten schützen.',
             contribute: 'Open-Source-Beiträge',
             explanation: 'Erkunden Sie unsere Code-Repositories und tragen Sie zur Zukunft der datenschutzfreundlichen Forschung medizinischer Daten bei.',
             github: 'GitHub öffnen',
@@ -72,6 +85,7 @@ export default defineLocale('de', [
     defineNamespace('flame', [defineTranslations({
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
+        status: 'FLAME ist im produktiven Einsatz.',
         lead: 'Mit FLAME können Forschende medizinische Daten mehrerer Einrichtungen analysieren, ohne dass die Daten diese jemals verlassen. Statt Daten zentral zu sammeln, bringt FLAME den Analysecode zu den Daten. Zurückgegeben werden nur aggregierte Ergebnisse.',
         architecture: {
             title: 'So funktioniert FLAME',
@@ -156,7 +170,7 @@ export default defineLocale('de', [
 
     defineNamespace('partners', [defineTranslations({
         title: 'Unsere Partner',
-        description: 'Insgesamt sind 17 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:',
+        description: 'Insgesamt sind 15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:',
         subsection1: 'Koordination',
         subsection2: 'Projektpartner',
         subsection3: 'Assoziierte Partner',

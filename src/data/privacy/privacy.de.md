@@ -206,7 +206,6 @@ Wenn Sie feststellen möchten, welche Cookies in Ihrem Browser gespeichert wurde
 **Chrome:** [Cookies in Chrome löschen, aktivieren und verwalten](https://support.google.com/chrome/answer/95647?hl=de)  
 **Safari:** [Verwalten von Cookies und Websitedaten mit Safari](https://support.apple.com/de-de/guide/safari/sfri11471/mac)  
 **Firefox:** [Cookies löschen, um Daten zu entfernen, die Websites auf Ihrem Computer abgelegt haben](https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen)  
-**Internet Explorer:** [Löschen und Verwalten von Cookies](https://support.microsoft.com/de-de/windows/verwalten-von-cookies-in-microsoft-edge-anzeigen-zulassen-blockieren-l%C3%B6schen-und-verwenden-168dab11-0753-043d-7c16-ede5947fc64d)  
 **Microsoft Edge:** [Löschen und Verwalten von Cookies](https://support.microsoft.com/de-de/windows/verwalten-von-cookies-in-microsoft-edge-anzeigen-zulassen-blockieren-l%C3%B6schen-und-verwenden-168dab11-0753-043d-7c16-ede5947fc64d)  
 
 Falls Sie grundsätzlich keine Cookies haben möchten, können Sie Ihren Browser so einrichten, dass er Sie immer informiert, wenn ein Cookie gesetzt werden soll. So können Sie bei jedem einzelnen Cookie entscheiden, ob Sie das Cookie erlauben oder nicht. Die Vorgehensweise ist je nach Browser verschieden. Am besten suchen Sie die Anleitung in Google mit dem Suchbegriff "Cookies löschen Chrome" oder "Cookies deaktivieren Chrome", falls Sie den Chrome-Browser verwenden.

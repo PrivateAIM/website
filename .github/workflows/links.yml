@@ -1,0 +1,26 @@
+name: Links
+
+on:
+    schedule:
+        -   cron: '23 5 * * 1'
+    workflow_dispatch:
+
+env:
+    NODE_VERSION: 22
+
+jobs:
+    links:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v7
+
+            -   name: Install
+                uses: ./.github/actions/install
+                with:
+                    node-version: ${{ env.NODE_VERSION }}
+
+            -   name: Build
+                run: npm run build-only
+
+            -   name: Check external links
+                run: npm run check-links

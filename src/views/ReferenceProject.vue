@@ -27,14 +27,12 @@
                     class="successor-body markdown-body"
                     v-html="renderMarkdown(content.successorNote)"
                 />
-                <a
-                    href="https://docs.privateaim.net/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <router-link
+                    :to="localePath('/flame')"
                     class="successor-button"
                 >
                     <ITranslate path="references.learnMore" /> <span aria-hidden="true">→</span>
-                </a>
+                </router-link>
             </aside>
 
             <section
@@ -149,12 +147,13 @@ import { useRoute } from 'vue-router';
 import { marked } from 'marked';
 import PageHeader from '@/components/PageHeader.vue';
 import NotFound from '@/views/NotFound.vue';
-import { useLocale, useTranslation } from '@/i18n';
+import { useLocale, useLocalePath, useTranslation } from '@/i18n';
 import { findReference, referenceContentForLocale } from '@/data/references';
 
 const props = defineProps<{ slug: string }>();
 
 const locale = useLocale();
+const localePath = useLocalePath();
 const route = useRoute();
 const successorHeading = useTranslation('references.successorHeading');
 const slidesLabel = useTranslation('references.slides');

@@ -35,7 +35,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKT.png"
+                                src="/images/partners/UKT.webp"
                                 alt="Universitätsklinikum Tübingen"
                             >
                         </div>
@@ -81,7 +81,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/LMU.png"
+                                src="/images/partners/LMU.webp"
                                 alt="Ludwig-Maximilians-Universität München"
                             >
                         </div>
@@ -100,7 +100,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/DKFZ.png"
+                                src="/images/partners/DKFZ.webp"
                                 alt="Deutsches Krebsforschungszentrum"
                             >
                         </div>
@@ -119,7 +119,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/EKUT.png"
+                                src="/images/partners/EKUT.webp"
                                 alt="Eberhard Karls Universität Tübingen"
                             >
                         </div>
@@ -138,7 +138,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/TMF.jpg"
+                                src="/images/partners/TMF.webp"
                                 alt="TMF"
                             >
                         </div>
@@ -195,7 +195,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKFR.png"
+                                src="/images/partners/UKFR.webp"
                                 alt="Universitätsklinikum Freiburg"
                             >
                         </div>
@@ -214,7 +214,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKHD.png"
+                                src="/images/partners/UKHD.webp"
                                 alt="Universitätsklinikum Heidelberg"
                             >
                         </div>
@@ -233,7 +233,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKK.png"
+                                src="/images/partners/UKK.webp"
                                 alt="Universitätsklinikum Köln"
                             >
                         </div>
@@ -252,7 +252,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKL.png"
+                                src="/images/partners/UKL.webp"
                                 alt="Universitätsklinikum Leipzig"
                             >
                         </div>
@@ -318,7 +318,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/IKIM.png"
+                                src="/images/partners/IKIM.webp"
                                 alt="University Hospital Essen"
                             >
                         </div>
@@ -337,7 +337,7 @@
                             <img
                                 loading="lazy"
                                 decoding="async"
-                                src="/images/partners/UKSH.png"
+                                src="/images/partners/UKSH.webp"
                                 alt="University Hospital Schleswig-Holstein"
                             >
                         </div>

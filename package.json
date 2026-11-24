@@ -8,6 +8,7 @@
         "preview": "vite preview",
         "build-only": "vite-ssg build",
         "check-dist": "node scripts/check-dist.mjs",
+        "check-links": "node scripts/check-links.mjs",
         "type-check": "vue-tsc --build --noEmit",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"

@@ -75,6 +75,12 @@ for (const file of htmlFiles) {
         if (pattern.test(html)) fail(`${file}: contains ${label}`);
     }
 }
+// llms.txt may only list pages that exist
+const llms = read(join(DIST, 'llms.txt'));
+for (const [, url] of llms.matchAll(/\]\((https:\/\/privateaim\.de[^)]*)\)/g)) {
+    if (!locs.includes(url)) fail(`llms.txt links ${url}, which is not in the sitemap`);
+}
+
 if (existsSync(join(DIST, 'blog')) || existsSync(join(DIST, 'blog.html'))) {
     fail('dist contains blog output');
 }

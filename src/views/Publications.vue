@@ -31,16 +31,22 @@
                         class="publication-item"
                     >
                         <div class="publication-details">
-                            <button
-                                class="publication-summary"
-                                :class="{ open: openKey === `${year}-${index}` }"
-                                @click="toggle(`${year}-${index}`)"
-                            >
-                                <span class="publication-title">{{ publication.title }}</span>
-                                <span class="publication-citation">{{ publication.citation }}</span>
-                            </button>
+                            <h3 class="publication-heading">
+                                <button
+                                    type="button"
+                                    class="publication-summary"
+                                    :class="{ open: openKey === `${year}-${index}` }"
+                                    :aria-expanded="openKey === `${year}-${index}`"
+                                    :aria-controls="`publication-${year}-${index}`"
+                                    @click="toggle(`${year}-${index}`)"
+                                >
+                                    <span class="publication-title">{{ publication.title }}</span>
+                                    <span class="publication-citation">{{ publication.citation }}</span>
+                                </button>
+                            </h3>
                             <div
                                 v-show="openKey === `${year}-${index}`"
+                                :id="`publication-${year}-${index}`"
                                 class="publication-detail-content"
                             >
                                 <div class="publication-authors">
@@ -397,6 +403,12 @@ const getFilteredPublicationsByYear = (year: number): Publication[] => filteredP
 </script>
 
 <style scoped>
+.publication-heading {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 .publications-container {
     width: 100%;
 }

@@ -48,3 +48,33 @@ jobs:
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./dist
+
+            # GitHub Pages publishes asynchronously, so retry for a few minutes
+            -   name: Check live site
+                run: |
+                    for attempt in $(seq 1 10); do
+                        failed=0
+                        for url in $(grep -o '<loc>[^<]*' dist/sitemap.xml | cut -c6-); do
+                            status=$(curl -s -o /dev/null -w '%{http_code}' "$url")
+                            if [ "$status" != 200 ]; then
+                                echo "$url: $status"
+                                failed=1
+                            fi
+                        done
+                        if [ "$failed" = 0 ]; then
+                            exit 0
+                        fi
+                        sleep 30
+                    done
+                    exit 1
+
+            # Tell Bing and other IndexNow engines about the pages; not for the daily rebuilds
+            -   name: Notify IndexNow
+                if: ${{ github.event_name == 'push' }}
+                continue-on-error: true
+                run: |
+                    urls=$(grep -o '<loc>[^<]*' dist/sitemap.xml | cut -c6- | jq -R . | jq -s -c .)
+                    curl -sS -X POST https://api.indexnow.org/indexnow \
+                        -H 'Content-Type: application/json; charset=utf-8' \
+                        -d "{\"host\":\"privateaim.de\",\"key\":\"c17504153cb57d9db689c4ad26e53916\",\"keyLocation\":\"https://privateaim.de/c17504153cb57d9db689c4ad26e53916.txt\",\"urlList\":$urls}" \
+                        -w 'IndexNow: %{http_code}\n'

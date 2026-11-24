@@ -6,6 +6,9 @@
         />
 
         <div class="flame-content">
+            <p class="flame-status">
+                <ITranslate path="flame.status" />
+            </p>
             <p class="flame-lead">
                 <ITranslate path="flame.lead" />
             </p>
@@ -106,6 +109,16 @@ const safeguards = ['review', 'isolation', 'encryption', 'hub', 'privacy', 'acce
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem 1rem;
+}
+
+.flame-status {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--tag-bg, #f0f4f8);
+    color: var(--primary-color, #3182ce);
+    font-weight: 600;
 }
 
 .flame-lead {

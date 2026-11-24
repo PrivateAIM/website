@@ -1,0 +1,21 @@
+# PrivateAIM
+
+> PrivateAIM (Privacy-Preserving Analytics in Medicine) is a consortium of 15 partners within Germany's Medical Informatics Initiative (MII), funded by the Federal Ministry of Research, Technology and Space (BMFTR) until 31 March 2027. It develops FLAME (Federated Learning and Analysis in Medicine), a platform in productive use that analyzes medical data across institutions: patient data stays at each site, only analysis code travels to the data, and only aggregated results are returned.
+
+## Pages
+
+- [FLAME](https://privateaim.de/flame): how the platform works, its safeguards and its limits
+- [Publications](https://privateaim.de/publications): publications and preprints of the consortium
+- [News](https://privateaim.de/news): events, workshops and project milestones
+- [Team](https://privateaim.de/team): the people behind PrivateAIM and FLAME
+- [Partners](https://privateaim.de/partners): participating university hospitals and institutions
+- [Personal Health Train (PHT)](https://privateaim.de/references/pht): the predecessor project
+
+## German
+
+- [Startseite](https://privateaim.de/de/): the German version of the site; every page is available under /de/
+
+## Optional
+
+- [FLAME documentation](https://docs.privateaim.net/): guides for researchers and site administrators
+- [Source code](https://github.com/PrivateAIM): FLAME repositories on GitHub

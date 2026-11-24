@@ -1,17 +1,18 @@
 import type { ReferenceProject } from '@/types/ReferenceProject';
 
 const MANIFESTO_URL = 'https://www.go-fair.org/wp-content/uploads/2019/05/Personal-Health-Train-Implementation-Network-Manifesto.pdf';
-const GO_FAIR_URL = 'https://www.go-fair.org/implementation-networks/overview/personal-health-train/';
+// Archived copies: the original pages are offline
+const GO_FAIR_URL = 'https://web.archive.org/web/20240425021138/https://www.go-fair.org/implementation-networks/overview/personal-health-train/';
 const GITHUB_URL = 'https://github.com/PHT-Medic';
-const DOCS_URL = 'https://pht-medic.github.io/documentation/';
+const DOCS_URL = 'https://web.archive.org/web/20220930215815/https://pht-medic.github.io/documentation/';
 const MII_URL = 'https://www.medizininformatik-initiative.de/en/about-initiative';
 
 const TALK_LINKS = {
     cord: 'https://docs.google.com/presentation/d/1CjFEUr07faHTNhVhcwDW-p1saVszcc3IkWS897Z-W-g/edit?usp=sharing',
     fairConvergence: 'https://drive.google.com/file/d/1_CjetwQB1uT7XgFyxLtg1xCUqVQCqSZS/view?usp=sharing',
     miiWorkshop: 'https://drive.google.com/file/d/1p3jC132ftYgQRgyiL_S8QzCxvwFqV-r8/view?usp=sharing',
-    difuture2019: 'https://difuture.de/wp-content/uploads/2019/10/Marius-Herr_DIFUTURE_Symposium_exported_High_quality.pdf',
-    difuture2018: 'https://difuture.de/wp-content/uploads/2018/12/dhs_05_oliver_kohlbacher.pdf',
+    difuture2019: 'https://web.archive.org/web/20240421211910/https://difuture.de/wp-content/uploads/2019/10/Marius-Herr_DIFUTURE_Symposium_exported_High_quality.pdf',
+    difuture2018: 'https://web.archive.org/web/20240421211900/https://difuture.de/wp-content/uploads/2018/12/dhs_05_oliver_kohlbacher.pdf',
 };
 
 const pht: ReferenceProject = {

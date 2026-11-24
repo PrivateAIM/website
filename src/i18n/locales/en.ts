@@ -55,11 +55,24 @@ export default defineLocale('en', [
             flamePlatform: 'Our platform for secure distributed medical data analysis',
             explorePlatform: 'Explore the Platform',
         },
+        facts: {
+            title: 'Project at a Glance',
+            funding: 'Funding',
+            fundingValue: 'Federal Ministry of Research, Technology and Space (BMFTR)',
+            network: 'Network',
+            networkValue: '15 partners from all four consortia of the Medical Informatics Initiative (MII)',
+            platform: 'Platform',
+            platformValue: 'FLAME, in productive use',
+            end: 'Regular project end',
+            endValue: '31 March 2027',
+            code: 'Code',
+            codeValue: 'Open source on GitHub',
+        },
         vision: {
             title: 'Our Vision',
             paragraph1: 'We envision a future where AI-driven medical research is seamlessly integrated with privacy-by-design principles. PrivateAIM is pioneering a new standard for secure, federated medical AI by fostering a collaborative network of hospitals, researchers, and patients.',
             paragraph2: 'PrivateAIM actively involves patients, [partners](/partners:internal), and the public through workshops, educational materials, and open dialogue to ensure broad acceptance and transparency. We aim to demystify AI and federated learning, making their safeguards, limits, and benefits understandable.',
-            paragraph3: 'Over the project time, PrivateAIM and [FLAME](https://docs.privateaim.net:external) will provide the [MII](https://www.medizininformatik-initiative.de/de/start:external) with a secure and scalable solution for cross-institutional medical data analysis. We are shaping the future of trustworthy and impactful medical research by enabling AI-driven healthcare innovations while preserving patient privacy.',
+            paragraph3: 'With [FLAME](/flame:internal), PrivateAIM provides the [MII](https://www.medizininformatik-initiative.de/de/start:external) with a secure and scalable solution for cross-institutional medical data analysis that is in productive use. We are shaping the future of trustworthy and impactful medical research by enabling AI-driven healthcare innovations while preserving patient privacy.',
             contribute: 'Open Source Contributions',
             explanation: 'Explore our code repositories and contribute to the future of privacy-preserving medical data research.',
             github: 'Visit GitHub',
@@ -78,6 +91,7 @@ export default defineLocale('en', [
     defineNamespace('flame', [defineTranslations({
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: the platform developed by PrivateAIM',
+        status: 'FLAME is in productive use.',
         lead: 'FLAME lets researchers analyze medical data from several institutions without the data ever leaving them. Instead of collecting data centrally, FLAME sends the analysis code to the data. Only aggregated results are returned.',
         architecture: {
             title: 'How FLAME works',
@@ -162,7 +176,7 @@ export default defineLocale('en', [
 
     defineNamespace('partners', [defineTranslations({
         title: 'Our partners',
-        description: 'The PrivateAIM project involves a total of 17 partners from all four consortia of the Medical Informatics Initiative (MII). Three MII-funded junior research groups are also involved. The project is coordinated by the University Hospital of Tübingen, the Berlin Institute of Health at the Charité and the Technical University of Munich.\n\nHere you will find a list of participating universities and research institutes:',
+        description: 'The PrivateAIM project involves a total of 15 partners from all four consortia of the Medical Informatics Initiative (MII). Three MII-funded junior research groups are also involved. The project is coordinated by the University Hospital of Tübingen, the Berlin Institute of Health at the Charité and the Technical University of Munich.\n\nHere you will find a list of participating universities and research institutes:',
         subsection1: 'Coordination',
         subsection2: 'Project partners',
         subsection3: 'Associated partners',
