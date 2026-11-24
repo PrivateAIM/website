@@ -98,6 +98,12 @@ export function useTranslation(path: string, data?: MaybeRef<Record<string, unkn
     return computed(() => translate(locale.value, path, unref(data)));
 }
 
+/** A translate function bound to the active locale, for labels built in templates or loops. */
+export function useTranslator(): (path: string, data?: Record<string, unknown>) => string {
+    const locale = injectLocale();
+    return (path, data) => translate(locale.value, path, data);
+}
+
 /** Locale of a URL path: `/de/...` is German, everything else the default locale. */
 export function localeOfPath(path: string): string {
     return /^\/de(\/|$)/.test(path) ? 'de' : DEFAULT_LOCALE;

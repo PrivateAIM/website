@@ -1,5 +1,8 @@
 <template>
-    <header class="header">
+    <header
+        class="header"
+        :class="{ scrolled: isScrolled }"
+    >
         <div class="header-container">
             <div class="logo-section">
                 <router-link
@@ -124,13 +127,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import {
+    onBeforeUnmount, 
+    onMounted, 
+    ref, 
+    watch,
+} from 'vue';
 import { useRoute } from 'vue-router';
 import { useLocalePath } from '@/i18n';
 import LanguageSelector from './LanguageSelector.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
 const localePath = useLocalePath();
+
+// Shadow under the sticky header once the page is scrolled
+const isScrolled = ref(false);
+const onScroll = () => {
+    isScrolled.value = window.scrollY > 8;
+};
+onMounted(() => {
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+});
+onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
 
 // Mobile Menu State
 const isMobileMenuOpen = ref(false);
@@ -170,6 +189,16 @@ const closeMobileMenu = () => {
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.header.scrolled {
+  border-bottom-color: transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.dark-mode .header.scrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .header-container {

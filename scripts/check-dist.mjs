@@ -77,7 +77,7 @@ const forbidden = [
     [/Test Test|test\.jpg/, 'placeholder content'],
     [/href="\/(de\/)?blog/, 'a link to the removed blog'],
     [/github\.com\/[\w-]+\.png|avatars\.githubusercontent\.com/, 'an avatar hotlinked from GitHub'],
-    [/>\s*(navigation|home|flame|explainer|footer|news|team|partners|publications|imprint|privacy|cookie|references)\.[a-zA-Z.]+\s*</, 'an untranslated i18n key'],
+    [/>\s*(navigation|home|flame|explainer|notFound|footer|news|team|partners|publications|imprint|privacy|cookie|references)\.[a-zA-Z.]+\s*</, 'an untranslated i18n key'],
 ];
 for (const file of htmlFiles) {
     const html = read(join(DIST, file));

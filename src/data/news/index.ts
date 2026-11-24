@@ -44,3 +44,14 @@ export function latestNews(locale: string, count: number): NewsEntry[] {
         .flatMap((year) => byYear[year] ?? [])
         .slice(0, count);
 }
+
+export type NewsCategory = 'conference' | 'retreat' | 'workshop' | 'milestone';
+
+/** Category of an entry, derived from its title (works for both locales). */
+export function categoryOf(item: NewsEntry): NewsCategory {
+    const title = item.title.toLowerCase();
+    if (title.includes('retreat')) return 'retreat';
+    if (title.includes('workshop')) return 'workshop';
+    if (/kick-off|start|flyer/.test(title)) return 'milestone';
+    return 'conference';
+}

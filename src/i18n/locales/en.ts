@@ -256,9 +256,25 @@ export default defineLocale('en', [
         },
     })]),
 
+    defineNamespace('notFound', [defineTranslations({
+        title: 'Page not found',
+        text: 'The page you are looking for does not exist or has moved. These pages might help:',
+        linksLabel: 'Suggested pages',
+        links: {
+            home: { title: 'Home', text: 'PrivateAIM at a glance' },
+            flame: { title: 'FLAME', text: 'The federated analysis platform' },
+            explainer: { title: 'What is federated analysis?', text: 'A short introduction' },
+            news: { title: 'News', text: 'Events and milestones' },
+        },
+    })]),
+
     defineNamespace('footer', [defineTranslations({
         documentation: 'Documentation',
-        flame: 'FLAME Platform',
+        flame: 'FLAME documentation',
+        project: 'Project',
+        tagline: 'Privacy-preserving analytics in medicine: federated analysis of medical data across German university hospitals.',
+        partOf: 'Part of the',
+        mii: 'Medical Informatics Initiative (MII)',
         explainer: 'What is federated analysis?',
         github: 'GitHub',
         references: 'References',
@@ -311,6 +327,8 @@ export default defineLocale('en', [
     defineNamespace('partners', [defineTranslations({
         title: 'Our partners',
         description: 'The PrivateAIM project involves a total of 15 partners from all four consortia of the Medical Informatics Initiative (MII). Three MII-funded junior research groups are also involved. The project is coordinated by the University Hospital of Tübingen, the Berlin Institute of Health at the Charité and the Technical University of Munich.\n\nHere you will find a list of participating universities and research institutes:',
+        subtitle: '15 partners from all four consortia of the Medical Informatics Initiative',
+        map: { label: 'Map of Germany with the locations of the PrivateAIM partners' },
         subsection1: 'Coordination',
         subsection2: 'Project partners',
         subsection3: 'Associated partners',
@@ -321,6 +339,7 @@ export default defineLocale('en', [
         network: {
             title: 'Join Our Network',
             subtitle: " Interested in collaborating with PrivateAIM? We're always looking to expand our network of partners who share our vision of privacy-preserving medical research.\n",
+            button: 'Get started with FLAME',
             box1: {
                 title: 'Access to Cutting-Edge Technology',
                 text: 'Work with our team to implement state-of-the-art federated learning systems.',
@@ -378,6 +397,18 @@ export default defineLocale('en', [
     })]),
 
     defineNamespace('news', [defineTranslations({
+        categories: {
+            conference: 'Conference & talk',
+            retreat: 'Retreat',
+            workshop: 'Workshop',
+            milestone: 'Milestone',
+        },
+        gallery: {
+            open: 'Open photo {{index}} of {{count}}',
+            close: 'Close',
+            previous: 'Previous photo',
+            next: 'Next photo',
+        },
         title: 'News',
         subtitle: 'Here you will find an overview of the latest news in the context of PrivateAIM.',
         noItems: 'No news items available for this year.',

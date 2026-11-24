@@ -250,9 +250,25 @@ export default defineLocale('de', [
         },
     })]),
 
+    defineNamespace('notFound', [defineTranslations({
+        title: 'Seite nicht gefunden',
+        text: 'Die gesuchte Seite gibt es nicht oder sie ist umgezogen. Diese Seiten helfen vielleicht weiter:',
+        linksLabel: 'Vorgeschlagene Seiten',
+        links: {
+            home: { title: 'Startseite', text: 'PrivateAIM im Überblick' },
+            flame: { title: 'FLAME', text: 'Die föderierte Analyseplattform' },
+            explainer: { title: 'Was ist föderierte Analyse?', text: 'Eine kurze Einführung' },
+            news: { title: 'Neuigkeiten', text: 'Veranstaltungen und Meilensteine' },
+        },
+    })]),
+
     defineNamespace('footer', [defineTranslations({
         documentation: 'Dokumentation',
-        flame: 'FLAME Plattform',
+        flame: 'FLAME-Dokumentation',
+        project: 'Projekt',
+        tagline: 'Datenschutzfreundliche Analytik in der Medizin: föderierte Analyse medizinischer Daten an deutschen Universitätskliniken.',
+        partOf: 'Teil der',
+        mii: 'Medizininformatik-Initiative (MII)',
         explainer: 'Was ist föderierte Analyse?',
         github: 'GitHub',
         references: 'Referenzen',
@@ -304,7 +320,9 @@ export default defineLocale('de', [
 
     defineNamespace('partners', [defineTranslations({
         title: 'Unsere Partner',
-        description: 'Insgesamt sind 15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht an beteiligte Universitäten und Forschungseinrichtungen:',
+        description: 'Insgesamt sind 15 Partner aus allen vier Konsortien der Medizininformatik-Initiative (MII) an PrivateAIM beteiligt. Mit dabei sind auch drei MII-geförderte Nachwuchsgruppen. Das Projekt wird vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité sowie der Technischen Universität München koordiniert.\n\nHier finden Sie eine Übersicht der beteiligten Universitäten und Forschungseinrichtungen:',
+        subtitle: '15 Partner aus allen vier Konsortien der Medizininformatik-Initiative',
+        map: { label: 'Deutschlandkarte mit den Standorten der PrivateAIM-Partner' },
         subsection1: 'Koordination',
         subsection2: 'Projektpartner',
         subsection3: 'Assoziierte Partner',
@@ -315,6 +333,7 @@ export default defineLocale('de', [
         network: {
             title: 'Teil unseres Netzwerks werden',
             subtitle: 'Interessiert an einer Zusammenarbeit mit PrivateAIM? Wir sind stets auf der Suche nach Partnern, die unsere Vision einer datenschutzfreundlichen medizinischen Forschung teilen.\n',
+            button: 'Mit FLAME starten',
             box1: {
                 title: 'Zugang zu modernster Technologie',
                 text: 'Arbeiten Sie mit unserem Team zusammen, um hochmoderne föderierte Lernsysteme zu implementieren.',
@@ -372,6 +391,18 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('news', [defineTranslations({
+        categories: {
+            conference: 'Konferenz & Vortrag',
+            retreat: 'Retreat',
+            workshop: 'Workshop',
+            milestone: 'Meilenstein',
+        },
+        gallery: {
+            open: 'Foto {{index}} von {{count}} öffnen',
+            close: 'Schließen',
+            previous: 'Vorheriges Foto',
+            next: 'Nächstes Foto',
+        },
         title: 'Neuigkeiten',
         subtitle: 'Hier finden Sie eine Übersicht der aktuellen Neuigkeiten rund um PrivateAIM.',
         noItems: 'Keine Neuigkeiten für dieses Jahr verfügbar.',

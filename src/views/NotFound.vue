@@ -1,32 +1,157 @@
 <template>
     <div class="not-found">
-        <h1>404 - Page Not Found</h1>
-        <p>The page you’re looking for doesn’t exist.</p>
-        <router-link :to="localePath('/')">
-            Go back home
-        </router-link>
+        <div class="not-found-hero">
+            <span
+                class="not-found-code"
+                aria-hidden="true"
+            >404</span>
+            <h1><ITranslate path="notFound.title" /></h1>
+            <p><ITranslate path="notFound.text" /></p>
+        </div>
+
+        <nav
+            class="not-found-links"
+            :aria-label="linksLabel"
+        >
+            <router-link
+                v-for="link in links"
+                :key="link.path"
+                :to="localePath(link.path)"
+                class="not-found-card"
+            >
+                <span class="card-icon">
+                    <AppIcon :name="link.icon" />
+                </span>
+                <span class="card-text">
+                    <strong><ITranslate :path="`notFound.links.${link.key}.title`" /></strong>
+                    <span><ITranslate :path="`notFound.links.${link.key}.text`" /></span>
+                </span>
+            </router-link>
+        </nav>
     </div>
 </template>
 
 <script setup lang="ts">
-import { useLocalePath } from '@/i18n';
+import AppIcon from '@/components/shared/AppIcon.vue';
+import { useLocalePath, useTranslation } from '@/i18n';
 
 const localePath = useLocalePath();
+const linksLabel = useTranslation('notFound.linksLabel');
+
+const links = [
+    {
+        key: 'home', 
+        path: '/', 
+        icon: 'arrow', 
+    },
+    {
+        key: 'flame', 
+        path: '/flame', 
+        icon: 'zap', 
+    },
+    {
+        key: 'explainer', 
+        path: '/federated-analysis', 
+        icon: 'book', 
+    },
+    {
+        key: 'news', 
+        path: '/news', 
+        icon: 'calendar', 
+    },
+];
 </script>
 
 <style scoped>
 .not-found {
-  padding: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1rem 5rem;
   text-align: center;
+  color: var(--text-color, #1a202c);
+}
+
+.not-found-code {
+  display: block;
+  font-size: clamp(5rem, 18vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #63b3ed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin: 1rem 0 0.75rem;
 }
 
-p {
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
+.not-found-hero p {
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.not-found-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.not-found-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 0.75rem;
+  background-color: var(--card-bg, #ffffff);
+  color: var(--text-color, #1a202c);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.not-found-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color, #3182ce);
+  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.15);
+}
+
+.card-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
+  color: #ffffff;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-text strong {
+  color: var(--primary-color, #3182ce);
+}
+
+.card-text span {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 560px) {
+  .not-found-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 </style>
