@@ -2,13 +2,17 @@
     <div class="not-found">
         <h1>404 - Page Not Found</h1>
         <p>The page you’re looking for doesn’t exist.</p>
-        <router-link to="/">
+        <router-link :to="localePath('/')">
             Go back home
         </router-link>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useLocalePath } from '@/i18n';
+
+const localePath = useLocalePath();
+</script>
 
 <style scoped>
 .not-found {

@@ -7,11 +7,6 @@ import policyDe from '@/data/privacy/privacy.de.md?raw';
 
 const locale = useLocale();
 
-// Function to switch to German version
-function switchToGerman() {
-    locale.value = 'de';
-}
-
 // Compute the rendered HTML from the Markdown content. Both locales are bundled
 // so the policy is part of the prerendered page.
 const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? policyDe : policyEn, { async: false }));
@@ -32,10 +27,9 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
                 <p class="alert alert-info">
                     <strong>Note:</strong> This legal notice is in Germany not legally binding and has been created for your convenience only.
                     We apologize for any inconveniences caused and refer to the
-                    <a
-                        href="#"
-                        @click.prevent="switchToGerman"
-                    >legally binding German version</a> available on this site.
+                    <router-link to="/de/privacy">
+                        legally binding German version
+                    </router-link> available on this site.
                 </p>
             </div>
 

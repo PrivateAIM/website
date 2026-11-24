@@ -95,6 +95,7 @@ h2 {
 .card-link {
     display: inline-block;
     margin-top: 1rem;
+    padding-block: 3px;
     color: var(--primary-color, #3182ce);
     font-weight: 500;
     text-decoration: none;

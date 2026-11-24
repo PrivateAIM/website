@@ -98,6 +98,40 @@ export function useTranslation(path: string, data?: MaybeRef<Record<string, unkn
     return computed(() => translate(locale.value, path, unref(data)));
 }
 
+/** Locale of a URL path: `/de/...` is German, everything else the default locale. */
+export function localeOfPath(path: string): string {
+    return /^\/de(\/|$)/.test(path) ? 'de' : DEFAULT_LOCALE;
+}
+
+/** Strip the locale prefix: `/de/news` → `/news`, `/de` → `/`. */
+export function stripLocale(path: string): string {
+    const match = path.match(/^\/de(\/.*)?$/);
+    return match ? (match[1] || '/') : path;
+}
+
+/**
+ * Path of a page in a locale; the default locale has no prefix. The German
+ * home is `/de/`, a directory index, since GitHub Pages would redirect `/de` there.
+ */
+export function localePath(path: string, locale: string): string {
+    const base = stripLocale(path);
+    if (locale === DEFAULT_LOCALE) {
+        return base;
+    }
+    return base === '/' ? `/${locale}/` : `/${locale}${base}`;
+}
+
+/** `localePath` bound to the active locale, for internal links. */
+export function useLocalePath(): (path: string) => string {
+    const locale = injectLocale();
+    return (path: string) => localePath(path, locale.value);
+}
+
+/** The app's locale ref, for code that runs outside components (router hooks). */
+export function appLocale(app: App): Ref<string> {
+    return injectLocale(app);
+}
+
 /** Reactive, writable active-locale ref. Assign `.value` to switch language. */
 export function useLocale(): Ref<string> {
     return injectLocale();

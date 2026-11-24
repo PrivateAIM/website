@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { writeFileSync } from 'node:fs';
+import { mkdirSync, renameSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 export const SITE_URL = 'https://privateaim.de';
@@ -16,6 +16,7 @@ interface PrerenderRoute {
 /** Indexable routes: the single source of truth for prerendering and the sitemap. */
 const PRERENDER_ROUTES: PrerenderRoute[] = [
     { path: '/', sources: ['src/views/Home.vue', 'src/components/home', 'src/i18n/locales'] },
+    { path: '/flame', sources: ['src/views/Flame.vue', 'src/i18n/locales'] },
     { path: '/news', sources: ['src/views/News.vue', 'src/data/news'] },
     { path: '/publications', sources: ['src/views/Publications.vue'] },
     { path: '/team', sources: ['src/views/Team.vue'] },
@@ -25,11 +26,55 @@ const PRERENDER_ROUTES: PrerenderRoute[] = [
     { path: '/privacy', sources: ['src/views/Privacy.vue', 'src/data/privacy'] },
 ];
 
-export const prerenderPaths = [...PRERENDER_ROUTES.map((route) => route.path), NOT_FOUND_ROUTE];
+/** Mirrors `LOCALES` and `localePath` in src/i18n: the default locale has no prefix. */
+const LOCALES = ['en', 'de'] as const;
+const DEFAULT_LOCALE = 'en';
+const OG_LOCALES: Record<string, string> = { en: 'en_US', de: 'de_DE' };
+
+function stripLocale(path: string): string {
+    const match = path.match(/^\/de(\/.*)?$/);
+    return match ? (match[1] || '/') : path;
+}
+
+function localePath(path: string, locale: string): string {
+    const base = stripLocale(path);
+    if (locale === DEFAULT_LOCALE) {
+        return base;
+    }
+    return base === '/' ? `/${locale}/` : `/${locale}${base}`;
+}
+
+function absoluteUrl(path: string): string {
+    return `${SITE_URL}${localePath(path, localeOfPath(path))}`;
+}
+
+function localeOfPath(path: string): string {
+    return /^\/de(\/|$)/.test(path) ? 'de' : DEFAULT_LOCALE;
+}
+
+/** vite-ssg needs `/de` (not `/de/`) and writes it to de.html; see `moveLocaleHomes`. */
+export const prerenderPaths = [
+    ...PRERENDER_ROUTES.flatMap((route) => LOCALES.map((locale) => localePath(route.path, locale).replace(/(.)\/$/, '$1'))),
+    NOT_FOUND_ROUTE,
+];
+
+/**
+ * Move de.html to de/index.html: with both a de.html file and a de/ directory,
+ * GitHub Pages redirects /de to /de/, so the directory index is the served URL.
+ */
+export function moveLocaleHomes(outDir: string) {
+    for (const locale of LOCALES) {
+        if (locale !== DEFAULT_LOCALE) {
+            mkdirSync(join(outDir, locale), { recursive: true });
+            renameSync(join(outDir, `${locale}.html`), join(outDir, locale, 'index.html'));
+        }
+    }
+}
 
 interface PageMeta {
     title?: string;
     description?: string;
+    locale?: string;
 }
 
 function escapeAttribute(value: string): string {
@@ -56,7 +101,7 @@ export function applyPageHead(route: string, html: string, meta: PageMeta): stri
 
     if (route === NOT_FOUND_ROUTE) {
         return setAttribute(html, 'meta name="robots"', 'content', 'noindex')
-            .replace(/\s*<link rel="canonical"[^>]*>/, '')
+            .replace(/\s*<link rel="(canonical|alternate)"[^>]*>/g, '')
             .replace(/\s*<meta property="og:url"[^>]*>/, '')
             .replace(/<title>[^<]*<\/title>/, `<title>${escapeAttribute(meta.title ?? 'Page Not Found')}</title>`);
     }
@@ -66,8 +111,18 @@ export function applyPageHead(route: string, html: string, meta: PageMeta): stri
         throw new Error(`[prerender] ${route} needs a title and description`);
     }
 
-    const url = route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}`;
-    let result = html.replace(/<title>[^<]*<\/title>/, () => `<title>${escapeAttribute(title)}</title>`);
+    const locale = meta.locale ?? DEFAULT_LOCALE;
+    const url = absoluteUrl(route);
+    let result = stripLocale(route) === '/' ? html : html.replace(/\s*<link rel="preload" href="\/images\/home\/[^"]*"[^>]*>/, '');
+    result = result
+        .replace(/<html lang="[^"]*">/, `<html lang="${locale}">`)
+        .replace(/<title>[^<]*<\/title>/, () => `<title>${escapeAttribute(title)}</title>`);
+    for (const alternate of LOCALES) {
+        result = setAttribute(result, `link rel="alternate" hreflang="${alternate}"`, 'href', absoluteUrl(localePath(route, alternate)));
+    }
+    result = setAttribute(result, 'link rel="alternate" hreflang="x-default"', 'href', absoluteUrl(stripLocale(route)));
+    result = setAttribute(result, 'meta property="og:locale"', 'content', OG_LOCALES[locale] ?? 'en_US');
+    result = setAttribute(result, 'meta property="og:locale:alternate"', 'content', locale === 'de' ? 'en_US' : 'de_DE');
     result = setAttribute(result, 'meta name="description"', 'content', description);
     result = setAttribute(result, 'link rel="canonical"', 'href', url);
     result = setAttribute(result, 'meta property="og:url"', 'content', url);
@@ -94,20 +149,25 @@ function lastModified(sources: string[]): string | undefined {
 }
 
 export function writeSitemap(outDir: string) {
-    const urls = PRERENDER_ROUTES.map(({ path, sources }) => {
-        const loc = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+    const urls = PRERENDER_ROUTES.flatMap(({ path, sources }) => {
         const lastmod = lastModified(sources);
-        return [
+        const alternates = [
+            ...LOCALES.map((locale) => [locale, absoluteUrl(localePath(path, locale))]),
+            ['x-default', absoluteUrl(path)],
+        ].map(([hreflang, href]) => `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}"/>`);
+
+        return LOCALES.map((locale) => [
             '  <url>',
-            `    <loc>${loc}</loc>`,
+            `    <loc>${absoluteUrl(localePath(path, locale))}</loc>`,
             ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
+            ...alternates,
             '  </url>',
-        ].join('\n');
+        ].join('\n'));
     });
 
     const sitemap = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
         ...urls,
         '</urlset>',
         '',

@@ -5,7 +5,8 @@ import {
     onUnmounted, 
     ref, 
 } from 'vue';
-import { LOCALES, useLocale } from '@/i18n';
+import { useRoute } from 'vue-router';
+import { LOCALES, localePath, useLocale } from '@/i18n';
 
 import FlagEN from '@/assets/flags/en-flag.svg';
 import FlagDE from '@/assets/flags/de-flag.svg';
@@ -22,6 +23,7 @@ const languages = LOCALES.map((locale) => ({
 }));
 
 const locale = useLocale();
+const route = useRoute();
 const activeLanguage = computed(() => locale.value);
 const activeLanguageEntry = computed(
     () => languages.find((l) => l.code === activeLanguage.value) ?? languages[0]!,
@@ -29,10 +31,13 @@ const activeLanguageEntry = computed(
 const isOpen = ref(false);
 const dropdownRef = ref<HTMLElement | null>(null);
 
-// Sprache ändern
-function changeLanguage(langCode: string) {
-    locale.value = langCode;
-    isOpen.value = false;
+// The same page in another language; the router sets the locale from the URL
+function switchTo(langCode: string) {
+    return {
+        path: localePath(route.path, langCode),
+        query: route.query,
+        hash: route.hash,
+    };
 }
 
 // Dropdown umschalten
@@ -92,22 +97,26 @@ onUnmounted(() => {
         </button>
 
         <div
-            v-if="isOpen"
+            v-show="isOpen"
             class="language-dropdown"
         >
-            <button
+            <router-link
                 v-for="lang in languages"
                 :key="lang.code"
+                :to="switchTo(lang.code)"
+                :hreflang="lang.code"
+                :lang="lang.code"
+                :aria-label="lang.label"
                 class="language-option"
                 :class="{ selected: activeLanguage === lang.code }"
-                @click="changeLanguage(lang.code)"
+                @click="isOpen = false"
             >
                 <img
                     :src="lang.flag"
                     :alt="lang.label"
                     class="flag-icon"
                 >
-            </button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -158,7 +167,9 @@ onUnmounted(() => {
 }
 
 .language-option {
+  display: block;
   width: 100%;
+  box-sizing: border-box;
   text-align: center;
   padding: 0.5rem;
   color: var(--nav-text, #64748b);

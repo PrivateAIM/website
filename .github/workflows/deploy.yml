@@ -6,6 +6,10 @@ name: CI
 on:
     push:
         branches: [master]
+    # Daily rebuild picks up changed GitHub profile pictures of the team
+    schedule:
+        -   cron: '17 4 * * *'
+    workflow_dispatch:
 
 env:
     NODE_VERSION: 22
@@ -25,11 +29,15 @@ jobs:
                 with:
                     node-version: ${{ env.NODE_VERSION }}
 
+            # Not the shared build action: its cache is keyed by commit, so the
+            # scheduled run would reuse the old avatars
             -   name: Build
-                uses: ./.github/actions/build
+                run: npm run build
+
+            -   name: Check build output
+                run: npm run check-dist
 
             -   name: CNAME
-                if: ${{ github.event_name == 'push' }}
                 run: |
                     cd ./dist/
                     touch CNAME

@@ -377,6 +377,8 @@ watch([content, () => route.fullPath], () => {
 }
 
 .item-link {
+    display: inline-block;
+    padding-block: 5px;
     color: var(--primary-color, #3182ce);
     text-decoration: none;
     font-weight: 500;

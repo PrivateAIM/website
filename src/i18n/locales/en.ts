@@ -13,6 +13,7 @@ import { defineLocale, defineNamespace, defineTranslations } from 'ilingo';
 export default defineLocale('en', [
     defineNamespace('navigation', [defineTranslations({
         home: 'Home',
+        flame: 'FLAME',
         news: 'News',
         team: 'Team',
         partners: 'Partners',
@@ -21,8 +22,8 @@ export default defineLocale('en', [
 
     defineNamespace('home', [defineTranslations({
         hero: {
-            title: 'Welcome to PrivateAIM',
-            subtitle: 'Advancing medical research through privacy-preserving analytics',
+            title: 'Privacy-preserving analytics for medical research',
+            subtitle: 'PrivateAIM develops FLAME, a federated platform that brings the analysis to the data at German university hospitals.',
             explorePlatform: 'Explore Our Platform',
             joinNetwork: 'Join Our Network',
         },
@@ -64,13 +65,47 @@ export default defineLocale('en', [
             github: 'Visit GitHub',
         },
         partners: {
-            title: 'Trusted By Leading Institutions',
+            title: 'Our Consortium Partners',
             viewAll: 'View All Partners',
         },
         news: {
             latestNews: 'Latest News',
             description: 'Here you can find the latest news and updates related to PrivateAIM.',
             button: 'Read More',
+        },
+    })]),
+
+    defineNamespace('flame', [defineTranslations({
+        title: 'FLAME',
+        subtitle: 'Federated Learning and Analysis in Medicine: the platform developed by PrivateAIM',
+        lead: 'FLAME lets researchers analyze medical data from several institutions without the data ever leaving them. Instead of collecting data centrally, FLAME sends the analysis code to the data. Only aggregated results are returned.',
+        architecture: {
+            title: 'How FLAME works',
+            body: 'FLAME consists of two parts: one central Hub and one Node at every participating site. The Hub coordinates, the Nodes compute.',
+            step1: 'Every participating site runs a Node next to its own data. Patient data is never transferred to the Hub or to other sites.',
+            step2: 'Every site decides whether it takes part in a project, reviews the analysis code before it runs, and starts the execution itself.',
+            step3: 'The analysis runs at each site. The results of the sites are combined by an aggregator, and only this combined result is made available to the researcher.',
+            step4: 'For iterative methods such as federated learning, this repeats over several rounds.',
+        },
+        safeguards: {
+            title: 'Safeguards',
+            review: 'An analysis is only built and executed after every participating node has approved its code.',
+            isolation: 'Every analysis runs in its own container without internet access.',
+            encryption: 'All connections use TLS. Messages and intermediate results exchanged between nodes are additionally encrypted end to end, so the Hub cannot read them.',
+            hub: 'The Hub never has access to patient data.',
+            privacy: 'Analyses can use privacy-enhancing techniques such as local differential privacy.',
+            access: 'Users, roles and permissions are managed per organization. Starting an analysis and configuring data stores is reserved for the staff of the site.',
+        },
+        limits: {
+            title: 'Limits',
+            body: 'Aggregation alone does not guarantee anonymity. FLAME does not automatically enforce minimum cohort sizes, k-anonymity thresholds or other output checks, so whether the returned results are appropriate is assessed during the review of each analysis.',
+        },
+        resources: {
+            title: 'Learn more',
+            docs: 'Documentation for researchers and site administrators',
+            code: 'Source code on GitHub',
+            publications: 'Publications from the PrivateAIM consortium',
+            predecessor: 'The predecessor project: Personal Health Train (PHT)',
         },
     })]),
 
@@ -178,6 +213,7 @@ export default defineLocale('en', [
     defineNamespace('team', [defineTranslations({
         title: 'Our Team',
         subtitle: 'Meet the dedicated individuals working to advance privacy-preserving analytics in medicine.',
+        core: 'Core Team',
         leadership: 'Project Leads',
         alumni: 'Alumni',
         alumniNote: 'We thank our alumni for their valuable contributions to the project.',

@@ -61,6 +61,8 @@
                 </div>
             </div>
 
+            <JsonLd :nodes="[publicationList]" />
+
             <div
                 v-if="filteredPublications.length === 0"
                 class="no-results"
@@ -80,7 +82,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
+import JsonLd from '@/components/shared/JsonLd';
 import { useTranslation } from '@/i18n';
+import { SITE_URL } from '@/seo/structuredData';
 
 const title = useTranslation('publications.title');
 const subtitle = useTranslation('publications.subtitle');
@@ -353,6 +357,26 @@ const searchQuery = ref('');
 const openKey = ref<string | null>(null);
 const toggle = (key: string) => {
     openKey.value = openKey.value === key ? null : key;
+};
+
+// Linked publications as schema.org articles (authors stay text: no Person entities from "et al.")
+const publicationList = {
+    '@type': 'ItemList',
+    '@id': `${SITE_URL}/publications#list`,
+    name: 'PrivateAIM publications',
+    itemListElement: publications
+        .filter((publication) => publication.link)
+        .map((publication, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'ScholarlyArticle',
+                headline: publication.title.replace(/\.$/, ''),
+                datePublished: String(publication.year),
+                url: publication.link,
+                ...(publication.link?.includes('doi.org/') ? { sameAs: publication.link } : {}),
+            },
+        })),
 };
 
 const filteredPublications = computed(() => {

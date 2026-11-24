@@ -7,6 +7,7 @@ import { defineLocale, defineNamespace, defineTranslations } from 'ilingo';
 export default defineLocale('de', [
     defineNamespace('navigation', [defineTranslations({
         home: 'Startseite',
+        flame: 'FLAME',
         news: 'Neuigkeiten',
         team: 'Team',
         partners: 'Partner',
@@ -15,8 +16,8 @@ export default defineLocale('de', [
 
     defineNamespace('home', [defineTranslations({
         hero: {
-            title: 'Willkommen bei PrivateAIM',
-            subtitle: 'Förderung der medizinischen Forschung durch datenschutzfreundliche Analytik',
+            title: 'Datenschutzfreundliche Analytik für die medizinische Forschung',
+            subtitle: 'PrivateAIM entwickelt FLAME, eine föderierte Plattform, die die Analyse zu den Daten an deutschen Universitätskliniken bringt.',
             explorePlatform: 'Unsere Plattform entdecken',
             joinNetwork: 'Netzwerk beitreten',
         },
@@ -58,13 +59,47 @@ export default defineLocale('de', [
             github: 'GitHub öffnen',
         },
         partners: {
-            title: 'Vertraut von führenden Institutionen',
+            title: 'Unsere Konsortialpartner',
             viewAll: 'Alle Partner anzeigen',
         },
         news: {
-            latestNews: 'Neueste Nachrichten',
-            description: 'Hier finden Sie die neuesten Nachrichten und Updates zu PrivateAIM.',
+            latestNews: 'Aktuelle Neuigkeiten',
+            description: 'Hier finden Sie aktuelle Neuigkeiten und Updates zu PrivateAIM.',
             button: 'Mehr lesen',
+        },
+    })]),
+
+    defineNamespace('flame', [defineTranslations({
+        title: 'FLAME',
+        subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
+        lead: 'Mit FLAME können Forschende medizinische Daten mehrerer Einrichtungen analysieren, ohne dass die Daten diese jemals verlassen. Statt Daten zentral zu sammeln, bringt FLAME den Analysecode zu den Daten. Zurückgegeben werden nur aggregierte Ergebnisse.',
+        architecture: {
+            title: 'So funktioniert FLAME',
+            body: 'FLAME besteht aus zwei Teilen: einem zentralen Hub und einem Node an jedem teilnehmenden Standort. Der Hub koordiniert, die Nodes rechnen.',
+            step1: 'Jeder teilnehmende Standort betreibt einen Node direkt bei seinen eigenen Daten. Patientendaten werden nie an den Hub oder an andere Standorte übertragen.',
+            step2: 'Jeder Standort entscheidet selbst, ob er an einem Projekt teilnimmt, prüft den Analysecode vor der Ausführung und startet die Ausführung selbst.',
+            step3: 'Die Analyse läuft an jedem Standort. Ein Aggregator führt die Ergebnisse der Standorte zusammen, und nur dieses Gesamtergebnis wird den Forschenden bereitgestellt.',
+            step4: 'Bei iterativen Verfahren wie föderiertem Lernen wiederholt sich das über mehrere Runden.',
+        },
+        safeguards: {
+            title: 'Schutzmaßnahmen',
+            review: 'Eine Analyse wird erst gebaut und ausgeführt, wenn alle teilnehmenden Nodes ihren Code genehmigt haben.',
+            isolation: 'Jede Analyse läuft in einem eigenen Container ohne Internetzugang.',
+            encryption: 'Alle Verbindungen nutzen TLS. Nachrichten und Zwischenergebnisse zwischen den Nodes sind zusätzlich Ende-zu-Ende-verschlüsselt, sodass der Hub sie nicht lesen kann.',
+            hub: 'Der Hub hat nie Zugriff auf Patientendaten.',
+            privacy: 'Analysen können datenschutzfördernde Verfahren wie lokale Differential Privacy nutzen.',
+            access: 'Nutzende, Rollen und Berechtigungen werden je Organisation verwaltet. Das Starten von Analysen und das Einrichten von Datenquellen ist dem Personal des Standorts vorbehalten.',
+        },
+        limits: {
+            title: 'Grenzen',
+            body: 'Aggregation allein garantiert keine Anonymität. FLAME erzwingt nicht automatisch Mindestfallzahlen, k-Anonymitäts-Schwellen oder andere Ausgabeprüfungen. Ob die zurückgegebenen Ergebnisse angemessen sind, wird deshalb bei der Prüfung jeder Analyse bewertet.',
+        },
+        resources: {
+            title: 'Mehr erfahren',
+            docs: 'Dokumentation für Forschende und Standort-Administration',
+            code: 'Quellcode auf GitHub',
+            publications: 'Publikationen des PrivateAIM-Konsortiums',
+            predecessor: 'Das Vorgängerprojekt: Personal Health Train (PHT)',
         },
     })]),
 
@@ -172,6 +207,7 @@ export default defineLocale('de', [
     defineNamespace('team', [defineTranslations({
         title: 'Unser Team',
         subtitle: 'Lernen Sie die engagierten Personen kennen, die an der Weiterentwicklung datenschutzfreundlicher Analytik in der Medizin arbeiten.',
+        core: 'Kernteam',
         leadership: 'Projektleitung',
         alumni: 'Alumni',
         alumniNote: 'Wir danken unseren Alumni für ihre wertvollen Beiträge zum Projekt.',
@@ -188,8 +224,8 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('news', [defineTranslations({
-        title: 'News',
-        subtitle: 'Hier finden Sie eine Übersicht der aktuellen News im Kontext von PrivateAIM.',
+        title: 'Neuigkeiten',
+        subtitle: 'Hier finden Sie eine Übersicht der aktuellen Neuigkeiten rund um PrivateAIM.',
         noItems: 'Keine Neuigkeiten für dieses Jahr verfügbar.',
     })]),
 

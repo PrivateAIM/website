@@ -4,13 +4,20 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
 import type {} from 'vite-ssg';
-import { applyPageHead, prerenderPaths, writeSitemap } from './scripts/prerender';
+import { avatarDevServer, downloadAvatars } from './scripts/avatars';
+import {
+    applyPageHead,
+    moveLocaleHomes,
+    prerenderPaths,
+    writeSitemap,
+} from './scripts/prerender';
 
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
         vue(),
         vueDevTools(),
+        avatarDevServer(),
     ],
     assetsInclude: ['**/*.md'],
     resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
@@ -20,6 +27,10 @@ export default defineConfig({
         beastiesOptions: false,
         includedRoutes: () => prerenderPaths,
         onPageRendered: (route, html, appCtx) => applyPageHead(route, html, appCtx.router.currentRoute.value.meta),
-        onFinished: () => writeSitemap('dist'),
+        onFinished: async () => {
+            moveLocaleHomes('dist');
+            writeSitemap('dist');
+            await downloadAvatars('dist');
+        },
     },
 });

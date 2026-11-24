@@ -164,9 +164,16 @@ onMounted(() => {
         <div
             v-if="isVisible"
             class="cookie-banner"
+            role="dialog"
+            aria-labelledby="cookie-banner-title"
         >
             <div class="cookie-content">
-                <h3><ITranslate path="cookie.title" /></h3>
+                <p
+                    id="cookie-banner-title"
+                    class="cookie-title"
+                >
+                    <ITranslate path="cookie.title" />
+                </p>
                 <p>
                     <ITranslate path="cookie.subtitle" />
                 </p>
@@ -275,9 +282,11 @@ onMounted(() => {
   margin: 0 auto;
 }
 
-h3 {
+.cookie-title {
   margin-top: 0;
   margin-bottom: 10px;
+  font-size: 1.17em;
+  font-weight: bold;
 }
 
 .cookie-options {
@@ -377,12 +386,12 @@ h3 {
     overflow-y: auto;
   }
 
-  h3 {
+  .cookie-title {
     margin-bottom: 4px;
     font-size: 1rem;
   }
 
-  .cookie-content > p {
+  .cookie-content > p:not(.cookie-title) {
     margin-bottom: 10px;
     font-size: 0.8rem;
     line-height: 1.35;

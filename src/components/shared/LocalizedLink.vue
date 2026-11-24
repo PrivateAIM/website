@@ -1,7 +1,7 @@
 <template>
     <router-link
         v-if="internal"
-        :to="url"
+        :to="localePath(url)"
         class="inline-link"
     >
         <slot>{{ text }}</slot>
@@ -19,6 +19,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useLocalePath } from '@/i18n';
+
+const localePath = useLocalePath();
 
 const props = defineProps({
     text: {

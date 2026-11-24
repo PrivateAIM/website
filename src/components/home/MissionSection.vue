@@ -26,7 +26,7 @@
                         </p>
                     </div>
                     <router-link
-                        to="/news"
+                        :to="localePath('/news')"
                         class="card-link"
                     >
                         <ITranslate path="home.news.button" /> →
@@ -39,8 +39,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useLocale } from '@/i18n';
+import { useLocale, useLocalePath } from '@/i18n';
 import { type NewsEntry, newsForLocale } from '@/data/news';
+
+const localePath = useLocalePath();
 
 const locale = useLocale();
 const newsByYear = computed(() => newsForLocale(locale.value));
@@ -118,6 +120,7 @@ h2 {
 .card-link {
   display: inline-block;
   margin-top: 1rem;
+  padding-block: 3px;
   color: var(--primary-color, #3182ce);
   font-weight: 500;
   text-decoration: none;
