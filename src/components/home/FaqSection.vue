@@ -56,12 +56,16 @@ h2 {
 }
 
 .faq-item {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-left: 4px solid var(--primary-color, #3182ce);
+  border-radius: 0.75rem;
+  background-color: var(--card-bg, #ffffff);
 }
 
 .faq-item h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
   color: var(--text-color, #1a202c);
 }

@@ -25,6 +25,30 @@
                         <ITranslate path="home.hero.joinNetwork" />
                     </a>
                 </div>
+
+                <ul class="hero-badges">
+                    <li>
+                        <AppIcon
+                            name="award"
+                            :size="16"
+                        />
+                        <ITranslate path="home.hero.badgeFunding" />
+                    </li>
+                    <li>
+                        <AppIcon
+                            name="share"
+                            :size="16"
+                        />
+                        <ITranslate path="home.hero.badgeMii" />
+                    </li>
+                    <li>
+                        <AppIcon
+                            name="code"
+                            :size="16"
+                        />
+                        <ITranslate path="home.hero.badgeOpenSource" />
+                    </li>
+                </ul>
             </div>
 
             <div class="hero-visual">
@@ -56,6 +80,7 @@
 </template>
 
 <script setup lang="ts">
+import AppIcon from '@/components/shared/AppIcon.vue';
 import { useLocalePath } from '@/i18n';
 
 const localePath = useLocalePath();
@@ -150,6 +175,27 @@ const localePath = useLocalePath();
 }
 
 /* Visual part */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-badges li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .hero-visual {
   position: relative;
   height: 100%;
@@ -205,7 +251,14 @@ const localePath = useLocalePath();
   .hero-container {
     /* minmax(0, ...) lets the column shrink below its longest word */
     grid-template-columns: minmax(0, 1fr);
+    /* Stacked layout: grow with the content instead of a fixed height */
+    height: auto;
+    gap: 2rem;
     text-align: center;
+  }
+
+  .hero-badges {
+    justify-content: center;
   }
 
   .hero-content {
@@ -228,11 +281,11 @@ const localePath = useLocalePath();
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 2rem 1rem 12rem;
+    padding: 2rem 1rem 5rem;
   }
 
   .hero-container {
-      gap: 0;
+      gap: 1.5rem;
   }
   .hero-visual {
       position: relative;

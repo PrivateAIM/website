@@ -208,11 +208,13 @@ export const routes: RouteRecordRaw[] = [
     },
 ];
 
-// Always scroll to top when navigating to a new page
-export const scrollBehavior: RouterScrollBehavior = () => ({
-    top: 0,
-    behavior: 'smooth',
-});
+// Scroll to the linked news entry (/news#news-…), otherwise to the top
+export const scrollBehavior: RouterScrollBehavior = (to) => {
+    if (to.hash.startsWith('#news-')) {
+        return { el: to.hash, top: 80 };
+    }
+    return { top: 0, behavior: 'smooth' };
+};
 
 export function installRouterHooks(router: Router, locale: Ref<string>) {
     // GitHub Pages also serves the prerendered files at their .html URLs, and serves

@@ -72,7 +72,12 @@
 import { computed, onMounted, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
 import { useLocale, useTranslation } from '@/i18n';
-import { type NewsEntry, newsForLocale } from '@/data/news';
+import {
+    type NewsEntry, 
+    anchorFor, 
+    isoDate, 
+    newsForLocale,
+} from '@/data/news';
 
 const title = useTranslation('news.title');
 const subtitle = useTranslation('news.subtitle');
@@ -94,30 +99,6 @@ const getImageUrl = (imagePath: string): string => `/images/news/${imagePath}`;
 
 // Function to get news items for a specific year
 const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? [];
-
-/** Start date of a display date such as `19-22/05/2026` as ISO `2026-05-19`. */
-function isoDate(date: string): string | undefined {
-    // "8/10/2025", "8-10/10/2025" or, across months, "27/09-01/10/2026"; the start date counts
-    const match = date.match(/^(\d{1,2})(?:\/(\d{1,2}))?(?:-\d{1,2})?\/(\d{1,2})\/(\d{4})$/);
-    if (!match) {
-        return undefined;
-    }
-    const [, day, startMonth, endMonth, year] = match;
-    return `${year}-${(startMonth ?? endMonth)!.padStart(2, '0')}-${day!.padStart(2, '0')}`;
-}
-
-/** Stable anchor per entry, e.g. #news-2026-05-19-mie-2026 */
-function anchorFor(item: NewsEntry): string {
-    const slug = item.title
-        .toLowerCase()
-        .normalize('NFKD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-|-$/g, '')
-        .slice(0, 40)
-        .replace(/-$/, '');
-    return `news-${isoDate(item.date) ?? item.date}-${slug}`;
-}
 
 // Open the entry a link points to (/news#news-…)
 onMounted(() => {
