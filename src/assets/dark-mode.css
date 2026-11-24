@@ -1,45 +1,90 @@
-/* Dark mode variables */
+/*
+ * Colour tokens for the light (:root) and dark (body.dark-mode) theme.
+ * This file is the only place with literal colours: components use var(--token),
+ * and shades are derived from tokens with color-mix().
+ * Palette: PrivateAIM logo (yellow, navy) and FLAME logo (flame, ember).
+ */
 :root {
-  --header-bg: #ffffff;
-  --footer-bg: #f9f9f9;
-  --border-color: #e0e0e0;
-  --text-color: #111111;
-  --nav-text: #222222;
-  --tag-bg: #f0f0f0;
-  --tag-text: #444444;
-  --primary-color: #1E90FF; /* New primary brand color */
-  --footer-text: #666666;
-  --copyright: #999999;
-  --body-bg: #ffffff;
-  --card-bg: #ffffff;
+  --body-bg: #F5F7FB;
+  --card-bg: #FFFFFF;
+  --header-bg: #FFFFFF;
+  --footer-bg: #0F1B3D;
+  --border-color: #DDE3EF;
+  --text-color: #16213F;
+  --nav-text: #16213F;
+  --text-muted: #5B6B8C;
+  --footer-text: #C9D2E8;
+  --copyright: #9AA8C7;
+  --primary-color: #2F4A87;
+  --primary-hover: #1F3B7A;
+  --on-primary: #FFFFFF;
+  --link-color: #2F4A87;
+  --brand-yellow: #E6E600;
+  --on-brand-yellow: #16213F;
+  --brand-yellow-tint: #FBFBE6;
+  --flame: #EA5930;
+  --flame-text: #B8431F;
+  --flame-tint: #FDF0EB;
+  --ember: #F49619;
+  --tag-bg: #EEF1F8;
+  --tag-text: #2F4A87;
+
+  /* Derived tokens */
+  --band-bg: var(--primary-color);      /* page headers, hero, key figures, CTA boxes */
+  --on-band: var(--on-primary);
+  --footer-heading: var(--on-primary);  /* the footer is dark in both themes */
+  --shadow-color: var(--text-color);
+  --overlay: color-mix(in srgb, var(--text-color) 92%, transparent);
+  --on-overlay: var(--card-bg);
+  --logo-plate: #FFFFFF;                /* partner and funder logos are dark artwork */
+
+  color-scheme: light;
 }
 
 body.dark-mode {
-  --header-bg: #0f1115;
-  --footer-bg: #0f1115;
-  --border-color: #2a2e35;
-  --text-color: #f5f5f5;
-  --nav-text: #d1d5db;
-  --tag-bg: #2a2e35;
-  --tag-text: #b0b0b0;
-  --primary-color: #1E90FF; /* Retain for brand consistency */
-  --footer-text: #a0aec0;
-  --copyright: #888888;
-  --body-bg: #0b0c10;
-  --card-bg: #1a1c24;
+  --body-bg: #0B1530;
+  --card-bg: #14234A;
+  --header-bg: #0B1530;
+  --footer-bg: #081026;
+  --border-color: #24366A;
+  --text-color: #E8ECF5;
+  --nav-text: #E8ECF5;
+  --text-muted: #9AA8C7;
+  --footer-text: #9AA8C7;
+  --copyright: #7686A8;
+  --primary-color: #E6E600;
+  --primary-hover: #F5F5A3;
+  --on-primary: #0B1530;
+  --link-color: #A9BCEB;
+  --brand-yellow: #E6E600;
+  --on-brand-yellow: #0B1530;
+  --brand-yellow-tint: #1C2A3A;
+  --flame: #EA5930;
+  --flame-text: #F07A55;
+  --flame-tint: #2A1F2E;
+  --ember: #F49619;
+  --tag-bg: #1C2D5A;
+  --tag-text: #C9D2E8;
 
+  --band-bg: var(--card-bg);
+  --on-band: var(--text-color);
+  --footer-heading: var(--text-color);
+  --shadow-color: #000000;
+  --overlay: color-mix(in srgb, var(--body-bg) 94%, transparent);
+  --on-overlay: var(--text-color);
+
+  color-scheme: dark;
   background-color: var(--body-bg);
   color: var(--text-color);
 }
 
-/* Additional dark mode styles */
-body.dark-mode a,
-body.dark-mode .router-link-active {
-  color: var(--primary-color);
+a,
+.router-link-active {
+  color: var(--link-color);
 }
 
-body.dark-mode pre,
-body.dark-mode code {
-  background-color: #1a1c22;
-  color: #e2e8f0;
+pre,
+code {
+  background-color: var(--tag-bg);
+  color: var(--text-color);
 }
