@@ -97,8 +97,8 @@ const applyTheme = () => {
   width: 44px;
   height: 24px;
   display: flex;
-  background-color: var(--tag-bg, #f1f1f1);
-  border: 1px solid rgba(100, 116, 139, 0.1);
+  background-color: var(--tag-bg);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
   position: relative;
   flex-shrink: 0;
@@ -108,7 +108,7 @@ const applyTheme = () => {
 }
 
 .theme-toggle.checked {
-  background-color: var(--primary-color, #3182ce);
+  background-color: var(--primary-color);
 }
 
 .theme-toggle-thumb {
@@ -117,13 +117,13 @@ const applyTheme = () => {
   left: 0px;
   width: 20px;
   height: 20px;
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--card-bg);
   font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--nav-text, #64748b);
-  border: 1px solid var(--border-color, #e2e8f0);
+  color: var(--nav-text);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
@@ -131,7 +131,7 @@ const applyTheme = () => {
 
 .theme-toggle-thumb.checked {
   transform: translateX(20px);
-  color: var(--card-bg, #ffffff);
+  color: var(--card-bg);
 }
 
 .toggle-icon {
@@ -141,10 +141,10 @@ const applyTheme = () => {
 
 /* For dark mode */
 :global(.dark-mode) .theme-toggle {
-  background-color: var(--primary-color, #3182ce);
+  background-color: var(--primary-color);
 }
 
 :global(.dark-mode) .theme-toggle-thumb {
-  color: white;
+  color: var(--on-primary);
 }
 </style>

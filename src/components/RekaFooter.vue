@@ -119,13 +119,7 @@
                         loading="lazy"
                         src="/images/BMFTR-dark.svg"
                         alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
-                        class="sponsor-logo sponsor-logo-dark"
-                    >
-                    <img
-                        loading="lazy"
-                        src="/images/BMFTR-light.svg"
-                        alt="Funded by the Federal Ministry of Research, Technology and Space (BMFTR)"
-                        class="sponsor-logo sponsor-logo-light"
+                        class="sponsor-logo"
                     >
                 </a>
             </div>
@@ -195,8 +189,8 @@ const referenceLinks = computed(() => references.map((project) => ({
 .footer {
   margin-top: 3rem;
   padding: 3.5rem 0 1.5rem;
-  border-top: 1px solid var(--border-color, #eaeaea);
-  background-color: var(--footer-bg, #f7fafc);
+  border-top: 1px solid color-mix(in srgb, var(--footer-text) 25%, transparent);
+  background-color: var(--footer-bg);
 }
 
 .footer-container {
@@ -211,7 +205,7 @@ const referenceLinks = computed(() => references.map((project) => ({
 .logo {
   display: inline-flex;
   align-items: center;
-  color: var(--text-color, #1a202c);
+  color: var(--footer-heading);
   text-decoration: none;
 }
 
@@ -231,7 +225,7 @@ const referenceLinks = computed(() => references.map((project) => ({
   margin: 1rem 0;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--footer-text, #718096);
+  color: var(--footer-text);
 }
 
 .footer-social {
@@ -245,15 +239,15 @@ const referenceLinks = computed(() => references.map((project) => ({
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  border: 1px solid var(--border-color, #e2e8f0);
+  border: 1px solid color-mix(in srgb, var(--footer-text) 25%, transparent);
   border-radius: 50%;
-  color: var(--footer-text, #718096);
+  color: var(--footer-text);
   transition: color 0.2s, border-color 0.2s;
 }
 
 .footer-social a:hover {
-  border-color: var(--primary-color, #3182ce);
-  color: var(--primary-color, #3182ce);
+  border-color: var(--brand-yellow);
+  color: var(--brand-yellow);
 }
 
 .footer-links {
@@ -273,7 +267,7 @@ const referenceLinks = computed(() => references.map((project) => ({
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-color, #1a202c);
+  color: var(--footer-heading);
 }
 
 .footer-link {
@@ -282,13 +276,13 @@ const referenceLinks = computed(() => references.map((project) => ({
   min-height: 24px;
   margin-bottom: 0.5rem;
   font-size: 0.92rem;
-  color: var(--footer-text, #718096);
+  color: var(--footer-text);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-link:hover {
-  color: var(--primary-color, #3182ce);
+  color: var(--brand-yellow);
 }
 
 .footer-funding {
@@ -300,7 +294,7 @@ const referenceLinks = computed(() => references.map((project) => ({
   max-width: 1200px;
   margin: 0 auto 1.5rem;
   padding: 1.5rem 1rem;
-  border-top: 1px solid var(--border-color, #eaeaea);
+  border-top: 1px solid color-mix(in srgb, var(--footer-text) 25%, transparent);
 }
 
 .funding-item {
@@ -314,24 +308,12 @@ const referenceLinks = computed(() => references.map((project) => ({
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--footer-text, #718096);
+  color: var(--footer-text);
 }
 
 .sponsor-logo {
   width: auto;
   height: 56px;
-}
-
-.sponsor-logo-dark {
-  display: none;
-}
-
-.dark-mode .sponsor-logo-dark {
-  display: block;
-}
-
-.dark-mode .sponsor-logo-light {
-  display: none;
 }
 
 .mii-link {
@@ -345,22 +327,22 @@ const referenceLinks = computed(() => references.map((project) => ({
   height: 64px;
 }
 
-/* The MII logo has grey text (and the English one a white background), so it sits on a light plate in dark mode */
-.dark-mode .mii-logo {
+/* The MII logo has grey text (and the English one a white background), so it sits on a light plate on the dark footer */
+.mii-logo {
   padding: 4px 8px;
   border-radius: 0.5rem;
-  background-color: #ffffff;
+  background-color: var(--logo-plate);
 }
 
 .copyright-container {
   padding-top: 1.25rem;
-  border-top: 1px solid var(--border-color, #eaeaea);
+  border-top: 1px solid color-mix(in srgb, var(--footer-text) 25%, transparent);
   text-align: center;
 }
 
 .copyright {
   font-size: 0.85rem;
-  color: var(--copyright, #a0aec0);
+  color: var(--copyright);
 }
 
 @media (max-width: 860px) {

@@ -88,7 +88,7 @@ const localePath = useLocalePath();
 </script>
 <style scoped>
 .partners-section {
-  background-color: var(--footer-bg, #f7fafc);
+  background-color: var(--footer-bg);
   padding: 4rem 1rem;
 }
 
@@ -103,7 +103,7 @@ h2 {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .partners-grid {
@@ -115,13 +115,13 @@ h2 {
 
 .partner-logo {
   height: 200px;
-  background-color: #ffffff;
+  background-color: var(--logo-plate);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
   padding: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
 }
 
 .partner-logo img {
@@ -137,7 +137,7 @@ h2 {
 .text-link {
   display: inline-block;
   padding-block: 5px;
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
   text-decoration: none;
   font-weight: 500;
 }

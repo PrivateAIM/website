@@ -211,8 +211,8 @@ onMounted(() => {
     margin: 0 0 1.25rem;
     padding: 0.3rem 1rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
     font-size: 1.25rem;
     font-weight: 700;
 }
@@ -231,7 +231,7 @@ onMounted(() => {
     top: 0.5rem;
     bottom: 0.5rem;
     left: 0.55rem;
-    border-left: 2px solid var(--border-color, #e2e8f0);
+    border-left: 2px solid var(--border-color);
 }
 
 .news-item {
@@ -247,26 +247,27 @@ onMounted(() => {
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 50%;
-    border: 3px solid var(--body-bg, #ffffff);
-    background-color: var(--primary-color, #3182ce);
-    box-shadow: 0 0 0 2px var(--primary-color, #3182ce);
+    border: 3px solid var(--body-bg);
+    background-color: var(--link-color);
+    box-shadow: 0 0 0 2px var(--link-color);
 }
 
-.dot-retreat { background-color: #38a169; box-shadow: 0 0 0 2px #38a169; }
-.dot-workshop { background-color: #dd6b20; box-shadow: 0 0 0 2px #dd6b20; }
-.dot-milestone { background-color: #805ad5; box-shadow: 0 0 0 2px #805ad5; }
+/* Categories differ by fill strength: event solid navy, workshop ring, retreat yellow ring, milestone solid yellow */
+.dot-workshop { background-color: var(--body-bg); }
+.dot-retreat { background-color: var(--brand-yellow-tint); box-shadow: 0 0 0 2px var(--brand-yellow); }
+.dot-milestone { background-color: var(--brand-yellow); box-shadow: 0 0 0 2px var(--brand-yellow); }
 
 .news-card {
     overflow: hidden;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
+    background-color: var(--card-bg);
     transition: box-shadow 0.2s ease;
 }
 
 .news-item.is-open .news-card,
 .news-card:hover {
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--shadow-color) 8%, transparent);
 }
 
 .news-heading {
@@ -291,7 +292,7 @@ onMounted(() => {
 }
 
 .news-summary:focus-visible {
-    outline: 2px solid var(--primary-color, #3182ce);
+    outline: 2px solid var(--primary-color);
     outline-offset: -2px;
 }
 
@@ -304,8 +305,8 @@ onMounted(() => {
     height: 72px;
     overflow: hidden;
     border-radius: 0.5rem;
-    background-color: var(--tag-bg, #ebf8ff);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--tag-bg);
+    color: var(--link-color);
 }
 
 .news-thumb img {
@@ -332,7 +333,7 @@ onMounted(() => {
 .news-date {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     white-space: nowrap;
 }
 
@@ -341,22 +342,19 @@ onMounted(() => {
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 600;
-    background-color: rgba(30, 144, 255, 0.12);
-    color: var(--primary-color, #3182ce);
+    border: 1px solid transparent;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
 }
 
-.tag-retreat { background-color: rgba(56, 161, 105, 0.14); color: #2f855a; }
-.tag-workshop { background-color: rgba(221, 107, 32, 0.14); color: #c05621; }
-.tag-milestone { background-color: rgba(128, 90, 213, 0.14); color: #6b46c1; }
-
-.dark-mode .tag-retreat { color: #68d391; }
-.dark-mode .tag-workshop { color: #f6ad55; }
-.dark-mode .tag-milestone { color: #b794f4; }
+.tag-workshop { border-color: var(--link-color); background-color: transparent; color: var(--link-color); }
+.tag-retreat { border-color: var(--brand-yellow); background-color: var(--brand-yellow-tint); color: var(--text-color); }
+.tag-milestone { background-color: var(--brand-yellow); color: var(--on-brand-yellow); }
 
 .news-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .news-toggle {
@@ -365,7 +363,7 @@ onMounted(() => {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: var(--tag-bg, #f0f4f8);
+    background-color: var(--tag-bg);
 }
 
 .news-toggle::before,
@@ -376,7 +374,7 @@ onMounted(() => {
     left: 50%;
     width: 0.8rem;
     height: 2px;
-    background-color: var(--primary-color, #3182ce);
+    background-color: var(--primary-color);
     transform: translate(-50%, -50%);
     transition: transform 0.2s ease;
 }
@@ -391,7 +389,7 @@ onMounted(() => {
 
 .news-detail-content {
     padding: 0.25rem 1.25rem 1.25rem;
-    color: var(--text-color, #4a5568);
+    color: var(--text-color);
     line-height: 1.7;
 }
 
@@ -417,7 +415,7 @@ onMounted(() => {
     aspect-ratio: 4 / 3;
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--tag-bg, #ebf8ff);
+    background-color: var(--tag-bg);
     cursor: zoom-in;
 }
 
@@ -435,7 +433,7 @@ onMounted(() => {
 }
 
 .gallery-item:focus-visible {
-    outline: 3px solid var(--primary-color, #3182ce);
+    outline: 3px solid var(--primary-color);
     outline-offset: 2px;
 }
 

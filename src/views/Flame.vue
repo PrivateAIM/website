@@ -273,8 +273,8 @@ const resources = [
     margin-bottom: 1.25rem;
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
-    background-color: var(--tag-bg, #f0f4f8);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--tag-bg);
+    color: var(--link-color);
     font-weight: 600;
 }
 
@@ -282,20 +282,20 @@ const resources = [
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background-color: #38a169;
-    box-shadow: 0 0 0 4px rgba(56, 161, 105, 0.2);
+    background-color: var(--success);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--success) 25%, transparent);
 }
 
 .flame-lead {
     font-size: 1.25rem;
     line-height: 1.7;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
 .flame-context {
     line-height: 1.7;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     opacity: 0.85;
     margin-bottom: 2rem;
 }
@@ -307,16 +307,16 @@ const resources = [
     margin-bottom: 3rem;
     padding: 1.25rem 1.5rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, rgba(30, 144, 255, 0.12), rgba(66, 153, 225, 0.04));
-    border: 1px solid rgba(30, 144, 255, 0.35);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--tag-bg);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
+    color: var(--link-color);
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .explainer-banner:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(30, 144, 255, 0.18);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-color) 18%, transparent);
 }
 
 .explainer-text {
@@ -324,11 +324,11 @@ const resources = [
     flex-direction: column;
     gap: 0.15rem;
     flex-grow: 1;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .explainer-text strong {
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     font-size: 1.1rem;
 }
 
@@ -344,13 +344,13 @@ const resources = [
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.25rem;
-    color: var(--text-color, #1a202c);
-    border-bottom: 2px solid var(--primary-color, #3182ce);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
 
 .section-body {
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
     line-height: 1.8;
     font-size: 1.05rem;
 }
@@ -370,8 +370,8 @@ const resources = [
     align-items: flex-start;
     padding: 1.1rem 1.25rem;
     border-radius: 0.75rem;
-    background-color: var(--tag-bg, #f7fafc);
-    color: var(--text-color, #1a202c);
+    background-color: var(--tag-bg);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -383,17 +383,17 @@ const resources = [
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: var(--primary-color, #3182ce);
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
     font-weight: 700;
 }
 
 .flame-figure {
     margin: 2rem 0 0;
     padding: 1rem;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
+    background-color: var(--card-bg);
 }
 
 .flame-figure img {
@@ -417,7 +417,7 @@ const resources = [
     margin-top: 0.75rem;
     font-size: 0.9rem;
     text-align: center;
-    color: var(--text-color, #4a5568);
+    color: var(--text-color);
     opacity: 0.8;
 }
 
@@ -435,10 +435,10 @@ const resources = [
     gap: 0.9rem;
     align-items: flex-start;
     padding: 1rem 1.25rem;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
-    color: var(--text-color, #1a202c);
+    background-color: var(--card-bg);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -451,15 +451,15 @@ const resources = [
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.6rem;
-    background-color: var(--tag-bg, #ebf8ff);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--tag-bg);
+    color: var(--link-color);
 }
 
 .limits-callout {
     padding: 1.5rem;
-    border-left: 4px solid #dd6b20;
+    border-left: 4px solid var(--flame);
     border-radius: 0.5rem;
-    background-color: rgba(221, 107, 32, 0.08);
+    background-color: var(--flame-tint);
 }
 
 .callout-heading {
@@ -469,7 +469,7 @@ const resources = [
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
-    color: #c05621;
+    color: var(--flame-text);
 }
 
 .limits-callout .section-body {
@@ -486,15 +486,15 @@ const resources = [
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
+    background-color: var(--card-bg);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .audience-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 8%, transparent);
 }
 
 .audience-icon {
@@ -504,20 +504,20 @@ const resources = [
 .audience-title {
     font-size: 1.15rem;
     margin: 0 0 0.5rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .audience-body {
     flex-grow: 1;
     line-height: 1.6;
     margin-bottom: 0.75rem;
-    color: var(--text-color, #1a202c);
+    color: var(--text-color);
 }
 
 .audience-link {
     display: inline-block;
     padding: 0.25rem 0;
-    color: var(--primary-color, #3182ce);
+    color: var(--link-color);
     font-weight: 500;
     text-decoration: none;
 }
@@ -541,10 +541,10 @@ const resources = [
     gap: 0.75rem;
     height: 100%;
     padding: 1rem 1.25rem;
-    border: 1px solid var(--border-color, #e2e8f0);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    background-color: var(--card-bg, #ffffff);
-    color: var(--primary-color, #3182ce);
+    background-color: var(--card-bg);
+    color: var(--link-color);
     font-weight: 500;
     line-height: 1.4;
     text-decoration: none;
@@ -552,8 +552,8 @@ const resources = [
 }
 
 .resource-card:hover {
-    border-color: var(--primary-color, #3182ce);
-    box-shadow: 0 4px 14px rgba(30, 144, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-color) 15%, transparent);
 }
 
 .resource-card svg {

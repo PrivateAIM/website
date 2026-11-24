@@ -48,7 +48,7 @@ h2 {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .capability-grid {
@@ -63,15 +63,15 @@ h2 {
   gap: 1rem;
   align-items: flex-start;
   padding: 1.5rem;
-  border: 1px solid var(--border-color, #e2e8f0);
+  border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--card-bg);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .capability:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 8%, transparent);
 }
 
 .capability-icon {
@@ -82,20 +82,20 @@ h2 {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.6rem;
-  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
 }
 
 .capability h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .capability p {
   margin: 0;
   line-height: 1.6;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 
 .capability-examples {
@@ -103,7 +103,7 @@ h2 {
   margin: 0 auto;
   text-align: center;
   line-height: 1.6;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 
 @media (max-width: 640px) {

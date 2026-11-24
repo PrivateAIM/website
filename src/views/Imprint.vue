@@ -58,7 +58,7 @@ const pageTitle = useTranslation('imprint.title');
   max-width: 800px;
   margin: 0 auto;
   padding: 3rem 1rem 5rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .legal-section {
@@ -69,8 +69,8 @@ h2 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--text-color, #1a202c);
-  border-bottom: 1px solid var(--border-color, #eaeaea);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
@@ -78,7 +78,7 @@ h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 1.5rem 0 1rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 p {

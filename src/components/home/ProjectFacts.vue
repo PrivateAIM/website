@@ -62,9 +62,9 @@ const facts = [
     padding: 2rem;
     border-radius: 1rem;
     background:
-        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0) 0 0 / 22px 22px,
-        linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-    color: #ffffff;
+        radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--on-band) 12%, transparent) 1px, transparent 0) 0 0 / 22px 22px,
+        var(--band-bg);
+    color: var(--on-band);
 }
 
 .facts-title {
@@ -112,7 +112,7 @@ const facts = [
     font-size: 2rem;
     font-weight: 800;
     line-height: 1.1;
-    color: #ffffff;
+    color: var(--on-band);
     text-decoration: none;
 }
 
@@ -120,11 +120,11 @@ a.fact-headline {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
-    text-decoration-color: rgba(255, 255, 255, 0.5);
+    text-decoration-color: color-mix(in srgb, var(--on-band) 50%, transparent);
 }
 
 a.fact-headline:hover {
-    text-decoration-color: #ffffff;
+    text-decoration-color: var(--on-band);
 }
 
 .fact-detail {

@@ -89,7 +89,7 @@ const pageNodes = computed(() => {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color, #2c3e50);
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -104,12 +104,12 @@ const pageNodes = computed(() => {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--body-bg, #ffffff);
+  background-color: var(--body-bg);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
 }
 
 /* Add smooth transitions for color changes */
@@ -123,8 +123,8 @@ a {
   top: -100%;
   left: 1rem;
   padding: 0.5rem 1rem;
-  background: var(--primary-color, #3182ce);
-  color: white;
+  background: var(--primary-color);
+  color: var(--on-primary);
   border-radius: 0 0 0.5rem 0.5rem;
   z-index: 100;
   text-decoration: none;

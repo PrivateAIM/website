@@ -68,7 +68,7 @@ const links = [
   margin: 0 auto;
   padding: 4rem 1rem 5rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .not-found-code {
@@ -77,10 +77,7 @@ const links = [
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #63b3ed 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--primary-color);
 }
 
 h1 {
@@ -108,18 +105,18 @@ h1 {
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  border: 1px solid var(--border-color, #e2e8f0);
+  border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  background-color: var(--card-bg, #ffffff);
-  color: var(--text-color, #1a202c);
+  background-color: var(--card-bg);
+  color: var(--text-color);
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .not-found-card:hover {
   transform: translateY(-2px);
-  border-color: var(--primary-color, #3182ce);
-  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-color) 15%, transparent);
 }
 
 .card-icon {
@@ -130,8 +127,8 @@ h1 {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.6rem;
-  background: linear-gradient(135deg, var(--primary-color, #3182ce) 0%, #4299e1 100%);
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
 }
 
 .card-text {
@@ -141,7 +138,7 @@ h1 {
 }
 
 .card-text strong {
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
 }
 
 .card-text span {

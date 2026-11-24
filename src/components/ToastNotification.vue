@@ -82,10 +82,10 @@ const handleKeyDown = (event: KeyboardEvent) => {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--primary-color, #3182ce);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   border-radius: 0.375rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--shadow-color) 15%, transparent);
   z-index: 1000;
   max-width: 350px;
   overflow: hidden;
@@ -104,7 +104,7 @@ const handleKeyDown = (event: KeyboardEvent) => {
 .toast-close-button {
   background: transparent;
   border: none;
-  color: white;
+  color: var(--on-primary);
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
@@ -117,13 +117,13 @@ const handleKeyDown = (event: KeyboardEvent) => {
 }
 
 .toast-close-button:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid color-mix(in srgb, var(--on-primary) 50%, transparent);
   border-radius: 3px;
 }
 
 .toast-progress-bar {
   height: 3px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: color-mix(in srgb, var(--on-primary) 70%, transparent);
   animation: shrink 3s linear forwards;
   transform-origin: left;
 }

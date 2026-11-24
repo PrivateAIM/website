@@ -56,7 +56,7 @@ const finalUrl = computed(() => {
 
 <style scoped>
 .inline-link {
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
   text-decoration: underline;
   text-underline-offset: 2px;
 }

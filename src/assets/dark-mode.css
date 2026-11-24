@@ -28,6 +28,7 @@
   --ember: #F49619;
   --tag-bg: #EEF1F8;
   --tag-text: #2F4A87;
+  --success: #2F9E5B;
 
   /* Derived tokens */
   --band-bg: var(--primary-color);      /* page headers, hero, key figures, CTA boxes */
@@ -65,6 +66,7 @@ body.dark-mode {
   --ember: #F49619;
   --tag-bg: #1C2D5A;
   --tag-text: #C9D2E8;
+  --success: #4CC47A;
 
   --band-bg: var(--card-bg);
   --on-band: var(--text-color);

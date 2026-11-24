@@ -52,27 +52,27 @@ h2 {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .faq-item {
   margin-bottom: 1rem;
   padding: 1.25rem 1.5rem;
-  border: 1px solid var(--border-color, #e2e8f0);
-  border-left: 4px solid var(--primary-color, #3182ce);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
   border-radius: 0.75rem;
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--card-bg);
 }
 
 .faq-item h3 {
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .faq-item p {
   margin: 0;
   line-height: 1.7;
-  color: var(--text-color, #4a5568);
+  color: var(--text-color);
 }
 </style>

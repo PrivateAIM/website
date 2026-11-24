@@ -123,7 +123,7 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   padding: 3rem 4rem;
-  background-color: rgba(10, 12, 16, 0.9);
+  background-color: var(--overlay);
 }
 
 .lightbox-figure {
@@ -142,7 +142,7 @@ onBeforeUnmount(() => {
 
 .lightbox-figure figcaption {
   margin-top: 0.75rem;
-  color: #e2e8f0;
+  color: var(--on-overlay);
   font-size: 0.9rem;
 }
 
@@ -155,15 +155,15 @@ onBeforeUnmount(() => {
   height: 2.75rem;
   border: none;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background-color: color-mix(in srgb, var(--on-overlay) 15%, transparent);
+  color: var(--on-overlay);
   font-size: 1.1rem;
   cursor: pointer;
 }
 
 .lightbox-button:hover,
 .lightbox-button:focus-visible {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: color-mix(in srgb, var(--on-overlay) 30%, transparent);
 }
 
 .lightbox-close {

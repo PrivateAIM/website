@@ -437,12 +437,12 @@ const description = useTranslation('partners.description');
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .section-description {
   font-size: 1.1rem;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   margin-bottom: 2.5rem;
   max-width: 800px;
   line-height: 1.6;
@@ -455,18 +455,18 @@ const description = useTranslation('partners.description');
 }
 
 .partner-card {
-  background-color: var(--tag-bg, #ffffff);
+  background-color: var(--card-bg);
   border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px color-mix(in srgb, var(--shadow-color) 5%, transparent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--border-color, #eaeaea);
+  border: 1px solid var(--border-color);
   height: 100%;
 }
 
 .partner-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px color-mix(in srgb, var(--shadow-color) 10%, transparent);
 }
 
 .partner-logo {
@@ -475,7 +475,7 @@ const description = useTranslation('partners.description');
   align-items: center;
   justify-content: center;
   padding: 1.0rem;
-  background-color: #ffffff;
+  background-color: var(--logo-plate);
   border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -494,12 +494,12 @@ const description = useTranslation('partners.description');
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .partner-description {
   font-size: 0.95rem;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
@@ -507,7 +507,7 @@ const description = useTranslation('partners.description');
 .partner-link {
   display: inline-block;
   padding-block: 5px;
-  color: var(--primary-color, #3182ce);
+  color: var(--link-color);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -521,7 +521,7 @@ const description = useTranslation('partners.description');
 .become-partner {
   margin-top: 4rem;
   padding: 3rem;
-  background-color: var(--tag-bg, #f7fafc);
+  background-color: var(--tag-bg);
   border-radius: 1rem;
 }
 
@@ -534,13 +534,13 @@ const description = useTranslation('partners.description');
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
   text-align: center;
 }
 
 .become-partner-description {
   font-size: 1.1rem;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   margin-bottom: 2.5rem;
   text-align: center;
   line-height: 1.6;
@@ -554,22 +554,22 @@ const description = useTranslation('partners.description');
 }
 
 .benefit {
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--shadow-color) 5%, transparent);
 }
 
 .benefit-title {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 .benefit-description {
   font-size: 0.95rem;
-  color: var(--nav-text, #4a5568);
+  color: var(--nav-text);
   line-height: 1.6;
 }
 
@@ -585,7 +585,7 @@ const description = useTranslation('partners.description');
   white-space: pre-line;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-color, #2d3748);
+  color: var(--text-color);
 }
 
 .contact-button {
@@ -594,8 +594,8 @@ const description = useTranslation('partners.description');
   margin: 2rem auto 0;
   padding: 0.875rem 1.75rem;
   border-radius: 0.5rem;
-  background-color: var(--primary-color, #3182ce);
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   font-weight: 600;
   text-align: center;
   text-decoration: none;
@@ -603,7 +603,7 @@ const description = useTranslation('partners.description');
 }
 
 .contact-button:hover {
-  background-color: #1a75d1;
+  background-color: var(--primary-hover);
 }
 
 @media (max-width: 860px) {

@@ -52,7 +52,7 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
   max-width: 800px;
   margin: 0 auto;
   padding: 3rem 1rem 5rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
   font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.6;
@@ -63,8 +63,8 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
 }
 
 .language-notice {
-  background-color: #f8f9fa;
-  border-left: 4px solid #ffc107;
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--primary-color);
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 0.25rem;
@@ -80,21 +80,9 @@ const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? polic
 }
 
 .alert-info {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-}
-
-/* Dark mode styling */
-body.dark-mode .language-notice {
-  background-color: #1a1a2e;
-  border-left-color: #ffc107;
-}
-
-body.dark-mode .alert-info {
-  color: #d1ecf1;
-  background-color: #0f3a4a;
-  border-color: #164b5e;
+  color: var(--text-color);
+  background-color: var(--tag-bg);
+  border-color: var(--border-color);
 }
 
 /* Add global styles for the markdown rendered content */
@@ -102,8 +90,8 @@ body.dark-mode .alert-info {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--text-color, #1a202c);
-  border-bottom: 1px solid var(--border-color, #eaeaea);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
@@ -111,7 +99,7 @@ body.dark-mode .alert-info {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 1.5rem 0 1rem;
-  color: var(--text-color, #1a202c);
+  color: var(--text-color);
 }
 
 :deep(p) {
@@ -130,12 +118,13 @@ body.dark-mode .alert-info {
 }
 
 :deep(a) {
-  color: var(--primary-color, #3182ce);
-  text-decoration: none;
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 :deep(a:hover) {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 /* Responsive adjustments */
