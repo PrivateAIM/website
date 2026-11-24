@@ -46,11 +46,11 @@ const pages: PageRoute[] = [
         meta: {
             en: {
                 title: 'PrivateAIM — Privacy-Preserving Analytics in Medicine',
-                description: 'PrivateAIM develops FLAME, a federated platform for medical data analysis. Patient data stays at each site; only aggregated results are returned.',
+                description: 'PrivateAIM develops FLAME, an open-source platform for federated learning and analysis of medical data across German university hospitals in the MII.',
             },
             de: {
                 title: 'PrivateAIM — Datenschutzfreundliche Analytik in der Medizin',
-                description: 'PrivateAIM entwickelt FLAME, eine föderierte Plattform für die Analyse medizinischer Daten. Patientendaten bleiben am Standort, zurück kommen nur aggregierte Ergebnisse.',
+                description: 'PrivateAIM entwickelt FLAME, eine quelloffene Plattform für föderiertes Lernen und föderierte Analysen medizinischer Daten an Universitätskliniken der MII.',
             },
         },
     },

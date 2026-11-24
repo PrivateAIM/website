@@ -24,8 +24,52 @@ export default defineLocale('de', [
             joinNetwork: 'Netzwerk beitreten',
         },
         intro: {
-            paragraph1: 'Medizinische Datenanalyse ist entscheidend für die Weiterentwicklung der Gesundheitsforschung und ermöglicht präzisere Diagnosen, innovative Behandlungen und zukunftsfähige Patientenversorgung. Aufgrund der Sensibilität solcher Daten sind jedoch strenge Datenschutzvorkehrungen erforderlich, um gesetzliche Vorschriften einzuhalten und die Vertraulichkeit der Patienten zu schützen.',
-            paragraph2: 'Diese Herausforderung wird besonders bei KI-Anwendungen im medizinischen Bereich deutlich, wo umfangreiche Datensätze erforderlich sind, um zuverlässige und aussagekräftige Ergebnisse zu erzielen.',
+            title: 'Was ist PrivateAIM?',
+            definition: 'PrivateAIM (Privacy-Preserving Analytics in Medicine) ist ein Forschungskonsortium aus 15 Partnern der Medizininformatik-Initiative (MII), gefördert vom Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) von April 2023 bis zum 31. März 2027. Es entwickelt [FLAME](/flame:internal) (Federated Learning and Analysis in Medicine), eine quelloffene Plattform im produktiven Einsatz, die medizinische Daten über Universitätskliniken hinweg analysiert: Patientendaten bleiben am jeweiligen Standort, nur der Analysecode kommt zu den Daten, und nur aggregierte Ergebnisse werden zurückgegeben.',
+            paragraph2: 'Medizinische Forschung und insbesondere KI brauchen Daten aus vielen Kliniken, um belastbare Ergebnisse zu liefern. Gesundheitsdaten sind jedoch sensibel und streng geschützt. Föderierte Analysen lösen diesen Konflikt: Statt Daten zentral zu sammeln, schicken Forschende ihre Analyse zu den Daten.',
+        },
+        capabilities: {
+            title: 'Was Sie mit FLAME machen können',
+            statistics: {
+                title: 'Statistiken und Kohortenzählungen',
+                description: 'Zählen Sie Kohorten und berechnen Sie deskriptive Statistiken über mehrere Standorte, auf FHIR-Daten wie dem MII-Kerndatensatz oder auf Dateien wie CSV oder VCF.',
+            },
+            learning: {
+                title: 'Föderiertes Lernen',
+                description: 'Trainieren Sie Machine-Learning-Modelle über mehrere Runden, während die Trainingsdaten die beteiligten Kliniken nie verlassen.',
+            },
+            privacy: {
+                title: 'Datenschutzfördernde Technologien',
+                description: 'Ergänzen Sie die Ergebnisse um lokale Differential Privacy, oder nutzen Sie homomorphe Verschlüsselung, sodass nur das Gesamtergebnis aller Standorte sichtbar ist.',
+            },
+            code: {
+                title: 'Eigene Python-Analysen',
+                description: 'Schreiben Sie Ihre Analyse in Python mit dem FLAME-SDK, testen Sie sie lokal und wählen Sie ein Master-Image mit den benötigten Abhängigkeiten.',
+            },
+            examples: 'Beispielanalysen in der [FLAME-Dokumentation](https://docs.privateaim.net/guide/user/analysis-coding:external) (Englisch) behandeln Long COVID (PASC), Überlebenszeitanalysen, logistische Regression, Bildklassifikation und die Qualitätskontrolle genomischer Daten.',
+        },
+        faq: {
+            title: 'Häufige Fragen',
+            q1: {
+                question: 'Verlassen Patientendaten die Klinik?',
+                answer: 'Nein. Jeder teilnehmende Standort betreibt einen FLAME Node direkt bei seinen eigenen Daten. Nur der Analysecode kommt zu den Daten, und nur aggregierte Ergebnisse werden zurückgegeben. Der zentrale FLAME Hub hat nie Zugriff auf Patientendaten.',
+            },
+            q2: {
+                question: 'Sind die Ergebnisse anonym?',
+                answer: 'Aggregation allein garantiert keine Anonymität. Deshalb prüft jeder Standort jede Analyse, bevor sie läuft, auch daraufhin, ob ihre Ergebnisse angemessen sind. Lokale Differential Privacy und homomorphe Verschlüsselung können zusätzlich schützen. Die [FLAME-Seite](/flame:internal) beschreibt die Schutzmaßnahmen und ihre Grenzen.',
+            },
+            q3: {
+                question: 'Wer kann FLAME nutzen?',
+                answer: 'Forschende reichen Analysen über den FLAME Hub ein. Universitätskliniken und andere Einrichtungen nehmen teil, indem sie einen FLAME Node betreiben, und entscheiden für jedes Projekt selbst, ob sie mitmachen. Die [FLAME-Seite](/flame:internal) bietet Einstiege für Forschende, Standorte, Datenschutzbeauftragte sowie Patientinnen und Patienten.',
+            },
+            q4: {
+                question: 'Ist FLAME Open Source?',
+                answer: 'Ja. Der Quellcode von FLAME Hub und Node ist öffentlich auf [GitHub](https://github.com/PrivateAIM:external) verfügbar, und die [Dokumentation](https://docs.privateaim.net/getting-started/:external) erklärt Installation und Nutzung.',
+            },
+            q5: {
+                question: 'Wer steht hinter PrivateAIM?',
+                answer: 'PrivateAIM vereint 15 [Partner](/partners:internal) aus allen vier Konsortien der Medizininformatik-Initiative (MII), koordiniert vom Universitätsklinikum Tübingen, dem Berlin Institute of Health in der Charité und der Technischen Universität München. Das Projekt wird bis zum 31. März 2027 vom BMFTR gefördert.',
+            },
         },
         mission: {
             title: 'Unsere Mission',
