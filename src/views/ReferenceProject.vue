@@ -148,7 +148,7 @@ import { marked } from 'marked';
 import PageHeader from '@/components/PageHeader.vue';
 import NotFound from '@/views/NotFound.vue';
 import { useLocale, useLocalePath, useTranslation } from '@/i18n';
-import { findReference, referenceContentForLocale } from '@/data/references';
+import { findReference, referenceContentForLocale, referenceTitle } from '@/data/references';
 
 const props = defineProps<{ slug: string }>();
 
@@ -192,7 +192,7 @@ watch([content, () => route.fullPath], () => {
         return;
     }
 
-    const title = `${content.value.name} — PrivateAIM`;
+    const title = referenceTitle(content.value, locale.value);
     document.title = title;
     setMeta('meta[name="description"]', 'content', content.value.tagline);
     setMeta('meta[property="og:title"]', 'content', title);

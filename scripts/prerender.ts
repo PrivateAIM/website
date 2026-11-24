@@ -1,5 +1,11 @@
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, renameSync, writeFileSync } from 'node:fs';
+import {
+    existsSync, 
+    mkdirSync, 
+    readdirSync, 
+    renameSync, 
+    writeFileSync,
+} from 'node:fs';
 import { join } from 'node:path';
 
 export const SITE_URL = 'https://privateaim.de';
@@ -165,6 +171,21 @@ export function writeSitemap(outDir: string) {
         ].join('\n'));
     });
 
+    // PDFs in public/files (flyers, slides) have no language alternates
+    const filesDir = join(outDir, 'files');
+    const documents = existsSync(filesDir) ?
+        readdirSync(filesDir).filter((file) => file.endsWith('.pdf')).sort() :
+        [];
+    for (const file of documents) {
+        const lastmod = lastModified([`public/files/${file}`]);
+        urls.push([
+            '  <url>',
+            `    <loc>${absoluteUrl(`/files/${file}`)}</loc>`,
+            ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
+            '  </url>',
+        ].join('\n'));
+    }
+
     const sitemap = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
@@ -173,4 +194,36 @@ export function writeSitemap(outDir: string) {
         '',
     ].join('\n');
     writeFileSync(join(outDir, 'sitemap.xml'), sitemap);
+}
+
+/** URLs of the former website that other sites still link to (e.g. docs.privateaim.net), and their new pages. */
+const LEGACY_REDIRECTS: Record<string, string> = {
+    '/eng/index.html': '/',
+    '/eng/project.html': '/',
+    '/eng/team.html': '/team',
+};
+
+/**
+ * GitHub Pages cannot send 301s, so each legacy URL gets a static page with an
+ * immediate meta refresh, which Google treats as a permanent redirect.
+ */
+export function writeLegacyRedirects(outDir: string) {
+    for (const [from, to] of Object.entries(LEGACY_REDIRECTS)) {
+        const target = absoluteUrl(to);
+        const file = join(outDir, from);
+        mkdirSync(join(file, '..'), { recursive: true });
+        writeFileSync(file, [
+            '<!DOCTYPE html>',
+            '<html lang="en">',
+            '<head>',
+            '<meta charset="utf-8">',
+            '<title>PrivateAIM</title>',
+            `<link rel="canonical" href="${target}">`,
+            `<meta http-equiv="refresh" content="0; url=${target}">`,
+            '</head>',
+            `<body><p>This page has moved to <a href="${target}">${target}</a>.</p></body>`,
+            '</html>',
+            '',
+        ].join('\n'));
+    }
 }

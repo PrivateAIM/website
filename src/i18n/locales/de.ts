@@ -12,6 +12,8 @@ export default defineLocale('de', [
         team: 'Team',
         partners: 'Partner',
         publications: 'Publikationen',
+        skipToContent: 'Zum Inhalt springen',
+        changeLanguage: 'Sprache wechseln',
     })]),
 
     defineNamespace('home', [defineTranslations({
@@ -86,6 +88,7 @@ export default defineLocale('de', [
         title: 'FLAME',
         subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
         status: 'FLAME ist im produktiven Einsatz.',
+        context: 'FLAME (Federated Learning and Analysis in Medicine) wird von PrivateAIM entwickelt, einem vom BMFTR geförderten Konsortium der Medizininformatik-Initiative (MII). Mit anderen Softwareprojekten namens Flame hat es nichts zu tun.',
         lead: 'Mit FLAME können Forschende medizinische Daten mehrerer Einrichtungen analysieren, ohne dass die Daten diese jemals verlassen. Statt Daten zentral zu sammeln, bringt FLAME den Analysecode zu den Daten. Zurückgegeben werden nur aggregierte Ergebnisse.',
         architecture: {
             title: 'So funktioniert FLAME',
@@ -193,7 +196,6 @@ export default defineLocale('de', [
                 title: 'Die Zukunft der medizinischen Forschung mitgestalten',
                 text: 'Helfen Sie mit, Standards und Best Practices für datenschutzfreundliche Analysen zu definieren.',
             },
-            button: 'Kontaktieren Sie uns für eine Partnerschaft',
         },
     })]),
 
@@ -205,6 +207,7 @@ export default defineLocale('de', [
         accept: 'Alle akzeptieren',
         deny: 'Nur notwendige',
         customize: 'Anpassen',
+        settings: 'Cookie-Einstellungen öffnen',
         preference: 'Auswahl speichern',
         setting: {
             required: {

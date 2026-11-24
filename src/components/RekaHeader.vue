@@ -285,10 +285,11 @@ const closeMobileMenu = () => {
   background: transparent;
   border: none;
   cursor: pointer;
-  /* 54x44px touch target around the 30x20px icon, without moving it */
+  /* 50x44px touch target around the 30x20px icon, without moving it; the right
+     side stays within the 0.5rem header padding on small screens */
   box-sizing: content-box;
-  padding: 12px;
-  margin: -12px;
+  padding: 12px 8px 12px 12px;
+  margin: -12px -8px -12px -12px;
   z-index: 20;
   flex-shrink: 0;
 }

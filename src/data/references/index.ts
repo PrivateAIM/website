@@ -18,3 +18,10 @@ export function referenceContentForLocale(project: ReferenceProject, locale: str
     }
     return content;
 }
+
+/** Page title of a reference project; the German one names the page type, so both locales have distinct titles. */
+export function referenceTitle(content: ReferenceProjectContent, locale: string): string {
+    return locale === 'de' ?
+        `${content.name} — Referenzprojekt von PrivateAIM` :
+        `${content.name} — PrivateAIM Reference Project`;
+}

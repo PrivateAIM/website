@@ -389,10 +389,6 @@
                             </p>
                         </div>
                     </div>
-                    <a
-                        href="mailto:info@bih-charite.de"
-                        class="contact-button"
-                    ><ITranslate path="partners.network.button" /></a>
                 </div>
             </section>
         </div>
@@ -560,25 +556,6 @@ const description = useTranslation('partners.description');
   font-size: 0.95rem;
   color: var(--nav-text, #4a5568);
   line-height: 1.6;
-}
-
-.contact-button {
-  display: block;
-  background-color: #0055b3;
-  color: white;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.contact-button:hover {
-  background-color: #2c5282;
 }
 
 /* Responsive adjustments */

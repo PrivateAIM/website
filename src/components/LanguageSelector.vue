@@ -6,10 +6,15 @@ import {
     ref, 
 } from 'vue';
 import { useRoute } from 'vue-router';
-import { LOCALES, localePath, useLocale } from '@/i18n';
+import {
+    LOCALES, 
+    localePath, 
+    useLocale, 
+    useTranslation,
+} from '@/i18n';
 
-import FlagEN from '@/assets/flags/en-flag.svg';
-import FlagDE from '@/assets/flags/de-flag.svg';
+import FlagEN from '@/assets/flags/en-flag.svg?no-inline';
+import FlagDE from '@/assets/flags/de-flag.svg?no-inline';
 
 type LocaleCode = (typeof LOCALES)[number]['code'];
 
@@ -29,6 +34,7 @@ const activeLanguageEntry = computed(
     () => languages.find((l) => l.code === activeLanguage.value) ?? languages[0]!,
 );
 const isOpen = ref(false);
+const changeLanguageLabel = useTranslation('navigation.changeLanguage');
 const dropdownRef = ref<HTMLElement | null>(null);
 
 // The same page in another language; the router sets the locale from the URL
@@ -70,11 +76,15 @@ onUnmounted(() => {
             type="button"
             class="language-trigger"
             :class="{ active: isOpen }"
+            :aria-label="`${changeLanguageLabel} (${activeLanguageEntry.label})`"
+            aria-haspopup="true"
+            :aria-expanded="isOpen"
+            aria-controls="language-dropdown"
             @click="toggleDropdown"
         >
             <img
                 :src="activeLanguageEntry.flag"
-                :alt="activeLanguageEntry.label"
+                alt=""
                 class="flag-icon"
             >
             <svg
@@ -98,6 +108,7 @@ onUnmounted(() => {
 
         <div
             v-show="isOpen"
+            id="language-dropdown"
             class="language-dropdown"
         >
             <router-link

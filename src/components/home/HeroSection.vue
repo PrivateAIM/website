@@ -90,6 +90,7 @@ const localePath = useLocalePath();
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
+  overflow-wrap: break-word;
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
@@ -200,7 +201,8 @@ const localePath = useLocalePath();
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .hero-container {
-    grid-template-columns: 1fr;
+    /* minmax(0, ...) lets the column shrink below its longest word */
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
 
@@ -238,6 +240,8 @@ const localePath = useLocalePath();
 
   .hero-title {
     font-size: 2.25rem;
+    /* Long German compounds ("Datenschutzfreundliche") are wider than small phones */
+    hyphens: auto;
   }
 
   .hero-cta {

@@ -12,6 +12,9 @@
             <p class="flame-lead">
                 <ITranslate path="flame.lead" />
             </p>
+            <p class="flame-context">
+                <ITranslate path="flame.context" />
+            </p>
 
             <section class="flame-section">
                 <h2 class="section-heading">
@@ -125,6 +128,13 @@ const safeguards = ['review', 'isolation', 'encryption', 'hub', 'privacy', 'acce
     font-size: 1.2rem;
     line-height: 1.7;
     color: var(--text-color, #1a202c);
+    margin-bottom: 1rem;
+}
+
+.flame-context {
+    line-height: 1.7;
+    color: var(--text-color, #1a202c);
+    opacity: 0.85;
     margin-bottom: 2.5rem;
 }
 

@@ -30,7 +30,7 @@
                         >
                         <div class="member-info">
                             <h3 class="member-name">{{ member.name }}</h3>
-                            <p class="member-role">{{ member.role }}</p>
+                            <p class="member-role">{{ roleLabel(member.role) }}</p>
                             <div class="member-links">
                                 <span class="member-link-item">
                                     <svg
@@ -84,7 +84,7 @@
                         >
                         <div class="member-info">
                             <h3 class="member-name">{{ member.name }}</h3>
-                            <p class="member-role">{{ member.role }}</p>
+                            <p class="member-role">{{ roleLabel(member.role) }}</p>
                             <div class="member-links">
                                 <span class="member-link-item">
                                     <svg
@@ -128,7 +128,7 @@
                         >
                         <div class="member-info">
                             <h3 class="member-name">{{ member.name }}</h3>
-                            <p class="member-role">{{ member.role }}</p>
+                            <p class="member-role">{{ roleLabel(member.role) }}</p>
                             <div class="member-links">
                                 <span class="member-link-item">
                                     <svg
@@ -150,10 +150,29 @@
 
 <script setup lang="ts">
 import PageHeader from '../components/PageHeader.vue';
-import { useTranslation } from '@/i18n';
+import { useLocale, useTranslation } from '@/i18n';
 
 const title = useTranslation('team.title');
 const subtitle = useTranslation('team.subtitle');
+const locale = useLocale();
+
+// German role labels; roles are kept in English in the member lists below
+const GERMAN_ROLES: Record<string, string> = {
+    'Technical Lead': 'Technische Leitung',
+    'Coordinator & Analyst': 'Koordination & Analyse',
+    'Node Lead & Developer': 'Node-Leitung & Entwicklung',
+    'Former Node Lead & Developer': 'Ehemals Node-Leitung & Entwicklung',
+    'Developer & Analyst': 'Entwicklung & Analyse',
+    Developer: 'Entwicklung',
+    'Privacy Engineer': 'Privacy Engineering',
+    Analyst: 'Analyse',
+    'Former Analyst': 'Ehemals Analyse',
+    'PI & Professor': 'Projektleitung & Professur',
+    Professor: 'Professur',
+    'Junior Professor': 'Juniorprofessur',
+};
+
+const roleLabel = (role: string) => (locale.value === 'de' ? GERMAN_ROLES[role] ?? role : role);
 
 interface TeamMember {
     name: string;

@@ -1,7 +1,7 @@
 // CookieBanner.vue
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { useMediaQuery } from '@vueuse/core';
+import { useTranslation } from '@/i18n';
 import { GA_TRACKING_ID, sendPageView } from '@/utils/analytics';
 
 interface CookieOptions {
@@ -16,8 +16,8 @@ interface WindowWithDataLayer extends Window {
 }
 
 const isVisible = ref(false);
-const isMobile = useMediaQuery('(max-width: 576px)');
 const showOptions = ref(false);
+const settingsLabel = useTranslation('cookie.settings');
 const cookieOptions = ref<CookieOptions>({
     necessary: true,
     analytics: false,
@@ -114,8 +114,8 @@ const acceptNecessary = () => {
 
 // Benutzerdefinierte Auswahl speichern
 const savePreferences = () => {
-    // On mobile the options are collapsed, so the first tap reveals them
-    if (isMobile.value && !showOptions.value) {
+    // The options are collapsed, so the first click reveals them
+    if (!showOptions.value) {
         showOptions.value = true;
         return;
     }
@@ -126,6 +126,8 @@ const savePreferences = () => {
 
 // Cookie-Einstellungen öffnen
 const openCookieSettings = () => {
+    // Reopened to change a choice: show the options right away
+    showOptions.value = true;
     isVisible.value = true;
 };
 
@@ -179,7 +181,7 @@ onMounted(() => {
                 </p>
 
                 <div
-                    v-show="!isMobile || showOptions"
+                    v-show="showOptions"
                     class="cookie-options"
                 >
                     <div class="cookie-option">
@@ -221,7 +223,7 @@ onMounted(() => {
                         class="btn btn-outline btn-preferences"
                         @click="savePreferences"
                     >
-                        <ITranslate :path="isMobile && !showOptions ? 'cookie.customize' : 'cookie.preference'" />
+                        <ITranslate :path="showOptions ? 'cookie.preference' : 'cookie.customize'" />
                     </button>
                     <button
                         class="btn btn-primary"
@@ -238,7 +240,7 @@ onMounted(() => {
     <button
         v-if="!isVisible"
         class="cookie-settings-button"
-        aria-label="Cookie-Einstellungen öffnen"
+        :aria-label="settingsLabel"
         @click="openCookieSettings"
     >
         <svg
@@ -303,10 +305,14 @@ onMounted(() => {
 .cookie-option label {
   display: flex;
   align-items: center;
+  min-height: 24px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .cookie-option input {
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
 }
 

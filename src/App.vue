@@ -4,7 +4,7 @@
             <a
                 href="#main-content"
                 class="skip-link"
-            >Skip to content</a>
+            ><ITranslate path="navigation.skipToContent" /></a>
             <RekaHeader />
             <main
                 id="main-content"
@@ -38,8 +38,11 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { localePath, useLocale } from '@/i18n';
 import {
+    breadcrumbNode,
     flameNode,
     projectNode,
+    projectReferenceNode,
+    publicationListId,
     webPageNode,
     websiteNode,
 } from '@/seo/structuredData';
@@ -47,13 +50,38 @@ import {
 const route = useRoute();
 const locale = useLocale();
 
-// The project and FLAME are described on the home pages; other pages link to them by @id
-const pageNodes = computed(() => [
-    websiteNode,
-    webPageNode(localePath(route.path, locale.value), route.meta.title ?? 'PrivateAIM', route.meta.description, locale.value),
-    ...(route.name === 'Home' || route.name === 'Home-de' ? [projectNode, flameNode] : []),
-    ...(route.name === 'Flame' || route.name === 'Flame-de' ? [flameNode] : []),
-]);
+const PAGE_TYPES: Record<string, string> = {
+    News: 'CollectionPage',
+    Publications: 'CollectionPage',
+    Team: 'AboutPage',
+    Partners: 'AboutPage',
+};
+
+// The project is described on the home pages; other pages reference it by @id
+const pageNodes = computed(() => {
+    const page = String(route.name ?? '').replace(/-de$/, '');
+    const path = localePath(route.path, locale.value);
+    const title = route.meta.title ?? 'PrivateAIM';
+    const isHome = page === 'Home';
+    let mainEntity: string | undefined;
+    if (page === 'Publications') mainEntity = publicationListId(path);
+    if (page === 'Flame') mainEntity = flameNode['@id'] as string;
+
+    return [
+        websiteNode,
+        webPageNode({
+            path,
+            name: title,
+            description: route.meta.description,
+            locale: locale.value,
+            type: PAGE_TYPES[page],
+            mainEntity,
+        }),
+        ...(isHome ? [projectNode, flameNode] : [projectReferenceNode]),
+        ...(page === 'Flame' ? [flameNode] : []),
+        ...(isHome || page === 'NotFound' ? [] : [breadcrumbNode(localePath('/', locale.value), 'PrivateAIM', path, title.split(' — ')[0] ?? title)]),
+    ];
+});
 </script>
 
 <style>

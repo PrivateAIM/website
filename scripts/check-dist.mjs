@@ -38,6 +38,9 @@ for (const loc of locs) {
         fail(`${loc}: no file in dist`);
         continue;
     }
+    if (!file.endsWith('.html')) {
+        continue;
+    }
 
     const html = read(file);
     const title = attr(html, /<title>([^<]*)<\/title>/);
@@ -55,6 +58,13 @@ for (const loc of locs) {
     for (const [, hreflang, href] of alternates) {
         if (!locs.includes(href)) fail(`${loc}: hreflang ${hreflang} points outside the sitemap (${href})`);
     }
+}
+
+// Nothing listed in the sitemap may be blocked for crawlers
+const disallowed = [...read(join(DIST, 'robots.txt')).matchAll(/^Disallow:\s*(\S+)/gm)].map((match) => match[1]);
+for (const loc of locs) {
+    const blocked = disallowed.find((prefix) => loc.slice(SITE_URL.length).startsWith(prefix));
+    if (blocked) fail(`${loc}: blocked by robots.txt (Disallow: ${blocked})`);
 }
 
 const notFound = read(join(DIST, '404.html'));

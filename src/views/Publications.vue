@@ -9,8 +9,9 @@
             <div class="search-bar">
                 <input
                     v-model="searchQuery"
-                    type="text"
+                    type="search"
                     :placeholder="searchPlaceholder"
+                    :aria-label="searchPlaceholder"
                     class="search-input"
                 >
                 <span class="result-count">{{ filteredPublications.length }} <ITranslate path="publications.results" /></span>
@@ -89,8 +90,8 @@
 import { computed, ref } from 'vue';
 import PageHeader from '../components/PageHeader.vue';
 import JsonLd from '@/components/shared/JsonLd';
-import { useTranslation } from '@/i18n';
-import { SITE_URL } from '@/seo/structuredData';
+import { localePath, useLocale, useTranslation } from '@/i18n';
+import { publicationListId } from '@/seo/structuredData';
 
 const title = useTranslation('publications.title');
 const subtitle = useTranslation('publications.subtitle');
@@ -366,9 +367,10 @@ const toggle = (key: string) => {
 };
 
 // Linked publications as schema.org articles (authors stay text: no Person entities from "et al.")
-const publicationList = {
+const locale = useLocale();
+const publicationList = computed(() => ({
     '@type': 'ItemList',
-    '@id': `${SITE_URL}/publications#list`,
+    '@id': publicationListId(localePath('/publications', locale.value)),
     name: 'PrivateAIM publications',
     itemListElement: publications
         .filter((publication) => publication.link)
@@ -383,7 +385,7 @@ const publicationList = {
                 ...(publication.link?.includes('doi.org/') ? { sameAs: publication.link } : {}),
             },
         })),
-};
+}));
 
 const filteredPublications = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
