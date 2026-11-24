@@ -25,7 +25,7 @@
                                 Charité Berlin
                             </h3>
                             <a
-                                href="https://www.bihealth.org/de/forschung/forschungsgruppen/detail-arbeitsgruppen/ag-prasser-medizininformatik"
+                                href="https://mi.bihealth.org"
                                 class="partner-link"
                             ><ITranslate path="partners.partner.info" /></a>
                         </div>
