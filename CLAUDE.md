@@ -10,7 +10,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 - `npm run dev` — start dev server
 - `npm run build` — type-check (`vue-tsc`) then build (`vite build`)
-- `npm run build-only` — build without type-check
+- `npm run build-only` — prerender with `vite-ssg build`, without type-check
 - `npm run type-check` — run `vue-tsc --build --noEmit`
 - `npm run lint` — ESLint check (non-mutating; this is the CI gate; also reports formatting — no separate Prettier step)
 - `npm run lint:fix` — ESLint with auto-fix (use locally)
@@ -31,9 +31,11 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `src/types/` — shared TypeScript interfaces (`NewsItem`)
 - `src/assets/` — CSS (dark-mode, fonts), SVG logo, flag icons
 
-**Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation. A session-storage-based redirect mechanism in `main.ts` handles SPA redirect after 404 pages on static hosting.
+**Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation.
 
-**i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
+**Prerendering:** `vite-ssg` renders the allowlist in `scripts/prerender.ts` to flat files (`dist/news.html`, because GitHub Pages would 301 `news/index.html` to `/news/`), writes per-route head tags, and generates `dist/sitemap.xml` and a `noindex` `dist/404.html`. Add new indexable routes to that list. Code that runs during setup must be SSR-safe: no `window`/`document` outside `onMounted` or an `import.meta.env.SSR` guard.
+
+**i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Lookups are synchronous (ilingo's own `get()` is async and would prerender raw keys). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
 
 **Theming:** Dark mode via CSS custom properties defined in `src/assets/dark-mode.css`, toggled by `ThemeToggle` component.
 

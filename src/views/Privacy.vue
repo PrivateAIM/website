@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { 
-    computed, 
-    onMounted, 
-    ref, 
-    watch, 
-} from 'vue';
+import { computed } from 'vue';
 import { marked } from 'marked';
 import { useLocale } from '@/i18n';
+import policyEn from '@/data/privacy/privacy.en.md?raw';
+import policyDe from '@/data/privacy/privacy.de.md?raw';
 
 const locale = useLocale();
 
@@ -15,37 +12,9 @@ function switchToGerman() {
     locale.value = 'de';
 }
 
-// Reactive variable to hold the raw Markdown content.
-const policyContent = ref('');
-
-// Asynchronously load the correct Markdown file based on the locale.
-async function loadPolicy() {
-    try {
-        let module;
-        if (locale.value === 'en') {
-            module = await import('@/data/privacy/privacy.en.md?raw');
-        }
-        else if (locale.value === 'de') {
-            module = await import('@/data/privacy/privacy.de.md?raw');
-        }
-        policyContent.value = module?.default || 'Failed to load privacy policy.';
-    } catch {
-        policyContent.value = 'Failed to load privacy policy.';
-    }
-}
-
-// Load the policy when the component is mounted.
-onMounted(() => {
-    loadPolicy();
-});
-
-// Watch for locale changes to reload the content.
-watch(locale, () => {
-    loadPolicy();
-});
-
-// Compute the rendered HTML from the Markdown content.
-const renderedPolicy = computed(() => marked(policyContent.value));
+// Compute the rendered HTML from the Markdown content. Both locales are bundled
+// so the policy is part of the prerendered page.
+const renderedPolicy = computed(() => marked.parse(locale.value === 'de' ? policyDe : policyEn, { async: false }));
 </script>
 
 <template>

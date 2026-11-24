@@ -184,6 +184,10 @@ function setMeta(selector: string, attribute: string, value: string) {
 // this instance, since afterEach overwrites the meta each time.
 // flush: 'post' runs after afterEach.
 watch([content, () => route.fullPath], () => {
+    if (import.meta.env.SSR) {
+        return;
+    }
+
     if (!content.value) {
         document.title = 'Page Not Found — PrivateAIM';
         return;

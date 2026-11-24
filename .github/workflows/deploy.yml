@@ -16,6 +16,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v7
+                with:
+                    # Full history for the sitemap lastmod dates
+                    fetch-depth: 0
 
             -   name: Install
                 uses: ./.github/actions/install

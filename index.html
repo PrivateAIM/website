@@ -86,6 +86,17 @@
     </script>
 </head>
 <body>
+<script>
+    // Apply the saved theme before the prerendered page paints
+    try {
+        const theme = localStorage.getItem('theme');
+        if (theme ? theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+        }
+    } catch {
+        // Storage unavailable: keep the light theme
+    }
+</script>
 <div id="app"></div>
 <script type="module" src="/src/main.ts"></script>
 </body>

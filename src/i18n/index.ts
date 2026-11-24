@@ -1,11 +1,19 @@
-import { MemoryStore, defineCatalog } from 'ilingo';
 import {
-    type DataMaybeRef,
-    injectLocale,
-    install as installIlingoVue,
-    useTranslation as useIlingoTranslation,
-} from '@ilingo/vue';
-import type { App, MaybeRef, Ref } from 'vue';
+    MemoryStore,
+    defineCatalog,
+    normalizeCatalog,
+    template,
+} from 'ilingo';
+import { ITranslateT, applyInstallInput, injectLocale } from '@ilingo/vue';
+import {
+    type App,
+    type ComputedRef,
+    type MaybeRef,
+    type Ref,
+    computed,
+    defineComponent,
+    unref,
+} from 'vue';
 import en from './locales/en';
 import de from './locales/de';
 
@@ -23,16 +31,8 @@ const catalog = defineCatalog([en, de]);
 /** In-memory store holding the whole catalog. */
 export const store = new MemoryStore({ data: catalog });
 
-/**
- * Register the ilingo translator on the Vue app — mirrors the
- * `installTranslator` helper used in the PrivateAIM hub. It installs the
- * `@ilingo/vue` plugin, which provides the `Ilingo` instance and a reactive
- * locale ref, registers the global `<ITranslate>` / `<ITranslateT>`
- * components and the `v-t` directive.
- */
-export function installTranslator(app: App, locale: string = DEFAULT_LOCALE) {
-    installIlingoVue(app, { store, locale });
-}
+/** The catalog as nested records, for synchronous lookups. */
+const messages = normalizeCatalog(catalog);
 
 function splitPath(path: string): { namespace: string; key: string } {
     const index = path.indexOf('.');
@@ -42,27 +42,60 @@ function splitPath(path: string): { namespace: string; key: string } {
     return { namespace: path.slice(0, index), key: path.slice(index + 1) };
 }
 
+function lookup(locale: string, namespace: string, key: string): string | undefined {
+    let node: unknown = messages[locale]?.[namespace];
+    for (const part of key.split('.')) {
+        node = (node as Record<string, unknown> | undefined)?.[part];
+    }
+    return typeof node === 'string' ? node : undefined;
+}
+
 /**
- * Path-based wrapper around `@ilingo/vue`'s `useTranslation`. Accepts a dotted
- * `namespace.key` path (e.g. `team.title`, `home.hero.title`) and returns a
- * reactive `Ref<string>` that re-resolves when the active locale changes.
+ * Resolve a `namespace.key` path synchronously, falling back to the default
+ * locale. ilingo's own `get()` is async and would prerender the raw key.
+ */
+function translate(locale: string, path: string, data?: Record<string, unknown>): string {
+    const { namespace, key } = splitPath(path);
+    const message = lookup(locale, namespace, key) ?? lookup(DEFAULT_LOCALE, namespace, key);
+    return message === undefined ? path : template(message, data ?? {});
+}
+
+/** `<ITranslate path="namespace.key" />`, resolved synchronously for prerendering. */
+export const ITranslate = defineComponent({
+    name: 'ITranslate',
+    props: {
+        path: { type: String, required: true },
+        data: { type: Object },
+    },
+    setup(props) {
+        const locale = injectLocale();
+        return () => translate(locale.value, props.path, props.data);
+    },
+});
+
+/**
+ * Register the translator on the Vue app — mirrors the `installTranslator`
+ * helper used in the PrivateAIM hub. It provides the `Ilingo` instance and a
+ * reactive locale ref, and registers the global `<ITranslate>` / `<ITranslateT>`
+ * components.
+ */
+export function installTranslator(app: App, locale: string = DEFAULT_LOCALE) {
+    applyInstallInput(app, { store, locale });
+    app.component('ITranslate', ITranslate);
+    app.component('ITranslateT', ITranslateT);
+}
+
+/**
+ * Accepts a dotted `namespace.key` path (e.g. `team.title`, `home.hero.title`)
+ * and returns a reactive ref that re-resolves when the active locale changes.
  *
  * Use this when a translated string is needed in script or bound to an
  * attribute/prop; for inline template text prefer the globally registered
  * `<ITranslate path="..." />` component.
  */
-export function useTranslation(
-    path: string,
-    data?: DataMaybeRef,
-    count?: MaybeRef<number>,
-): Ref<string> {
-    const { namespace, key } = splitPath(path);
-    return useIlingoTranslation({
-        namespace, 
-        key, 
-        data, 
-        count, 
-    });
+export function useTranslation(path: string, data?: MaybeRef<Record<string, unknown>>): ComputedRef<string> {
+    const locale = injectLocale();
+    return computed(() => translate(locale.value, path, unref(data)));
 }
 
 /** Reactive, writable active-locale ref. Assign `.value` to switch language. */

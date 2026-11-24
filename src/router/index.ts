@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import type { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw, Router, RouterScrollBehavior } from 'vue-router';
 import { sendPageView } from '@/utils/analytics';
 import { findReference, referenceContentForLocale } from '@/data/references';
 
@@ -11,7 +10,7 @@ declare module 'vue-router' {
 }
 
 // Define routes with proper typing
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Home',
@@ -93,65 +92,74 @@ const routes: Array<RouteRecordRaw> = [
     },
 ];
 
-const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes,
-    scrollBehavior() {
-    // Always scroll to top when navigating to a new page
+// Always scroll to top when navigating to a new page
+export const scrollBehavior: RouterScrollBehavior = () => ({
+    top: 0,
+    behavior: 'smooth',
+});
+
+export function installRouterHooks(router: Router) {
+    // GitHub Pages also serves the prerendered files at their .html URLs
+    router.beforeEach((to) => {
+        if (!to.path.endsWith('.html')) {
+            return undefined;
+        }
+
         return {
-            top: 0,
-            behavior: 'smooth',
+            path: to.path.replace(/(\/index)?\.html$/, '') || '/',
+            query: to.query,
+            hash: to.hash,
+            replace: true,
         };
-    },
-});
+    });
 
-// Resolve the dynamic title/description of reference pages before afterEach
-// writes them (and sends the page view). The view refines them per locale.
-router.beforeResolve((to) => {
-    if (to.name !== 'ReferenceProject') {
-        return;
-    }
+    // Resolve the dynamic title/description of reference pages before afterEach
+    // writes them (and sends the page view). The view refines them per locale.
+    router.beforeResolve((to) => {
+        if (to.name !== 'ReferenceProject') {
+            return;
+        }
 
-    const { slug } = to.params;
-    const project = typeof slug === 'string' ? findReference(slug) : undefined;
-    if (!project) {
-        to.meta.title = 'Page Not Found — PrivateAIM';
-        return;
-    }
+        const { slug } = to.params;
+        const project = typeof slug === 'string' ? findReference(slug) : undefined;
+        if (!project) {
+            to.meta.title = 'Page Not Found — PrivateAIM';
+            return;
+        }
 
-    const content = referenceContentForLocale(project, 'en');
-    to.meta.title = `${content.name} — PrivateAIM`;
-    to.meta.description = content.tagline;
-});
+        const content = referenceContentForLocale(project, 'en');
+        to.meta.title = `${content.name} — PrivateAIM`;
+        to.meta.description = content.tagline;
+    });
 
-// Update document title and meta description on each navigation
-router.afterEach((to) => {
-    const defaultTitle = 'PrivateAIM — Privacy-Preserving Analytics in Medicine';
-    document.title = to.meta.title || defaultTitle;
+    // Update document title and meta description on each navigation.
+    // Prerendered pages get these tags from scripts/prerender.ts instead.
+    router.afterEach((to) => {
+        if (import.meta.env.SSR) {
+            return;
+        }
 
-    const descriptionMeta = document.querySelector('meta[name="description"]');
-    if (descriptionMeta && to.meta.description) {
-        descriptionMeta.setAttribute('content', to.meta.description);
-    }
+        const defaultTitle = 'PrivateAIM — Privacy-Preserving Analytics in Medicine';
+        const title = to.meta.title || defaultTitle;
+        document.title = title;
 
-    // Update Open Graph title and description
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-        ogTitle.setAttribute('content', to.meta.title || defaultTitle);
-    }
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc && to.meta.description) {
-        ogDesc.setAttribute('content', to.meta.description);
-    }
+        const setMeta = (selector: string, value?: string) => {
+            if (value) {
+                document.querySelector(selector)?.setAttribute('content', value);
+            }
+        };
+        setMeta('meta[name="description"]', to.meta.description);
+        setMeta('meta[property="og:title"]', title);
+        setMeta('meta[property="og:description"]', to.meta.description);
+        setMeta('meta[name="twitter:title"]', title);
+        setMeta('meta[name="twitter:description"]', to.meta.description);
 
-    // Update canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-        canonical.setAttribute('href', `https://privateaim.de${to.path}`);
-    }
+        // Update canonical URL
+        const url = `https://privateaim.de${to.path}`;
+        document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+        setMeta('meta[property="og:url"]', url);
 
-    // Send GA4 page view for SPA navigation
-    sendPageView(to.path, document.title);
-});
-
-export default router;
+        // Send GA4 page view for SPA navigation
+        sendPageView(to.path, document.title);
+    });
+}
