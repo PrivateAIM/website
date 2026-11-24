@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-PrivateAIM website — a Vue 3 + TypeScript single-page application built with Vite. Requires Node.js >= 22.
+PrivateAIM website — a Vue 3 + TypeScript single-page application built with Vite. Requires Node.js >= 22.22 (npm-run-all2).
 
 ## Commands
 
@@ -19,7 +19,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 ## Architecture
 
-**Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, ilingo (`@ilingo/vue`), Pinia, Bootstrap (grid + utilities only), Vite, TypeScript strict mode.
+**Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, ilingo (`@ilingo/vue`), Vite, TypeScript strict mode. No Pinia or Bootstrap: state is local to components, and styles are scoped CSS with the colour tokens.
 
 **Lint & formatting:** ESLint flat config via [`@tada5hi/eslint-config`](https://github.com/tada5hi/javascript) (`eslint.config.ts`). It bundles `@stylistic` formatting (4-space indent, single quotes, semicolons, comma-dangle multiline, max-len 150) and replaces Prettier. `eslint.config.ts` adds browser globals, disables `vue/no-v-html` (markdown is rendered via `v-html` by design), and turns off `@stylistic/max-len` for `.vue` files (inline SVG paths). TypeScript config extends [`@tada5hi/tsconfig`](https://github.com/tada5hi/javascript) in `tsconfig.json`, layering Vite bundler-mode overrides on top. The base enables `noUncheckedIndexedAccess` and `verbatimModuleSyntax`, so index access is `T | undefined` and type-only imports must use `import type`.
 
@@ -39,7 +39,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 **i18n:** ilingo via `@ilingo/vue`. `src/i18n/index.ts` assembles a catalog with `defineCatalog` from the per-locale definitions in `src/i18n/locales/{en,de}.ts` (each top-level section is an ilingo *namespace*; nested objects extend the dotted *key* path), holds it in a `MemoryStore`, and exposes `installTranslator(app)` (called in `main.ts`). Lookups are synchronous (ilingo's own `get()` is async and would prerender raw keys). Translations are consumed via the globally-registered `<ITranslate path="namespace.key" />` component for inline text, or the `useTranslation('namespace.key')` composable (returns a reactive `Ref<string>`) for attributes/props/script. `useLocale()` returns the writable active-locale ref; assign `.value` to switch language. Interpolation uses `{{var}}` with a `:data` object. Default locale is `en`, available locales are `en` and `de`. The `LanguageProvider` component wraps the entire app.
 
-**Theming:** All colours are CSS custom properties in `src/assets/dark-mode.css` (light palette on `:root`, dark palette on `body.dark-mode`, toggled by `ThemeToggle`), derived from the PrivateAIM and FLAME logos. Components use `var(--token)` without fallbacks and no literal colours; derive shades with `color-mix()`. Yellow is never text on a light background, and FLAME orange is reserved for FLAME content. Bootstrap CSS is not imported.
+**Theming:** All colours are CSS custom properties in `src/assets/dark-mode.css` (light palette on `:root`, dark palette on `body.dark-mode`, toggled by `ThemeToggle`), derived from the PrivateAIM and FLAME logos. Components use `var(--token)` without fallbacks and no literal colours; derive shades with `color-mix()`. Yellow is never text on a light background, and FLAME orange is reserved for FLAME content.
 
 **News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 

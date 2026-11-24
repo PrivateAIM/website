@@ -6,7 +6,9 @@ import { join } from 'node:path';
 const DIST = 'dist';
 const SITE_URL = 'https://privateaim.de';
 const errors = [];
-const fail = (message) => errors.push(message);
+const fail = (message) => {
+    errors.push(message);
+};
 
 /** The file GitHub Pages serves for a URL path. */
 function fileFor(path) {
@@ -22,7 +24,7 @@ const htmlFiles = readdirSync(DIST, { recursive: true }).filter((file) => file.e
 
 // Every sitemap URL is a prerendered page with its own head tags
 const sitemap = read(join(DIST, 'sitemap.xml'));
-const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+const locs = sitemap.matchAll(/<loc>([^<]+)<\/loc>/g).map((match) => match[1]).toArray();
 if (locs.length === 0) {
     fail('sitemap.xml has no URLs');
 }
@@ -53,15 +55,15 @@ for (const loc of locs) {
     titles.set(title, loc);
 
     // hreflang alternates must point back to this page
-    const alternates = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)];
-    if (!alternates.some(([, , href]) => href === loc)) fail(`${loc}: no hreflang pointing to itself`);
+    const alternates = html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g).toArray();
+    if (alternates.every(([, , href]) => href !== loc)) fail(`${loc}: no hreflang pointing to itself`);
     for (const [, hreflang, href] of alternates) {
         if (!locs.includes(href)) fail(`${loc}: hreflang ${hreflang} points outside the sitemap (${href})`);
     }
 }
 
 // Nothing listed in the sitemap may be blocked for crawlers
-const disallowed = [...read(join(DIST, 'robots.txt')).matchAll(/^Disallow:\s*(\S+)/gm)].map((match) => match[1]);
+const disallowed = read(join(DIST, 'robots.txt')).matchAll(/^Disallow:\s*(\S+)/gm).map((match) => match[1]).toArray();
 for (const loc of locs) {
     const blocked = disallowed.find((prefix) => loc.slice(SITE_URL.length).startsWith(prefix));
     if (blocked) fail(`${loc}: blocked by robots.txt (Disallow: ${blocked})`);

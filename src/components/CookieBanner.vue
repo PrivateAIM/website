@@ -75,19 +75,20 @@ const initGoogleAnalytics = () => {
 
 // Google Analytics deaktivieren
 const disableGoogleAnalytics = () => {
-    if (typeof window !== 'undefined') {
-        const windowWithDataLayer = window as unknown as WindowWithDataLayer;
+    if (typeof window === 'undefined') {
+        return;
+    }
+    const windowWithDataLayer = window as unknown as WindowWithDataLayer;
 
-        // GA4 deaktivieren
-        windowWithDataLayer[`ga-disable-${GA_TRACKING_ID}`] = true;
+    // GA4 deaktivieren
+    windowWithDataLayer[`ga-disable-${GA_TRACKING_ID}`] = true;
 
-        // Optional: Vorhandene GA-Cookies entfernen
-        const cookies = document.cookie.split(';');
-        for (const cooky of cookies) {
-            const cookie = cooky.trim();
-            if (cookie.indexOf('_ga') === 0 || cookie.indexOf('_gid') === 0 || cookie.indexOf('_gat') === 0) {
-                document.cookie = `${cookie.split('=')[0] ?? ''}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-            }
+    // Optional: Vorhandene GA-Cookies entfernen
+    const cookies = document.cookie.split(';');
+    for (const cooky of cookies) {
+        const cookie = cooky.trim();
+        if (cookie.indexOf('_ga') === 0 || cookie.indexOf('_gid') === 0 || cookie.indexOf('_gat') === 0) {
+            document.cookie = `${cookie.split('=')[0] ?? ''}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
         }
     }
 };
