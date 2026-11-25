@@ -1,5 +1,5 @@
 import { type PropType, defineComponent, h } from 'vue';
-import type { JsonLdNode } from '@/seo/structuredData';
+import type { JsonLdNode } from '@/seo/types';
 
 /** Renders schema.org nodes as one JSON-LD `@graph` script, also in prerendered HTML. */
 export default defineComponent({

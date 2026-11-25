@@ -167,6 +167,7 @@ const publications = computed(() => [...(project.value?.publications ?? [])].sor
 /** Render markdown; external links open in a new tab. */
 function renderMarkdown(markdown: string): string {
     const html = marked.parse(markdown, { async: false, gfm: true });
+
     return html.replace(/<a href="(https?:\/\/[^"]*)"/g, '<a href="$1" target="_blank" rel="noopener noreferrer"');
 }
 
@@ -189,10 +190,12 @@ watch([content, () => route.fullPath], () => {
 
     if (!content.value) {
         document.title = 'Page Not Found — PrivateAIM';
+
         return;
     }
 
     const title = referenceTitle(content.value, locale.value);
+
     document.title = title;
     setMeta('meta[name="description"]', 'content', content.value.tagline);
     setMeta('meta[property="og:title"]', 'content', title);

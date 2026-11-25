@@ -36,17 +36,21 @@ const messages = normalizeCatalog(catalog);
 
 function splitPath(path: string): { namespace: string; key: string } {
     const index = path.indexOf('.');
+
     if (index <= 0 || index >= path.length - 1) {
         throw new SyntaxError(`[i18n] "${path}" must be a "namespace.key" path.`);
     }
+
     return { namespace: path.slice(0, index), key: path.slice(index + 1) };
 }
 
 function lookup(locale: string, namespace: string, key: string): string | undefined {
     let node: unknown = messages[locale]?.[namespace];
+
     for (const part of key.split('.')) {
         node = (node as Record<string, unknown> | undefined)?.[part];
     }
+
     return typeof node === 'string' ? node : undefined;
 }
 
@@ -57,6 +61,7 @@ function lookup(locale: string, namespace: string, key: string): string | undefi
 function translate(locale: string, path: string, data?: Record<string, unknown>): string {
     const { namespace, key } = splitPath(path);
     const message = lookup(locale, namespace, key) ?? lookup(DEFAULT_LOCALE, namespace, key);
+
     return message === undefined ? path : template(message, data ?? {});
 }
 
@@ -69,6 +74,7 @@ export const ITranslate = defineComponent({
     },
     setup(props) {
         const locale = injectLocale();
+
         return () => translate(locale.value, props.path, props.data);
     },
 });
@@ -95,12 +101,14 @@ export function installTranslator(app: App, locale: string = DEFAULT_LOCALE) {
  */
 export function useTranslation(path: string, data?: MaybeRef<Record<string, unknown>>): ComputedRef<string> {
     const locale = injectLocale();
+
     return computed(() => translate(locale.value, path, unref(data)));
 }
 
 /** A translate function bound to the active locale, for labels built in templates or loops. */
 export function useTranslator(): (path: string, data?: Record<string, unknown>) => string {
     const locale = injectLocale();
+
     return (path, data) => translate(locale.value, path, data);
 }
 
@@ -112,6 +120,7 @@ export function localeOfPath(path: string): string {
 /** Strip the locale prefix: `/de/news` → `/news`, `/de` → `/`. */
 export function stripLocale(path: string): string {
     const match = path.match(/^\/de(\/.*)?$/);
+
     return match ? (match[1] || '/') : path;
 }
 
@@ -121,15 +130,18 @@ export function stripLocale(path: string): string {
  */
 export function localePath(path: string, locale: string): string {
     const base = stripLocale(path);
+
     if (locale === DEFAULT_LOCALE) {
         return base;
     }
+
     return base === '/' ? `/${locale}/` : `/${locale}${base}`;
 }
 
 /** `localePath` bound to the active locale, for internal links. */
 export function useLocalePath(): (path: string) => string {
     const locale = injectLocale();
+
     return (path: string) => localePath(path, locale.value);
 }
 

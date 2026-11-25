@@ -6,11 +6,13 @@ const isDarkMode = ref(false);
 // Check for saved theme preference, fall back to OS preference
 onMounted(() => {
     const savedTheme = localStorage.getItem('theme');
+
     if (savedTheme) {
         isDarkMode.value = savedTheme === 'dark';
     } else {
         isDarkMode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
+
     applyTheme();
 });
 

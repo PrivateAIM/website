@@ -7,7 +7,7 @@ const OUTLINE = 'M160.2,517.8 L152.7,512.7 L145.5,507.8 L143.1,507.8 L132.5,508.
 
 type Role = 'coordination' | 'partner' | 'associated';
 
-interface Site {
+interface ISite {
     name: { en: string; de: string };
     x: number;
     y: number;
@@ -19,7 +19,7 @@ interface Site {
     dy?: number;
 }
 
-const SITES: Site[] = [
+const SITES: ISite[] = [
     {
         name: { en: 'Berlin', de: 'Berlin' }, 
         x: 326.9, 

@@ -27,12 +27,12 @@
 </template>
 
 <script setup lang="ts">
-interface PageHeaderProps {
+interface IPageHeaderProps {
     title: string;
     subtitle?: string;
 }
 
-defineProps<PageHeaderProps>();
+defineProps<IPageHeaderProps>();
 </script>
 
 <style scoped>

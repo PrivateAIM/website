@@ -1,3 +1,5 @@
+import type { JsonLdNode } from './types';
+
 /**
  * Schema.org JSON-LD nodes, rendered into each page via <JsonLd>. Nodes reference
  * each other by `@id`, so every page can link to the project without repeating it.
@@ -7,8 +9,6 @@ export const SITE_URL = 'https://privateaim.de';
 const PROJECT_ID = `${SITE_URL}/#project`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 const FLAME_ID = `${SITE_URL}/#flame`;
-
-export type JsonLdNode = Record<string, unknown>;
 
 export const projectNode: JsonLdNode = {
     '@type': 'ResearchProject',
@@ -100,7 +100,7 @@ export const websiteNode: JsonLdNode = {
     publisher: { '@id': PROJECT_ID },
 };
 
-interface WebPageInput {
+interface IWebPageInput {
     path: string;
     name: string;
     description?: string;
@@ -124,8 +124,9 @@ export function webPageNode({
     mainEntity,
     dateModified,
     breadcrumb,
-}: WebPageInput): JsonLdNode {
+}: IWebPageInput): JsonLdNode {
     const url = `${SITE_URL}${path}`;
+
     return {
         '@type': type,
         '@id': `${url}#webpage`,
@@ -144,6 +145,7 @@ export function webPageNode({
 /** The explainer page's article, its main entity. */
 export function techArticleNode(path: string, headline: string, description: string, locale: string, dateModified?: string): JsonLdNode {
     const url = `${SITE_URL}${path}`;
+
     return {
         '@type': 'TechArticle',
         '@id': techArticleId(path),

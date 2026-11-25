@@ -97,7 +97,7 @@ const title = useTranslation('publications.title');
 const subtitle = useTranslation('publications.subtitle');
 const searchPlaceholder = useTranslation('publications.searchPlaceholder');
 
-interface Publication {
+interface IPublication {
     authors: string;
     title: string;
     citation: string;
@@ -105,7 +105,7 @@ interface Publication {
     link?: string;
 }
 
-const publications: Publication[] = [
+const publications: IPublication[] = [
     // 2025
     {
         authors: 'Swaminathan, A., Hannemann, A., Inal, A. B., Pfeifer, N., Akgün, M.',
@@ -389,7 +389,11 @@ const publicationList = computed(() => ({
 
 const filteredPublications = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
-    if (!query) return publications;
+
+    if (!query) {
+        return publications;
+    }
+
     return publications.filter((p) =>
         p.title.toLowerCase().includes(query) ||
         p.authors.toLowerCase().includes(query) ||
@@ -398,10 +402,11 @@ const filteredPublications = computed(() => {
 
 const filteredYears = computed(() => {
     const uniqueYears = [...new Set(filteredPublications.value.map((p) => p.year))];
+
     return uniqueYears.sort((a, b) => b - a);
 });
 
-const getFilteredPublicationsByYear = (year: number): Publication[] => filteredPublications.value.filter((p) => p.year === year);
+const getFilteredPublicationsByYear = (year: number): IPublication[] => filteredPublications.value.filter((p) => p.year === year);
 </script>
 
 <style scoped>

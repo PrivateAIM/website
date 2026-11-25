@@ -13,14 +13,14 @@ export const SITE_URL = 'https://privateaim.de';
 /** GitHub Pages serves `dist/404.html` for unknown paths, with a real 404 status. */
 const NOT_FOUND_ROUTE = '/404';
 
-interface PrerenderRoute {
+interface IPrerenderRoute {
     path: string;
     /** Files whose last commit date becomes the sitemap `lastmod`. */
     sources: string[];
 }
 
 /** Indexable routes: the single source of truth for prerendering and the sitemap. */
-const PRERENDER_ROUTES: PrerenderRoute[] = [
+const PRERENDER_ROUTES: IPrerenderRoute[] = [
     { path: '/', sources: ['src/views/Home.vue', 'src/components/home', 'src/i18n/locales'] },
     { path: '/flame', sources: ['src/views/Flame.vue', 'src/i18n/locales'] },
     { path: '/federated-analysis', sources: ['src/views/FederatedAnalysis.vue', 'src/i18n/locales'] },
@@ -40,14 +40,17 @@ const OG_LOCALES: Record<string, string> = { en: 'en_US', de: 'de_DE' };
 
 function stripLocale(path: string): string {
     const match = path.match(/^\/de(\/.*)?$/);
+
     return match ? (match[1] || '/') : path;
 }
 
 function localePath(path: string, locale: string): string {
     const base = stripLocale(path);
+
     if (locale === DEFAULT_LOCALE) {
         return base;
     }
+
     return base === '/' ? `/${locale}/` : `/${locale}${base}`;
 }
 
@@ -78,7 +81,7 @@ export function moveLocaleHomes(outDir: string) {
     }
 }
 
-interface PageMeta {
+interface IPageMeta {
     title?: string;
     description?: string;
     locale?: string;
@@ -94,14 +97,16 @@ function escapeAttribute(value: string): string {
 
 function setAttribute(html: string, tagStart: string, attribute: string, value: string): string {
     const pattern = new RegExp(`(<${tagStart}[^>]*\\b${attribute}=")[^"]*(")`);
+
     if (!pattern.test(html)) {
         throw new Error(`[prerender] Missing tag: <${tagStart}>`);
     }
+
     return html.replace(pattern, (_match, before: string, after: string) => `${before}${escapeAttribute(value)}${after}`);
 }
 
 /** Write the route's own head tags into its static HTML. */
-export function applyPageHead(route: string, html: string, meta: PageMeta): string {
+export function applyPageHead(route: string, html: string, meta: IPageMeta): string {
     if (!html.includes('<h1')) {
         throw new Error(`[prerender] ${route} rendered without an <h1>`);
     }
@@ -114,6 +119,7 @@ export function applyPageHead(route: string, html: string, meta: PageMeta): stri
     }
 
     const { title, description } = meta;
+
     if (!title || !description) {
         throw new Error(`[prerender] ${route} needs a title and description`);
     }
@@ -121,12 +127,15 @@ export function applyPageHead(route: string, html: string, meta: PageMeta): stri
     const locale = meta.locale ?? DEFAULT_LOCALE;
     const url = absoluteUrl(route);
     let result = stripLocale(route) === '/' ? html : html.replace(/\s*<link rel="preload" href="\/images\/home\/[^"]*"[^>]*>/, '');
+
     result = result
         .replace(/<html lang="[^"]*">/, `<html lang="${locale}">`)
         .replace(/<title>[^<]*<\/title>/, () => `<title>${escapeAttribute(title)}</title>`);
+
     for (const alternate of LOCALES) {
         result = setAttribute(result, `link rel="alternate" hreflang="${alternate}"`, 'href', absoluteUrl(localePath(route, alternate)));
     }
+
     result = setAttribute(result, 'link rel="alternate" hreflang="x-default"', 'href', absoluteUrl(stripLocale(route)));
     result = setAttribute(result, 'meta property="og:locale"', 'content', OG_LOCALES[locale] ?? 'en_US');
     result = setAttribute(result, 'meta property="og:locale:alternate"', 'content', locale === 'de' ? 'en_US' : 'de_DE');
@@ -136,6 +145,7 @@ export function applyPageHead(route: string, html: string, meta: PageMeta): stri
     result = setAttribute(result, 'meta property="og:title"', 'content', title);
     result = setAttribute(result, 'meta property="og:description"', 'content', description);
     result = setAttribute(result, 'meta name="twitter:title"', 'content', title);
+
     return setAttribute(result, 'meta name="twitter:description"', 'content', description);
 }
 
@@ -149,6 +159,7 @@ function lastModified(sources: string[]): string | undefined {
         if (git('rev-parse', '--is-shallow-repository') === 'true') {
             return undefined;
         }
+
         return git('log', '-1', '--format=%cs', '--', ...sources) || undefined;
     } catch {
         return undefined;
@@ -159,6 +170,7 @@ function lastModified(sources: string[]): string | undefined {
 export function pageDates(): Record<string, string> {
     return Object.fromEntries(PRERENDER_ROUTES.flatMap(({ path, sources }) => {
         const date = lastModified(sources);
+
         return date ? [[path, date]] : [];
     }));
 }
@@ -185,8 +197,10 @@ export function writeSitemap(outDir: string) {
     const documents = existsSync(filesDir) ?
         readdirSync(filesDir).filter((file) => file.endsWith('.pdf')).sort() :
         [];
+
     for (const file of documents) {
         const lastmod = lastModified([`public/files/${file}`]);
+
         urls.push([
             '  <url>',
             `    <loc>${absoluteUrl(`/files/${file}`)}</loc>`,
@@ -202,6 +216,7 @@ export function writeSitemap(outDir: string) {
         '</urlset>',
         '',
     ].join('\n');
+
     writeFileSync(join(outDir, 'sitemap.xml'), sitemap);
 }
 
@@ -221,6 +236,7 @@ export function writeLegacyRedirects(outDir: string) {
     for (const [from, to] of Object.entries(LEGACY_REDIRECTS)) {
         const target = absoluteUrl(to);
         const file = join(outDir, from);
+
         mkdirSync(join(file, '..'), { recursive: true });
         writeFileSync(file, [
             '<!DOCTYPE html>',

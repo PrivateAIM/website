@@ -21,10 +21,13 @@ function resize(source: string, width: number) {
 /** Write a thumbnail per width for every image in the source directories. */
 export async function writeThumbnails(outDir: string) {
     const imagesDir = join(outDir, 'images');
+
     await Promise.all(SOURCE_DIRS.map(async (dir) => {
         const files = (await readdir(join(imagesDir, dir), { recursive: true })).filter((file) => IMAGE_FILE.test(file));
+
         await Promise.all(files.flatMap((file) => THUMBNAIL_WIDTHS.map(async (width) => {
             const target = join(imagesDir, 'thumbs', String(width), dir, file.replace(IMAGE_FILE, '.webp'));
+
             await mkdir(dirname(target), { recursive: true });
             await resize(join(imagesDir, dir, file), width).toFile(target);
         })));
@@ -40,8 +43,10 @@ export function thumbnailDevServer(): Plugin {
             server.middlewares.use(async (req, res, next) => {
                 const match = req.url?.match(THUMBNAIL_PATH);
                 const width = Number(match?.[1]);
+
                 if (!match?.[2] || !THUMBNAIL_WIDTHS.includes(width)) {
                     next();
+
                     return;
                 }
 
@@ -49,14 +54,17 @@ export function thumbnailDevServer(): Plugin {
                 const sources = await Promise.all(['.webp', '.jpg', '.jpeg', '.png'].map(async (extension) => {
                     try {
                         await sharp(stem + extension).metadata();
+
                         return stem + extension;
                     } catch {
                         return undefined;
                     }
                 }));
                 const source = sources.find(Boolean);
+
                 if (!source) {
                     next();
+
                     return;
                 }
 

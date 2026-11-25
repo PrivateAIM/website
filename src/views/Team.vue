@@ -174,7 +174,7 @@ const GERMAN_ROLES: Record<string, string> = {
 
 const roleLabel = (role: string) => (locale.value === 'de' ? GERMAN_ROLES[role] ?? role : role);
 
-interface TeamMember {
+interface ITeamMember {
     name: string;
     role: string;
     github?: string;
@@ -185,7 +185,7 @@ const openLink = (url: string) => {
     window.open(url, '_blank');
 };
 
-const team: TeamMember[] = [
+const team: ITeamMember[] = [
     {
         name: 'Marius Herr',
         role: 'Coordinator & Analyst',
@@ -275,7 +275,7 @@ const team: TeamMember[] = [
     },
 ];
 
-const leadership: TeamMember[] = [
+const leadership: ITeamMember[] = [
     {
         name: 'Oliver Kohlbacher',
         role: 'PI & Professor',
@@ -323,7 +323,7 @@ const leadership: TeamMember[] = [
     },
 ];
 
-const alumni: TeamMember[] = [
+const alumni: ITeamMember[] = [
     {
         name: 'Hammam Abu Attieh',
         role: 'Privacy Engineer',

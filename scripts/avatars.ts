@@ -28,17 +28,21 @@ async function downscale(body: Buffer): Promise<Buffer> {
 
 async function fetchAvatar(user: string, attempts = 3): Promise<Buffer> {
     let lastError: unknown;
+
     for (let attempt = 0; attempt < attempts; attempt++) {
         try {
             const response = await fetch(`https://github.com/${user}.png?size=${AVATAR_SIZE}`);
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
             }
+
             return await downscale(Buffer.from(await response.arrayBuffer()));
         } catch (error) {
             lastError = error;
         }
     }
+
     throw new Error(`[avatars] Could not fetch the GitHub avatar of "${user}": ${String(lastError)}`);
 }
 
@@ -49,9 +53,11 @@ async function fetchAvatar(user: string, attempts = 3): Promise<Buffer> {
 export async function downloadAvatars(outDir: string) {
     const users = new Set<string>();
     const files = await readdir(outDir, { recursive: true });
+
     for (const file of files) {
         if (file.endsWith('.html')) {
             const html = await readFile(join(outDir, file), 'utf8');
+
             for (const match of html.matchAll(AVATAR_PATH)) {
                 if (match[1]) {
                     users.add(match[1]);
@@ -61,6 +67,7 @@ export async function downloadAvatars(outDir: string) {
     }
 
     const avatarDir = join(outDir, 'images', 'avatars');
+
     await mkdir(avatarDir, { recursive: true });
     await Promise.all([...users].map(async (user) => {
         await writeFile(join(avatarDir, `${user}.png`), await fetchAvatar(user));
@@ -75,13 +82,16 @@ export function avatarDevServer(): Plugin {
         configureServer(server) {
             server.middlewares.use(async (req, res, next) => {
                 const user = req.url?.match(/^\/images\/avatars\/([A-Za-z0-9-]+)\.png/)?.[1];
+
                 if (!user) {
                     next();
+
                     return;
                 }
 
                 try {
                     const body = await fetchAvatar(user);
+
                     res.setHeader('Content-Type', 'image/png');
                     res.end(body);
                 } catch (error) {

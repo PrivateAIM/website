@@ -1,9 +1,9 @@
-export interface ReferenceLink {
+export interface IReferenceLink {
     label: string;
     url: string;
 }
 
-export interface ReferenceTalk {
+export interface IReferenceTalk {
     /** Localized display date, e.g. 'Nov 2021' / 'Nov. 2021'. */
     date: string;
     title: string;
@@ -11,13 +11,13 @@ export interface ReferenceTalk {
     link: string;
 }
 
-export interface ReferenceSection {
+export interface IReferenceSection {
     title: string;
     /** Markdown, rendered with marked. */
     body: string;
 }
 
-export interface ReferencePublication {
+export interface IReferencePublication {
     authors: string;
     title: string;
     citation: string;
@@ -25,26 +25,26 @@ export interface ReferencePublication {
     link: string;
 }
 
-export interface ReferenceProjectContent {
+export interface IReferenceProjectContent {
     /** Display name, e.g. 'Personal Health Train (PHT)'. */
     name: string;
     /** One sentence shown under the title. */
     tagline: string;
     /** Markdown: how the project lives on in FLAME / PrivateAIM. */
     successorNote: string;
-    sections: ReferenceSection[];
-    talks: ReferenceTalk[];
+    sections: IReferenceSection[];
+    talks: IReferenceTalk[];
     /** Archived code, docs, manifesto etc. */
-    links: ReferenceLink[];
+    links: IReferenceLink[];
 }
 
-export interface ReferenceProject {
+export interface IReferenceProject {
     /** URL slug, rendered at /references/<slug>. */
     slug: string;
     /** Optional activity period, only if supported by sources. */
     period?: string;
     /** Localized content keyed by locale ('en', 'de'). */
-    content: Record<string, ReferenceProjectContent>;
+    content: Record<string, IReferenceProjectContent>;
     /** Locale-independent publication list. */
-    publications: ReferencePublication[];
+    publications: IReferencePublication[];
 }

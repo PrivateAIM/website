@@ -1,4 +1,4 @@
-import type { ReferenceProject } from '@/types/ReferenceProject';
+import type { IReferenceProject } from './types';
 
 const MANIFESTO_URL = 'https://www.go-fair.org/wp-content/uploads/2019/05/Personal-Health-Train-Implementation-Network-Manifesto.pdf';
 // Archived copies: the original pages are offline
@@ -15,7 +15,7 @@ const TALK_LINKS = {
     difuture2018: 'https://web.archive.org/web/20240421211900/https://difuture.de/wp-content/uploads/2018/12/dhs_05_oliver_kohlbacher.pdf',
 };
 
-const pht: ReferenceProject = {
+const pht: IReferenceProject = {
     slug: 'pht',
     content: {
         en: {

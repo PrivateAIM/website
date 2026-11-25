@@ -123,8 +123,8 @@ import ImageLightbox from '@/components/shared/ImageLightbox.vue';
 import { thumbnail } from '@/utils/thumbnail';
 import { useLocale, useTranslation, useTranslator } from '@/i18n';
 import {
+    type INewsEntry,
     type NewsCategory,
-    type NewsEntry,
     anchorFor,
     categoryOf,
     isoDate,
@@ -162,7 +162,7 @@ openKey.value = years.value[0] ? `${years.value[0]}-0` : null;
 const galleryIndex = ref<number | null>(null);
 const galleryImages = ref<string[]>([]);
 const galleryAlt = ref('');
-const openGallery = (item: NewsEntry, index: number) => {
+const openGallery = (item: INewsEntry, index: number) => {
     galleryImages.value = (item.images ?? []).map((image) => getImageUrl(image));
     galleryAlt.value = item.title;
     galleryIndex.value = index;
@@ -172,19 +172,23 @@ const openGallery = (item: NewsEntry, index: number) => {
 const getImageUrl = (imagePath: string): string => `/images/news/${imagePath}`;
 
 // Function to get news items for a specific year
-const getNewsItemsByYear = (year: string): NewsEntry[] => newsByYear.value[year] ?? [];
+const getNewsItemsByYear = (year: string): INewsEntry[] => newsByYear.value[year] ?? [];
 
 // Open the entry a link points to (/news#news-…)
 onMounted(() => {
     const id = decodeURIComponent(window.location.hash.slice(1));
+
     if (!id) {
         return;
     }
+
     for (const year of years.value) {
         const index = getNewsItemsByYear(year).findIndex((item) => anchorFor(item) === id);
+
         if (index !== -1) {
             openKey.value = `${year}-${index}`;
             document.getElementById(id)?.scrollIntoView();
+
             return;
         }
     }
