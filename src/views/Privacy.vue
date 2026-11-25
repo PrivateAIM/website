@@ -15,7 +15,7 @@ import policyDe from '@/data/privacy/privacy.de.md?raw';
 const locale = useLocale();
 const pageTitle = useTranslation('privacy.title');
 
-interface Section {
+interface ISection {
     id: string;
     text: string;
 }
@@ -36,7 +36,7 @@ function slugify(text: string): string {
 // headings for the table of contents. Both locales are bundled so the policy
 // is part of the prerendered page.
 const policy = computed(() => {
-    const sections: Section[] = [];
+    const sections: ISection[] = [];
     const marked = new Marked({
         renderer: {
             heading({
@@ -45,14 +45,17 @@ const policy = computed(() => {
                 text, 
             }) {
                 const id = slugify(text);
+
                 if (depth === 2) {
                     sections.push({ id, text });
                 }
+
                 return `<h${depth} id="${id}">${this.parser.parseInline(tokens)}</h${depth}>\n`;
             },
         },
     });
     const html = marked.parse(locale.value === 'de' ? policyDe : policyEn, { async: false });
+
     return { html, sections };
 });
 
@@ -65,6 +68,7 @@ function observeSections() {
     observer?.disconnect();
     observer = new IntersectionObserver((entries) => {
         const visible = entries.filter((entry) => entry.isIntersecting);
+
         if (visible.length > 0) {
             activeId.value = visible[0]?.target.id;
         }
