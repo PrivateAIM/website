@@ -144,7 +144,7 @@ export default defineLocale('en', [
     })]),
 
     defineNamespace('explainer', [defineTranslations({
-        lastUpdated: 'Last updated: {{date}}',
+        lastUpdated: 'Written by the PrivateAIM team · Last updated: {{date}}',
         title: 'What is federated analysis?',
         subtitle: 'A short introduction to analyzing medical data without collecting it centrally',
         intro: 'Federated analysis means analyzing data that is spread across several institutions without bringing it together in one place. Instead of copying patient data into a central database, the analysis is sent to each institution, runs there next to the local data, and only the results come back. Combined, these results answer the same research question as a central analysis, with the same or very similar results.',
@@ -395,7 +395,16 @@ export default defineLocale('en', [
         searchPlaceholder: 'Search by title, author, or venue...',
         results: 'publications',
         noResults: 'No publications found matching your search.',
-        resetSearch: 'Reset search',
+        resetSearch: 'Reset search and filters',
+        filterType: 'Type',
+        filterYear: 'Year',
+        types: {
+            all: 'All',
+            journal: 'Journal',
+            conference: 'Conference',
+            book: 'Book chapter',
+            preprint: 'Preprint',
+        },
     })]),
 
     defineNamespace('news', [defineTranslations({
@@ -425,6 +434,12 @@ export default defineLocale('en', [
         talks: 'Talks',
         slides: 'Slides',
         opensInNewTab: 'opens in a new tab',
+        timeline: 'Timeline',
+        kinds: {
+            milestone: 'Milestone',
+            talk: 'Talk',
+            publication: 'Publication',
+        },
         links: 'Links & code',
     })]),
 ]);

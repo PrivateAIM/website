@@ -119,7 +119,7 @@ const localePath = useLocalePath();
   line-height: 1.1;
   overflow-wrap: break-word;
   margin-bottom: 1.5rem;
-  color: var(--on-band);
+  color: var(--title-color);
 }
 
 .hero-subtitle {

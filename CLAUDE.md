@@ -11,7 +11,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `npm run dev` — start dev server
 - `npm run build` — type-check (`vue-tsc`) then build (`vite build`)
 - `npm run build-only` — prerender with `vite-ssg build`, without type-check
-- `npm run type-check` — run `vue-tsc --build --noEmit`
+- `npm run type-check` — run `vue-tsc` for the app and for the build scripts (`tsconfig.node.json`)
 - `npm run check-dist` — check the build output (sitemap URLs, head tags, hreflang, no placeholder/blog content); runs in CI after the build
 - `npm run check-links` — check all external links in `dist/` (weekly in CI via `links.yml`; 401/403/429 count as bot protection, not broken)
 - `npm run lint` — ESLint check (non-mutating; this is the CI gate; also reports formatting — no separate Prettier step)

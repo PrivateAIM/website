@@ -79,6 +79,12 @@
                         class="footer-link"
                     ><ITranslate path="footer.github" /></a>
                     <router-link
+                        :to="localePath('/federated-analysis')"
+                        class="footer-link"
+                    >
+                        <ITranslate path="footer.explainer" />
+                    </router-link>
+                    <router-link
                         v-for="reference in referenceLinks"
                         :key="reference.slug"
                         :to="localePath(`/references/${reference.slug}`)"
@@ -175,7 +181,6 @@ const locale = useLocale();
 
 const projectPages = [
     { path: '/flame', label: 'navigation.flame' },
-    { path: '/federated-analysis', label: 'footer.explainer' },
     { path: '/news', label: 'navigation.news' },
     { path: '/publications', label: 'navigation.publications' },
     { path: '/team', label: 'navigation.team' },
@@ -245,13 +250,13 @@ const referenceLinks = computed(() => references.map((project) => ({
   height: 2.25rem;
   border: 1px solid color-mix(in srgb, var(--footer-text) 25%, transparent);
   border-radius: 50%;
-  color: var(--footer-text);
+  color: var(--brand-yellow);
   transition: color 0.2s, border-color 0.2s;
 }
 
 .footer-social a:hover {
   border-color: var(--brand-yellow);
-  color: var(--brand-yellow);
+  color: var(--footer-heading);
 }
 
 .footer-links {
@@ -312,7 +317,7 @@ const referenceLinks = computed(() => references.map((project) => ({
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--footer-text);
+  color: var(--brand-yellow);
 }
 
 .sponsor-logo {

@@ -2,4 +2,12 @@
     font-family: 'Helvetica Neue';
     src: url('./fonts/HelveticaNeueRoman.woff2') format('woff2');
     font-display: swap;
+    /*
+     * The font's own metrics end the ascent at the cap height (0.71em) but keep
+     * 0.20em below the baseline, so text sat high in buttons and badges. Moving
+     * 0.10em from descent to ascent centres caps and digits in the line box;
+     * the total and the font's own line gap stay, so line heights are unchanged.
+     */
+    ascent-override: 81%;
+    descent-override: 10%;
 }

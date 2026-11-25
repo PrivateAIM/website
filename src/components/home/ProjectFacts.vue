@@ -74,7 +74,7 @@ const facts = [
     letter-spacing: 0.08em;
     margin-bottom: 1.5rem;
     text-align: center;
-    opacity: 0.9;
+    color: var(--band-accent);
 }
 
 .facts-list {
@@ -99,6 +99,10 @@ const facts = [
     letter-spacing: 0.05em;
     opacity: 0.85;
     margin-bottom: 0.5rem;
+}
+
+.fact dt svg {
+    color: var(--band-accent);
 }
 
 .fact dd {

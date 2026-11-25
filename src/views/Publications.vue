@@ -17,6 +17,52 @@
                 <span class="result-count">{{ filteredPublications.length }} <ITranslate path="publications.results" /></span>
             </div>
 
+            <div class="filters">
+                <div
+                    class="filter-group"
+                    role="group"
+                    :aria-label="typeLabel"
+                >
+                    <span class="filter-label">{{ typeLabel }}</span>
+                    <button
+                        v-for="type in TYPE_FILTERS"
+                        :key="type"
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedType === type"
+                        @click="selectedType = type"
+                    >
+                        <ITranslate :path="`publications.types.${type}`" />
+                        <span class="chip-count">{{ typeCounts[type] }}</span>
+                    </button>
+                </div>
+                <div
+                    class="filter-group"
+                    role="group"
+                    :aria-label="yearLabel"
+                >
+                    <span class="filter-label">{{ yearLabel }}</span>
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedYear === null"
+                        @click="selectedYear = null"
+                    >
+                        <ITranslate path="publications.types.all" />
+                    </button>
+                    <button
+                        v-for="year in allYears"
+                        :key="year"
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedYear === year"
+                        @click="selectedYear = year"
+                    >
+                        {{ year }}
+                    </button>
+                </div>
+            </div>
+
             <div
                 v-for="year in filteredYears"
                 :key="year"
@@ -41,6 +87,10 @@
                                     :aria-controls="`publication-${year}-${index}`"
                                     @click="toggle(`${year}-${index}`)"
                                 >
+                                    <span
+                                        class="type-badge"
+                                        :class="`type-${publicationType(publication)}`"
+                                    ><ITranslate :path="`publications.types.${publicationType(publication)}`" /></span>
                                     <span class="publication-title">{{ publication.title }}</span>
                                     <span class="publication-citation">{{ publication.citation }}</span>
                                 </button>
@@ -60,7 +110,13 @@
                                     rel="noopener noreferrer"
                                     class="publication-link"
                                 >
-                                    <ITranslate path="publications.readMore" /> →
+                                    <template v-if="doiOf(publication.link)">DOI {{ doiOf(publication.link) }}</template>
+                                    <template v-else-if="publication.link.endsWith('.pdf')">PDF</template>
+                                    <ITranslate
+                                        v-else
+                                        path="publications.readMore"
+                                    />
+                                    <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -77,7 +133,7 @@
                 <p><ITranslate path="publications.noResults" /></p>
                 <button
                     class="reset-button"
-                    @click="searchQuery = ''"
+                    @click="resetFilters"
                 >
                     <ITranslate path="publications.resetSearch" />
                 </button>
@@ -106,7 +162,141 @@ interface IPublication {
 }
 
 const publications: IPublication[] = [
+    // 2026
+    {
+        authors: 'Öztürk, H., Afonja, T., Jälkö, J., Binkyte, R., Rodriguez-Mier, P., Lobentanzer, S., Wicks, A., Kreuer, J., Ouaari, S., Pfeifer, N., Menzies, S., Pentyala, S., Filienko, D., Golob, S., McKeever, P., Banerjee, J., Foschini, L., De Cock, M., Saez-Rodriguez, J., Fritz, M., Stegle, O., Honkela, A.',
+        title: 'Community benchmarking of generative models for privacy-preserving synthetic bulk RNA-seq data generation.',
+        citation: 'Genome Biology, 27, 355, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1186/s13059-026-04326-1',
+    },
+    {
+        authors: 'Kirchhoff, Y. et al.',
+        title: 'Dataset Collections: Challenges of Large-Scale Data Aggregation in 3D Medical Image Datasets.',
+        citation: 'arXiv preprint, 2026.',
+        year: 2026,
+        link: 'https://arxiv.org/abs/2611.10144',
+    },
+    {
+        authors: 'Parampottupadam, S., Martínez Mora, A., Bounias, D., Sav, S., Maier-Hein, K., Floca, R.',
+        title: 'Privacy Leakage in Federated Learning in Radiology Reports: Comparative Evaluation of Tokenizer and Batch-Size Privacy Risks.',
+        citation: 'JMIR Medical Informatics, 14, e88390, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.2196/88390',
+    },
+    {
+        authors: 'Bujotzek, M., Bounias, D., Denner, S., Floca, R., Fischer, M., Neher, P., Maier-Hein, K.',
+        title: 'Federated Medical Image Segmentation under Real-World Label Noise: A Benchmark Suite for Noisy Label Learning Method Selection.',
+        citation: 'Journal of Imaging Informatics in Medicine, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1007/s10278-026-02205-6',
+    },
+    {
+        authors: 'Eckhardt-Bellmann, P., Taha, N. A., Werle, S. D., Kraus, J. M., Ikonomi, N., Kestler, H. A.',
+        title: 'Systematic detection of predictive gene sets by semantics-based selection.',
+        citation: 'BMC Bioinformatics, 27, 221, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1186/s12859-026-06570-5',
+    },
+    {
+        authors: 'Herr, M., Placzek, P., Abu Attieh, H., Schultz, B., Hieber, D., Röhl, A., Jaberansary, M., Twrdik, A., Brassel, P., Schaible, M., Halilovic, M., Prasser, F., Kirsten, T., Kohlbacher, O.',
+        title: 'Enabling Privacy-Preserving Federated Learning in Healthcare: The FLAME Architecture and Policy Framework.',
+        citation: 'Studies in Health Technology and Informatics, 336, 1589–1590 (MIE 2026), 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.3233/SHTI260485',
+    },
+    {
+        authors: 'Abu Attieh, H., Halilovic, M., Herr, M., Hieber, D., Placzek, P., Röhl, A., Kuntzer, J., Ziller, A., Kohlbacher, O., Rueckert, D., Prasser, F.',
+        title: 'A Maturity Model for the Enforcement of PETs in Federated Settings.',
+        citation: 'Studies in Health Technology and Informatics, 336, 1593–1594 (MIE 2026), 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.3233/SHTI260487',
+    },
+    {
+        authors: 'Meurers, T., Halilovic, M., Abu Attieh, H., Despraz, J., Kaabachi, B., Otte, K., Papapostolou, G., Raisaro, J. L., Prasser, F.',
+        title: 'Unequal Flows? Economic Dimensions of Sharing Anonymized Data in Biomedical Research.',
+        citation: 'Studies in Health Technology and Informatics, 336, 2061–2065 (MIE 2026), 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.3233/SHTI260614',
+    },
+    {
+        authors: 'Abu Attieh, H., Halilovic, M., Kerkouche, R., Rahimian, S., Wang, H.-P., Rehms, R., Kaissis, G., Ziller, A., Kuntzer, J., Otte, K., Meurers, T., Fritz, M., Rueckert, D., Prasser, F.',
+        title: 'An Exploratory Survey Study Toward a Conceptual Framework for Structuring the Integration of Privacy-Enhancing Technologies in Federated Learning and Analytics.',
+        citation: 'IEEE Access, 14, 41508–41528, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1109/ACCESS.2026.3672991',
+    },
+    {
+        authors: 'Swaminathan, A., Akgün, M.',
+        title: 'Accelerating Targeted Hard-Label Adversarial Attacks in Low-Query Black-Box Settings.',
+        citation: 'IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 756–767, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1109/SaTML68715.2026.00048',
+    },
+    {
+        authors: 'Kaiser, J., Ziller, A., Triantafillou, E., Rueckert, D., Kaissis, G.',
+        title: 'Your Privacy Depends on Others: Collusion Vulnerabilities in Individual Differential Privacy.',
+        citation: 'IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 481–499, 2026.',
+        year: 2026,
+        link: 'https://doi.org/10.1109/SaTML68715.2026.00034',
+    },
+    {
+        authors: 'Kreuer, J., Ouaari, S., Pfeifer, N.',
+        title: 'How Private Are DNA Embeddings? Inverting Foundation Model Representations of Genomic Sequences.',
+        citation: 'arXiv preprint, 2026.',
+        year: 2026,
+        link: 'https://arxiv.org/abs/2603.06950',
+    },
     // 2025
+    {
+        authors: 'Mağara, Ş. S., Dietrich, N., Ünal, A. B., Akgün, M.',
+        title: 'Accelerating probabilistic privacy-preserving medical record linkage: A three-party MPC approach.',
+        citation: 'Journal of Biomedical Informatics, 171, 104920, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.1016/j.jbi.2025.104920',
+    },
+    {
+        authors: 'Stolnicu, A., Eckhardt-Bellmann, P., Kestler, A. M. R., Kestler, H. A.',
+        title: 'Identification of ordinal relations and alternative suborders within high-dimensional molecular data.',
+        citation: 'Frontiers in Bioinformatics, 5, 1665892, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.3389/fbinf.2025.1665892',
+    },
+    {
+        authors: 'Thiam, P., Schwenker, F., Kestler, H. A.',
+        title: 'Dealing with Class Overlap Through Cluster-Based Sample Weighting.',
+        citation: 'Computers, 14(11), 457, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.3390/computers14110457',
+    },
+    {
+        authors: 'Zhioua, S., Binkyte, R., Ouni, A., Ktata, F. B.',
+        title: 'Revisiting Sampling Bias: Implications on Fairness Measurement and Mitigation.',
+        citation: 'Research Square preprint, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.21203/rs.3.rs-6332112/v1',
+    },
+    {
+        authors: 'Baykara, C. A., Ünal, A. B., Pfeifer, N., Akgün, M.',
+        title: 'Privacy-preserving federated unsupervised domain adaptation with application to age prediction from DNA methylation data.',
+        citation: 'Bioinformatics, 41(10), btaf465, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.1093/bioinformatics/btaf465',
+    },
+    {
+        authors: 'Baykara, C. A., Pandey, S. R., Ünal, A. B., Lee, H., Akgün, M.',
+        title: 'Federated Learning for Epileptic Seizure Prediction Across Heterogeneous EEG Datasets.',
+        citation: 'arXiv preprint, 2025.',
+        year: 2025,
+        link: 'https://arxiv.org/abs/2508.08159',
+    },
+    {
+        authors: 'Abu Attieh, H., Müller, A., Wirth, F. N., Prasser, F.',
+        title: 'Pseudonymization tools for medical research: a systematic review.',
+        citation: 'BMC Medical Informatics and Decision Making, 25, 128, 2025.',
+        year: 2025,
+        link: 'https://doi.org/10.1186/s12911-025-02958-0',
+    },
     {
         authors: 'Swaminathan, A., Hannemann, A., Inal, A. B., Pfeifer, N., Akgün, M.',
         title: 'PP-GWAS: Privacy-Preserving Multi-Site Genome-wide Association Studies.',
@@ -242,13 +432,6 @@ const publications: IPublication[] = [
         link: 'https://www.nature.com/articles/s42256-024-00858-y',
     },
     {
-        authors: 'Baykara, C. A., Inal, A. B., Pfeifer, N., Akgün, M.',
-        title: 'Privacy-Preserving Federated Unsupervised Domain Adaptation for Regression on Small-Scale and High-Dimensional Biological Data.',
-        citation: 'CoRR abs/2411.17287, 2024.',
-        year: 2024,
-        link: 'https://dblp.org/rec/journals/corr/abs-2411-17287',
-    },
-    {
         authors: 'Baykara, C. A., Inal, A. B., Akgün, M.',
         title: 'FHAUC: Privacy Preserving AUC Calculation for Federated Learning using Fully Homomorphic Encryption.',
         citation: 'CoRR abs/2403.14428, 2024.',
@@ -361,6 +544,43 @@ const publications: IPublication[] = [
 ];
 
 const searchQuery = ref('');
+const typeLabel = useTranslation('publications.filterType');
+const yearLabel = useTranslation('publications.filterYear');
+
+type PublicationType = 'journal' | 'conference' | 'book' | 'preprint';
+
+const TYPE_FILTERS = ['all', 'journal', 'conference', 'book', 'preprint'] as const;
+
+/** Type from the citation and link, so entries need no extra field. */
+function publicationType({ citation, link }: IPublication): PublicationType {
+    if (/preprint|arxiv|corr abs|biorxiv|medrxiv|research square|openreview/i.test(citation) || link?.includes('arxiv.org')) {
+        return 'preprint';
+    }
+
+    if (/conference|proceedings|symposium|workshop|studies in health technology|\(MIE|lecture notes|computer and information science|miccai|neurips|icml|saTML/i.test(citation)) {
+        return 'conference';
+    }
+
+    if (/ebooks|book/i.test(citation)) {
+        return 'book';
+    }
+
+    return 'journal';
+}
+
+function doiOf(link: string): string | undefined {
+    return link.match(/doi\.org\/(10\..+)$/)?.[1];
+}
+
+const selectedType = ref<(typeof TYPE_FILTERS)[number]>('all');
+const selectedYear = ref<number | null>(null);
+const allYears = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
+
+const resetFilters = () => {
+    searchQuery.value = '';
+    selectedType.value = 'all';
+    selectedYear.value = null;
+};
 const openKey = ref<string | null>(null);
 const toggle = (key: string) => {
     openKey.value = openKey.value === key ? null : key;
@@ -387,18 +607,36 @@ const publicationList = computed(() => ({
         })),
 }));
 
-const filteredPublications = computed(() => {
+const matchesSearch = (p: IPublication, query: string) => !query ||
+    p.title.toLowerCase().includes(query) ||
+    p.authors.toLowerCase().includes(query) ||
+    p.citation.toLowerCase().includes(query);
+
+// Search and year narrow the list; the type counts follow them
+const searchedPublications = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
 
-    if (!query) {
-        return publications;
+    return publications.filter((p) => matchesSearch(p, query) && (selectedYear.value === null || p.year === selectedYear.value));
+});
+
+const typeCounts = computed(() => {
+    const counts = {
+        all: searchedPublications.value.length,
+        journal: 0,
+        conference: 0,
+        book: 0,
+        preprint: 0,
+    };
+
+    for (const publication of searchedPublications.value) {
+        counts[publicationType(publication)]++;
     }
 
-    return publications.filter((p) =>
-        p.title.toLowerCase().includes(query) ||
-        p.authors.toLowerCase().includes(query) ||
-        p.citation.toLowerCase().includes(query));
+    return counts;
 });
+
+const filteredPublications = computed(() => searchedPublications.value
+    .filter((p) => selectedType.value === 'all' || publicationType(p) === selectedType.value));
 
 const filteredYears = computed(() => {
     const uniqueYears = [...new Set(filteredPublications.value.map((p) => p.year))];
@@ -453,6 +691,85 @@ const getFilteredPublicationsByYear = (year: number): IPublication[] => filtered
     font-size: 0.9rem;
     color: var(--nav-text);
     white-space: nowrap;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: -1rem 0 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-label {
+    min-width: 3.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-chip:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-chip[aria-pressed="true"] {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.chip-count {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.type-badge {
+    align-self: flex-start;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+}
+
+.type-conference {
+    background-color: var(--brand-yellow-tint);
+    color: var(--text-color);
+}
+
+.type-book {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.type-preprint {
+    background-color: transparent;
+    border: 1px dashed var(--text-muted);
+    color: var(--text-muted);
 }
 
 .publications-year-section {
@@ -558,10 +875,12 @@ const getFilteredPublicationsByYear = (year: number): IPublication[] => filtered
 }
 
 .publication-link {
-    display: inline-block;
+    display: inline-flex;
+    gap: 0.35rem;
     color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
 .publication-link:hover {

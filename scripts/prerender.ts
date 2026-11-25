@@ -7,6 +7,7 @@ import {
     writeFileSync,
 } from 'node:fs';
 import { join } from 'node:path';
+import { socialImageFor } from './socialImages.ts';
 
 export const SITE_URL = 'https://privateaim.de';
 
@@ -106,7 +107,20 @@ function setAttribute(html: string, tagStart: string, attribute: string, value: 
 }
 
 /** Write the route's own head tags into its static HTML. */
-export function applyPageHead(route: string, html: string, meta: IPageMeta): string {
+/** Read the head fields from the route meta, which this project sees untyped. */
+function pageMeta(meta: Record<string, unknown>): IPageMeta {
+    const text = (key: string) => (typeof meta[key] === 'string' ? meta[key] : undefined);
+
+    return {
+        title: text('title'), 
+        description: text('description'), 
+        locale: text('locale'), 
+    };
+}
+
+export function applyPageHead(route: string, html: string, routeMeta: Record<string, unknown>): string {
+    const meta = pageMeta(routeMeta);
+
     if (!html.includes('<h1')) {
         throw new Error(`[prerender] ${route} rendered without an <h1>`);
     }
@@ -145,6 +159,17 @@ export function applyPageHead(route: string, html: string, meta: IPageMeta): str
     result = setAttribute(result, 'meta property="og:title"', 'content', title);
     result = setAttribute(result, 'meta property="og:description"', 'content', description);
     result = setAttribute(result, 'meta name="twitter:title"', 'content', title);
+
+    const image = socialImageFor(route, title, description);
+
+    if (image) {
+        const alt = `${title}: ${description}`;
+
+        result = setAttribute(result, 'meta property="og:image"', 'content', `${SITE_URL}${image}`);
+        result = setAttribute(result, 'meta name="twitter:image"', 'content', `${SITE_URL}${image}`);
+        result = setAttribute(result, 'meta property="og:image:alt"', 'content', alt);
+        result = setAttribute(result, 'meta name="twitter:image:alt"', 'content', alt);
+    }
 
     return setAttribute(result, 'meta name="twitter:description"', 'content', description);
 }

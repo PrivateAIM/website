@@ -312,7 +312,7 @@
                         </div>
                         <div class="partner-info">
                             <h3 class="partner-name">
-                                CISPA
+                                CISPA Helmholtz Center for Information Security
                             </h3>
                             <a
                                 href="https://cispa.de/de"

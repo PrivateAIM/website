@@ -53,6 +53,7 @@ defineProps<IPageHeaderProps>();
 }
 
 .page-header h1 {
+  color: var(--title-color);
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -0.01em;

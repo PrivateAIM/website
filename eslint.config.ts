@@ -1,7 +1,8 @@
 import eslintConfig from '@tada5hi/eslint-config';
+import type { Linter } from 'eslint';
 import globals from 'globals';
 
-export default eslintConfig(
+const config: Promise<Linter.Config[]> = eslintConfig(
     {
         typescript: true,
         vue: { typescript: true },
@@ -33,3 +34,5 @@ export default eslintConfig(
         rules: { '@stylistic/max-len': 'off' },
     },
 );
+
+export default config;
