@@ -432,13 +432,6 @@ const publications: IPublication[] = [
         link: 'https://www.nature.com/articles/s42256-024-00858-y',
     },
     {
-        authors: 'Baykara, C. A., Inal, A. B., Pfeifer, N., Akgün, M.',
-        title: 'Privacy-Preserving Federated Unsupervised Domain Adaptation for Regression on Small-Scale and High-Dimensional Biological Data.',
-        citation: 'CoRR abs/2411.17287, 2024.',
-        year: 2024,
-        link: 'https://dblp.org/rec/journals/corr/abs-2411-17287',
-    },
-    {
         authors: 'Baykara, C. A., Inal, A. B., Akgün, M.',
         title: 'FHAUC: Privacy Preserving AUC Calculation for Federated Learning using Fully Homomorphic Encryption.',
         citation: 'CoRR abs/2403.14428, 2024.',

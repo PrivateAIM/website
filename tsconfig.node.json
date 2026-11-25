@@ -3,6 +3,7 @@
     "include": [
         "vite.config.*",
         "scripts/**/*.ts",
+        "src/utils/thumbnail.ts",
         "vitest.config.*",
         "cypress.config.*",
         "nightwatch.conf.*",

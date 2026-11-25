@@ -34,7 +34,7 @@ The dev server runs at http://localhost:5173.
 | `npm run build` | Type-check and prerender the site to `dist/` |
 | `npm run build-only` | Prerender without type-check |
 | `npm run preview` | Serve the build output locally |
-| `npm run type-check` | Run `vue-tsc` |
+| `npm run type-check` | Run `vue-tsc` for the app and the build scripts |
 | `npm run lint` | Lint and check formatting (the CI gate) |
 | `npm run lint:fix` | Lint with auto-fix |
 | `npm run check-dist` | Check the build output: sitemap, head tags, hreflang |

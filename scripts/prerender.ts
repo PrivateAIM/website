@@ -107,7 +107,20 @@ function setAttribute(html: string, tagStart: string, attribute: string, value: 
 }
 
 /** Write the route's own head tags into its static HTML. */
-export function applyPageHead(route: string, html: string, meta: IPageMeta): string {
+/** Read the head fields from the route meta, which this project sees untyped. */
+function pageMeta(meta: Record<string, unknown>): IPageMeta {
+    const text = (key: string) => (typeof meta[key] === 'string' ? meta[key] : undefined);
+
+    return {
+        title: text('title'), 
+        description: text('description'), 
+        locale: text('locale'), 
+    };
+}
+
+export function applyPageHead(route: string, html: string, routeMeta: Record<string, unknown>): string {
+    const meta = pageMeta(routeMeta);
+
     if (!html.includes('<h1')) {
         throw new Error(`[prerender] ${route} rendered without an <h1>`);
     }

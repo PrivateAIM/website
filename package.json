@@ -9,7 +9,7 @@
         "build-only": "vite-ssg build",
         "check-dist": "node scripts/check-dist.mjs",
         "check-links": "node scripts/check-links.mjs",
-        "type-check": "vue-tsc --build --noEmit",
+        "type-check": "vue-tsc --build --noEmit && vue-tsc -p tsconfig.node.json --noEmit",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
