@@ -185,8 +185,8 @@ export default defineLocale('de', [
 
     defineNamespace('flame', [defineTranslations({
         lastUpdated: 'Zuletzt aktualisiert: {{date}}',
-        title: 'FLAME',
-        subtitle: 'Federated Learning and Analysis in Medicine: die von PrivateAIM entwickelte Plattform',
+        title: 'FLAME: die föderierte Analyseplattform von PrivateAIM',
+        subtitle: 'Federated Learning and Analysis in Medicine, entwickelt von PrivateAIM in der Medizininformatik-Initiative (MII)',
         status: 'FLAME ist im produktiven Einsatz.',
         explainer: {
             title: 'Neu bei föderierter Analyse?',
@@ -351,7 +351,7 @@ export default defineLocale('de', [
         },
     })]),
 
-    defineNamespace('privacy', [defineTranslations({ title: 'Datenschutzerklärung' })]),
+    defineNamespace('privacy', [defineTranslations({ title: 'Datenschutzerklärung', contents: 'Inhalt' })]),
 
     defineNamespace('cookie', [defineTranslations({
         title: 'Cookie-Einstellungen',
