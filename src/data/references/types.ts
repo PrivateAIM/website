@@ -25,6 +25,11 @@ export interface IReferencePublication {
     link: string;
 }
 
+export interface IReferenceMilestone {
+    year: number;
+    text: string;
+}
+
 export interface IReferenceProjectContent {
     /** Display name, e.g. 'Personal Health Train (PHT)'. */
     name: string;
@@ -34,6 +39,8 @@ export interface IReferenceProjectContent {
     successorNote: string;
     sections: IReferenceSection[];
     talks: IReferenceTalk[];
+    /** Project milestones for the timeline, besides talks and publications. */
+    milestones: IReferenceMilestone[];
     /** Archived code, docs, manifesto etc. */
     links: IReferenceLink[];
 }

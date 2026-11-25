@@ -50,65 +50,68 @@
             </section>
 
             <section
-                v-if="publications.length > 0"
+                v-if="timeline.length > 0"
                 class="reference-section"
             >
                 <h2 class="section-heading">
-                    <ITranslate path="references.publications" />
+                    <ITranslate path="references.timeline" />
                 </h2>
-                <ul class="item-list">
+                <ol class="timeline">
                     <li
-                        v-for="(publication, index) in publications"
-                        :key="index"
-                        class="item-card"
+                        v-for="group in timeline"
+                        :key="group.year"
+                        class="timeline-year"
                     >
-                        <span class="item-title">{{ publication.title }}</span>
-                        <span class="item-authors">{{ publication.authors }}</span>
-                        <span class="item-meta">{{ publication.citation }}</span>
-                        <a
-                            v-if="publication.link"
-                            :href="publication.link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="item-link"
-                            :aria-label="`${readPaperLabel}: ${publication.title} (${newTabLabel})`"
-                        >
-                            <ITranslate path="references.readPaper" /> <span aria-hidden="true">→</span>
-                        </a>
+                        <h3 class="timeline-year-label">
+                            {{ group.year }}
+                        </h3>
+                        <ul class="item-list">
+                            <li
+                                v-for="(entry, index) in group.entries"
+                                :key="index"
+                                class="item-card"
+                                :class="`entry-${entry.kind}`"
+                            >
+                                <span class="entry-kind">
+                                    <ITranslate :path="`references.kinds.${entry.kind}`" />
+                                    <template v-if="entry.kind === 'talk'"> · {{ entry.talk.date }}</template>
+                                </span>
+                                <template v-if="entry.kind === 'milestone'">
+                                    <span class="item-title">{{ entry.milestone.text }}</span>
+                                </template>
+                                <template v-else-if="entry.kind === 'talk'">
+                                    <span class="item-title">{{ entry.talk.title }}</span>
+                                    <span class="item-meta">{{ entry.talk.venue }}</span>
+                                    <a
+                                        v-if="entry.talk.link"
+                                        :href="entry.talk.link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="item-link"
+                                        :aria-label="`${slidesLabel}: ${entry.talk.title} (${newTabLabel})`"
+                                    >
+                                        <ITranslate path="references.slides" /> <span aria-hidden="true">→</span>
+                                    </a>
+                                </template>
+                                <template v-else>
+                                    <span class="item-title">{{ entry.publication.title }}</span>
+                                    <span class="item-authors">{{ entry.publication.authors }}</span>
+                                    <span class="item-meta">{{ entry.publication.citation }}</span>
+                                    <a
+                                        v-if="entry.publication.link"
+                                        :href="entry.publication.link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="item-link"
+                                        :aria-label="`${readPaperLabel}: ${entry.publication.title} (${newTabLabel})`"
+                                    >
+                                        <ITranslate path="references.readPaper" /> <span aria-hidden="true">→</span>
+                                    </a>
+                                </template>
+                            </li>
+                        </ul>
                     </li>
-                </ul>
-            </section>
-
-            <section
-                v-if="content.talks.length > 0"
-                class="reference-section"
-            >
-                <h2 class="section-heading">
-                    <ITranslate path="references.talks" />
-                </h2>
-                <ul class="item-list">
-                    <li
-                        v-for="(talk, index) in content.talks"
-                        :key="index"
-                        class="item-card item-card-row"
-                    >
-                        <span class="item-date">{{ talk.date }}</span>
-                        <span class="item-main">
-                            <span class="item-title">{{ talk.title }}</span>
-                            <span class="item-meta">{{ talk.venue }}</span>
-                        </span>
-                        <a
-                            v-if="talk.link"
-                            :href="talk.link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="item-link"
-                            :aria-label="`${slidesLabel}: ${talk.title} (${newTabLabel})`"
-                        >
-                            <ITranslate path="references.slides" /> <span aria-hidden="true">→</span>
-                        </a>
-                    </li>
-                </ul>
+                </ol>
             </section>
 
             <section
@@ -149,6 +152,7 @@ import PageHeader from '@/components/PageHeader.vue';
 import NotFound from '@/views/NotFound.vue';
 import { useLocale, useLocalePath, useTranslation } from '@/i18n';
 import { findReference, referenceContentForLocale, referenceTitle } from '@/data/references';
+import type { IReferenceMilestone, IReferencePublication, IReferenceTalk } from '@/data/references/types';
 
 const props = defineProps<{ slug: string }>();
 
@@ -162,7 +166,25 @@ const newTabLabel = useTranslation('references.opensInNewTab');
 
 const project = computed(() => findReference(props.slug));
 const content = computed(() => (project.value ? referenceContentForLocale(project.value, locale.value) : undefined));
-const publications = computed(() => [...(project.value?.publications ?? [])].sort((a, b) => b.year - a.year));
+type TimelineEntry =    | { kind: 'milestone'; milestone: IReferenceMilestone } |
+    { kind: 'talk'; talk: IReferenceTalk } |
+    { kind: 'publication'; publication: IReferencePublication };
+
+// Milestones, talks and publications in one list per year, oldest first
+const timeline = computed(() => {
+    if (!project.value || !content.value) {
+        return [];
+    }
+
+    const entries: { year: number; entry: TimelineEntry }[] = [
+        ...content.value.milestones.map((milestone) => ({ year: milestone.year, entry: { kind: 'milestone' as const, milestone } })),
+        ...content.value.talks.map((talk) => ({ year: Number(talk.date.match(/\d{4}/)?.[0]), entry: { kind: 'talk' as const, talk } })),
+        ...project.value.publications.map((publication) => ({ year: publication.year, entry: { kind: 'publication' as const, publication } })),
+    ];
+    const years = [...new Set(entries.map(({ year }) => year))].sort((a, b) => a - b);
+
+    return years.map((year) => ({ year, entries: entries.filter((item) => item.year === year).map(({ entry }) => entry) }));
+});
 
 /** Render markdown; external links open in a new tab. */
 function renderMarkdown(markdown: string): string {
@@ -319,6 +341,48 @@ watch([content, () => route.fullPath], () => {
     margin: 0 0 1rem;
 }
 
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-year {
+    position: relative;
+    margin-bottom: 1.75rem;
+}
+
+.timeline-year::before {
+    content: "";
+    position: absolute;
+    top: 0.45rem;
+    left: calc(-1.5rem - 7px);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.timeline-year-label {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.entry-kind {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.item-card.entry-milestone {
+    border-left: 4px solid var(--brand-yellow);
+}
+
 .item-list,
 .link-list {
     list-style: none;
@@ -340,26 +404,8 @@ watch([content, () => route.fullPath], () => {
     gap: 0.25rem;
 }
 
-.item-card-row {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 1rem;
-}
 
-.item-main {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    flex: 1;
-    min-width: 0;
-}
 
-.item-date {
-    flex: 0 0 6.5rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--nav-text);
-}
 
 .item-title {
     font-size: 1.05rem;
@@ -426,15 +472,6 @@ watch([content, () => route.fullPath], () => {
 
     .section-heading {
         font-size: 1.5rem;
-    }
-
-    .item-card-row {
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .item-date {
-        flex-basis: auto;
     }
 }
 </style>

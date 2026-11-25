@@ -11,6 +11,7 @@ import {
     writeLegacyRedirects,
     writeSitemap,
 } from './scripts/prerender.ts';
+import { writeSocialImages } from './scripts/socialImages.ts';
 import { thumbnailDevServer, writeThumbnails } from './scripts/thumbnails.ts';
 
 // https://vite.dev/config/
@@ -39,7 +40,7 @@ export default defineConfig({
             moveLocaleHomes('dist');
             writeSitemap('dist');
             writeLegacyRedirects('dist');
-            await Promise.all([downloadAvatars('dist'), writeThumbnails('dist')]);
+            await Promise.all([downloadAvatars('dist'), writeThumbnails('dist'), writeSocialImages('dist')]);
         },
     },
 });

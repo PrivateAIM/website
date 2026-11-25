@@ -138,7 +138,7 @@ export default defineLocale('de', [
     })]),
 
     defineNamespace('explainer', [defineTranslations({
-        lastUpdated: 'Zuletzt aktualisiert: {{date}}',
+        lastUpdated: 'Verfasst vom PrivateAIM-Team · Zuletzt aktualisiert: {{date}}',
         title: 'Was ist föderierte Analyse?',
         subtitle: 'Eine kurze Einführung in die Analyse medizinischer Daten ohne zentrale Datensammlung',
         intro: 'Föderierte Analyse bedeutet, Daten auszuwerten, die auf mehrere Einrichtungen verteilt sind, ohne sie an einem Ort zusammenzuführen. Statt Patientendaten in eine zentrale Datenbank zu kopieren, wird die Analyse an jede Einrichtung geschickt, läuft dort bei den lokalen Daten, und nur die Ergebnisse kommen zurück. Zusammengeführt beantworten diese Ergebnisse dieselbe Forschungsfrage wie eine zentrale Analyse, mit gleichen oder sehr ähnlichen Ergebnissen.',
@@ -389,7 +389,16 @@ export default defineLocale('de', [
         searchPlaceholder: 'Suche nach Titel, Autor oder Venue...',
         results: 'Publikationen',
         noResults: 'Keine Publikationen gefunden.',
-        resetSearch: 'Suche zurücksetzen',
+        resetSearch: 'Suche und Filter zurücksetzen',
+        filterType: 'Typ',
+        filterYear: 'Jahr',
+        types: {
+            all: 'Alle',
+            journal: 'Journal',
+            conference: 'Konferenz',
+            book: 'Buchkapitel',
+            preprint: 'Preprint',
+        },
     })]),
 
     defineNamespace('news', [defineTranslations({
@@ -419,6 +428,12 @@ export default defineLocale('de', [
         talks: 'Vorträge',
         slides: 'Folien',
         opensInNewTab: 'öffnet in neuem Tab',
+        timeline: 'Zeitleiste',
+        kinds: {
+            milestone: 'Meilenstein',
+            talk: 'Vortrag',
+            publication: 'Publikation',
+        },
         links: 'Links & Code',
     })]),
 ]);

@@ -17,6 +17,52 @@
                 <span class="result-count">{{ filteredPublications.length }} <ITranslate path="publications.results" /></span>
             </div>
 
+            <div class="filters">
+                <div
+                    class="filter-group"
+                    role="group"
+                    :aria-label="typeLabel"
+                >
+                    <span class="filter-label">{{ typeLabel }}</span>
+                    <button
+                        v-for="type in TYPE_FILTERS"
+                        :key="type"
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedType === type"
+                        @click="selectedType = type"
+                    >
+                        <ITranslate :path="`publications.types.${type}`" />
+                        <span class="chip-count">{{ typeCounts[type] }}</span>
+                    </button>
+                </div>
+                <div
+                    class="filter-group"
+                    role="group"
+                    :aria-label="yearLabel"
+                >
+                    <span class="filter-label">{{ yearLabel }}</span>
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedYear === null"
+                        @click="selectedYear = null"
+                    >
+                        <ITranslate path="publications.types.all" />
+                    </button>
+                    <button
+                        v-for="year in allYears"
+                        :key="year"
+                        type="button"
+                        class="filter-chip"
+                        :aria-pressed="selectedYear === year"
+                        @click="selectedYear = year"
+                    >
+                        {{ year }}
+                    </button>
+                </div>
+            </div>
+
             <div
                 v-for="year in filteredYears"
                 :key="year"
@@ -41,6 +87,10 @@
                                     :aria-controls="`publication-${year}-${index}`"
                                     @click="toggle(`${year}-${index}`)"
                                 >
+                                    <span
+                                        class="type-badge"
+                                        :class="`type-${publicationType(publication)}`"
+                                    ><ITranslate :path="`publications.types.${publicationType(publication)}`" /></span>
                                     <span class="publication-title">{{ publication.title }}</span>
                                     <span class="publication-citation">{{ publication.citation }}</span>
                                 </button>
@@ -60,7 +110,13 @@
                                     rel="noopener noreferrer"
                                     class="publication-link"
                                 >
-                                    <ITranslate path="publications.readMore" /> →
+                                    <template v-if="doiOf(publication.link)">DOI {{ doiOf(publication.link) }}</template>
+                                    <template v-else-if="publication.link.endsWith('.pdf')">PDF</template>
+                                    <ITranslate
+                                        v-else
+                                        path="publications.readMore"
+                                    />
+                                    <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -77,7 +133,7 @@
                 <p><ITranslate path="publications.noResults" /></p>
                 <button
                     class="reset-button"
-                    @click="searchQuery = ''"
+                    @click="resetFilters"
                 >
                     <ITranslate path="publications.resetSearch" />
                 </button>
@@ -495,6 +551,43 @@ const publications: IPublication[] = [
 ];
 
 const searchQuery = ref('');
+const typeLabel = useTranslation('publications.filterType');
+const yearLabel = useTranslation('publications.filterYear');
+
+type PublicationType = 'journal' | 'conference' | 'book' | 'preprint';
+
+const TYPE_FILTERS = ['all', 'journal', 'conference', 'book', 'preprint'] as const;
+
+/** Type from the citation and link, so entries need no extra field. */
+function publicationType({ citation, link }: IPublication): PublicationType {
+    if (/preprint|arxiv|corr abs|biorxiv|medrxiv|research square|openreview/i.test(citation) || link?.includes('arxiv.org')) {
+        return 'preprint';
+    }
+
+    if (/conference|proceedings|symposium|workshop|studies in health technology|\(MIE|lecture notes|computer and information science|miccai|neurips|icml|saTML/i.test(citation)) {
+        return 'conference';
+    }
+
+    if (/ebooks|book/i.test(citation)) {
+        return 'book';
+    }
+
+    return 'journal';
+}
+
+function doiOf(link: string): string | undefined {
+    return link.match(/doi\.org\/(10\..+)$/)?.[1];
+}
+
+const selectedType = ref<(typeof TYPE_FILTERS)[number]>('all');
+const selectedYear = ref<number | null>(null);
+const allYears = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
+
+const resetFilters = () => {
+    searchQuery.value = '';
+    selectedType.value = 'all';
+    selectedYear.value = null;
+};
 const openKey = ref<string | null>(null);
 const toggle = (key: string) => {
     openKey.value = openKey.value === key ? null : key;
@@ -521,18 +614,36 @@ const publicationList = computed(() => ({
         })),
 }));
 
-const filteredPublications = computed(() => {
+const matchesSearch = (p: IPublication, query: string) => !query ||
+    p.title.toLowerCase().includes(query) ||
+    p.authors.toLowerCase().includes(query) ||
+    p.citation.toLowerCase().includes(query);
+
+// Search and year narrow the list; the type counts follow them
+const searchedPublications = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
 
-    if (!query) {
-        return publications;
+    return publications.filter((p) => matchesSearch(p, query) && (selectedYear.value === null || p.year === selectedYear.value));
+});
+
+const typeCounts = computed(() => {
+    const counts = {
+        all: searchedPublications.value.length,
+        journal: 0,
+        conference: 0,
+        book: 0,
+        preprint: 0,
+    };
+
+    for (const publication of searchedPublications.value) {
+        counts[publicationType(publication)]++;
     }
 
-    return publications.filter((p) =>
-        p.title.toLowerCase().includes(query) ||
-        p.authors.toLowerCase().includes(query) ||
-        p.citation.toLowerCase().includes(query));
+    return counts;
 });
+
+const filteredPublications = computed(() => searchedPublications.value
+    .filter((p) => selectedType.value === 'all' || publicationType(p) === selectedType.value));
 
 const filteredYears = computed(() => {
     const uniqueYears = [...new Set(filteredPublications.value.map((p) => p.year))];
@@ -587,6 +698,85 @@ const getFilteredPublicationsByYear = (year: number): IPublication[] => filtered
     font-size: 0.9rem;
     color: var(--nav-text);
     white-space: nowrap;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: -1rem 0 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-label {
+    min-width: 3.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-chip:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-chip[aria-pressed="true"] {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.chip-count {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.type-badge {
+    align-self: flex-start;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+}
+
+.type-conference {
+    background-color: var(--brand-yellow-tint);
+    color: var(--text-color);
+}
+
+.type-book {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.type-preprint {
+    background-color: transparent;
+    border: 1px dashed var(--text-muted);
+    color: var(--text-muted);
 }
 
 .publications-year-section {
@@ -692,10 +882,12 @@ const getFilteredPublicationsByYear = (year: number): IPublication[] => filtered
 }
 
 .publication-link {
-    display: inline-block;
+    display: inline-flex;
+    gap: 0.35rem;
     color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
 .publication-link:hover {

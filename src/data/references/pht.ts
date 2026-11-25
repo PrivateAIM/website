@@ -96,6 +96,10 @@ const pht: IReferenceProject = {
                     link: TALK_LINKS.difuture2018,
                 },
             ],
+            milestones: [
+                { year: 2018, text: 'DIFUTURE Tübingen joins the GO FAIR PHT Implementation Network and starts PHT-meDIC.' },
+                { year: 2023, text: 'PrivateAIM starts in April 2023; the PHT work continues in FLAME.' },
+            ],
             links: [
                 { label: 'Source code on GitHub', url: GITHUB_URL },
                 { label: 'Documentation', url: DOCS_URL },
@@ -181,6 +185,10 @@ const pht: IReferenceProject = {
                     venue: 'DIFUTURE-Symposium 2018, München; GO-FAIR-Treffen in Leiden und Berlin',
                     link: TALK_LINKS.difuture2018,
                 },
+            ],
+            milestones: [
+                { year: 2018, text: 'DIFUTURE Tübingen tritt dem GO FAIR PHT Implementation Network bei und beginnt mit PHT-meDIC.' },
+                { year: 2023, text: 'PrivateAIM startet im April 2023; die PHT-Arbeit wird in FLAME fortgeführt.' },
             ],
             links: [
                 { label: 'Quellcode auf GitHub', url: GITHUB_URL },
