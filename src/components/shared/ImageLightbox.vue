@@ -200,6 +200,11 @@ onBeforeUnmount(() => {
   right: 1rem;
 }
 
+.lightbox-prev,
+.lightbox-next {
+  color: var(--brand-yellow);
+}
+
 .lightbox-prev {
   left: 1rem;
 }

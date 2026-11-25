@@ -97,7 +97,7 @@ const SITES: ISite[] = [
         x: 51.6, 
         y: 400.5, 
         role: 'partner', 
-        institutions: 'CISPA',
+        institutions: 'CISPA Helmholtz Center for Information Security',
         dy: 14,
     },
     {

@@ -81,6 +81,7 @@ const links = [
 }
 
 h1 {
+  color: var(--title-color);
   font-size: 2rem;
   margin: 1rem 0 0.75rem;
 }

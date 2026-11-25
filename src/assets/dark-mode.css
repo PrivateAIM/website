@@ -38,6 +38,8 @@
   --overlay: color-mix(in srgb, var(--text-color) 92%, transparent);
   --on-overlay: var(--card-bg);
   --logo-plate: #FFFFFF;                /* partner and funder logos are dark artwork */
+  --band-accent: var(--brand-yellow);   /* headings and icons on the band, dark in both themes */
+  --title-color: currentColor;          /* H1: inherits in light mode, yellow in dark mode */
 
   color-scheme: light;
 }
@@ -56,7 +58,7 @@ body.dark-mode {
   --primary-color: #E6E600;
   --primary-hover: #F5F5A3;
   --on-primary: #0B1530;
-  --link-color: #A9BCEB;
+  --link-color: #E6E600;
   --brand-yellow: #E6E600;
   --on-brand-yellow: #0B1530;
   --brand-yellow-tint: #1C2A3A;
@@ -74,6 +76,7 @@ body.dark-mode {
   --shadow-color: #000000;
   --overlay: color-mix(in srgb, var(--body-bg) 94%, transparent);
   --on-overlay: var(--text-color);
+  --title-color: var(--brand-yellow);
 
   color-scheme: dark;
   background-color: var(--body-bg);
