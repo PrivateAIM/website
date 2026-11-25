@@ -69,9 +69,18 @@ const pageNodes = computed(() => {
     const hasBreadcrumb = !isHome && page !== 'NotFound';
     const dateModified = page === 'NotFound' ? undefined : pageDate(path);
     let mainEntity: string | undefined;
-    if (page === 'Publications') mainEntity = publicationListId(path);
-    if (page === 'Flame') mainEntity = flameNode['@id'] as string;
-    if (page === 'FederatedAnalysis') mainEntity = techArticleId(path);
+
+    if (page === 'Publications') {
+        mainEntity = publicationListId(path);
+    }
+
+    if (page === 'Flame') {
+        mainEntity = flameNode['@id'] as string;
+    }
+
+    if (page === 'FederatedAnalysis') {
+        mainEntity = techArticleId(path);
+    }
 
     return [
         websiteNode,

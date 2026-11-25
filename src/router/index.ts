@@ -16,6 +16,8 @@ import {
 } from '@/i18n';
 
 declare module 'vue-router' {
+    // Augments vue-router's own interface, so the name is fixed
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     interface RouteMeta {
         title?: string
         description?: string
@@ -25,20 +27,20 @@ declare module 'vue-router' {
 
 type LocaleCode = (typeof LOCALES)[number]['code'];
 
-interface PageMeta {
+interface IPageMeta {
     title: string;
     description: string;
 }
 
-interface PageRoute {
+interface IPageRoute {
     path: string;
     name: string;
     component: RouteRecordSingleView['component'];
     props?: boolean;
-    meta: Record<LocaleCode, PageMeta>;
+    meta: Record<LocaleCode, IPageMeta>;
 }
 
-const pages: PageRoute[] = [
+const pages: IPageRoute[] = [
     {
         path: '/',
         name: 'Home',
@@ -214,6 +216,7 @@ export const scrollBehavior: RouterScrollBehavior = (to) => {
     if (to.hash) {
         return { el: to.hash, top: 80 };
     }
+
     return { top: 0, behavior: 'smooth' };
 };
 
@@ -221,11 +224,14 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
     // GitHub Pages also serves the prerendered files at their .html URLs, and serves
     // the 404 page for /news/: send both to the canonical URL (the locale homes keep their slash)
     const localeHomes = LOCALES.filter(({ code }) => code !== DEFAULT_LOCALE).map(({ code }) => `/${code}/`);
+
     router.beforeEach((to) => {
         let path = to.path.replace(/(\/index)?\.html$/, '') || '/';
+
         if (path.endsWith('/') && path !== '/' && !localeHomes.includes(path)) {
             path = path.replace(/\/+$/, '');
         }
+
         if (path === to.path) {
             return undefined;
         }
@@ -252,13 +258,16 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
 
         const { slug } = to.params;
         const project = typeof slug === 'string' ? findReference(slug) : undefined;
+
         if (!project) {
             to.meta.title = 'Page Not Found — PrivateAIM';
+
             return;
         }
 
         const locale = to.meta.locale ?? DEFAULT_LOCALE;
         const content = referenceContentForLocale(project, locale);
+
         to.meta.title = referenceTitle(content, locale);
         to.meta.description = content.tagline;
     });
@@ -272,6 +281,7 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
 
         const defaultTitle = 'PrivateAIM — Privacy-Preserving Analytics in Medicine';
         const title = to.meta.title || defaultTitle;
+
         document.title = title;
 
         const setMeta = (selector: string, value?: string) => {
@@ -279,6 +289,7 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
                 document.querySelector(selector)?.setAttribute('content', value);
             }
         };
+
         setMeta('meta[name="description"]', to.meta.description);
         setMeta('meta[property="og:title"]', title);
         setMeta('meta[property="og:description"]', to.meta.description);
@@ -287,6 +298,7 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
 
         // Update canonical URL
         const url = `https://privateaim.de${to.path}`;
+
         document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
         setMeta('meta[property="og:url"]', url);
 
@@ -294,9 +306,11 @@ export function installRouterHooks(router: Router, locale: Ref<string>) {
         const setAlternate = (hreflang: string, path: string) => {
             document.querySelector(`link[hreflang="${CSS.escape(hreflang)}"]`)?.setAttribute('href', `https://privateaim.de${path}`);
         };
+
         for (const { code } of LOCALES) {
             setAlternate(code, localePath(base, code));
         }
+
         setAlternate('x-default', base);
 
         // Send GA4 page view for SPA navigation

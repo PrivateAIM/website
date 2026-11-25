@@ -1,7 +1,7 @@
 /** Widths generated at build time by scripts/thumbnails.ts (about twice the displayed size). */
 export const THUMBNAIL_WIDTHS = [192, 640];
 
-export type ThumbnailWidth = 192 | 640;
+type ThumbnailWidth = 192 | 640;
 
 /**
  * URL of a downscaled copy of an image in public/images, e.g.

@@ -26,21 +26,37 @@ const current = computed(() => (props.index === null ? undefined : props.images[
 
 const close = () => emit('update:index', null);
 const step = (delta: number) => {
-    if (props.index === null) return;
+    if (props.index === null) {
+        return;
+    }
+
     const count = props.images.length;
+
     emit('update:index', (props.index + delta + count) % count);
 };
 
 const onKey = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') close();
-    if (event.key === 'ArrowLeft') step(-1);
-    if (event.key === 'ArrowRight') step(1);
+    if (event.key === 'Escape') {
+        close();
+    }
+
+    if (event.key === 'ArrowLeft') {
+        step(-1);
+    }
+
+    if (event.key === 'ArrowRight') {
+        step(1);
+    }
 };
 
 // Lock page scroll and move focus into the dialog while it is open
 watch(() => props.index !== null, async (open) => {
-    if (typeof document === 'undefined') return;
+    if (typeof document === 'undefined') {
+        return;
+    }
+
     document.body.style.overflow = open ? 'hidden' : '';
+
     if (open) {
         returnFocus = document.activeElement as HTMLElement | null;
         document.addEventListener('keydown', onKey);
@@ -53,7 +69,10 @@ watch(() => props.index !== null, async (open) => {
 });
 
 onBeforeUnmount(() => {
-    if (typeof document === 'undefined') return;
+    if (typeof document === 'undefined') {
+        return;
+    }
+
     document.removeEventListener('keydown', onKey);
     document.body.style.overflow = '';
 });

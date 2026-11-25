@@ -147,6 +147,7 @@ const isScrolled = ref(false);
 const onScroll = () => {
     isScrolled.value = window.scrollY > 8;
 };
+
 onMounted(() => {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });

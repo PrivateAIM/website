@@ -59,6 +59,7 @@ const items = computed(() => latestNews(locale.value, 3));
 // First sentence-ish preview of the HTML content
 const summary = (content: string): string => {
     const text = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+
     return text.length > 140 ? `${text.slice(0, 140).replace(/\s+\S*$/, '')}…` : text;
 };
 </script>

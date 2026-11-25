@@ -13,6 +13,7 @@ export function useDarkMode(): Ref<boolean | undefined> {
         const update = () => {
             isDark.value = document.body.classList.contains('dark-mode');
         };
+
         update();
         observer = new MutationObserver(update);
         observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });

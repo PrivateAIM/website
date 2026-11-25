@@ -33,6 +33,7 @@ const dir = computed(() => textDirection.value === 'rtl' ? 'rtl' : 'ltr');
 // For now, both languages are LTR, so this doesn't change anything
 function updateLanguage(newLocale: string) {
     const langInfo = languages.find((lang) => lang.value === newLocale);
+
     if (langInfo) {
         textDirection.value = langInfo.dir;
     }

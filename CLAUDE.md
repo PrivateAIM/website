@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-PrivateAIM website — a Vue 3 + TypeScript single-page application built with Vite. Requires Node.js >= 22.22 (npm-run-all2).
+PrivateAIM website — a Vue 3 + TypeScript single-page application built with Vite. Requires Node.js >= 24.3 (`@tada5hi/eslint-config` 3).
 
 ## Commands
 
@@ -21,7 +21,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 **Stack:** Vue 3 (Composition API, `<script setup>`), Vue Router, ilingo (`@ilingo/vue`), Vite, TypeScript strict mode. No Pinia or Bootstrap: state is local to components, and styles are scoped CSS with the colour tokens.
 
-**Lint & formatting:** ESLint flat config via [`@tada5hi/eslint-config`](https://github.com/tada5hi/javascript) (`eslint.config.ts`). It bundles `@stylistic` formatting (4-space indent, single quotes, semicolons, comma-dangle multiline, max-len 150) and replaces Prettier. `eslint.config.ts` adds browser globals, disables `vue/no-v-html` (markdown is rendered via `v-html` by design), and turns off `@stylistic/max-len` for `.vue` files (inline SVG paths). TypeScript config extends [`@tada5hi/tsconfig`](https://github.com/tada5hi/javascript) in `tsconfig.json`, layering Vite bundler-mode overrides on top. The base enables `noUncheckedIndexedAccess` and `verbatimModuleSyntax`, so index access is `T | undefined` and type-only imports must use `import type`.
+**Lint & formatting:** ESLint flat config via [`@tada5hi/eslint-config`](https://github.com/tada5hi/javascript) (`eslint.config.ts`). It bundles `@stylistic` formatting (4-space indent, single quotes, semicolons, comma-dangle multiline, max-len 150) and replaces Prettier. `eslint.config.ts` adds browser globals, disables `vue/no-v-html` (markdown is rendered via `v-html` by design), and turns off `@stylistic/max-len` for `.vue` files (inline SVG paths). TypeScript config extends [`@tada5hi/tsconfig`](https://github.com/tada5hi/javascript) in `tsconfig.json`, layering Vite bundler-mode overrides on top. The base enables `noUncheckedIndexedAccess` and `verbatimModuleSyntax`, so index access is `T | undefined` and type-only imports must use `import type`. The lint config requires interface names with an `I` prefix (`INewsEntry`) and exported types in a `types.ts` next to the code (`src/data/news/types.ts`, `src/data/references/types.ts`, `src/seo/types.ts`). TypeScript stays on 6.x until typescript-eslint supports 7.
 
 **Path alias:** `@` → `src/` (configured in both `tsconfig.json` and `vite.config.ts`).
 
@@ -30,7 +30,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 - `src/components/` — reusable components; `home/` has homepage sections, `shared/` has generic components like LinkText and LocalizedLink
 - `src/data/news/` — news content as TypeScript modules per locale (`en.ts`, `de.ts`), grouped by year and keyed by locale in `index.ts`
 - `src/i18n/locales/` — `en.ts` and `de.ts` ilingo catalogs built with `defineLocale`/`defineNamespace`/`defineTranslations`
-- `src/types/` — shared TypeScript interfaces (`NewsItem`)
+- `src/types/` — ambient declarations (`json.d.ts`)
 - `src/assets/` — CSS (colour tokens, fonts), flag icons
 
 **Routing:** All routes use lazy-loaded components. The router scrolls to top on navigation.
@@ -41,7 +41,7 @@ PrivateAIM website — a Vue 3 + TypeScript single-page application built with V
 
 **Theming:** All colours are CSS custom properties in `src/assets/dark-mode.css` (light palette on `:root`, dark palette on `body.dark-mode`, toggled by `ThemeToggle`), derived from the PrivateAIM and FLAME logos. Components use `var(--token)` without fallbacks and no literal colours; derive shades with `color-mix()`. Yellow is never text on a light background, and FLAME orange is reserved for FLAME content.
 
-**News system:** News items are typed `NewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
+**News system:** News items are typed `INewsEntry` objects in `src/data/news/{en,de}.ts`, grouped by year and exported per-locale from `index.ts`. The News view (and the homepage "Latest News" card) select the array for the active locale via `useLocale()`. They live outside the i18n catalog because ilingo holds only string/plural leaves, not arrays of objects.
 
 **Static assets:** Images go in `public/images/` with subdirectories per content type (news, team, partners). Markdown files are included as assets via Vite config (`assetsInclude: ['**/*.md']`); privacy policy content is in `src/data/privacy/`.
 

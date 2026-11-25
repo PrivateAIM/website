@@ -4,12 +4,12 @@ import { onMounted, ref } from 'vue';
 import { useTranslation } from '@/i18n';
 import { GA_TRACKING_ID, sendPageView } from '@/utils/analytics';
 
-interface CookieOptions {
+interface ICookieOptions {
     necessary: boolean;
     analytics: boolean;
 }
 
-interface WindowWithDataLayer extends Window {
+interface IWindowWithDataLayer extends Window {
     dataLayer: Array<unknown[]>;
     gtag?: (...args: unknown[]) => void;
     [key: string]: unknown;
@@ -18,7 +18,7 @@ interface WindowWithDataLayer extends Window {
 const isVisible = ref(false);
 const showOptions = ref(false);
 const settingsLabel = useTranslation('cookie.settings');
-const cookieOptions = ref<CookieOptions>({
+const cookieOptions = ref<ICookieOptions>({
     necessary: true,
     analytics: false,
 });
@@ -27,9 +27,10 @@ const cookieOptions = ref<CookieOptions>({
 const checkCookieConsent = (): boolean => document.cookie.includes('cookie-consent=true');
 
 // Cookie setzen
-const setCookieConsent = (options: CookieOptions) => {
+const setCookieConsent = (options: ICookieOptions) => {
     // Setze einen Cookie für das Consent mit 6 Monaten Gültigkeit
     const expiryDate = new Date();
+
     expiryDate.setMonth(expiryDate.getMonth() + 6);
 
     document.cookie = `cookie-consent=true; expires=${expiryDate.toUTCString()}; path=/`;
@@ -46,14 +47,19 @@ const setCookieConsent = (options: CookieOptions) => {
 
 // Google Analytics mit anonymisierter IP initialisieren
 const initGoogleAnalytics = () => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') {
+        return;
+    }
 
-    const win = window as unknown as WindowWithDataLayer;
+    const win = window as unknown as IWindowWithDataLayer;
 
     // Prevent duplicate injection
-    if (win.gtag) return;
+    if (win.gtag) {
+        return;
+    }
 
     const initScript = document.createElement('script');
+
     initScript.text = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -63,6 +69,7 @@ const initGoogleAnalytics = () => {
     document.head.appendChild(initScript);
 
     const gtagScript = document.createElement('script');
+
     gtagScript.async = true;
     gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${  GA_TRACKING_ID}`;
     document.head.appendChild(gtagScript);
@@ -78,15 +85,18 @@ const disableGoogleAnalytics = () => {
     if (typeof window === 'undefined') {
         return;
     }
-    const windowWithDataLayer = window as unknown as WindowWithDataLayer;
+
+    const windowWithDataLayer = window as unknown as IWindowWithDataLayer;
 
     // GA4 deaktivieren
     windowWithDataLayer[`ga-disable-${GA_TRACKING_ID}`] = true;
 
     // Optional: Vorhandene GA-Cookies entfernen
     const cookies = document.cookie.split(';');
+
     for (const cooky of cookies) {
         const cookie = cooky.trim();
+
         if (cookie.indexOf('_ga') === 0 || cookie.indexOf('_gid') === 0 || cookie.indexOf('_gat') === 0) {
             document.cookie = `${cookie.split('=')[0] ?? ''}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
         }
@@ -118,8 +128,10 @@ const savePreferences = () => {
     // The options are collapsed, so the first click reveals them
     if (!showOptions.value) {
         showOptions.value = true;
+
         return;
     }
+
     setCookieConsent(cookieOptions.value);
     isVisible.value = false;
     showOptions.value = false;
@@ -147,6 +159,7 @@ onMounted(() => {
         if (cookieOptionsStr) {
             try {
                 const savedOptions = JSON.parse(decodeURIComponent(cookieOptionsStr));
+
                 cookieOptions.value = savedOptions;
 
                 // Falls Analytics bereits akzeptiert wurde, initialisiere es

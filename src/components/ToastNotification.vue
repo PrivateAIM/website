@@ -23,12 +23,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 
-interface ToastNotificationProps {
+interface IToastNotificationProps {
     message: string;
     duration?: number;
 }
 
-const props = withDefaults(defineProps<ToastNotificationProps>(), { duration: 3000 });
+const props = withDefaults(defineProps<IToastNotificationProps>(), { duration: 3000 });
 
 const emit = defineEmits<{
     'close': [];
@@ -67,6 +67,7 @@ const handleClose = () => {
         clearTimeout(closeTimeout);
         closeTimeout = null;
     }
+
     emit('close');
 };
 
