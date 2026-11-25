@@ -15,6 +15,9 @@
       "@/*": ["./src/*"]
     }
   },
+  "vueCompilerOptions": {
+    "strictVModel": true
+  },
   "include": [
     "types/*.ts",
     "types/*.d.ts",

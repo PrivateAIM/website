@@ -1,5 +1,3 @@
-import { URL, fileURLToPath } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
@@ -25,7 +23,12 @@ export default defineConfig({
     ],
     assetsInclude: ['**/*.md'],
     define: { __PAGE_DATES__: JSON.stringify(pageDates()) },
-    resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+    // The @/* alias comes from tsconfig.json paths
+    resolve: { tsconfigPaths: true },
+    // Browser errors and warnings also show in the dev server log
+    server: { forwardConsole: true },
+    // Inventory of the bundled third-party packages, published with the site
+    build: { license: { fileName: 'third-party-licenses.md' } },
     ssgOptions: {
         // Flat files: GitHub Pages serves news.html at /news, while news/index.html would 301 to /news/
         dirStyle: 'flat',

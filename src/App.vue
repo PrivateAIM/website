@@ -17,6 +17,7 @@
                     >
                         <component :is="Component" />
                     </transition>
+                    <ScrollRestorer />
                 </router-view>
             </main>
             <JsonLd :nodes="pageNodes" />
@@ -34,6 +35,7 @@ import LanguageProvider from './components/LanguageProvider.vue';
 import CookieBanner from './components/CookieBanner.vue';
 import BackToTop from './components/BackToTop.vue';
 import JsonLd from './components/shared/JsonLd';
+import ScrollRestorer from './components/shared/ScrollRestorer.vue';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { localePath, useLocale } from '@/i18n';
