@@ -116,11 +116,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, nextTick, ref } from 'vue';
+import { onRouteRendered } from 'vue-router/experimental';
 import PageHeader from '../components/PageHeader.vue';
 import AppIcon from '@/components/shared/AppIcon.vue';
 import ImageLightbox from '@/components/shared/ImageLightbox.vue';
 import { thumbnail } from '@/utils/thumbnail';
+import { scrollToHash } from '@/router/scroll';
 import { useLocale, useTranslation, useTranslator } from '@/i18n';
 import {
     type INewsEntry,
@@ -174,9 +176,9 @@ const getImageUrl = (imagePath: string): string => `/images/news/${imagePath}`;
 // Function to get news items for a specific year
 const getNewsItemsByYear = (year: string): INewsEntry[] => newsByYear.value[year] ?? [];
 
-// Open the entry a link points to (/news#news-…)
-onMounted(() => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
+// Open the entry a link points to (/news#news-…), also when only the hash changes
+onRouteRendered(async (to) => {
+    const id = decodeURIComponent(to.hash.slice(1));
 
     if (!id) {
         return;
@@ -187,7 +189,9 @@ onMounted(() => {
 
         if (index !== -1) {
             openKey.value = `${year}-${index}`;
-            document.getElementById(id)?.scrollIntoView();
+            // Opening changes the layout: scroll once the entry is expanded
+            await nextTick();
+            scrollToHash(to.hash);
 
             return;
         }

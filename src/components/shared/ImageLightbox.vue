@@ -6,8 +6,9 @@ import {
     ref, 
     watch,
 } from 'vue';
+import { useLiveAnnouncer } from '@vueuse/core';
 import AppIcon from '@/components/shared/AppIcon.vue';
-import { useTranslation } from '@/i18n';
+import { useTranslation, useTranslator } from '@/i18n';
 
 const props = defineProps<{
     images: string[]; 
@@ -19,6 +20,8 @@ const emit = defineEmits<{ (e: 'update:index', value: number | null): void }>();
 const closeLabel = useTranslation('news.gallery.close');
 const previousLabel = useTranslation('news.gallery.previous');
 const nextLabel = useTranslation('news.gallery.next');
+const t = useTranslator();
+const { polite } = useLiveAnnouncer();
 const closeButton = ref<HTMLButtonElement | null>(null);
 let returnFocus: HTMLElement | null = null;
 
@@ -65,6 +68,13 @@ watch(() => props.index !== null, async (open) => {
     } else {
         document.removeEventListener('keydown', onKey);
         returnFocus?.focus();
+    }
+});
+
+// Announce the new position when stepping through an open gallery; focus stays on the button
+watch(() => props.index, (index, previous) => {
+    if (index !== null && previous !== null && props.images.length > 1) {
+        polite(t('news.gallery.photo', { index: index + 1, count: props.images.length }));
     }
 });
 

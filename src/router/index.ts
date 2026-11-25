@@ -3,7 +3,6 @@ import type {
     RouteRecordRaw,
     RouteRecordSingleView,
     Router,
-    RouterScrollBehavior,
 } from 'vue-router';
 import { sendPageView } from '@/utils/analytics';
 import { findReference, referenceContentForLocale, referenceTitle } from '@/data/references';
@@ -209,16 +208,6 @@ export const routes: RouteRecordRaw[] = [
         meta: { title: 'Page Not Found — PrivateAIM' },
     },
 ];
-
-// Scroll to the linked news entry (/news#news-…), otherwise to the top
-export const scrollBehavior: RouterScrollBehavior = (to) => {
-    // Anchors (news entries, #audiences on /flame) sit below the sticky header
-    if (to.hash) {
-        return { el: to.hash, top: 80 };
-    }
-
-    return { top: 0, behavior: 'smooth' };
-};
 
 export function installRouterHooks(router: Router, locale: Ref<string>) {
     // GitHub Pages also serves the prerendered files at their .html URLs, and serves
